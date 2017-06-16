@@ -1,0 +1,44 @@
+程序结构:
+day8-FTPServer/
+├── README
+├── ftpclient  # FTP客户端目录
+│   ├── __init__.py
+│   ├── ftp_client.py  # FTP客户端启动程序
+│   ├── download  # 下载目录，用户从服务器下载的文件均在此目录下
+│   │   ├── mylog.log  # 一个已经下载好的文件示例
+├── ftpserver  # FTP服务端目录
+│   ├── __init__.py
+│   ├── bin    # FTP服务端 执行文件 目录
+│   │   ├── __init__.py
+│   │   ├── start_ftpserver.py    # FTP服务端 执行程序
+│   ├── conf   # 配置文件目录
+│   │   ├── __init__.py
+│   │   └── settings.py   # 基础信息配置文件
+│   ├── core  # 主要程序逻辑都 在这个目录 里
+│   │   ├── __init__.py
+│   │   ├── base.py        # 基类，提供类的基础功能
+│   │   ├── ftp_server.py  # 服务端类
+│   │   ├── idmaker.py     # id对象类模块
+│   │   ├── manager.py     # 管理员类
+│   │   ├── mylogger.py    # 日志处理模块
+│   │   ├── user.py        # 用户类，用于生成用户对象
+│   ├── db  # 用户数据存储的地方
+│   │   ├── __init__.py
+│   │   ├── manager   # 存储管理员信息
+│   │       └── 75be91be-4441-11e7-bb80-1cb72cdda746  # 一个管理员信息示例文件
+│   │   ├── user   # 存储用户信息
+│   │       └── 32e95310-44e7-11e7-9426-1cb72cdda746  # 一个用户信息示例文件
+│   ├── lib # 公共函数目录
+│   │    ├── __init__.py
+│   │    ├── public.py     # 公共函数
+│   ├── log  # 日志目录
+│   │    ├── __init__.py
+│   │    ├── action.log    #行为日志，记录操作登陆等一些行为
+│   │    ├── manage.log    #管理日志，记录一些管理操作
+│   ├── home     # 用户目录
+│   │   ├── __init__.py
+│   │   ├── Breakering     # 一个用户在服务器的目录示例
+│   │   │   └── mylog.log  # 用户在服务器存储的文件
+│   │   ├── profhua
+│   │   │   └── ......
+└────────

@@ -1,0 +1,25 @@
+2017-05-13 15:01:25,170 - manage - INFO - admin_view - 54:  [老男孩] [北京]校区 创建成功
+2017-05-13 15:01:47,993 - manage - INFO - admin_view - 54:  [老男孩] [上海]校区 创建成功
+2017-05-13 15:02:10,107 - manage - INFO - admin_view - 96:  课程 [python] 创建成功
+2017-05-13 15:02:45,894 - manage - INFO - admin_view - 96:  课程 [liunx] 创建成功
+2017-05-13 15:02:55,348 - manage - INFO - admin_view - 96:  课程 [go] 创建成功
+2017-05-13 15:04:18,879 - manage - INFO - admin_view - 162:  讲师 [李杰] 记录创建成功
+2017-05-13 15:04:50,634 - manage - INFO - admin_view - 162:  讲师 [武沛齐] 记录创建成功
+2017-05-13 15:05:26,223 - manage - INFO - admin_view - 287:  班级 [Python自动化开发] [第16期] 创建成功
+2017-05-13 15:05:26,223 - manage - INFO - admin_view - 288:  班级 [Python自动化开发] [第16期] 上课记录创建成功
+2017-05-13 15:06:14,320 - manage - INFO - admin_view - 287:  班级 [Python自动化开发] [第15期] 创建成功
+2017-05-13 15:06:14,320 - manage - INFO - admin_view - 288:  班级 [Python自动化开发] [第15期] 上课记录创建成功
+2017-05-13 15:06:42,408 - manage - INFO - admin_view - 287:  班级 [Python全栈开发] [第1期] 创建成功
+2017-05-13 15:06:42,409 - manage - INFO - admin_view - 288:  班级 [Python全栈开发] [第1期] 上课记录创建成功
+2017-05-13 15:07:56,199 - manage - INFO - admin_view - 403:  学员 [赵晋彪] 关联班级 [Python自动化开发] 学校 [老男孩] 成功！
+2017-05-13 15:07:56,199 - manage - INFO - admin_view - 405:  学员 [赵晋彪] 对应班级 [Python自动化开发] 学习记录创建成功！
+2017-05-13 15:07:56,199 - manage - INFO - admin_view - 407:  学员 [赵晋彪] 关联班级 [Python自动化开发] 对应表创建成功！
+2017-05-13 15:09:03,449 - manage - INFO - admin_view - 403:  学员 [赵晋彪] 关联班级 [Python全栈开发] 学校 [老男孩] 成功！
+2017-05-13 15:09:03,449 - manage - INFO - admin_view - 405:  学员 [赵晋彪] 对应班级 [Python全栈开发] 学习记录创建成功！
+2017-05-13 15:09:03,449 - manage - INFO - admin_view - 407:  学员 [赵晋彪] 关联班级 [Python全栈开发] 对应表创建成功！
+2017-05-14 19:04:03,363 - manage - INFO - admin_view - 403:  学员 [花教授] 关联班级 [Python自动化开发] 学校 [老男孩] 成功！
+2017-05-14 19:04:03,379 - manage - INFO - admin_view - 405:  学员 [花教授] 对应班级 [Python自动化开发] 学习记录创建成功！
+2017-05-14 19:04:03,379 - manage - INFO - admin_view - 407:  学员 [花教授] 关联班级 [Python自动化开发] 对应表创建成功！
+2017-05-14 20:58:43,157 - manage - INFO - admin_view - 403:  学员 [赵晋彪] 关联班级 [Python自动化开发] 学校 [老男孩] 成功！
+2017-05-14 20:58:43,157 - manage - INFO - admin_view - 405:  学员 [赵晋彪] 对应班级 [Python自动化开发] 学习记录创建成功！
+2017-05-14 20:58:43,157 - manage - INFO - admin_view - 407:  学员 [赵晋彪] 关联班级 [Python自动化开发] 对应表创建成功！

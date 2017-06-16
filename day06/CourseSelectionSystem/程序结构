@@ -1,0 +1,49 @@
+程序结构:
+day6-CourseSelectionSystem/
+├── README
+├── CourseSelectionSystem  #选课系统主程目录
+│   ├── __init__.py
+│   ├── bin #选课系统 执行文件 目录
+│   │   ├── __init__.py
+│   │   ├── bin.py    #选课系统 执行程序
+│   ├── conf #配置文件
+│   │   ├── __init__.py
+│   │   ├── exhibition.py #界面显示配置文件
+│   │   └── settings.py   #基础信息配置文件
+│   ├── core #主要程序逻辑都 在这个目录 里
+│   │   ├── __init__.py
+│   │   ├── main   #存储管理者账户信息
+│   │       └── __init__.py
+│   │       └── admin_view.py    #管理员视图主服务端
+│   │       └── student_view.py  #学员视图主服务端
+│   │       └── teacher_view.py  #讲师视图主服务端
+│   │   ├── idmaker.py           #id对象类模块
+│   │   ├── module.py            #主要类模块
+│   │   ├── mylogger.py          #日志处理模块
+│   ├── db  #用户数据存储的地方
+│   │   ├── __init__.py
+│   │   ├── admin   #存储管理者账户信息
+│   │       └── e562261a-37a9-11e7-bb8a-1cb72cdda746  #一个管理者账户示例文件
+│   │   ├── classes       #存储班级信息
+│   │       └── ....
+│   │   ├── classrecord   #存储上课记录信息
+│   │       └── ....
+│   │   ├── course        #存储课程信息
+│   │       └── ....
+│   │   ├── school        #存储学校信息
+│   │       └── ....
+│   │   ├── student       #存储学员信息
+│   │       └── ....
+│   │   ├── studenttoclasses   #存储学员和班级对应信息
+│   │       └── ....
+│   │   ├── studyrecord   #存储学习记录信息
+│   │       └── ....
+│   │   ├── teacher       #存储讲师信息
+│   │       └── ....
+│   └── lib #公共函数目录
+│       ├── __init__.py
+│       ├── public.py     #公共函数
+│   └── log  #日志目录
+│       ├── __init__.py
+│       ├── action.log    #行为日志，记录操作登陆等一些行为
+│       ├── manage.log    #管理日志，管理端进行操作时会记录

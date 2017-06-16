@@ -1,0 +1,50 @@
+2017-04-25 21:08:09,323 - trade - INFO - trade - 84:  account_id:1  trade:withdraw  amount:-10000.0  interest:-500.0
+2017-04-25 21:08:15,330 - trade - INFO - trade - 84:  account_id:1  trade:repay  amount:10500.0  interest:0.0
+2017-04-25 21:08:24,263 - trade - INFO - trade - 67:  account_id:3  trade:transfer  amount:2000.0 
+2017-04-25 21:08:25,265 - trade - INFO - trade - 84:  account_id:1  trade:transfer  amount:-2000.0  interest:-0.0
+2017-04-25 21:08:30,420 - trade - INFO - trade - 84:  account_id:1  trade:repay  amount:2000.0  interest:0.0
+2017-04-25 21:09:12,963 - trade - INFO - trade - 84:  account_id:3  trade:withdraw  amount:-2000.0  interest:-100.0
+2017-04-25 21:09:27,984 - trade - INFO - trade - 84:  account_id:3  trade:repay  amount:100.0  interest:0.0
+2017-04-25 21:10:17,225 - trade - INFO - trade - 84:  account_id:2  trade:withdraw  amount:-1000.0  interest:-50.0
+2017-04-25 21:11:01,843 - trade - INFO - trade - 84:  account_id:1  trade:consume  amount:-100.0  interest:-0.0
+2017-04-25 21:33:30,710 - trade - INFO - trade - 84:  account_id:1  trade:consume  amount:-100.0  interest:-0.0
+2017-04-25 21:33:48,396 - trade - INFO - trade - 84:  account_id:1  trade:consume  amount:-100.0  interest:-0.0
+2017-04-25 21:34:10,662 - trade - INFO - trade - 84:  account_id:1  trade:consume  amount:-100.0  interest:-0.0
+2017-04-25 21:36:51,795 - trade - INFO - trade - 84:  account_id:1  trade:consume  amount:-100.0  interest:-0.0
+2017-04-25 21:43:55,868 - trade - INFO - trade - 84:  account_id:1  trade:consume  amount:-100.0  interest:-0.0
+2017-04-25 21:45:12,271 - trade - INFO - trade - 84:  account_id:1  trade:consume  amount:-100.0  interest:-0.0
+2017-04-25 21:45:24,416 - trade - INFO - trade - 84:  account_id:1  trade:consume  amount:-100.0  interest:-0.0
+2017-04-25 21:45:44,976 - trade - INFO - trade - 84:  account_id:1  trade:consume  amount:-100.0  interest:-0.0
+2017-04-25 21:48:48,237 - trade - INFO - trade - 84:  account_id:1  trade:withdraw  amount:-1000.0  interest:-50.0
+2017-04-25 21:48:54,245 - trade - INFO - trade - 67:  account_id:2  trade:transfer  amount:12.0 
+2017-04-25 21:48:55,246 - trade - INFO - trade - 84:  account_id:1  trade:transfer  amount:-12.0  interest:-0.0
+2017-04-25 21:49:00,252 - trade - INFO - trade - 84:  account_id:1  trade:repay  amount:1962.0  interest:0.0
+2017-04-25 21:49:24,514 - trade - INFO - trade - 84:  account_id:3  trade:withdraw  amount:-1000.0  interest:-50.0
+2017-04-25 21:49:29,854 - trade - INFO - trade - 84:  account_id:3  trade:repay  amount:1050.0  interest:0.0
+2017-04-25 21:51:24,093 - trade - INFO - trade - 84:  account_id:1  trade:consume  amount:-100.0  interest:-0.0
+2017-04-25 21:52:28,194 - trade - INFO - trade - 84:  account_id:1  trade:consume  amount:-8000.0  interest:-0.0
+2017-04-26 11:14:42,504 - trade - INFO - trade - 84:  account_id:1  trade:withdraw  amount:-100.0  interest:-5.0
+2017-04-26 11:14:49,720 - trade - INFO - trade - 84:  account_id:1  trade:repay  amount:8205.0  interest:0.0
+2017-04-26 11:14:59,993 - trade - INFO - trade - 67:  account_id:2  trade:transfer  amount:100.0 
+2017-04-26 11:15:00,995 - trade - INFO - trade - 84:  account_id:1  trade:transfer  amount:-100.0  interest:-0.0
+2017-04-26 11:15:06,072 - trade - INFO - trade - 84:  account_id:1  trade:repay  amount:100.0  interest:0.0
+2017-04-26 11:24:16,257 - trade - INFO - trade - 84:  account_id:1  trade:consume  amount:-800.0  interest:-0.0
+2017-04-26 11:24:45,377 - trade - INFO - trade - 84:  account_id:1  trade:consume  amount:-3.0  interest:-0.0
+2017-04-26 11:25:41,721 - trade - INFO - trade - 84:  account_id:1  trade:consume  amount:-3.0  interest:-0.0
+2017-04-26 11:26:44,408 - trade - INFO - trade - 84:  account_id:1  trade:repay  amount:806.0  interest:0.0
+2017-04-28 15:10:09,592 - trade - INFO - trade - 84:  account_id:1  trade:consume  amount:-6000.0  interest:-0.0
+2017-04-28 15:12:20,118 - trade - INFO - trade - 84:  account_id:1  trade:repay  amount:6000.0  interest:0.0
+2017-04-28 15:12:34,726 - trade - INFO - trade - 67:  account_id:2  trade:transfer  amount:100.0 
+2017-04-28 15:12:35,730 - trade - INFO - trade - 84:  account_id:1  trade:transfer  amount:-100.0  interest:-0.0
+2017-04-28 15:13:17,831 - trade - INFO - trade - 84:  account_id:2  trade:repay  amount:838.0  interest:0.0
+2017-04-28 15:13:28,391 - trade - INFO - trade - 67:  account_id:1  trade:transfer  amount:1000.0 
+2017-04-28 15:13:29,395 - trade - INFO - trade - 84:  account_id:2  trade:transfer  amount:-1000.0  interest:-0.0
+2017-04-28 15:13:51,190 - trade - INFO - trade - 84:  account_id:1  trade:withdraw  amount:-900.0  interest:-45.0
+2017-04-28 15:13:55,703 - trade - INFO - trade - 84:  account_id:1  trade:repay  amount:45.0  interest:0.0
+2017-04-28 19:27:15,327 - trade - INFO - trade - 84:  account_id:1  trade:withdraw  amount:-2.0  interest:-0.1
+2017-04-28 19:35:01,923 - trade - INFO - trade - 84:  account_id:1  trade:consume  amount:-8000.0  interest:-0.0
+2017-04-28 19:37:12,599 - trade - INFO - trade - 84:  account_id:1  trade:consume  amount:-6000.0  interest:-0.0
+2017-04-28 20:07:01,300 - trade - INFO - trade - 84:  account_id:1  trade:repay  amount:14002.1  interest:0.0
+2017-05-06 17:21:27,989 - trade - INFO - trade - 84:  account_id:1  trade:withdraw  amount:-100.0  interest:-5.0
+2017-05-08 22:16:17,857 - trade - INFO - trade - 85:  account_id:1  trade:consume  amount:-800.0  interest:-0.0
+2017-05-08 22:19:04,615 - trade - INFO - trade - 85:  account_id:1  trade:repay  amount:905.0  interest:0.0

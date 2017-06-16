@@ -1,0 +1,53 @@
+程序结构:
+day5-atm/
+├── README
+├── atm  #ATM主程目录
+│   ├── __init__.py
+│   ├── bin #ATM 执行文件 目录
+│   │   ├── __init__.py
+│   │   ├── atm.py    #ATM 执行程序
+│   │   └── manage.py #ATM 管理端
+│   ├── conf #配置文件
+│   │   ├── __init__.py
+│   │   ├── exhibition.py #界面显示配置文件
+│   │   └── settings.py   #基础信息配置文件
+│   ├── core #主要程序逻辑都 在这个目录 里
+│   │   ├── __init__.py
+│   │   ├── data_access.py   #数据访问层模块
+│   │   ├── db_handler.py    #转接模块，主要用于使用不同数据库之间的转换
+│   │   ├── login.py         #登陆验证模块
+│   │   ├── main.py          #主函数模块，用于逻辑交互
+│   │   ├── mylogger.py      #日志处理模块
+│   │   ├── report_handle.py #报告处理模块
+│   │   └── trade.py         #交易处理模块
+│   ├── db  #用户数据存储的地方
+│   │   ├── __init__.py
+│   │   ├── manage   #存储管理者账户信息
+│   │       └── __init__.py
+│   │       └── Breakering.json  #一个管理者账户示例文件
+│   │       └── manage_create.py #初始化管理者账户，测试专用
+│   │   ├── user  #存储用户信息
+│   │       └── __init__.py
+│   │       └── abc.json  #一个用户账户示例文件
+│   │       └── abcd.json
+│   │       └── profhua.json
+│   │   ├── myInitialization.py #初始化用户信息模块，并初始化日志以及报告，测试专用
+│   │   └── user_id.json   #存储用户id，以及用户名，在管理端添加账户时有用
+│   └── log #日志目录
+│       ├── __init__.py
+│       ├── action.log   #行为日志，记录操作登陆等一些行为
+│       ├── manage.log   #管理日志，管理端进行操作时会记录
+│       └── trade.log    #交易日志
+│   └── report  #报告目录
+│       ├── __init__.py
+│       ├── abc.rp    #一个用户报告文件示例
+│       ├── abcd.rp
+│       └── profhua.rp
+└── shopping_marker #购物商城程序
+│       ├── __init__.py
+│       ├── customer_dict.json   #存储所有用户信息
+│       ├── customer_entrance.py #购物商城主程序
+│       ├── goods_dict.json      #存储商品信息
+│       ├── merchant_portal.py   #管理商品程序，可以添加商品，删除商品等操作
+│       ├── Readme.txt
+└───────

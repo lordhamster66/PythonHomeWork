@@ -1,0 +1,4 @@
+2017-04-25 20:58:25,207 - manage - INFO - main - 331:  用户profhua已被管理者Breakering添加至ATM系统！
+2017-04-26 11:16:52,800 - manage - INFO - main - 362:  用户abcd已被管理者Breakering重新设置信用额度，新额度为：15000
+2017-04-26 11:16:57,424 - manage - INFO - main - 391:  用户abcd已被管理者Breakering冻结
+2017-04-26 11:17:01,561 - manage - INFO - main - 417:  用户abcd已被管理者Breakering解冻

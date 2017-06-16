@@ -1,0 +1,22 @@
+2017-06-04 14:30:04,596 - action - INFO - base - 73:  Breakering登陆了该系统！
+2017-06-04 19:05:50,253 - action - INFO - base - 69:  Breakering登陆了该系统！
+2017-06-04 19:09:57,973 - action - INFO - base - 69:  Breakering登陆了该系统！
+2017-06-04 19:10:33,597 - action - INFO - base - 69:  Breakering登陆了该系统！
+2017-06-04 19:12:08,677 - action - INFO - base - 69:  Breakering登陆了该系统！
+2017-06-04 19:12:31,982 - action - INFO - myssh - 46:  [192.168.48.20 22 hadoop] 执行了命令 ls
+2017-06-04 19:13:29,711 - action - INFO - main - 167:  主机192.168.48.30,端口22,用户名root删除完毕！
+2017-06-04 19:14:15,493 - action - INFO - base - 69:  Breakering登陆了该系统！
+2017-06-04 19:14:24,924 - action - INFO - myssh - 46:  [192.168.48.20 22 root] 执行了命令 ifconfig
+2017-06-04 19:14:24,930 - action - INFO - myssh - 46:  [192.168.48.20 22 hadoop] 执行了命令 ifconfig
+2017-06-04 19:14:29,575 - action - INFO - myssh - 46:  [192.168.48.20 22 root] 执行了命令 df
+2017-06-04 19:14:29,576 - action - INFO - myssh - 46:  [192.168.48.20 22 hadoop] 执行了命令 df
+2017-06-04 19:51:12,909 - action - INFO - base - 69:  Breakering登陆了该系统！
+2017-06-04 19:51:22,785 - action - INFO - myssh - 46:  [192.168.48.20 22 root] 执行了命令 ls
+2017-06-04 19:51:22,788 - action - INFO - myssh - 46:  [192.168.48.20 22 root] 执行了命令 ls
+2017-06-04 19:52:21,841 - action - INFO - myssh - 57:  [192.168.48.20 22 root] 接收了文件 a
+2017-06-04 19:52:21,842 - action - INFO - myssh - 57:  [192.168.48.20 22 root] 接收了文件 a
+2017-06-04 20:02:09,173 - action - INFO - base - 69:  Breakering登陆了该系统！
+2017-06-04 20:02:16,472 - action - INFO - myssh - 46:  [192.168.48.20 22 root] 执行了命令 ls
+2017-06-04 20:02:16,479 - action - INFO - myssh - 46:  [192.168.48.20 22 hadoop] 执行了命令 ls
+2017-06-04 20:03:53,846 - action - INFO - myssh - 46:  [192.168.48.20 22 root] 执行了命令 aa
+2017-06-04 20:03:53,846 - action - INFO - myssh - 46:  [192.168.48.20 22 hadoop] 执行了命令 aa

@@ -1,0 +1,35 @@
+程序结构:
+day9-LikeFabric/
+├── README
+├── LikeFabric  # Fabric目录
+│   ├── __init__.py
+│   ├── bin  # LikeFabric 执行文件 目录
+│   │   ├── __init__.py
+│   │   ├── start.py        # LikeFabric 执行程序
+│   ├── conf   # 配置文件目录
+│   │   ├── __init__.py
+│   │   └── settings.py     # 基础信息配置文件
+│   │   └── exhibition.py   # 界面展示配置
+│   ├── core  # 主要程序逻辑都 在这个目录 里
+│   │   ├── __init__.py
+│   │   ├── base.py         # 基类，提供类的基础功能
+│   │   ├── mian.py         # 主要服务类
+│   │   ├── mylogger.py     # 日志处理模块
+│   │   ├── myssh.py        # 封装paramiko模块，提供ssh和ftp功能
+│   │   ├── user.py         # 用户类，用于生成用户对象
+│   ├── db  # 用户数据存储的地方
+│   │   ├── __init__.py
+│   │   ├── .ssh            # 公钥密钥存储
+│   │       └── id_rsa      # 私钥
+│   │       └── id_rsa.pub  # 公钥
+│   │   ├── host            # 存储管理员信息
+│   │       └── e802de90-48ff-11e7-9cad-1cb72cdda746.json  # 一个主机信息示例文件
+│   │   ├── user            # 存储用户信息
+│   │       └── c4537da6-48eb-11e7-848c-1cb72cdda746       # 一个用户信息示例文件
+│   ├── lib # 公共函数目录
+│   │    ├── __init__.py
+│   │    ├── public.py      # 公共函数
+│   ├── log  # 日志目录
+│   │    ├── __init__.py
+│   │    ├── action.log     # 行为日志，记录操作登陆等一些行为
+└────────

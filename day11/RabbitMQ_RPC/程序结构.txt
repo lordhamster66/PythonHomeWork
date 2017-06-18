@@ -1,0 +1,22 @@
+程序结构:
+day11-RabbitMQ_RPC/
+├── README
+├── RPC_Client  # RPC客户端目录
+│   ├── __init__.py
+│   ├── rpc_client.py  # RPC客户端启动程序
+├── RPCServer  # RPC服务端目录
+│   ├── __init__.py
+│   ├── bin    # RPC服务端 执行文件 目录
+│   │   ├── __init__.py
+│   │   ├── start_rpc_server.py    # RPC服务端 执行程序
+│   ├── conf   # 配置文件目录
+│   │   ├── __init__.py
+│   │   └── settings.py      # 基础信息配置文件
+│   ├── core  # 主要程序逻辑都 在这个目录 里
+│   │   ├── __init__.py
+│   │   ├── mylogger.py      # 日志处理模块
+│   │   ├── rpc_server.py    # RPC服务器主要功能类
+│   ├── log  # 日志目录
+│   │    ├── __init__.py
+│   │    ├── action.log    #行为日志，记录操作登陆等一些行为
+└────────

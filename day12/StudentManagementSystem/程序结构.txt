@@ -1,0 +1,23 @@
+程序结构:
+day12-StudentManagementSystem/
+├── README
+├── StudentManagementSystem  # 学员管理系统目录
+│   ├── __init__.py
+│   ├── bin                  # 学员管理系统执行文件目录
+│   │   ├── __init__.py
+│   │   ├── start_stmasm.py  # 学员管理系统执行程序
+│   ├── conf   # 配置文件目录
+│   │   ├── __init__.py
+│   │   └── settings.py      # 基础信息配置文件
+│   ├── core  # 主要程序逻辑都 在这个目录 里
+│   │   ├── __init__.py
+│   │   ├── view                   # 视图模块目录
+│   │   │   └── main_view.py       # 主视图模块
+│   │   │   └── student_view.py    # 学员视图模块
+│   │   │   └── teacher_view.py    # 讲师视图模块
+│   │   ├── mylogger.py            # 日志处理模块
+│   │   ├── table_structure.py     # 表结构定义模块
+│   ├── log  # 日志目录
+│   │    ├── __init__.py
+│   │    ├── action.log    #行为日志，记录操作登陆等一些行为
+└────────

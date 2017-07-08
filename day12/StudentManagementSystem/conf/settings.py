@@ -28,7 +28,7 @@ DB_INFO = {
     "db_type": "mysql",
     "db_connect": "pymysql",
     "user": "root",
-    "password": "dmc19930417",
+    "password": "123",
     "host": "192.168.146.20",
     "port": 3306,
     "db": "test",

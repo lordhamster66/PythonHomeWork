@@ -1,0 +1,27 @@
+程序结构:
+day13-MyStrongHold/
+├── README.md
+├── bin
+│   ├── init_system.py  # 初始化数据库及表
+│   ├── start_mystronghold.py  # 启动堡垒机
+│   ├── __init__.py
+├── conf
+│   ├── settings.py  # 基础配置信息
+│   ├── __init__.py
+├── core
+│   ├── db_conn.py  # 数据库连接相关
+│   ├── interactive.py  # ssh连接相关
+│   ├── mysystem_init.py  # 初始化数据库相关
+│   ├── table_structure.py  # 表结构
+│   ├── utils.py  # 实用工具，例:yaml操作
+│   ├── __init__.py
+├── resources  # 一些资源目录
+│   ├── tables  # 生成数据库表的源文件
+│   │   ├── bind_host.yaml
+│   │   ├── group.yaml
+│   │   ├── host.yaml
+│   │   ├── host_user.yaml
+│   │   ├── user.yaml
+│   ├── __init__.py
+├── 堡垒机表结构设计.png
+├── requirements.txt  # 依赖包

@@ -1,0 +1,40 @@
+bindhost01:
+  host:
+    ip: 192.168.48.20
+    port: 22
+  hostuser:
+    username: root
+    password: hadoop
+    login_type: SSH/Password
+  groups:
+    - WEB
+    - DB
+
+bindhost02:
+  host:
+    ip: 192.168.48.20
+    port: 22
+  hostuser:
+    username: hadoop
+    password: hadoop
+    login_type: SSH/Password
+  groups:
+    - WEB
+
+bindhost03:
+  host:
+    ip: 192.168.48.21
+    port: 22
+  hostuser:
+    username: root
+    password: hadoop
+    login_type: SSH/Password
+
+
+bindhost04:
+  host:
+    ip: 192.168.48.21
+    port: 22
+  hostuser:
+    username: root
+    login_type: SSH/Password

@@ -1,0 +1,3 @@
+PyMySQL>=0.7.11
+SQLAlchemy>=1.1.11
+paramiko>=2.1.1

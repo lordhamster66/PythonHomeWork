@@ -1,0 +1,40 @@
+user01:
+  username: breakering
+  password: 123
+  bindhosts:
+    - host:
+        ip: 192.168.48.21
+        port: 22
+      hostuser:
+        username: root
+        password: hadoop
+        login_type: SSH/Password
+  groups:
+    - WEB
+
+user02:
+  username: profhua
+  password: 456
+  bindhosts:
+    - host:
+        ip: 192.168.48.21
+        port: 22
+      hostuser:
+        username: root
+        password: hadoop
+        login_type: SSH/Password
+    - host:
+        ip: 192.168.48.21
+        port: 22
+      hostuser:
+        username: root
+        login_type: SSH/Password
+  groups:
+    - DB
+
+user03:
+  username: wolf
+  password: 789
+  groups:
+    - DB
+    - WEB

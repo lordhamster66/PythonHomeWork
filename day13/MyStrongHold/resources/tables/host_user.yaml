@@ -1,0 +1,13 @@
+hostuser01:
+  username: root
+  password: hadoop
+  login_type: SSH/Password
+
+hostuser02:
+  username: hadoop
+  password: hadoop
+  login_type: SSH/Password
+
+hostuser03:
+  username: root
+  login_type: SSH/Password

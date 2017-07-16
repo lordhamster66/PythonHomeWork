@@ -1,0 +1,464 @@
+body {
+    margin: 0 auto;
+}
+
+div {
+    /*border: 1px solid black;*/
+}
+
+.clear {
+    clear: both;
+}
+
+.pg-header-top {
+    width: 100%;
+    height: 30px;
+    background-color: #e3e4e5;
+}
+
+.pg-header-top .container {
+    width: 1600px;
+    height: 30px;
+    margin: 0 auto;
+}
+
+.pg-header-top .container .left {
+    float: left;
+    width: 80px;
+    height: 30px;
+}
+
+.pg-header-top .container .right {
+    float: right;
+    width: 550px;
+    height: 30px;
+}
+
+.pg-header-top .container a {
+    float: left;
+    line-height: 30px;
+    font-size:small;
+    color: #6e6e6e;
+    margin-left: 10px;
+    margin-right: 10px;
+    text-decoration:none;
+    display:block;
+}
+
+.pg-header-top .container select {
+    float: left;
+    padding: 5px;
+    font-size:small;
+    color: #6e6e6e;
+    border:0;
+    margin-left: 3px;
+    margin-right: 3px;
+    text-decoration:none;
+    background-color: #e3e4e5;
+    display:block;
+}
+
+.pg-header-middle {
+    width: 100%;
+    height: 100px;
+}
+
+.pg-header-middle .container {
+    width: 1600px;
+    height: 100px;
+    margin: 0 auto;
+}
+
+.pg-header-middle .container .right{
+    float: right;
+    width: 1200px;
+    height: 100px;
+}
+
+.pg-header-middle .container .right .left{
+    float: left;
+    width: 250px;
+    height: 100px;
+}
+
+.pg-header-middle .container .right .banner {
+    margin: 10px 10px;
+}
+
+.pg-header-middle .container .right .middle{
+    float: left;
+    width: 500px;
+    height: 60px;
+    margin: 20px 0;
+}
+
+.pg-header-middle .container .right .middle .text{
+    float: left;
+    width: 400px;
+    height: 30px;
+}
+
+.pg-header-middle .container .right .middle .submit{
+    float: left;
+    border: 1px solid #999;
+    width: 60px;
+    height: 34px
+}
+
+.pg-header-middle .container .right .middle .font{
+    float: left;
+    line-height: 30px;
+    font-size:small;
+    color: #999;
+    margin-top: 0;
+    text-align:left;
+    text-decoration:none;
+    display:block;
+}
+
+.pg-header-middle .container .right .right{
+    float: left;
+    width: 400px;
+    height: 100px;
+}
+
+.pg-header-middle .container .right .right .container {
+    width: 150px;
+    height: 35px;
+    background-color: #f4f4f4;
+    border: 1px solid #999;
+    margin: 20px 250px;
+}
+
+.pg-header-middle .container .right .right .container a {
+    display: block;
+    float: right;
+    line-height: 35px;
+    color: #5d5d5d;
+    width: 100px;
+    text-align: right;
+    font-size: smaller;
+    text-decoration: none;
+}
+
+.pg-header-down {
+    width: 100%;
+    height: 40px;
+    background-color: #d4003c;
+}
+
+.pg-header-down a {
+    float: left;
+    font-size: 15px;
+    padding: 0 20px;
+    color: #ffffff;
+    font-weight: bolder;
+    line-height: 40px;
+    text-decoration:none;
+    display:block;
+    /*border: 1px solid black;*/
+}
+
+.pg-header-down .container {
+    width: 1600px;
+    height: 40px;
+    margin: 0 auto;
+}
+
+.pg-header-down .container .left {
+    float: left;
+    width: 300px;
+    height: 40px;
+    /*border: 1px solid black;*/
+}
+
+.pg-header-down .container .middle {
+    float: left;
+    width: 1000px;
+    height: 40px;
+    /*border: 1px solid black;*/
+}
+
+.pg-header-down .container .right {
+    float: left;
+    width: 300px;
+    height: 40px;
+    /*border: 1px solid black;*/
+}
+
+.pg-body {
+    width: 1600px;
+    height: 2000px;
+    margin: 0 auto;
+}
+
+.pg-body .left {
+    float: left;
+    width: 299px;
+    height: 500px;
+    /*border: 1px dotted #d9d9d9;*/
+}
+
+.pg-body .left .nav{
+    float: left;
+    width: 299px;
+    height: 60px;
+    border: 1px dotted #d9d9d9;
+}
+
+.pg-body .left .nav p{
+    float: left;
+    margin: 0 10px;
+    width: 280px;
+    height: 30px;
+    color: #000000;
+    font-weight: bold;
+}
+
+.pg-body .left .nav a{
+    float: left;
+    margin: 0 0;
+    font-size:small;
+    color: #5d5d5d;
+    width: 50px;
+    font-weight: normal;
+    text-decoration:none;
+}
+
+.pg-body .left .rank{
+    float: left;
+    margin: 20px 0;
+    width: 299px;
+    height: 50px;
+    border: 1px solid #d9d9d9;
+}
+
+.pg-body .left .rank div {
+    float: left;
+    margin: 0 auto;
+    width: 299px;
+    height: 30px;
+    background-color: #f4f4f4;
+    border-bottom: 1px solid #d9d9d9;
+}
+
+.pg-body .left .rank div span {
+    display: block;
+    float: left;
+    font-size: 14px;
+    color: #2f2f2f;
+    font-weight: bold;
+    line-height: 30px;
+    margin: 0 10px;
+}
+
+.pg-body .left .rank span {
+    font-size: small;
+}
+
+.pg-body .right {
+    float: left;
+    width: 1299px;
+    height: 2000px;
+}
+
+.pg-body .right .container {
+    float: right;
+    margin: 30px 0;
+    width: 1270px;
+    height: 1000px;
+    /*border: 1px solid red;*/
+}
+
+.pg-body .right .container p {
+    float: left;
+    margin: 0 auto;
+    width: 1270px;
+    height: 30px;
+    font-size: small;
+    color: #000000;
+}
+
+.pg-body .right .container .nav {
+    float: left;
+    width: 1270px;
+    height: 195px;
+    border-style:solid;
+    border-width: 2px 1px 1px;
+    border-color: #bd0036 #d9d9d9 #d9d9d9;
+}
+
+.pg-body .right .container .nav div {
+    float: left;
+    width: 1250px;
+    height: 48px;
+    margin: 0 10px 0 10px;
+    border-bottom: 1px dotted #d9d9d9;
+}
+
+.pg-body .right .container .more {
+    float: left;
+    width: 150px;
+    height: 30px;
+    margin: -2px 0 0 550px;
+    border-top: 2px solid white;
+    border-left: 1px solid #d9d9d9;
+    border-right: 1px solid #d9d9d9;
+    border-bottom: 1px solid #d9d9d9;
+    font-size: small;
+    color: #000000;
+    text-decoration: none;
+}
+
+.pg-body .right .container .nav span {
+    display: block;
+    float: left;
+    width: 80px;
+    color: #2f2f2f;
+    font-size: small;
+    font-weight: bold;
+    line-height: 48px;
+    text-align: center;
+}
+
+.pg-body .right .container .nav a {
+    display: block;
+    float: left;
+    width: 50px;
+    color: #2f2f2f;
+    font-size: smaller;
+    line-height: 48px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.pg-body .right .container .tool {
+    float: left;
+    width: 1270px;
+    height: 30px;
+    margin: 10px 0;
+    background-color: #f8f8f8;
+    border: 1px solid #d9d9d9;
+}
+
+.pg-body .right .container .tool .left {
+    float: left;
+    width: 1100px;
+    height: 30px;
+    border-right: 1px solid #d9d9d9;
+}
+
+.pg-body .right .container .tool .font {
+    float: left;
+    width: 80px;
+    height: 30px;
+    line-height: 30px;
+    font-size: smaller;
+    text-align: center;
+
+}
+.pg-body .right .container .tool .sort {
+    float: left;
+    width: 60px;
+    height: 30px;
+    color: #200bea;
+    font-size: smaller;
+    text-align: center;
+    line-height: 30px;
+    text-decoration: none;
+}
+
+.pg-body .right .container .tool .flip {
+    float: left;
+    width: 160px;
+    height: 30px;
+    font-size: smaller;
+    line-height: 30px;
+    text-align: left;
+}
+
+.pg-body .right .container .tool .flip .num {
+    float: left;
+    text-align: center;
+    width: 60px;
+    height: 30px;
+}
+
+.pg-body .right .container .tool .flip .select {
+    float: left;
+    width: 20px;
+    height: 20px;
+    margin: 5px 5px;
+    line-height: 20px;
+    text-align: center;
+    font-weight: bold;
+    background-color: white;
+    border: 1px solid #d8d8d8;
+    text-decoration: none;
+}
+
+
+.pg-body .right .container .main {
+    float: left;
+    width: 1270px;
+    margin: 2px 0;
+}
+
+.pg-body .right .container .main .goods {
+    float: left;
+    width: 300px;
+    height: 300px;
+    text-align: center;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    border: 1px solid red;
+}
+
+.pg-body .right .container .main .goods .img-circle {
+    width: 250px;
+    height: 220px;
+    margin: 0 20px;
+}
+
+.pg-body .right .container .main .goods .info {
+    width: 250px;
+    height: 30px;
+    margin: 0 20px;
+    line-height: 30px;
+}
+
+.pg-body .right .container .main .goods .shop {
+    width: 280px;
+    height: 30px;
+    margin: 10px 10px;
+    line-height: 30px;
+}
+
+.pg-body .right .container .main .goods .shop .left {
+    float: left;
+    color: #cd000b;
+    width: 100px;
+    height: 30px;
+    font-weight: bold;
+}
+
+.pg-body .right .container .main .goods .shop .right {
+    float: right;
+    width: 150px;
+    height: 20px;
+    margin: 5px 0;
+}
+
+.pg-body .right .container .main .goods .shop .right input {
+    float: left;
+}
+
+.pg-body .right .container .main .goods .shop .right .submit {
+    float: left;
+    border:none;
+    margin: 0 8px;
+    background-color: #db2d38;
+    color: white;
+    width: 30px;
+    font-weight: bold;
+}

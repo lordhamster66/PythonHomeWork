@@ -12,6 +12,38 @@ a {
     font-weight: bold;
 }
 
+.logo {
+    position: absolute;
+    margin-top: -100px;
+}
+
+.banner {
+    width: 360px;
+    height: 250px;
+}
+
+.jump-register {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 100px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    background-color: #75ad55;
+}
+
+.copyright {
+    position: absolute;
+    width: 500px;
+    right: 50%;
+    bottom: 0;
+    left: 50%;
+    font-size: smaller;
+    margin-bottom: -50px;
+    margin-left: -250px;
+}
+
 .red {
     color: red;
 }
@@ -32,4 +64,85 @@ a {
     position: fixed;
 }
 
+.register-login-container {
+    top:50%;
+    left: 50%;
+    width: 1200px;
+    height: 600px;
+    margin-left: -600px;
+    margin-top: -300px;
+    border: 1px solid #e3e4e5;
+}
+
+.register-left {
+    width: 700px;
+    height: 500px;
+    margin-top: 50px;
+    margin-left: 50px;
+}
+
+.register-right {
+    width: 390px;
+    height: 500px;
+    margin-top: 50px;
+    border-left: 1px solid #e3e4e5;
+}
+
+.login-left {
+    width: 360px;
+    height: 250px;
+    margin-top: 70px;
+    margin-left: 50px;
+}
+
+.login-right {
+    width: 500px;
+    height: 300px;
+    margin-top: 43px;
+    margin-left: 150px;
+}
+
+.input-line {
+    width: 700px;
+    height: 60px;
+    line-height: 60px;
+}
+
+.input-label {
+    width: 100px;
+    height: 60px;
+    text-align: right;
+}
+
+.input-container {
+    position: relative;
+    width: 300px;
+    height: 30px;
+    margin-top: 15px;
+    margin-left: 20px;
+    line-height: 30px;
+}
+
+.input-text {
+    width: 270px;
+    height: 30px;
+    padding-right: 30px;
+}
+
+.input-submit {
+    width: 300px;
+    height: 30px;
+    background-color: red;
+    color: white;
+    border:0;
+}
+
+.input-icon {
+    position: absolute;
+    right:10px;
+    top:10px;
+    height: 16px;
+    width: 16px;
+    display: inline-block;
+}
 

@@ -9,79 +9,70 @@
     <meta name="description" content="老男孩IT教育隶属北京一天天教育科技有限公司,是一直专注于Linux培训、Linux系统及架构师培训、Python培训、大数据实战的高端培训机构.师资力量雄厚,教学理念先进,培训方法独特，毕业生平均工资在11K以上.">
     <link rel="shortcut icon" href="img/favicon.ico">
     <link rel="stylesheet" type="text/css" href="css/common.css">
-    <link rel="stylesheet" type="text/css" href="css/register.css">
-    <style>
-        div {
-            /*border: 1px solid red;*/
-        }
-        /*label {*/
-            /*border: 1px solid red;*/
-        /*}*/
-    </style>
 </head>
 <body>
-    <div class="fixed register-container">
+    <div class="fixed register-login-container">
         <img class="logo" src="img/logo.png" alt="logo" >
-        <div class="fleft left">
-            <div class="fleft line" style="font-size: larger; font-weight: bold;">注册新用户</div>
+        <div class="fleft register-left">
+            <div class="fleft input-line" style="font-size: larger; font-weight: bold;">注册新用户</div>
             <form action="">
-                <div class="fleft line">
-                    <label for="username" class="fleft"><span class="red bold">*&nbsp;</span>用户名:</label>
-                    <div class="fleft text">
-                        <input class="input" id="username" name="username" type="text">
-                        <span class="icon" style="background-image: url(img/i_name.jpg);"></span>
+                <div class="fleft input-line">
+                    <label class="fleft input-label" for="username" ><span class="red bold">*&nbsp;</span>用户名:</label>
+                    <div class="fleft input-container">
+                        <input class="input-text" id="username" name="username" type="text">
+                        <span class="input-icon" style="background-image: url(img/i_name.jpg);"></span>
                     </div>
                 </div>
-                <div class="fleft line">
-                    <label for="phone" class="fleft"><span class="red bold">*&nbsp;</span>手机号:</label>
-                    <div class="fleft text">
-                        <input class="input" id="phone" name="phone" type="text">
-                        <span class="icon" style="background-image: url(img/i_phone.jpg);"></span>
+                <div class="fleft input-line">
+                    <label class="fleft input-label" for="phone"><span class="red bold">*&nbsp;</span>手机号:</label>
+                    <div class="fleft input-container">
+                        <input class="input-text" id="phone" name="phone" type="text">
+                        <span class="input-icon" style="background-image: url(img/i_phone.jpg);"></span>
                     </div>
                 </div>
-                <div class="fleft line">
-                    <label for="pwd" class="fleft"><span class="red bold">*&nbsp;</span>登录密码:</label>
-                    <div class="fleft text">
-                        <input class="input" id="pwd" name="pwd" type="text">
-                        <span class="icon" style="background-image: url(img/i_pwd.jpg);"></span>
+                <div class="fleft input-line">
+                    <label class="fleft input-label" for="pwd"><span class="red bold">*&nbsp;</span>登录密码:</label>
+                    <div class="fleft input-container">
+                        <input class="input-text" id="pwd" name="pwd" type="text">
+                        <span class="input-icon" style="background-image: url(img/i_pwd.jpg);"></span>
                     </div>
                 </div>
-                <div class="fleft line">
-                    <label for="confirm_pwd" class="fleft"><span class="red bold">*&nbsp;</span>确认密码:</label>
-                    <div class="fleft text">
-                        <input class="input" id="confirm_pwd" name="confirm_pwd" type="text">
-                        <span class="icon" style="background-image: url(img/i_pwd.jpg);"></span>
+                <div class="fleft input-line">
+                    <label class="fleft input-label" for="confirm_pwd"><span class="red bold">*&nbsp;</span>确认密码:</label>
+                    <div class="fleft input-container">
+                        <input class="input-text" id="confirm_pwd" name="confirm_pwd" type="text">
+                        <span class="input-icon" style="background-image: url(img/i_pwd.jpg);"></span>
                     </div>
                 </div>
-                <div class="fleft line">
-                    <label for="verification_code" class="fleft"><span class="red bold">*&nbsp;</span>验证码:</label>
-                    <div class="fleft text">
-                        <input class="input" id="verification_code" name="verification_code" type="text" style="width: 120px; height: 30px; padding-right: 0;">
+                <div class="fleft input-line">
+                    <label class="fleft input-label" for="verification_code"><span class="red bold">*&nbsp;</span>验证码:</label>
+                    <div class="fleft input-container">
+                        <input class="input-text" id="verification_code" name="verification_code" type="text" style="width: 120px; height: 30px; padding-right: 0;">
                         <img class="fright" src="img/verification_code.png" alt="verification_code">
                     </div>
                 </div>
-                <div class="fleft line">
-                    <label class="fleft"></label>
-                    <div class="fleft text">
+                <div class="fleft input-line">
+                    <label class="fleft input-label"></label>
+                    <div class="fleft input-container">
                         <input name="zcxy" type="checkbox">
                         <span>我已阅读并同意</span>
                         <a href="https://baike.baidu.com/item/%E7%94%A8%E6%88%B7%E6%B3%A8%E5%86%8C%E5%8D%8F%E8%AE%AE/14485933?fr=aladdin">《用户注册协议》</a>
                     </div>
                 </div>
-                <div class="fleft line">
-                    <label class="fleft"></label>
-                    <div class="fleft text">
-                        <input class="submit" type="submit" value="同意以上协议并注册">
+                <div class="fleft input-line">
+                    <label class="fleft input-label" ></label>
+                    <div class="fleft input-container">
+                        <input class="input-submit" type="submit" value="同意以上协议并注册">
                     </div>
                 </div>
             </form>
         </div>
-        <div class="fleft right">
+        <div class="fleft register-right">
             <div class="fright" style="width: 360px;">
                 <span>我已注册，现在就</span>
-                <a href="">登录</a>
+                <a href="login.html">登录</a>
                 <a href="https://www.51rz.com/ind/PC/summer_barbecued.html" target="_blank">
-                    <img style="width: 360px;height: 300px; margin-top: 80px;" src="img/login_banner.png" alt="">
+                    <img class="banner" style="margin-top: 80px;" src="img/login_banner.png" alt="">
                 </a>
             </div>
         </div>

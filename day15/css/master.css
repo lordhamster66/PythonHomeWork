@@ -1,0 +1,67 @@
+.pg-header {
+    width: 100%;
+    height: 34px;
+    background-color: #000000;
+    margin: 0 auto;
+}
+
+.container {
+    width: 1100px;
+}
+
+.pg-header-welcome {
+    float: left;
+    width: 200px;
+    height: 34px;
+    line-height: 34px;
+}
+
+.pg-header-menu {
+    float: right;
+    width: 520px;
+    height: 34px;
+    line-height: 34px;
+}
+
+.pg-header-menu-container {
+    float: left;
+    height: 34px;
+    line-height: 34px;
+}
+
+.pg-header-menu-container a {
+    display: block;
+    position: relative;
+    padding: 0 9px 0 9px;
+}
+
+.pg-header-menu-container .pg-header-font:hover {
+    color: white;
+}
+
+.icon-tel {
+    width: 11px;
+    height: 16px;
+    background: url(../img/home/home_sprite.png) no-repeat -40px -70px;
+    position: absolute;
+    left: 0;
+    top: 10px;
+}
+
+.menu-btn {
+    background: url(../img/home/t_b_bg.png) no-repeat right 16px;
+    position: absolute;
+    left: 0;
+    top: 10px;
+}
+
+.pg-header-font {
+    font-size: smaller;
+    color: #959395;
+}
+
+.pg-header-font .pg-header-font:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+

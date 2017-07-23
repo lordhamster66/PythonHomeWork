@@ -8,6 +8,41 @@ image {
 
 a {
     text-decoration: none;
+}
+
+.mask {
+        z-index: 9;
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: black;
+        opacity: 0.6;
+    }
+
+.popup {
+    z-index: 10;
+    position: fixed;
+    width: 500px;
+    height: 300px;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    margin-left: -250px;
+    margin-top: -150px;
+    background-color: white;
+}
+
+.hide {
+    display: none;
+}
+
+.clear {
+    clear: both;
+}
+
+.normal-a {
     color: #5956dc;
     font-weight: bold;
 }
@@ -145,4 +180,6 @@ a {
     width: 16px;
     display: inline-block;
 }
+
+
 

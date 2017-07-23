@@ -4,9 +4,235 @@
     <meta charset="UTF-8">
     <meta http-equiv="x-ua-compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Title</title>
+    <title>老男孩IT教育官网-只培养技术精英</title>
+    <meta name="keywords" content="Linux培训,Python培训,大数据培训,linux架构培训,Python自动化运维,老男孩教育,老男孩">
+    <meta name="description" content="老男孩IT教育隶属北京一天天教育科技有限公司,是一直专注于Linux培训、Linux系统及架构师培训、Python培训、大数据实战的高端培训机构.师资力量雄厚,教学理念先进,培训方法独特，毕业生平均工资在11K以上.">
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <link rel="stylesheet" type="text/css" href="css/admin.css">
+    <style>
+        div {
+            /*border: 1px solid red;*/
+        }
+    </style>
 </head>
 <body>
+    <div class="admin-header">
+        <img class="fleft" src="img/admin_logo.png" alt="">
+        <div class="fright header-menu-container">
+            <div class="fleft header-menu">
+                <a href="">消息管理</a>
+            </div>
+            <div class="fleft header-menu">
+                <a href="">会员管理</a>
+            </div>
+            <div class="fleft header-menu">
+                <a href="">奖金管理</a>
+            </div>
+            <div class="fleft header-menu">
+                <a href="">订单管理</a>
+            </div>
+            <div class="fleft header-menu">
+                <a href="">产品管理</a>
+            </div>
+            <div class="fleft header-menu">
+                <a href="">个人中心</a>
+            </div>
+            <div class="fleft header-menu">
+                <a href="">系统设置</a>
+            </div>
+        </div>
+    </div>
+    <div class="admin-left-nav">
+        <div class="fleft line ">
+            <span class="font normal">欢迎系统管理员：Breakering</span>
+        </div>
+        <div>
+            <div class="fleft line">
+                <div id="m1" class="fleft font normal" onclick="ChangeMenu('m1');">
+                    <span class="fleft">商品管理</span>
+                    <span class="fright">+</span>
+                </div>
+                <div class="hide">
+                    <a class="fleft font small" href="">商品列表</a>
+                    <a class="fleft font small" href="">添加新商品</a>
+                    <a class="fleft font small" href="">商品分类</a>
+                    <a class="fleft font small" href="">用户评论</a>
+                    <a class="fleft font small" href="">商品回收站</a>
+                    <a class="fleft font small" href="">库存管理</a>
+                </div>
+            </div>
+            <div class="fleft line">
+                <div id="m2" class="fleft font normal" onclick="ChangeMenu('m2');">
+                    <span class="fleft">订单管理</span>
+                    <span class="fright">+</span>
+                </div>
+                <div class="hide">
+                    <a class="fleft font small" href="">订单列表</a>
+                    <a class="fleft font small" href="">合并订单</a>
+                    <a class="fleft font small" href="">订单打印</a>
+                    <a class="fleft font small" href="">添加订单</a>
+                    <a class="fleft font small" href="">发货单列表</a>
+                    <a class="fleft font small" href="">换货单列表</a>
+                </div>
+            </div>
+            <div class="fleft line">
+                <div id="m3" class="fleft font normal" onclick="ChangeMenu('m3');">
+                    <span class="fleft">会员管理</span>
+                    <span class="fright">+</span>
+                </div>
+                <div class="hide">
+                    <a class="fleft font small" href="">会员列表</a>
+                    <a class="fleft font small" href="">未激活会员</a>
+                    <a class="fleft font small" href="">团队系谱图</a>
+                    <a class="fleft font small" href="">会员推荐图</a>
+                    <a class="fleft font small" href="">推荐列表</a>
+                </div>
+            </div>
+            <div class="fleft line">
+                <div id="m4" class="fleft font normal" onclick="ChangeMenu('m4');">
+                    <span class="fleft">信息通知</span>
+                    <span class="fright">+</span>
+                </div>
+                <div class="hide">
+                    <a class="fleft font small" href="">站内消息 /留言</a>
+                    <a class="fleft font small" href="">短信</a>
+                    <a class="fleft font small" href="">邮件</a>
+                    <a class="fleft font small" href="">微信</a>
+                    <a class="fleft font small" href="">客服</a>
+                </div>
+            </div>
+            <div class="fleft line">
+                <div id="m5" class="fleft font normal" onclick="ChangeMenu('m5');">
+                    <span class="fleft">系统设置</span>
+                    <span class="fright">+</span>
+                </div>
+                <div class="hide">
+                    <a class="fleft font small" href="">数据备份</a>
+                    <a class="fleft font small" href="">邮件/短信管理</a>
+                    <a class="fleft font small" href="">上传/下载</a>
+                    <a class="fleft font small" href="">权限</a>
+                    <a class="fleft font small" href="">网站设置</a>
+                    <a class="fleft font small" href="">第三方支付</a>
+                    <a class="fleft font small" href="">提现 /转账 出入账汇率</a>
+                    <a class="fleft font small" href="">平台设置</a>
+                    <a class="fleft font small" href="">声音文件</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="admin-body">
+        <div class="fleft admin-body-menu">
+            <a class="fleft content" href="">首页</a>
+            <a class="fleft content" href="">帮助中心 X</a>
+            <a class="fleft content" href="">奖金管理 X</a>
+            <a class="fleft content" href="">产品管理 X</a>
+        </div>
+        <div class="fleft table-container">
+            <input type="button" value="添加" onclick="showModel()" />
+            <input type="button" value="全选" onclick="ChooseAll()" />
+            <input type="button" value="反选" onclick="ReverseAll()" />
+            <input type="button" value="取消" onclick="CancelAll()" />
+            <table>
+                <thead>
+                    <tr>
+                        <th>选择</th>
+                        <th>ID</th>
+                        <th>商品名称</th>
+                        <th>进销存</th>
+                        <th>已销售金额</th>
+                    </tr>
+                </thead>
+                <tbody id="tb1">
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>14</td>
+                        <td>Business management</td>
+                        <td>进货：456件      销售：677件      库存： 555件      损耗：5件</td>
+                        <td>访问</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>3</td>
+                        <td>Business management</td>
+                        <td>default</td>
+                        <td>访问</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>4</td>
+                        <td>Business management</td>
+                        <td>default</td>
+                        <td>访问</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>5</td>
+                        <td>Business management</td>
+                        <td>default</td>
+                        <td>访问</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>6</td>
+                        <td>Business management</td>
+                        <td>default</td>
+                        <td>访问</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>15</td>
+                        <td>Business management</td>
+                        <td>default</td>
+                        <td>访问</td>
+                    </tr>
 
+                </tbody>
+            </table>
+        </div>
+        <div class="admin-body-foot">
+            <span>版权所有@2017.Breakering</span>
+            <a class="fright gotop" href="" onclick="GoTop()">返回顶部</a>
+        </div>
+        <!--遮罩层开始-->
+        <div id="i1" class="mask hide"></div>
+        <!--遮罩层结束-->
+
+        <!--弹出框开始-->
+        <div id="i2" class="popup hide">
+            <form action="">
+                <div class="fleft input-line">
+                        <label class="fleft input-label" for="goods_id"><span class="red bold">*&nbsp;</span>ID:</label>
+                        <div class="fleft input-container">
+                            <input class="input-text" id="goods_id" name="goods_id" type="text">
+                        </div>
+                </div>
+                <div class="fleft input-line">
+                        <label class="fleft input-label" for="goods_name"><span class="red bold">*&nbsp;</span>商品名称:</label>
+                        <div class="fleft input-container">
+                            <input class="input-text" id="goods_name" name="goods_name" type="text">
+                        </div>
+                </div>
+                <div class="fleft input-line">
+                        <label class="fleft input-label" for="jxc"><span class="red bold">*&nbsp;</span>进销存:</label>
+                        <div class="fleft input-container">
+                            <input class="input-text" id="jxc" name="jxc" type="text">
+                        </div>
+                </div>
+                <div class="fleft input-line">
+                        <label class="fleft input-label" for="account"><span class="red bold">*&nbsp;</span>已销售金额:</label>
+                        <div class="fleft input-container">
+                            <input class="input-text" id="account" name="account" type="text">
+                        </div>
+                </div>
+                <p>
+                    <input type="button" value="取消" onclick="hideModel()" />
+                    <input type="submit" value="确定" />
+                </p>
+            </form>
+        </div>
+    <!--弹出框结束-->
+    </div>
+    <script type="text/javascript" src="js/common.js"></script >
 </body>
 </html>

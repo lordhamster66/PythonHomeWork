@@ -5,10 +5,6 @@
     margin: 0 auto;
 }
 
-.container {
-    width: 1100px;
-}
-
 .pg-header-welcome {
     float: left;
     width: 200px;
@@ -65,3 +61,182 @@
     text-decoration: underline;
 }
 
+.pg-search {
+    width: 100%;
+    height: 83px;
+    background-color: #e8e8ea;
+    margin: 0 auto;
+}
+
+.search-container {
+    position: relative;
+    width: 460px;
+    height: 42px;
+    margin-top: 16px;
+    margin-left: 20px;
+}
+
+.search {
+    width: 358px;
+    height: 42px;
+    padding-left: 80px;
+    padding-right: 20px;
+}
+
+.classify {
+    position: absolute;
+    left: 10px;
+    top: 15px;
+    font-size: small;
+}
+
+.search-container .icon{
+    background: url(../img/home/v_hd_bg1.png) 0 -34px no-repeat;
+    display: block;
+    height: 10px;
+    width: 10px;
+    line-height: 10px;
+    font-size: 0;
+    position: absolute;
+    left: 70px;
+    top: 20px;
+}
+
+.search-container .del {
+    position: absolute;
+    left: 440px;
+    background: url(../img/home/select_key_sort_bg.png) -1px bottom no-repeat;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    display: block;
+    top: 15px;
+    z-index: 3;
+}
+
+.pg-search .button {
+    height: 47px;
+    width: 50px;
+    background: #e20052 url(../img/home/v_hd_bg1.png) center -62px no-repeat;
+    border: none;
+    cursor: pointer;
+    margin-top: 16px;
+    margin-left: 5px;
+}
+
+.pg-search .hot {
+    font-size: smaller;
+    width: 300px;
+    overflow: hidden;
+    position: relative;
+    display: block;
+    height: 44px;
+    line-height: 44px;
+    margin-left: 20px;
+    margin-top: 15px;
+    color: #828282;
+}
+
+.pg-search .hot a {
+    color: #3a1638;
+}
+
+.pg-search .hot a:hover {
+    text-decoration: underline;
+}
+
+.pg-nav {
+    background-color: #74086e;
+    height: 40px;
+    width: 100%;
+    position: relative;
+    margin: 0 auto;
+}
+
+.pg-nav .menu {
+    display: inline-block;
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 40px;
+    line-height: 40px;
+    font-size: small;
+    color: white;
+}
+
+.pg-nav .menu:hover {
+    background-color: #c70048;
+}
+
+.pg-sbox {
+    background-color: #c70048;
+    height: 15px;
+    width: 100%;
+    position: relative;
+    margin: 0 auto;
+}
+
+.pg-body {
+    width: 100%;
+    height: 100%;
+    background-color: #e8e8ea;
+    margin: 0 auto;
+}
+
+.pg-body .right {
+    position: relative;
+    width: 270px;
+    height: 1100px;
+    margin-top: 108px;
+}
+
+.pg-body .title {
+    margin-top: 20px;
+}
+
+.pg-body .list-container {
+    width: 800px;
+    height: 280px;
+}
+
+.pg-body .list {
+    width: 800px;
+    height: 260px;
+    position: relative;
+}
+
+.pg-body .list a img {
+    display: block;
+    width: 800px;
+    height: 230px;
+}
+
+.pg-body .list .shop-name {
+    display: block;
+    width: 224px;
+    height: 30px;
+    line-height: 30px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-color: #000;
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.pg-body .list .time{
+    display: block;
+    width: 570px;
+    height: 30px;
+    position: absolute;
+    left: 230px;
+    bottom: 0;
+    background-color: rgba(255,255,255,0.95);
+    color: #000;
+    line-height: 28px;
+}
+.container {
+    width: 1100px;
+}

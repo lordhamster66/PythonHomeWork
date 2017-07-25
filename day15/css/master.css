@@ -188,6 +188,11 @@
     margin-top: 108px;
 }
 
+.pg-body .right .banner {
+    width: 260px;
+    height: 150px;
+}
+
 .pg-body .title {
     margin-top: 20px;
 }

@@ -65,3 +65,7 @@ function CancelAll() {
         checkbox.checked = false;
     }
 }
+
+function GoTop() {
+    document.body.scrollTop = 0;
+}

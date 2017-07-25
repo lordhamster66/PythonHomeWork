@@ -204,6 +204,15 @@
     position: relative;
 }
 
+.pg-body .list:hover {
+    padding: -3px;
+    border: 3px solid #e20052;
+}
+
+.pg-body .list .shop-name:hover {
+    background-color: #e20052;
+}
+
 .pg-body .list a img {
     display: block;
     width: 800px;

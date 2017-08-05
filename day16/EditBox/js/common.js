@@ -13,7 +13,6 @@ $(".menu input[value='全选']").click(function () {
             }
         })
     }
-    ;
 });
 // 取消功能
 $(".menu input[value='取消']").click(function () {
@@ -26,7 +25,6 @@ $(".menu input[value='取消']").click(function () {
             }
         })
     }
-    ;
 });
 // 反选功能
 $(".menu input[value='反选']").click(function () {
@@ -42,7 +40,6 @@ $(".menu input[value='反选']").click(function () {
                 }
             })
         }
-        ;
     })
 });
 // 进入和取消编辑模式功能
@@ -75,7 +72,7 @@ function editRow(self) {
     var option_selected = $(self).children(".line-or-not").text();   // 获取当前的选择内容
     $(select_tag).children(":contains(" + option_selected + ")").attr("selected", "selected");  // 根据当前选择内容改变select标签的选择状态
     $(self).children(".line-or-not").empty().append(select_tag);  // 将状态单元格的内容替换为select标签
-};
+}
 // 取消编辑形态功能
 function uneditRow(self) {
     $(self).children().eq(0).nextUntil(".line-or-not").each(function () {  // 循环不是状态的每个单元格
@@ -84,7 +81,7 @@ function uneditRow(self) {
     });
     var option_selected = $(self).children(".line-or-not").find("select option:selected").text();  // 获取当前的选择内容
     $(self).children(".line-or-not").empty().text(option_selected);  // 将状态单元格的内容替换为文字
-};
+}
 // 单个选取切换编辑形态功能
 $("#table1 :checkbox").click(function () {
     var flag = $(this).parent().next().children(":eq(0)").is("input");
@@ -100,7 +97,7 @@ $("#table1 :checkbox").click(function () {
             }
         }
     }
-    ;
+
 });
 // 按住CTRL同时改变状态功能
 $("#table1 tr td select").click(function (e) {
@@ -108,4 +105,4 @@ $("#table1 tr td select").click(function (e) {
     if (e.ctrlKey) {
         console.log(1)
     }
-})
+});

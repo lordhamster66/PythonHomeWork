@@ -100,9 +100,11 @@ $("#table1 :checkbox").click(function () {
 
 });
 // 按住CTRL同时改变状态功能
-$("#table1 tr td select").click(function (e) {
-    console.log(1);
-    if (e.ctrlKey) {
-        console.log(1)
+$("#table1").delegate("select","click",function(e) {
+    console.log(e);
+    if(e.ctrlKey) {
+        var info = $(this).find("option:selected").text();
+        $("#table1 select").children(":contains(" + info + ")").attr("selected", "selected").siblings().removeAttr("selected");
     }
-});
+}
+);

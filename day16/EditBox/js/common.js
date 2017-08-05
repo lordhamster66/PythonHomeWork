@@ -30,17 +30,17 @@ $(".menu input[value='取消']").click(function () {
 $(".menu input[value='反选']").click(function () {
     $("#table1 :checkbox").each(function () {
         $(this).prop("checked", $(this).prop("checked") ? false : true);
-        if ($(".edit").hasClass("editing")) {       // 编辑状态下处理方法
-            $("#table1").children().each(function () {  // 循环每一行
-                var flag = $(this).children(":eq(1)").children(":eq(0)").is("input");
-                if (flag) {                // 编辑形态则切换为非编辑形态
-                    uneditRow(this);
-                } else {                   // 非编辑形态则切换为编辑形态
-                    editRow(this);
-                }
-            })
-        }
-    })
+    });
+    if ($(".edit").hasClass("editing")) {       // 编辑状态下处理方法
+        $("#table1").children().each(function () {  // 循环每一行
+            var flag = $(this).children(":eq(1)").children(":eq(0)").is("input");
+            if (flag) {                // 编辑形态则切换为非编辑形态
+                uneditRow(this);
+            } else {                   // 非编辑形态则切换为编辑形态
+                editRow(this);
+            }
+        })
+    }
 });
 // 进入和取消编辑模式功能
 $(".edit").click(function () {

@@ -76,11 +76,11 @@ function editRow(self) {
     var option_tag1 = document.createElement("option");  // 创建一个option标签
     var option_tag2 = document.createElement("option");
     $(select_tag).attr("name", "status");
-    $(option_tag1).text("在线").attr("value", "在线");  // 给option标签设置内容
-    $(option_tag2).text("下线").attr("value", "下线");
+    $(option_tag1).text("在线").attr("value", "1");  // 给option标签设置内容
+    $(option_tag2).text("下线").attr("value", "2");
     $(select_tag).append(option_tag1).append(option_tag2);  // 将option标签放入select标签
     var option_selected = $(self).children(".line-or-not").text();  // 获取当前的选择内容
-    $(select_tag).val(option_selected);  // 根据当前选择内容改变select标签的选择状态
+    $(select_tag).val(option_selected == "在线" ? "1" : "2");  // 根据当前选择内容改变select标签的选择状态
     $(self).children(".line-or-not").empty().append(select_tag);  // 将状态单元格的内容替换为select标签
 }
 
@@ -132,7 +132,7 @@ $(document).keydown(function (event) {
 $("#table1").delegate("select", "click", function () {
         if (key_stay) {
             var info = $(this).children('option:selected').text();
-            $("#table1 select").val(info);
+            $("#table1 select").val(info == "在线" ? "1" : "2");
         }
     }
 );

@@ -1,6 +1,8 @@
 /**
  * Created by Administrator on 2017/8/5.
  */
+
+
 // 全选功能
 $(".menu input[value='全选']").click(function () {
     $("#table1 :checkbox").prop("checked", true);
@@ -14,6 +16,8 @@ $(".menu input[value='全选']").click(function () {
         })
     }
 });
+
+
 // 取消功能
 $(".menu input[value='取消']").click(function () {
     $("#table1 :checkbox").prop("checked", false);
@@ -26,6 +30,8 @@ $(".menu input[value='取消']").click(function () {
         })
     }
 });
+
+
 // 反选功能
 $(".menu input[value='反选']").click(function () {
     $("#table1 :checkbox").each(function () {
@@ -42,6 +48,8 @@ $(".menu input[value='反选']").click(function () {
         })
     }
 });
+
+
 // 进入和取消编辑模式功能
 $(".edit").click(function () {
     $(this).toggleClass("editing");   // 编辑和非编辑状态自由切换
@@ -56,23 +64,27 @@ $(".edit").click(function () {
         }
     })
 });
+
+
 // 切换编辑形态功能
 function editRow(self) {
     $(self).children().eq(0).nextUntil(".line-or-not").each(function () {  // 循环不是状态的每个单元格
-        var info = $(this).text();                               // 获取该单元格的信息
-        $(this).html("<input type='text' value='" + info + "'>");    // 更改单元格内容
+        var info = $(this).text();  // 获取该单元格的信息
+        $(this).html("<input type='text' value='" + info + "'>");  // 更改单元格内容
     });
-    var select_tag = document.createElement("select");      // 创建一个select标签
-    var option_tag1 = document.createElement("option");     // 创建一个option标签
+    var select_tag = document.createElement("select");  // 创建一个select标签
+    var option_tag1 = document.createElement("option");  // 创建一个option标签
     var option_tag2 = document.createElement("option");
     $(select_tag).attr("name", "status");
-    $(option_tag1).text("在线").attr("value", 1);           // 给option标签设置内容
-    $(option_tag2).text("下线").attr("value", 2);
+    $(option_tag1).text("在线").attr("value", "在线");  // 给option标签设置内容
+    $(option_tag2).text("下线").attr("value", "下线");
     $(select_tag).append(option_tag1).append(option_tag2);  // 将option标签放入select标签
-    var option_selected = $(self).children(".line-or-not").text();   // 获取当前的选择内容
-    $(select_tag).children(":contains(" + option_selected + ")").attr("selected", "selected");  // 根据当前选择内容改变select标签的选择状态
+    var option_selected = $(self).children(".line-or-not").text();  // 获取当前的选择内容
+    $(select_tag).val(option_selected);  // 根据当前选择内容改变select标签的选择状态
     $(self).children(".line-or-not").empty().append(select_tag);  // 将状态单元格的内容替换为select标签
 }
+
+
 // 取消编辑形态功能
 function uneditRow(self) {
     $(self).children().eq(0).nextUntil(".line-or-not").each(function () {  // 循环不是状态的每个单元格
@@ -82,6 +94,8 @@ function uneditRow(self) {
     var option_selected = $(self).children(".line-or-not").find("select option:selected").text();  // 获取当前的选择内容
     $(self).children(".line-or-not").empty().text(option_selected);  // 将状态单元格的内容替换为文字
 }
+
+
 // 单个选取切换编辑形态功能
 $("#table1 :checkbox").click(function () {
     var flag = $(this).parent().next().children(":eq(0)").is("input");
@@ -97,14 +111,28 @@ $("#table1 :checkbox").click(function () {
             }
         }
     }
-
 });
-// 按住CTRL同时改变状态功能
-$("#table1").delegate("select","click",function(e) {
-    console.log(e);
-    if(e.ctrlKey) {
-        var info = $(this).find("option:selected").text();
-        $("#table1 select").children(":contains(" + info + ")").attr("selected", "selected").siblings().removeAttr("selected");
+
+
+// 判断Ctrl是否被按下，被按下则为true,反之为false, 借鉴导师
+key_stay = false;
+$(document).keyup(function (event) {
+    if (event.keyCode == 17) {
+        key_stay = false;
     }
-}
+});
+$(document).keydown(function (event) {
+    if (event.keyCode == 17) {
+        key_stay = true;
+    }
+});
+
+
+// 按住CTRL同时改变状态功能
+$("#table1").delegate("select", "click", function () {
+        if (key_stay) {
+            var info = $(this).children('option:selected').text();
+            $("#table1 select").val(info);
+        }
+    }
 );

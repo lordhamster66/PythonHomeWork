@@ -114,13 +114,25 @@ $("#table1 :checkbox").click(function () {
 });
 
 
+// 判断Ctrl是否被按下，被按下则为true,反之为false
+key_stay = false;
+$(document).keyup(function (event) {
+if(event.keyCode == 17){
+    key_stay = false;
+    }
+});
+$(document).keydown(function (event) {
+if(event.keyCode == 17){
+    key_stay = true;
+    }
+});
+
+
 // 按住CTRL同时改变状态功能
 $("#table1").delegate("select", "click", function () {
-        $(this).keydown(function (e) {
-            if (e.keyCode == 17 && $(this).mousedown()) {
-                var info = $(this).children('option:selected').text();
-                $("#table1 select").val(info == "在线" ? "1" : "2");
-            }
-        })
+		if (key_stay) {
+			var info = $(this).children('option:selected').text();
+			$("#table1 select").val(info == "在线" ? "1" : "2");
+		}
     }
 );

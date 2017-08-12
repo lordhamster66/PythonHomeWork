@@ -67,11 +67,25 @@ def register(request):
 
 
 def login_check(request):
+    """登录检查函数"""
+    session_class = sessionmaker(bind=models.engine)  # 创建一个session类
+    session = session_class()  # 创建一个session实例
     if request.method == "POST":
         loginObj = request.POST.get("loginObj")
-        # ret = json.dumps({"accountMsg": "用户名不存在"})
-        # ret = json.dumps({"pwdMsg": "用户名密码错误"})
-        ret = json.dumps({"user": "111"})
+        loginObj = json.loads(loginObj)
+        username = loginObj.get("accountNo")  # 获取用户名
+        m_obj = hashlib.md5()  # 创建一个md5对象
+        password = str(loginObj.get("pwd"))  # 获取密码
+        m_obj.update(password.encode("utf-8"))
+        password = m_obj.hexdigest()  # 加密的用户密码
+        user_obj = session.query(models.User).filter(models.User.username == username).first()
+        if user_obj:  # 能获取结果，说明用户名在数据库里面
+            if password == user_obj.password:  # 密码匹配则登录成功
+                ret = json.dumps({"user": "111"})
+            else:  # 否则返回密码错误
+                ret = json.dumps({"pwdMsg": "用户名密码错误"})
+        else:
+            ret = json.dumps({"accountMsg": "用户名不存在"})
         return HttpResponse(ret)
 
 

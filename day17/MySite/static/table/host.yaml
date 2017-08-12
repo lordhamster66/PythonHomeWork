@@ -1,0 +1,99 @@
+h1:
+  hostname: h1
+  ip: 192.168.48.21
+  port: 3306
+  line_status: 在线
+  server_style: Centos7.0
+  cpu: 1核
+  memory: 1GB
+  disk: 200GB
+
+h2:
+  hostname: h2
+  ip: 192.168.48.22
+  port: 3308
+  line_status: 在线
+  server_style: Centos6.5
+  cpu: 2核
+  memory: 2GB
+  disk: 100GB
+
+h3:
+  hostname: h3
+  ip: 192.168.48.23
+  port: 22
+  line_status: 在线
+  server_style: Windows
+  cpu: 1核
+  memory: 1GB
+  disk: 100GB
+
+h4:
+  hostname: h4
+  ip: 192.168.48.24
+  port: 6969
+  line_status: 在线
+  server_style: Ubuntu16.04
+  cpu: 1核
+  memory: 1GB
+  disk: 100GB
+
+h5:
+  hostname: h5
+  ip: 192.168.48.25
+  port: 22
+  line_status: 在线
+  server_style: Centos6.6
+  cpu: 2核
+  memory: 2GB
+  disk: 200GB
+
+h6:
+  hostname: h6
+  ip: 192.168.48.26
+  port: 3306
+  line_status: 在线
+  server_style: Centos7.0
+  cpu: 1核
+  memory: 1GB
+  disk: 300GB
+
+h7:
+  hostname: h7
+  ip: 192.168.48.27
+  port: 2208
+  line_status: 在线
+  server_style: Centos6.5
+  cpu: 2核
+  memory: 2GB
+  disk: 300GB
+
+h8:
+  hostname: h8
+  ip: 192.168.48.28
+  port: 22
+  line_status: 在线
+  server_style: Centos7.0
+  cpu: 4核
+  memory: 8GB
+  disk: 1TB
+
+h9:
+  hostname: h9
+  ip: 192.168.48.29
+  port: 3306
+  line_status: 在线
+  server_style: Windows
+  cpu: 1核
+  memory: 1GB
+  disk: 100GB
+
+h10:
+  hostname: h10
+  ip: 192.168.48.210
+  port: 3306
+  line_status: 在线
+  server_style: Centos7.0
+  cpu: 2核
+  memory: 2GB
+  disk: 100GB

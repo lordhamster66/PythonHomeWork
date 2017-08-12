@@ -1,8 +1,61 @@
 from django.shortcuts import render
 from django.shortcuts import HttpResponse
 import json
-
+import os
+import hashlib
+import time
+from MySite import settings
+from cmdb import models
+from cmdb.utils import yaml_parser
+from sqlalchemy.orm import sessionmaker
 # Create your views here.
+
+
+def init(request):
+    """初始化函数"""
+    models.base.metadata.create_all()  # 初始化数据的表格
+    host_file = os.path.join(settings.BASE_DIR, "static", "table", "host.yaml")  # 获取已经设置好的主机信息文件
+    host_data = yaml_parser(host_file)  # 使用yaml解析
+    session_class = sessionmaker(bind=models.engine)  # 创建一个session类
+    session = session_class()  # 创建一个session实例
+    for k, v in host_data.items():  # 创建所有的主机信息
+        host_obj = models.Host(hostname=v.get("hostname"), ip=v.get("ip"), port=v.get("port"),
+                               line_status=v.get("line_status"), server_style=v.get("server_style"),
+                               cpu=v.get("cpu"), memory=v.get("memory"), disk=v.get("disk"))
+        session.add(host_obj)
+    session.commit()
+    group_file = os.path.join(settings.BASE_DIR, "static", "table", "group.yaml")  # 获取分组信息文件
+    group_data = yaml_parser(group_file)  # yaml解析
+    for k, v in group_data.items():  # 创建所有的分组信息
+        group_obj = models.Group(groupname=v[0])
+        for h in v[1].get("host"):
+            h_obj = session.query(models.Host).filter(models.Host.hostname == h).first()
+            group_obj.hosts.append(h_obj)
+        session.add(group_obj)
+    session.commit()
+    user_file = os.path.join(settings.BASE_DIR, "static", "table", "user.yaml")  # 获取用户信息文件
+    user_data = yaml_parser(user_file)  # yaml解析
+    for k, v in user_data.items():
+        m_obj = hashlib.md5()  # 创建一个md5对象
+        username = v.get("username")
+        password = str(v.get("password"))
+        m_obj.update(password.encode("utf-8"))
+        password = m_obj.hexdigest()  # 加密的用户密码
+        create_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())  # 获取实时的时间
+        group = v.get("group")
+        g_obj = session.query(models.Group).filter(models.Group.groupname == group).first()
+        group_id = g_obj.id
+        user_obj = models.User(username=username, password=password, create_time=create_time, group_id=group_id)
+        session.add(user_obj)
+    session.commit()
+    session.close()
+    return HttpResponse("done!")
+
+
+def drop(request):
+    """drop数据库函数"""
+    models.base.metadata.drop_all()
+    return HttpResponse("done!")
 
 
 def login(request):

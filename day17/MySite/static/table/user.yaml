@@ -1,0 +1,14 @@
+user01:
+  username: breakering
+  password: 123
+  group: 数据挖掘部
+
+user02:
+  username: profhua
+  password: 123
+  group: 运维部
+
+user03:
+  username: wolf
+  password: 123
+  group: 开发部

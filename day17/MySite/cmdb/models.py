@@ -21,11 +21,11 @@ class User(base):
 
     id = Column(Integer, primary_key=True, autoincrement=True)
     username = Column(String(32), unique=True, nullable=False)  # 用户名
-    password = Column(String(128), unique=True, nullable=False)  # 密码
+    password = Column(String(128), nullable=False)  # 密码
     create_time = Column(DateTime, nullable=False)  # 注册时间
     group_id = Column(Integer, ForeignKey("group.id"))  # 对应分组ID
 
-    user_group = relationship("group", backref="group_user")  # 查看分组详情
+    user_group = relationship("Group", backref="group_user")  # 查看分组详情
 
     def __repr__(self):
         return "username:%s, groupname:%s" % (self.username, self.user_group.groupname)
@@ -37,7 +37,7 @@ class Group(base):
 
     id = Column(Integer, primary_key=True, autoincrement=True)
     groupname = Column(String(32), unique=True, nullable=False)  # 分组名称
-    hosts = relationship("host", secondary=group_to_host, backref="groups")  # 分组下的主机
+    hosts = relationship("Host", secondary=group_to_host, backref="groups")  # 分组下的主机
 
     def __repr__(self):
         return "groupname:%s" % self.groupname
@@ -59,5 +59,3 @@ class Host(base):
 
     def __repr__(self):
         return "hostname:%s, ip:%s, port:%s" % (self.hostname, self.ip, self.port)
-
-base.metadata.create_all()

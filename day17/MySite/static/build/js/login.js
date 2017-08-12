@@ -42,7 +42,7 @@ $("#btn_login").click(function () {
                 $("#pw-error").text("密码错误");
                 $("#pwdMsg").removeClass("hidden");
             } else if (e.user) {
-                //location.href="main/successLogin.do";
+                //location.href="/index/";
                 $("#loginForm").submit();
             }
         });

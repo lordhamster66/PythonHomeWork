@@ -9,6 +9,10 @@ def login(request):
     return render(request, "login.html")
 
 
+def register(request):
+    return render(request, "register.html")
+
+
 def login_check(request):
     if request.method == "POST":
         loginObj = request.POST.get("loginObj")
@@ -24,3 +28,5 @@ def index(request):
         pwd = request.POST.get("pwd")
         print(accountNo, pwd)
         return HttpResponse("ok!")
+
+

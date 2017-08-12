@@ -123,7 +123,6 @@ def index(request):
     if request.method == "POST":
         accountNo = request.POST.get("accountNo")
         pwd = request.POST.get("pwd")
-        print(accountNo, pwd)
         return HttpResponse("ok!")
 
 

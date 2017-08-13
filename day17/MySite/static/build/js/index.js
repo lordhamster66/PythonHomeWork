@@ -109,7 +109,7 @@ $("#myModal").delegate("[target='update']", "click", function () {
     var cpu = $(this).parent().siblings().find("#cpu").val();
     var memory = $(this).parent().siblings().find("#memory").val();
     var disk = $(this).parent().siblings().find("#disk").val();
-    host_info = {
+    var host_info = {
         "host_id": host_id, "hostname": hostname, "ip": ip, "port": port, "line_status": line_status,
         "server_style": server_style, "cpu": cpu, "memory": memory, "disk": disk
     };
@@ -144,7 +144,7 @@ $("#myModal").delegate("[target='insert']", "click", function () {
         var cpu = $(this).parent().siblings().find("#cpu").val();
         var memory = $(this).parent().siblings().find("#memory").val();
         var disk = $(this).parent().siblings().find("#disk").val();
-        host_info = {
+        var host_info = {
             "hostname": hostname, "ip": ip, "port": port, "line_status": line_status,
             "server_style": server_style, "cpu": cpu, "memory": memory, "disk": disk
         };

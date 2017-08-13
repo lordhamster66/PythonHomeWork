@@ -12,6 +12,11 @@ from sqlalchemy.orm import sessionmaker
 # Create your views here.
 
 
+def home(request):
+    """首页"""
+    return render(request, "home.html")
+
+
 def init(request):
     """初始化函数"""
     models.base.metadata.create_all()  # 初始化数据的表格
@@ -83,6 +88,7 @@ def login_check(request):
                 ret = json.dumps({"pwdMsg": "用户名密码错误"})
         else:
             ret = json.dumps({"accountMsg": "用户名不存在"})
+        session.close()
         return HttpResponse(ret)
 
 
@@ -117,10 +123,12 @@ def register_check(request):
                 session.commit()
                 session.close()
                 ret = json.dumps({"user": "ok!"})
+        session.close()
         return HttpResponse(ret)
 
 
 def index(request):
+    """主机管理功能"""
     session_class = sessionmaker(bind=models.engine)  # 创建一个session类
     session = session_class()  # 创建一个session实例
     if request.method == "POST":
@@ -132,6 +140,7 @@ def index(request):
         user_obj = session.query(models.User).filter(models.User.username == username and
                                                      models.User.password == password).first()
         hosts = user_obj.user_group.hosts
+        session.close()
         return render(request, "index.html", {"username": username, "hosts": hosts})
 
 
@@ -146,6 +155,7 @@ def select(request):
                     "line_status": host_obj.line_status,"server_style": host_obj.server_style,
                     "cpu": host_obj.cpu, "memory": host_obj.memory, "disk": host_obj.disk}
         host_obj = json.dumps(host_obj)
+        session.close()
         return HttpResponse(host_obj)
 
 
@@ -193,6 +203,7 @@ def insert(request):
                 session.commit()
                 session.close()
                 ret = json.dumps({"Confirm": "ok"})
+        session.close()
         return HttpResponse(ret)
 
 

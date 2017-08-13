@@ -1,14 +1,31 @@
 from django.db import models
 
 # Create your models here.
+import os
+from MySite import settings
 from sqlalchemy import create_engine, Column, String, Integer, ForeignKey, Table, DateTime
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
+from cmdb.utils import yaml_parser
 
-engine = create_engine("mysql+pymysql://root:dmc19930417@192.168.48.20:3306/s18?charset=utf8", max_overflow=5)
 
+# 获取数据库配置信息文件
+db_file = os.path.join(settings.BASE_DIR, "static", "db", "db_info.yaml")
+
+
+def getdbinfo():
+    """读取数据库配置信息"""
+    return yaml_parser(db_file)
+
+engine = create_engine("mysql+pymysql://%s:%s@%s:%s/%s?charset=utf8" % (
+                        getdbinfo().get("username"), getdbinfo().get("password"), getdbinfo().get("ip"),
+                        getdbinfo().get("port"), getdbinfo().get("db")
+                      ), max_overflow=5)
+
+# 生成一个基类
 base = declarative_base(bind=engine)
 
+# 分组对应主机信息表
 group_to_host = Table('group_to_host', base.metadata,
                       Column('group_id', Integer, ForeignKey('group.id')),
                       Column('host_id', Integer, ForeignKey('host.id'))

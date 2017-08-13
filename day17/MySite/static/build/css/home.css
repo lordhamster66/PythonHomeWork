@@ -1,0 +1,45 @@
+body {
+    background: url(/static/img/bg-login.jpg) !important;
+}
+
+.my-content {
+    width: 900px;
+    height: 200px;
+    margin: 300px auto auto auto;
+}
+
+.my-content .menu {
+    float: left;
+    width: 250px;
+    height: 200px;
+    line-height: 200px;
+    text-align: center;
+    margin-right: 49px;
+    font-weight: bold;
+    font-size: larger;
+    color: white;
+    cursor: pointer;
+}
+
+.my-modal-content{
+    width: 400px;
+    margin: 0 auto;
+}
+
+.my-modal-content .info-left{
+    float: left;
+    display: block;
+    width: 100px;
+    height: 25px;
+    line-height: 25px;
+    text-align: right;
+}
+
+.my-modal-content .info-right{
+    float: left;
+    display: block;
+    width: 300px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+}

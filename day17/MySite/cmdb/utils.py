@@ -34,3 +34,12 @@ def yaml_parser(yml_filename):
         return data  # 返回yaml解析的结果
     except Exception as e:
         print_err(e)  # 如果出现错误则打印错误信息
+
+
+def yaml_dump(data, yml_filename):
+
+    try:
+        yaml_file = open(yml_filename, 'w', encoding="utf-8")  # 尝试打开文件句柄
+        yaml.dump(data, yaml_file)  # 尝试用yaml修改文件
+    except Exception as e:
+        print_err(e)  # 如果出现错误则打印错误信息

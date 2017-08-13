@@ -19,15 +19,16 @@ from cmdb import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^login/', views.login),
-    url(r'^login_check/', views.login_check),
-    url(r'^index/', views.index),
-    url(r'^register/', views.register),
-    url(r'^register_check/', views.register_check),
-    url(r'^select/', views.select),
-    url(r'^update/', views.update),
-    url(r'^insert/', views.insert),
-    url(r'^delete/', views.delete),
-    url(r'^init/', views.init),
-    url(r'^drop/', views.drop),
+    url(r'^login/', views.login),  # 登录
+    url(r'^login_check/', views.login_check),  # 登录检查
+    url(r'^index/', views.index),  # 主机管理主页
+    url(r'^register/', views.register),  # 注册
+    url(r'^register_check/', views.register_check),  # 注册检查
+    url(r'^select/', views.select),  # 查询
+    url(r'^update/', views.update),  # 更新
+    url(r'^insert/', views.insert),  # 添加
+    url(r'^delete/', views.delete),  # 删除
+    url(r'^init/', views.init),  # 初始化数据库
+    url(r'^drop/', views.drop),  # 重置数据库
+    url(r'^home/', views.home),  # 首页
 ]

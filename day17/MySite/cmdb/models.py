@@ -48,7 +48,7 @@ class Host(base):
     __tablename__ = "host"
 
     id = Column(Integer, primary_key=True, autoincrement=True)
-    hostname = Column(String(32), nullable=False)  # 主机名
+    hostname = Column(String(32), unique=True, nullable=False)  # 主机名
     ip = Column(String(32), unique=True, nullable=False)  # 主机地址
     port = Column(Integer, nullable=False)  # 主机端口
     line_status = Column(String(32), nullable=False)  # 在线状态

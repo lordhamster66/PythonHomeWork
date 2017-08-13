@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.shortcuts import redirect
 from django.shortcuts import HttpResponse
 import json
 import os
@@ -120,9 +121,91 @@ def register_check(request):
 
 
 def index(request):
+    session_class = sessionmaker(bind=models.engine)  # 创建一个session类
+    session = session_class()  # 创建一个session实例
     if request.method == "POST":
-        accountNo = request.POST.get("accountNo")
-        pwd = request.POST.get("pwd")
-        return HttpResponse("ok!")
+        username = request.POST.get("accountNo")
+        m_obj = hashlib.md5()  # 创建一个md5对象
+        password = request.POST.get("pwd")
+        m_obj.update(password.encode("utf-8"))
+        password = m_obj.hexdigest()  # 加密的用户密码
+        user_obj = session.query(models.User).filter(models.User.username == username and
+                                                     models.User.password == password).first()
+        hosts = user_obj.user_group.hosts
+        return render(request, "index.html", {"username": username, "hosts": hosts})
 
 
+def select(request):
+    """提供根据host_id查询信息的功能"""
+    session_class = sessionmaker(bind=models.engine)  # 创建一个session类
+    session = session_class()  # 创建一个session实例
+    if request.method == "POST":
+        host_id = request.POST.get("host_id")
+        host_obj = session.query(models.Host).filter(models.Host.id == host_id).first()
+        host_obj = {"hostname": host_obj.hostname, "ip": host_obj.ip, "port": host_obj.port,
+                    "line_status": host_obj.line_status,"server_style": host_obj.server_style,
+                    "cpu": host_obj.cpu, "memory": host_obj.memory, "disk": host_obj.disk}
+        host_obj = json.dumps(host_obj)
+        return HttpResponse(host_obj)
+
+
+def update(request):
+    """提供更新功能"""
+    session_class = sessionmaker(bind=models.engine)  # 创建一个session类
+    session = session_class()  # 创建一个session实例
+    if request.method == "POST":
+        host_info = request.POST.get("host_info")
+        host_info = json.loads(host_info)
+        session.query(models.Host).filter(models.Host.id == host_info.get("host_id")).update(
+            {"hostname": host_info.get("hostname"), "ip": host_info.get("ip"),
+             "port": host_info.get("port"), "line_status": host_info.get("line_status"),
+             "server_style": host_info.get("server_style"), "cpu": host_info.get("cpu"),
+             "memory": host_info.get("memory"), "disk": host_info.get("disk")}
+        )  # 更新主机信息
+        session.commit()
+        session.close()
+        return HttpResponse("ok")
+
+
+def insert(request):
+    """提供添加功能"""
+    session_class = sessionmaker(bind=models.engine)  # 创建一个session类
+    session = session_class()  # 创建一个session实例
+    if request.method == "POST":
+        host_info = request.POST.get("host_info")
+        host_info = json.loads(host_info)
+        username = request.POST.get("username")
+        user_obj = session.query(models.User).filter(models.User.username == username).first()
+        h1 = session.query(models.Host).filter(models.Host.hostname == host_info.get("hostname")).first()
+        if h1:  # 主机名存在
+            ret = json.dumps({"HostName": "repeat"})
+        else:
+            h2 = session.query(models.Host).filter(models.Host.ip == host_info.get("ip")).first()
+            if h2:  # 主机地址存在
+                ret = json.dumps({"IP": "repeat"})
+            else:
+                host_obj = models.Host(hostname=host_info.get("hostname"), ip=host_info.get("ip"),
+                                       port=host_info.get("port"), line_status=host_info.get("line_status"),
+                                       server_style=host_info.get("server_style"), cpu=host_info.get("cpu"),
+                                       memory=host_info.get("memory"), disk=host_info.get("disk"))
+                host_obj.groups.append(user_obj.user_group)  # 将其分组至当前用户所在的组别
+                session.add(host_obj)  # 添加主机信息
+                session.commit()
+                session.close()
+                ret = json.dumps({"Confirm": "ok"})
+        return HttpResponse(ret)
+
+
+def delete(request):
+    """提供删除功能"""
+    session_class = sessionmaker(bind=models.engine)  # 创建一个session类
+    session = session_class()  # 创建一个session实例
+    if request.method == "POST":
+        host_id = request.POST.get("host_id")
+        host_obj = session.query(models.Host).filter(models.Host.id == host_id).first()
+        host_obj.groups.clear()  # 清空分组才能删除主机
+        session.commit()
+        session.query(models.Host).filter(models.Host.id == host_id).delete()
+        session.commit()
+        session.close()
+        return HttpResponse("ok")

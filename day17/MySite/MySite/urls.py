@@ -24,6 +24,10 @@ urlpatterns = [
     url(r'^index/', views.index),
     url(r'^register/', views.register),
     url(r'^register_check/', views.register_check),
+    url(r'^select/', views.select),
+    url(r'^update/', views.update),
+    url(r'^insert/', views.insert),
+    url(r'^delete/', views.delete),
     url(r'^init/', views.init),
     url(r'^drop/', views.drop),
 ]

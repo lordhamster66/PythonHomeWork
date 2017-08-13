@@ -4,9 +4,267 @@
     <meta charset="UTF-8">
     <meta http-equiv="x-ua-compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Title</title>
+    <title>老男孩IT教育官网-只培养技术精英</title>
+    <meta name="keywords" content="Linux培训,Python培训,大数据培训,linux架构培训,Python自动化运维,老男孩教育,老男孩">
+    <meta name="description" content="老男孩IT教育隶属北京一天天教育科技有限公司,是一直专注于Linux培训、Linux系统及架构师培训、Python培训、大数据实战的高端培训机构.师资力量雄厚,教学理念先进,培训方法独特，毕业生平均工资在11K以上.">
+    <link rel="shortcut icon" href="/static/img/favicon.ico">
+    <link rel="stylesheet" href="/static/plugin/bootstrap-3.3.7/dist/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/static/build/css/common.css">
+    <link rel="stylesheet" type="text/css" href="/static/build/css/index.css">
 </head>
 <body>
+    <div class="admin-header">
+        <img class="fleft" src="/static/img/admin_logo.png" alt="">
+        <div class="fright header-menu-container">
+            <div class="fleft header-menu">
+                <a href="#">消息管理</a>
+            </div>
+            <div class="fleft header-menu">
+                <a href="#">会员管理</a>
+            </div>
+            <div class="fleft header-menu">
+                <a href="#">奖金管理</a>
+            </div>
+            <div class="fleft header-menu">
+                <a href="#">订单管理</a>
+            </div>
+            <div class="fleft header-menu">
+                <a href="#">产品管理</a>
+            </div>
+            <div class="fleft header-menu">
+                <a href="#">个人中心</a>
+            </div>
+            <div class="fleft header-menu">
+                <a href="#">系统设置</a>
+            </div>
+        </div>
+    </div>
+    <div class="admin-left-nav">
+        <div class="fleft line ">
+            <span class="font normal" id="username" target="{{ username }}">Welcome：{{ username }}</span>
+        </div>
+        <div>
+            <div class="fleft line">
+                <div effect="menu" class="fleft font normal">
+                    <span class="fleft">商品管理</span>
+                    <span class="fright">+</span>
+                </div>
+                <div class="hide">
+                    <a class="fleft font small" href="#">商品列表</a>
+                    <a class="fleft font small" href="#">添加新商品</a>
+                    <a class="fleft font small" href="#">商品分类</a>
+                    <a class="fleft font small" href="#">用户评论</a>
+                    <a class="fleft font small" href="#">商品回收站</a>
+                    <a class="fleft font small" href="#">库存管理</a>
+                </div>
+            </div>
+            <div class="fleft line">
+                <div effect="menu" class="fleft font normal">
+                    <span class="fleft">订单管理</span>
+                    <span class="fright">+</span>
+                </div>
+                <div class="hide">
+                    <a class="fleft font small" href="#">订单列表</a>
+                    <a class="fleft font small" href="#">合并订单</a>
+                    <a class="fleft font small" href="#">订单打印</a>
+                    <a class="fleft font small" href="#">添加订单</a>
+                    <a class="fleft font small" href="#">发货单列表</a>
+                    <a class="fleft font small" href="#">换货单列表</a>
+                </div>
+            </div>
+            <div class="fleft line">
+                <div effect="menu" class="fleft font normal">
+                    <span class="fleft">会员管理</span>
+                    <span class="fright">+</span>
+                </div>
+                <div class="hide">
+                    <a class="fleft font small" href="#">会员列表</a>
+                    <a class="fleft font small" href="#">未激活会员</a>
+                    <a class="fleft font small" href="#">团队系谱图</a>
+                    <a class="fleft font small" href="#">会员推荐图</a>
+                    <a class="fleft font small" href="#">推荐列表</a>
+                </div>
+            </div>
+            <div class="fleft line">
+                <div effect="menu" class="fleft font normal">
+                    <span class="fleft">信息通知</span>
+                    <span class="fright">+</span>
+                </div>
+                <div class="hide">
+                    <a class="fleft font small" href="#">站内消息 /留言</a>
+                    <a class="fleft font small" href="#">短信</a>
+                    <a class="fleft font small" href="#">邮件</a>
+                    <a class="fleft font small" href="#">微信</a>
+                    <a class="fleft font small" href="#">客服</a>
+                </div>
+            </div>
+            <div class="fleft line">
+                <div effect="menu" class="fleft font normal">
+                    <span class="fleft">系统设置</span>
+                    <span class="fright">+</span>
+                </div>
+                <div class="hide">
+                    <a class="fleft font small" href="#">数据备份</a>
+                    <a class="fleft font small" href="#">邮件/短信管理</a>
+                    <a class="fleft font small" href="#">上传/下载</a>
+                    <a class="fleft font small" href="#">权限</a>
+                    <a class="fleft font small" href="#">网站设置</a>
+                    <a class="fleft font small" href="#">第三方支付</a>
+                    <a class="fleft font small" href="#">提现 /转账 出入账汇率</a>
+                    <a class="fleft font small" href="#">平台设置</a>
+                    <a class="fleft font small" href="#">声音文件</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="admin-body">
+        <div class="fleft admin-body-menu">
+            <a class="fleft content" href="#">首页</a>
+            <a class="fleft content" href="#">帮助中心 X</a>
+            <a class="fleft content" href="#">奖金管理 X</a>
+            <a class="fleft content" href="#">产品管理 X</a>
+        </div>
+        <div class="fleft table-container">
+            <input type="button" value="添加" data-toggle="modal" data-target="#myModal"/>
+            <input type="button" value="全选"/>
+            <input type="button" value="反选"/>
+            <input type="button" value="取消"/>
+            <table>
+                <thead>
+                    <tr>
+                        <th>选择</th>
+                        <th>ID</th>
+                        <th>主机名</th>
+                        <th>IP</th>
+                        <th>端口</th>
+                        <th>在线状态</th>
+                        <th>工具栏</th>
+                    </tr>
+                </thead>
+                <tbody id="tb1">
+                    {% for host in hosts %}
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td id="host_id">{{ host.id }}</td>
+                            <td>{{ host.hostname }}</td>
+                            <td>{{ host.ip }}</td>
+                            <td>{{ host.port }}</td>
+                            <td>{{ host.line_status }}</td>
+                            <td>
+                                <a class="edit" href="#" data-toggle="modal" data-target="#myModal">编辑</a>|
+                                <a class="detail" href="#" data-toggle="modal" data-target="#myModal1">查看详细</a>|
+                                <a class="delete" href="#" data-toggle="modal" data-target="#myModal2">删除</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="admin-body-foot">
+            <span>版权所有@2017.Breakering</span>
+            <a id="gotop" class="fright gotop" href="#">返回顶部</a>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                        </button>
+                        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                    </div>
+                    <div class="modal-body" style="text-align: center">
+                        <div class="my-modal-content">
+                            <label class="info-left">主机ID:</label>
+                            <label class="info-right" name="host_id"></label>
+                            <label class="info-left" for="hostname">主机名:</label>
+                            <input class="info-right form-control" type="text" name="hostname" id="hostname">
+                            <label class="info-left" for="ip">主机地址:</label>
+                            <input class="info-right form-control" type="text" name="ip" id="ip">
+                            <label class="info-left" for="port">主机端口:</label>
+                            <input class="info-right form-control" type="text" name="port" id="port">
+                            <label class="info-left" for="line_status">主机在线状态:</label>
+                            <input class="info-right form-control" type="text" name="line_status" id="line_status">
+                            <label class="info-left" for="server_style">服务器类型:</label>
+                            <input class="info-right form-control" type="text" name="server_style" id="server_style">
+                            <label class="info-left" for="cpu">CPU:</label>
+                            <input class="info-right form-control" type="text" name="cpu" id="cpu">
+                            <label class="info-left" for="memory">内存:</label>
+                            <input class="info-right form-control" type="text" name="memory" id="memory">
+                            <label class="info-left" for="disk">硬盘:</label>
+                            <input class="info-right form-control" type="text" name="disk" id="disk">
+                            <div style="clear: both;"></div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                        <button id="confirm" type="button" class="btn btn-primary">确定</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
+        <!-- Modal1 -->
+        <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                        </button>
+                        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                    </div>
+                    <div class="modal-body" style="text-align: center">
+                        <div class="my-modal-content">
+                            <label class="info-left">主机ID:</label>
+                            <label class="info-right" name="host_id"></label>
+                            <label class="info-left">主机名:</label>
+                            <label class="info-right" name="hostname"></label>
+                            <label class="info-left">主机地址:</label>
+                            <label class="info-right" name="ip"></label>
+                            <label class="info-left">主机端口:</label>
+                            <label class="info-right" name="port"></label>
+                            <label class="info-left">主机在线状态:</label>
+                            <label class="info-right" name="line_status"></label>
+                            <label class="info-left">服务器类型:</label>
+                            <label class="info-right" name="server_style"></label>
+                            <label class="info-left">CPU:</label>
+                            <label class="info-right" name="cpu"></label>
+                            <label class="info-left">内存:</label>
+                            <label class="info-right" name="memory"></label>
+                            <label class="info-left">硬盘:</label>
+                            <label class="info-right" name="disk"></label>
+                            <div style="clear: both;"></div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal2 -->
+        <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                        </button>
+                        <h4 class="modal-title" id="myModalLabel">删除提醒！</h4>
+                    </div>
+                    <div class="modal-body" style="text-align: center">
+                        <span style="color: red; font-weight: bold;">确认删除吗？</span>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                        <button id="delete" type="button" class="btn btn-primary">确定</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/static/plugin/jquery-1.12.4.js"></script>
+    <script src="/static/plugin/bootstrap-3.3.7/dist/js/bootstrap.js"></script>
+    <script type="text/javascript" src="/static/build/js/index.js"></script >
 </body>
 </html>

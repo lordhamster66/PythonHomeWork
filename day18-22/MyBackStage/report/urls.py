@@ -18,4 +18,6 @@ from report import views
 
 urlpatterns = [
     url(r'^login/$', views.login),  # 登录注册页面
+    url(r'^register/$', views.register),  # 注册功能
+    url(r'^index/$', views.index),  # 后台首页
 ]

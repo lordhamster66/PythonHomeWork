@@ -27,6 +27,11 @@ a:hover {
     color: #f00;
 }
 
+.errors {
+    color: red;
+    font-weight: bold;
+}
+
 .cl {
     clear: both;
 }

@@ -34,16 +34,17 @@
                         <input type="hidden" name="did" value="0"/>
                         <input type="hidden" name="to" value="log"/>
                         <div class="uinArea" id="uinArea">
-                            <label class="input-tips" for="u">用户名：</label>
+                            <label class="input-tips" for="u">{{ login_obj.username.label }}</label>
                             <div class="inputOuter" id="uArea">
-                                <input type="text" id="u" name="username" class="inputstyle"/>
+                                {{ login_obj.username }}
+                                <span class="errors">{{ login_obj.username.errors.0 }}</span>
                             </div>
                         </div>
                         <div class="pwdArea" id="pwdArea">
-                            <label class="input-tips" for="p">密码：</label>
+                            <label class="input-tips" for="p">{{ login_obj.pwd.label }}</label>
                             <div class="inputOuter" id="pArea">
-
-                                <input type="password" id="p" name="pwd" class="inputstyle"/>
+                                {{ login_obj.pwd }}
+                                <span class="errors">{{ login_obj.pwd.errors.0 }}</span>
                             </div>
                         </div>
                         <div style="padding-left:62px;margin-top:20px;">
@@ -60,34 +61,38 @@
     <!--注册-->
     <div class="qlogin" id="qlogin" style="display: none; ">
         <div class="web_login">
-            <form name="form2" id="regUser" accept-charset="utf-8" action="http://www.jq22.com" method="post">
+            <form name="form2" id="regUser" accept-charset="utf-8">
+                {% csrf_token %}
                 <input type="hidden" name="to" value="reg"/>
                 <input type="hidden" name="did" value="0"/>
                 <ul class="reg_form" id="reg-ul">
                     <div id="userCue" class="cue">快速注册请注意格式</div>
                     <li>
-                        <label for="user" class="input-tips2">用户名：</label>
+                        <label for="user" class="input-tips2">{{ register_obj.username.label }}</label>
                         <div class="inputOuter2">
-                            <input type="text" id="user" name="user" maxlength="16" class="inputstyle2"/>
+                            {{ register_obj.username }}
+                            <span id="username-error" class="errors">{{ register_obj.username.errors.0 }}</span>
                         </div>
                     </li>
                     <li>
-                        <label for="passwd" class="input-tips2">密码：</label>
+                        <label for="passwd" class="input-tips2">{{ register_obj.pwd.label }}</label>
                         <div class="inputOuter2">
-                            <input type="password" id="passwd" name="passwd" maxlength="16" class="inputstyle2"/>
+                            {{ register_obj.pwd }}
+                            <span id="pwd-error" class="errors">{{ register_obj.pwd.errors.0 }}</span>
                         </div>
                     </li>
                     <li>
-                        <label for="passwd2" class="input-tips2">确认密码：</label>
+                        <label for="passwd2" class="input-tips2">{{ register_obj.pwd_again.label }}</label>
                         <div class="inputOuter2">
-                            <input type="password" id="passwd2" name="" maxlength="16" class="inputstyle2"/>
+                            {{ register_obj.pwd_again }}
+                            <span id="pwd_again-error" class="errors">{{ register_obj.pwd_again.errors.0 }}</span>
                         </div>
                     </li>
                     <li>
-                        <label for="qq" class="input-tips2">QQ：</label>
+                        <label for="qq" class="input-tips2">{{ register_obj.qq.label }}</label>
                         <div class="inputOuter2">
-
-                            <input type="text" id="qq" name="qq" maxlength="10" class="inputstyle2"/>
+                            {{ register_obj.qq }}
+                            <span id="qq-error" class="errors">{{ register_obj.qq.errors.0 }}</span>
                         </div>
                     </li>
                     <li>
@@ -104,6 +109,7 @@
     <!--注册end-->
 </div>
 <script src="/static/plugin/jquery-1.12.4.js"></script>
+<script src="/static/plugin/jquery.cookie.js"></script>
 <script src="/static/build/js/login.js"></script>
 </body>
 </html>

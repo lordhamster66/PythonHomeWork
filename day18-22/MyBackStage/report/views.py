@@ -4,5 +4,7 @@ from django.shortcuts import HttpResponse
 # Create your views here.
 
 
-def register(request):
-    return HttpResponse("ok!")
+def login(request):
+
+    return render(request, "login.html")
+

@@ -17,5 +17,5 @@ from django.conf.urls import url
 from report import views
 
 urlpatterns = [
-    url(r'^register/$', views.register),
+    url(r'^login/$', views.login),  # 登录注册页面
 ]

@@ -19,7 +19,10 @@ def login(request):
     elif request.method == "POST":
         login_obj = myforms.LoginForm(request.POST)
         if login_obj.is_valid():
-            return redirect("/report/index/")
+            request.session.clear_expired()  # 清空过期的session
+            if login_obj.clean().get("remember", None) == "True":
+                request.session["username"] = login_obj.clean().get("username")  # 设置session
+            return render(request, "index.html")
         else:
             return render(request, "login.html", {"login_obj": login_obj, "register_obj": register_obj})
 
@@ -27,7 +30,7 @@ def login(request):
 def register(request):
     """注册功能"""
     if request.method == "GET":
-        msg_dic = {'status': False, 'error': "滚!", 'data': None}
+        msg_dic = {'status': False, 'error': "滚!", 'data': None}  # get请求也拒绝
         return HttpResponse(json.dumps(msg_dic))
     elif request.method == "POST":
         register_obj = myforms.RegisterForm(request.POST)
@@ -42,14 +45,22 @@ def register(request):
             msg_dic = {'status': True, 'error': None, 'data': None}
             return HttpResponse(json.dumps(msg_dic))
         else:
-            error = register_obj.errors
-            msg_dic = {'status': False, 'error': error, 'data': None}
+            error = register_obj.errors  # 获取所有的错误信息对象，前端可以通过error.username来获取username的错误信息，其他类似
+            msg_dic = {'status': False, 'error': error, 'data': None}  # 返回一个字典，前端可以很方便的处理
             return HttpResponse(json.dumps(msg_dic))
     else:
-        msg_dic = {'status': False, 'error': "滚!", 'data': None}
+        msg_dic = {'status': False, 'error': "滚!", 'data': None}  # 其他请求则拒绝
         return HttpResponse(json.dumps(msg_dic))
 
 
 def index(request):
     """后台首页"""
-    return HttpResponse("Welcome")
+    if request.method == "GET":
+        if request.session.get("username", None):
+            return render(request, "index.html")
+        else:
+            return redirect("/report/login/")
+    elif request.method == "POST":
+        return HttpResponse("滚！")
+    else:
+        return HttpResponse("滚！")

@@ -304,7 +304,6 @@ h1 sup {
 
 .button_blue {
     display: inline-block;
-    float: left;
     height: 41px;
     border-radius: 4px;
     background: #2795dc;
@@ -348,3 +347,6 @@ a.zcxy {
     left: 70px;
 }
 
+#web_login .remember {
+
+}

@@ -24,6 +24,11 @@ class LoginForm(Form):
         error_messages={"required": "密码不能为空！"}
     )
 
+    remember = fields.CharField(
+        required=False,
+        widget=widgets.CheckboxInput()
+    )
+
     def clean_username(self):
         """检查用户输入的用户名"""
         username = self.cleaned_data.get("username")

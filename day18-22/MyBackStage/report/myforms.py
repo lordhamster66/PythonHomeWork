@@ -68,7 +68,7 @@ class RegisterForm(Form):
     qq = fields.IntegerField(
         label="QQ：",
         widget=widgets.TextInput(attrs={"id": "qq", "class": "inputstyle2", "maxlength": "10"}),
-        error_messages={"required": "QQ号不能为空！"}
+        error_messages={"required": "QQ号不能为空！", "invalid": "QQ号必须为数字!"}
     )
 
     def clean_username(self):

@@ -1,5 +1,5 @@
-ip: 192.168.48.20
+ip: 192.168.146.20
 port: 3306
 db: s18
 username: root
-password: 123
+password: dmc19930417

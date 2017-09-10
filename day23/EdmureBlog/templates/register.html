@@ -17,40 +17,95 @@
     <div style="font-size: 25px; font-weight: bold;text-align: center;">
         用户注册
     </div>
-    <form role="form">
+    <form id="register-form" role="form">
+        {% csrf_token %}
         <div class="form-group">
             <label for="username">用户名</label>
-            <input type="email" class="form-control" id="username" placeholder="请输入用户名">
+            <input type="text" class="form-control" id="username" placeholder="请输入用户名" name="username">
+            <span id="username-error" style="color: red;"></span>
         </div>
         <div class="form-group">
             <label for="email">邮箱</label>
-            <input type="email" class="form-control" id="email" placeholder="请输入密码">
+            <input type="email" class="form-control" id="email" placeholder="请输入密码" name="email">
+            <span id="email-error" style="color: red;"></span>
         </div>
         <div class="form-group">
             <label for="password">密码</label>
-            <input type="password" class="form-control" id="password" placeholder="请输入密码">
+            <input type="password" class="form-control" id="password" placeholder="请输入密码" name="password">
+            <span id="password-error" style="color: red;"></span>
         </div>
         <div class="form-group">
             <label for="confirm_password">确认密码</label>
-            <input type="password" class="form-control" id="confirm_password" placeholder="请重新输入密码">
+            <input type="password" class="form-control" id="confirm_password" placeholder="请重新输入密码"
+                   name="confirm_password">
+            <span id="confirm_password-error" style="color: red;"></span>
         </div>
 
         <div class="form-group">
-            <label for="password">验证码</label>
+            <label for="check_code">验证码</label>
 
             <div class="row">
                 <div class="col-xs-7">
-                    <input type="password" class="form-control" id="password" placeholder="请输入验证码">
+                    <input type="password" class="form-control" id="check_code" placeholder="请输入验证码" name="check_code">
                 </div>
                 <div class="col-xs-5">
                     <img src="/check_code.html">
                 </div>
             </div>
-
+            <span id="check_code-error" style="color: red;"></span>
         </div>
-
-        <input type="submit" class="btn btn-default" value="下一步"/>
+        <input id="confirm" type="button" class="btn btn-default" value="下一步"/>
     </form>
 </div>
+<script src="/static/js/jquery-1.12.4.js"></script>
+<script>
+    $(function () {
+        $("#confirm").click(function () {
+            $.ajax({
+                url: "/register.html",
+                type: "POST",
+                data: $("#register-form").serialize(),
+                dataType: "JSON",
+                success: function (obj) {
+                    if (obj.status) {
+                        location.href = "/login.html"
+                    } else {
+                        if (obj.error.username) {
+                            $("#username-error").text(obj.error.username[0].messages);
+                        } else {
+                            $("#username-error").text("");
+                        }
+
+                        if (obj.error.email) {
+                            $("#email-error").text(obj.error.email[0].messages);
+                        } else {
+                            $("#email-error").text("");
+                        }
+
+                        if (obj.error.password) {
+                            $("#password-error").text(obj.error.password[0].messages);
+                        } else {
+                            $("#password-error").text("");
+                        }
+
+                        if (obj.error.confirm_password) {
+                            $("#confirm_password-error").text(obj.error.confirm_password[0].messages);
+                        } else if(obj.error.__all__) {
+                            $("#confirm_password-error").text(obj.error.__all__[0].messages);
+                        }else{
+                            $("#confirm_password-error").text("");
+                        }
+
+                        if (obj.error.check_code) {
+                            $("#check_code-error").text(obj.error.check_code[0].messages)
+                        } else {
+                            $("#check_code-error").text("")
+                        }
+                    }
+                }
+            })
+        })
+    })
+</script>
 </body>
 </html>

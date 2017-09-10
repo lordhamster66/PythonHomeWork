@@ -8,9 +8,9 @@ class UserInfo(models.Model):
     nid = models.BigAutoField(primary_key=True)
     username = models.CharField(verbose_name='用户名', max_length=32, unique=True)
     password = models.CharField(verbose_name='密码', max_length=64)
-    nickname = models.CharField(verbose_name='昵称', max_length=32)
+    nickname = models.CharField(verbose_name='昵称', max_length=32, null=True)
     email = models.EmailField(verbose_name='邮箱', unique=True)
-    avatar = models.ImageField(verbose_name='头像')
+    avatar = models.ImageField(verbose_name='头像', null=True)
 
     create_time = models.DateTimeField(verbose_name='创建时间', auto_now_add=True)
 

@@ -47,9 +47,9 @@ def login(request):
                 user_obj = models.UserInfo.objects.filter(username=username, password=password).first()
                 if user_obj:
                     request.session.clear_expired()  # 将所有Session失效日期小于当前日期的数据删除
+                    request.session["username"] = username  # 创建session
                     remember = login_obj.cleaned_data.get("remember")
                     if remember:  # 用户选择一个月免登录
-                        request.session["username"] = username  # 创建session
                         request.session.set_expiry(2592000)  # 设定过期时间在1个月之后
                 else:  # 获取不到用户对象，说明密码错误
                     ret["status"] = False

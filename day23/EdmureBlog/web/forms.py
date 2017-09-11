@@ -90,6 +90,15 @@ class RegisterForm(Form):
         else:
             return username
 
+    def clean_email(self):
+        """验证邮箱"""
+        email = self.cleaned_data.get("email")
+        user_obj = models.UserInfo.objects.filter(email=email).count()
+        if user_obj:
+            raise ValidationError("该邮箱已经被注册!", "invalid")
+        else:
+            return email
+
     def clean(self):
         """总验证"""
         password = self.cleaned_data.get("password")

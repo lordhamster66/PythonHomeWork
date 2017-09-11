@@ -20,6 +20,7 @@ from .views import account
 urlpatterns = [
     url(r'^login.html$', account.login),
     url(r'^register.html$', account.register),
+    url(r'^logout.html$', account.logout),
     url(r'^check_code.html$', account.check_code),
     url(r'^(?P<site>\w+).html', home.home),
     url(r'^(?P<site>\w+)/(?P<condition>((tag)|(date)|(category)))/(?P<val>\w+-*\w+).html', home.filter),

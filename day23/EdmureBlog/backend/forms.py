@@ -48,3 +48,25 @@ class BaseInfoForm(Form):
             "placeholder": "来一杯鸡汤..."
         })
     )
+
+
+class TagForm(Form):
+    tagname = fields.CharField(
+        widget=widgets.TextInput(attrs={
+            "class": "form-control",
+            "id": "tagname",
+            "placeholder": "请输入标签名"
+        }),
+        error_messages={"required": "标签名不能为空！"}
+    )
+
+
+class CategoryForm(Form):
+    category = fields.CharField(
+        widget=widgets.TextInput(attrs={
+            "class": "form-control",
+            "id": "category",
+            "placeholder": "请输入分类名称"
+        }),
+        error_messages={"required": "分类名称不能为空！"}
+    )

@@ -4,9 +4,13 @@ from django.shortcuts import render
 from django.shortcuts import redirect
 from repository import models
 from backend.forms import BaseInfoForm
+from backend.forms import TagForm
+from backend.forms import CategoryForm
 
 
 def login_decorate(func):
+    """登录验证装饰器"""
+
     def inner(request, *args, **kwargs):
         username = request.session.get("username", None)  # 获取session中的用户名
         if username:
@@ -94,16 +98,51 @@ def tag(request):
     :param request:
     :return:
     """
-    return render(request, 'backend_tag.html')
+    username = request.session.get("username", None)  # 获取session中的用户名
+    user_obj = models.UserInfo.objects.filter(username=username).select_related("blog").first()
+    tag_list = models.Tag.objects.filter(blog_id=user_obj.blog.nid).all()
+    if request.method == "GET":
+        tag_obj = TagForm()
+        return render(request, 'backend_tag.html', {"tag_list": tag_list, "tag_obj": tag_obj})
+    elif request.method == "POST":
+        tag_obj = TagForm(request.POST)
+        if tag_obj.is_valid():  # tagform验证通过
+            tagname = tag_obj.cleaned_data.get("tagname")  # 获取新加的tagname
+            if models.Tag.objects.filter(blog_id=user_obj.blog.nid, title=tagname).count():  # 检测tagname是否存在
+                tag_obj.add_error("tagname", "该标签名已经存在！")
+            else:  # 不存在则创建
+                models.Tag.objects.create(
+                    title=tagname,
+                    blog_id=user_obj.blog.nid
+                )
+        return render(request, 'backend_tag.html', {"tag_list": tag_list, "tag_obj": tag_obj})
 
 
+@login_decorate
 def category(request):
     """
     博主个人分类管理
     :param request:
     :return:
     """
-    return render(request, 'backend_category.html')
+    username = request.session.get("username", None)  # 获取session中的用户名
+    user_obj = models.UserInfo.objects.filter(username=username).select_related("blog").first()  # 获取用户对象
+    category_list = models.Category.objects.filter(blog_id=user_obj.blog.nid).all()  # 获取用户的文章分类
+    if request.method == "GET":
+        category_obj = CategoryForm()
+        return render(request, 'backend_category.html', {"category_list": category_list, "category_obj": category_obj})
+    elif request.method == "POST":
+        category_obj = CategoryForm(request.POST)
+        if category_obj.is_valid():  # categoryform验证通过
+            category = category_obj.cleaned_data.get("category")  # category
+            if models.Category.objects.filter(blog_id=user_obj.blog.nid, title=category).count():  # 检测category是否存在
+                category_obj.add_error("category", "该分类名称已经存在！")
+            else:  # 不存在则创建
+                models.Category.objects.create(
+                    title=category,
+                    blog_id=user_obj.blog.nid
+                )
+        return render(request, 'backend_category.html', {"category_list": category_list, "category_obj": category_obj})
 
 
 def article(request):

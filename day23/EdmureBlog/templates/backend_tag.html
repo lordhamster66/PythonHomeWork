@@ -9,13 +9,15 @@
     </ol>
     <div>
         <div class="row" style="padding: 20px 5px;">
-            <form class="form-horizontal">
+            <form class="form-horizontal" action="/backend/tag.html" method="POST">
+                {% csrf_token %}
                 <div class="col-xs-12">
                     <div class="form-group">
                         <label class="col-xs-1 control-label">标签名</label>
 
                         <div class="col-xs-3">
-                            <input type="text" class="form-control" id="nickname" placeholder="请输入昵称">
+                            {{ tag_obj.tagname }}
+                            <span style="color: red;">{{ tag_obj.tagname.errors.0 }}</span>
                         </div>
                         <div class="col-xs-3">
                             <input type="submit" class="btn btn-primary" value="添 加">
@@ -39,51 +41,23 @@
             </tr>
             </thead>
             <tbody>
-            <tr>
-                <td>妹子</td>
-                <td>10</td>
-                <td>
-                    <a class="btn btn-danger btn-xs">
-                        <i class="fa fa-times" aria-hidden="true"></i>
-                        删除
-                    </a>
-                    |
-                    <a class="btn btn-primary btn-xs">
-                        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-                        编辑
-                    </a>
-                </td>
-            </tr>
-            <tr>
-                <td>Coding</td>
-                <td>8</td>
-                <td>
-                    <a class="btn btn-danger btn-xs">
-                        <i class="fa fa-times" aria-hidden="true"></i>
-                        删除
-                    </a>
-                    |
-                    <a class="btn btn-primary btn-xs">
-                        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-                        编辑
-                    </a>
-                </td>
-            </tr>
-            <tr>
-                <td>旅行</td>
-                <td>10</td>
-                <td>
-                    <a class="btn btn-danger btn-xs">
-                        <i class="fa fa-times" aria-hidden="true"></i>
-                        删除
-                    </a>
-                    |
-                    <a class="btn btn-primary btn-xs">
-                        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-                        编辑
-                    </a>
-                </td>
-            </tr>
+            {% for obj in tag_list %}
+                <tr>
+                    <td>{{ obj.title }}</td>
+                    <td>{{ obj.article2tag_set.count }}</td>
+                    <td>
+                        <a class="btn btn-danger btn-xs">
+                            <i class="fa fa-times" aria-hidden="true"></i>
+                            删除
+                        </a>
+                        |
+                        <a class="btn btn-primary btn-xs">
+                            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                            编辑
+                        </a>
+                    </td>
+                </tr>
+            {% endfor %}
             </tbody>
         </table>
 

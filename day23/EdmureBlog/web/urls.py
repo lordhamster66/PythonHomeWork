@@ -25,5 +25,5 @@ urlpatterns = [
     url(r'^(?P<site>\w+).html', home.home),
     url(r'^(?P<site>\w+)/(?P<condition>((tag)|(date)|(category)))/(?P<val>\w+-*\w+).html', home.filter),
     url(r'^(?P<site>\w+)/(?P<nid>\d+).html', home.detail),
-    url(r'^', home.index),
+    url(r'^(?P<article_type>\w*)', home.index, name='index'),
 ]

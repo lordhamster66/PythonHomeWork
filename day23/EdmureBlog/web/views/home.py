@@ -2,17 +2,32 @@
 # -*- coding:utf-8 -*-
 from django.shortcuts import render
 from django.shortcuts import redirect
+from django.urls import reverse
 from repository import models
+from utils.pagination import Page
 
 
-def index(request):
+def index(request, article_type):
     """
     博客首页，展示全部博文
-    :param request:
+    :param request:  请求信息
+    :param article_type: 文章类型
     :return:
     """
-    article_list = models.Article.objects.all()
-    return render(request, 'index.html', {'article_list': article_list})
+    if request.method == "GET":
+        current_page = int(request.GET.get("p", "1"))  # 当前页码，默认是第一页
+        index_url = reverse("index", args=(article_type,))  # 反解当前URL
+        if article_type:  # 有类型查询条件
+            article_type = int(article_type)  # 先变成整数
+            article_list = models.Article.objects.filter(
+                article_type=article_type).all().select_related("blog", "blog__user")  # 依据类型获取所有的文章
+        else:
+            article_list = models.Article.objects.all().select_related("blog", "blog__user")  # 没有类型查询条件则获取所有文章
+        data_count = len(article_list)  # 文章总个数
+        page_obj = Page(current_page, data_count)  # 生成分页对象
+        article_list = article_list[page_obj.start:page_obj.end]  # 获取当前页的所有文章
+        page_str = page_obj.page_str(index_url)  # 获取分页html
+        return render(request, 'index.html', {'article_list': article_list, "page_str": page_str})
 
 
 def home(request, site):
@@ -62,4 +77,3 @@ def detail(request, site, nid):
     :return:
     """
     return render(request, 'home_detail.html')
-

@@ -2,13 +2,12 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title></title>
+    <title>EdmureBlog首页</title>
     <link rel="stylesheet" href="/static/plugins/bootstrap/css/bootstrap.css"/>
     <link rel="stylesheet" href="/static/plugins/font-awesome/css/font-awesome.css"/>
     <link rel="stylesheet" href="/static/css/edmure.css"/>
     <link rel="stylesheet" href="/static/css/commons.css"/>
     <link rel="stylesheet" href="/static/css/row-avatar.css"/>
-
     <script type="text/javascript" src="/static/js/jquery-1.12.4.js"></script>
     <script type="text/javascript" src="/static/plugins/bootstrap/js/bootstrap.js"></script>
 </head>
@@ -19,106 +18,45 @@
     <div>
         <div class="col-md-8">
             <div class="article-list">
-                <div class="article-item clearfix">
-                    <h3><a href="#">不服你来打我呀</a>
-                        <small> - python</small>
-                    </h3>
-                    <div class="clearfix">
-                        <a class="avatar left" href="#">
-                            <img src="/static/imgs/avatar/20130809170025.png">
-                        </a>
-                        越是到年底越是感觉浑身无力，看着啥也不想动，只期盼着年终奖的到来以此来给自己打一针强心剂。估摸着大多数人都跟我一样犯着这样浑身无力的病，感觉今年算是没挣到啥钱，但是话也不能这么说，搞得好像去年挣到钱了似的。不过该做的事情还是得到，因为毕竟自己拿着工资，拿一天钱就得干一天活，无论自己觉得工资给的多还是
-                        ...
+                <!-- 文章列表开始 -->
+                {% for article in article_list %}
+                    <div class="article-item clearfix">
+                        <h3>
+                            <!-- 可以跳转至文章详细页面 -->
+                            <a href="{{ article.blog.site }}/{{ article.nid }}.html">{{ article.title }}</a>
+                            <small> - {{ article.article_type.type }}</small>  <!-- 文章类型 -->
+                        </h3>
+                        <div class="clearfix">
+                            <!-- 点击头像也可以跳转至文章作者的博客首页 -->
+                            <a class="avatar left" href="{{ article.blog.site }}.html">
+                                <img src="/static/imgs/avatar/20130809170025.png">
+                            </a>
+                            {{ article.summary }}  <!-- 文章简介 -->
+                        </div>
+                        <div class="footers">
+                            <a href="{{ article.blog.site }}.html">  <!-- 可以跳转至文章作者的博客首页 -->
+                                <i class="fa fa-user-o" aria-hidden="true"></i>
+                                <span>{{ article.blog.user.nickname }}</span>  <!-- 用户昵称 -->
+                            </a>
+                            <span>发布于 {{ article.create_time }}</span>  <!-- 发布时间 -->
+                            <a href="#" class="ele">
+                                <i class="fa fa-commenting-o" aria-hidden="true"></i>
+                                <span>{{ article.comment_count }}</span>  <!-- 评论的个数 -->
+                            </a>
+                            <a href="#" class="ele">
+                                <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+                                <span>{{ article.up_count }}</span> <!-- 赞的个数 -->
+                            </a>
+                        </div>
                     </div>
-                    <div class="footers">
-                        <a href="#">
-                            <i class="fa fa-user-o" aria-hidden="true"></i>
-                            <span>一米八大高个</span>
-                        </a>
-                        <span>发布于 2014-11-11</span>
-                        <a href="#" class="ele">
-                            <i class="fa fa-commenting-o" aria-hidden="true"></i>
-                            <span>1000</span>
-                        </a>
-                        <a href="#" class="ele">
-                            <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
-                            <span>1000</span>
-                        </a>
-                    </div>
-
-                </div>
-                <div class="article-item clearfix">
-                    <h3><a href="#">不服你来打我呀</a>
-                        <small> - python</small>
-                    </h3>
-                    <div class="clearfix">
-                        <a class="avatar left" href="#">
-                            <img src="/static/imgs/avatar/20130809170025.png">
-                        </a>
-                        越是到年底越是感觉浑身无力，看着啥也不想动，只期盼着年终奖的到来以此来给自己打一针强心剂。估摸着大多数人都跟我一样犯着这样浑身无力的病，感觉今年算是没挣到啥钱，但是话也不能这么说，搞得好像去年挣到钱了似的。不过该做的事情还是得到，因为毕竟自己拿着工资，拿一天钱就得干一天活，无论自己觉得工资给的多还是
-                        ...
-                    </div>
-                    <div class="footers">
-                        <a href="#">
-                            <i class="fa fa-user-o" aria-hidden="true"></i>
-                            <span>一米八大高个</span>
-                        </a>
-                        <span>发布于 2014-11-11</span>
-                        <a href="#" class="ele">
-                            <i class="fa fa-commenting-o" aria-hidden="true"></i>
-                            <span>1000</span>
-                        </a>
-                        <a href="#" class="ele">
-                            <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
-                            <span>1000</span>
-                        </a>
-                    </div>
-
-                </div>
-                <div class="article-item clearfix">
-                    <h3><a href="#">不服你来打我呀</a>
-                        <small> - python</small>
-                    </h3>
-                    <div class="clearfix">
-                        <a class="avatar left" href="#">
-                            <img src="/static/imgs/avatar/20130809170025.png">
-                        </a>
-                        越是到年底越是感觉浑身无力，看着啥也不想动，只期盼着年终奖的到来以此来给自己打一针强心剂。估摸着大多数人都跟我一样犯着这样浑身无力的病，感觉今年算是没挣到啥钱，但是话也不能这么说，搞得好像去年挣到钱了似的。不过该做的事情还是得到，因为毕竟自己拿着工资，拿一天钱就得干一天活，无论自己觉得工资给的多还是
-                        ...
-                    </div>
-                    <div class="footers">
-                        <a href="#">
-                            <i class="fa fa-user-o" aria-hidden="true"></i>
-                            <span>一米八大高个</span>
-                        </a>
-                        <span>发布于 2014-11-11</span>
-                        <a href="#" class="ele">
-                            <i class="fa fa-commenting-o" aria-hidden="true"></i>
-                            <span>1000</span>
-                        </a>
-                        <a href="#" class="ele">
-                            <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
-                            <span>1000</span>
-                        </a>
-                    </div>
-
-                </div>
+                {% endfor %}
+                <!-- 文章列表结束 -->
             </div>
-
             <div class="clearfix">
-
                 <ul class="pagination">
-                    <li><a href="#">&laquo;</a></li>
-                    <li><a href="#">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#">5</a></li>
-                    <li><a href="#">&raquo;</a></li>
+                    {{ page_str }}  <!-- 分页标签 -->
                 </ul>
-
             </div>
-
         </div>
         <div class="col-md-4">
             <div class="panel panel-default hot-recommend">

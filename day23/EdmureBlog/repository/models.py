@@ -105,22 +105,21 @@ class Article(models.Model):
     create_time = models.DateTimeField(verbose_name='创建时间', auto_now_add=True)
 
     blog = models.ForeignKey(verbose_name='所属博客', to='Blog', to_field='nid')
-    category = models.ForeignKey(verbose_name='文章类型', to='Category', to_field='nid', null=True)
+    category = models.ForeignKey(verbose_name='文章分类', to='Category', to_field='nid', null=True)
 
-    type_choices = [
-        (1, "Python"),
-        (2, "Linux"),
-        (3, "OpenStack"),
-        (4, "GoLang"),
-    ]
-
-    article_type = models.IntegerField(choices=type_choices, default=None)
+    article_type = models.ForeignKey(verbose_name='文章类型', to='ArticleType', to_field='nid')
 
     tags = models.ManyToManyField(
         to="Tag",
         through='Article2Tag',
         through_fields=('article', 'tag'),
     )
+
+
+class ArticleType(models.Model):
+    """文章类型"""
+    nid = models.BigAutoField(primary_key=True)
+    type = models.CharField(verbose_name='文章类型', max_length=32)
 
 
 class Article2Tag(models.Model):
@@ -131,4 +130,3 @@ class Article2Tag(models.Model):
         unique_together = [
             ('article', 'tag'),
         ]
-

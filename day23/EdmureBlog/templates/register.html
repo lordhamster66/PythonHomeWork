@@ -49,7 +49,7 @@
                     <input type="password" class="form-control" id="check_code" placeholder="请输入验证码" name="check_code">
                 </div>
                 <div class="col-xs-5">
-                    <img src="/check_code.html">
+                    <img id="check-code-img" src="/check_code.html">
                 </div>
             </div>
             <span id="check_code-error" style="color: red;"></span>
@@ -60,6 +60,9 @@
 <script src="/static/js/jquery-1.12.4.js"></script>
 <script>
     $(function () {
+        $("#check-code-img").click(function () {
+            $(this).attr("src", $(this).attr("src") + "?")
+        });
         $("#confirm").click(function () {
             $.ajax({
                 url: "/register.html",
@@ -90,9 +93,9 @@
 
                         if (obj.error.confirm_password) {
                             $("#confirm_password-error").text(obj.error.confirm_password[0].messages);
-                        } else if(obj.error.__all__) {
+                        } else if (obj.error.__all__) {
                             $("#confirm_password-error").text(obj.error.__all__[0].messages);
-                        }else{
+                        } else {
                             $("#confirm_password-error").text("");
                         }
 

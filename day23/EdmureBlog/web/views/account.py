@@ -28,7 +28,7 @@ def check_code(request):
 
 def login(request):
     """
-    登陆
+    登陆，采用ajax操作
     :param request:
     :return:
     """
@@ -66,7 +66,7 @@ def login(request):
 
 def register(request):
     """
-    注册
+    注册，采用ajax操作
     :param request:
     :return:
     """
@@ -104,5 +104,5 @@ def logout(request):
     :param request:
     :return:
     """
-    request.session.delete(request.session.session_key)
+    request.session.delete(request.session.session_key)  # 删除用户的session记录
     return redirect("/")

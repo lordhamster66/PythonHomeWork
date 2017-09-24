@@ -42,30 +42,35 @@ class Page:
                     start_index = self.total_count - self.pager_num + 1
 
         if self.current_page == 1:
-            prev = '<a class="page" href="javascript:void(0);">上一页</a>'
+            prev = '<li><a href="#">&laquo;</a></li>'
         else:
-            prev = '<a class="page" href="%s?p=%s">上一页</a>' % (base_url, self.current_page - 1,)
+            prev = '<li><a href="%s?p=%s">&laquo;</a></li>' % (base_url, self.current_page - 1,)
         page_list.append(prev)
 
         for i in range(int(start_index), int(end_index)):
             if i == self.current_page:
-                temp = '<a class="page active" href="%s?p=%s">%s</a>' % (base_url, i, i)
+                temp = '<li class="active"><a href="%s?p=%s">%s</a></li>' % (base_url, i, i)
             else:
-                temp = '<a class="page" href="%s?p=%s">%s</a>' % (base_url, i, i)
+                temp = '<li><a href="%s?p=%s">%s</a></li>' % (base_url, i, i)
             page_list.append(temp)
 
         if self.current_page == self.total_count:
-            nex = '<a class="page" href="javascript:void(0);">下一页</a>'
+            nex = '<li><a href="#">&raquo;</a></li>'
         else:
-            nex = '<a class="page" href="%s?p=%s">下一页</a>' % (base_url, self.current_page + 1,)
+            nex = '<li><a href="%s?p=%s">&raquo;</a></li>' % (base_url, self.current_page + 1,)
         page_list.append(nex)
 
         jump = """
-        <input type='text'  /><a onclick='jumpTo(this, "%s?p=");'>GO</a>
+        <li>
+            <a style='padding: 0;'><input type='text' style='width: 50px;height: 33px;' /></a>
+            <a href="#" onclick='jumpTo(this, "%s?p=");'>GO</a>
+        </li>
         <script>
             function jumpTo(ths,base){
                 var val = ths.previousSibling.value;
-                location.href = base + val;
+                if(val){
+                    location.href = base + val;
+                }
             }
         </script>
         """ % (base_url,)

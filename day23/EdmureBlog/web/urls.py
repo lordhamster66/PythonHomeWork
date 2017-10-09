@@ -18,12 +18,12 @@ from .views import home
 from .views import account
 
 urlpatterns = [
-    url(r'^login.html$', account.login),
-    url(r'^register.html$', account.register),
-    url(r'^logout.html$', account.logout),
-    url(r'^check_code.html$', account.check_code),
-    url(r'^(?P<site>\w+).html', home.home),
-    url(r'^(?P<site>\w+)/(?P<condition>((tag)|(date)|(category)))/(?P<val>\w+-*\w+).html', home.filter),
-    url(r'^(?P<site>\w+)/(?P<nid>\d+).html', home.detail),
-    url(r'^(?P<article_type>\w*)', home.index, name='index'),
+    url(r'^login.html$', account.login),  # 登录
+    url(r'^register.html$', account.register),  # 注册
+    url(r'^logout.html$', account.logout),  # 注销
+    url(r'^check_code.html$', account.check_code),  # 获取验证码
+    url(r'^(?P<site>\w+).html', home.home),  # 某人博客首页
+    url(r'^(?P<site>\w+)/(?P<condition>((tag)|(date)|(category)))/(?P<val>\w+-*\w+).html', home.filter),  # 博文过滤
+    url(r'^(?P<site>\w+)/(?P<nid>\d+).html', home.detail),  # 博文详细页面
+    url(r'^', home.index),  # 博客首页
 ]

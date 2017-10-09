@@ -1,13 +1,12 @@
-__author__ = 'Administrator'
 from django.utils.safestring import mark_safe
 
 
 class Page:
     def __init__(self, current_page, data_count, per_page_count=10, pager_num=7):
-        self.current_page = current_page
-        self.data_count = data_count
-        self.per_page_count = per_page_count
-        self.pager_num = pager_num
+        self.current_page = current_page  # 当前页
+        self.data_count = data_count  # 总个数
+        self.per_page_count = per_page_count  # 一页最多显示几条数据
+        self.pager_num = pager_num  # 一页最多显示页码个数
 
     @property
     def start(self):
@@ -62,18 +61,19 @@ class Page:
 
         jump = """
         <li>
-            <a style='padding: 0;'><input type='text' style='width: 50px;height: 33px;' /></a>
+            <a style='padding: 0;'><input type='text' style='width: 50px;height: 33px;'/></a>
             <a href="#" onclick='jumpTo(this, "%s?p=");'>GO</a>
         </li>
+        <li style="line-height:33px;">当前第%s页/总共%s页 </li>
         <script>
             function jumpTo(ths,base){
-                var val = ths.previousSibling.value;
+                var val = ths.previousElementSibling.firstElementChild.value;
                 if(val){
                     location.href = base + val;
                 }
             }
         </script>
-        """ % (base_url,)
+        """ % (base_url, self.current_page, self.total_count)
 
         page_list.append(jump)
 

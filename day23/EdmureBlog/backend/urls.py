@@ -9,4 +9,6 @@ urlpatterns = [
     url(r'^article.html$', user.article),
     url(r'^add-article.html$', user.add_article),
     url(r'^edit-article-(\d+).html$', user.edit_article),
+    url(r'^upload_head_portrait/$', user.upload_head_portrait),  # 上传头像
+    url(r'^revoke_head_portrait/$', user.revoke_head_portrait),  # 撤销头像
 ]

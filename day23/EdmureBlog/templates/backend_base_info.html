@@ -6,24 +6,28 @@
             margin-bottom: 0;
             text-align: right;
         }
-        .avatar-container{
+
+        .avatar-container {
             height: 200px;
             width: 200px;
             padding: 2px;
             border: 1px solid #dddddd;
             position: relative;
         }
-        .avatar-container img{
+
+        .avatar-container img {
             height: 100%;
             width: 100%;
             border: 0;
             overflow: hidden;
         }
-        .avatar-container .text{
+
+        .avatar-container .text {
             text-align: center;
         }
-        .avatar-container .img-file{
-            top:0;
+
+        .avatar-container .img-file {
+            top: 0;
             left: 0;
             right: 0;
             bottom: 0;
@@ -100,9 +104,17 @@
             </form>
             <div style="position: absolute;" class="col-xs-offset-7 col-xs-5">
                 <div class="avatar-container">
-                    <img origin="/static/imgs/avatar/default.png" src="/static/imgs/avatar/default.png">
-                    <div class="text">点击图片更换(<a href="#">撤销</a>)</div>
-                    <input id="avatarImg" type="file" class="img-file" />
+                    <form id="fm1" action="/backend/upload_head_portrait/" method="POST" target="ifm1"
+                          enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <iframe id="ifm1" name="ifm1" style="display: none"></iframe>
+                        <img origin="/static/imgs/avatar/default.png"
+                             src="/static/imgs/avatar/{{ user_obj.avatar }}.png"
+                             style="height: 194px;width: 194px;"
+                        >
+                        <div class="text">点击图片更换(<a id="revoke" href="#">撤销</a>)</div>
+                        <input id="avatarImg" type="file" class="img-file" name="head_portrait"/>
+                    </form>
                 </div>
             </div>
         </div>
@@ -110,5 +122,32 @@
 {% endblock %}
 
 {% block js %}
-
+    <script>
+        $(function () {
+            // 更换图片功能
+            $("#avatarImg").change(function () {
+                $("#ifm1").load(function () {
+                    var text = $("#ifm1").contents().find("body").text();
+                    var obj = JSON.parse(text);
+                    if (obj.status) {
+                        location.reload()
+                    }
+                });
+                $("#fm1").submit();  // 提交表单
+            });
+            // 撤销头像功能
+            $("#revoke").click(function () {
+                $.ajax({
+                    url: '/backend/revoke_head_portrait/',
+                    type: "GET",
+                    dataType: "JSON",  // 内部会自动将返回的数据用JSON解析
+                    success: function (obj) {
+                        if (obj.status) {
+                            location.reload()
+                        }
+                    }
+                })
+            })
+        })
+    </script>
 {% endblock %}

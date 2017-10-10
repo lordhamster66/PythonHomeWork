@@ -1,11 +1,16 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
+import json
+import os
 from django.shortcuts import render
+from django.shortcuts import HttpResponse
 from django.shortcuts import redirect
 from repository import models
 from backend.forms import BaseInfoForm
 from backend.forms import TagForm
 from backend.forms import CategoryForm
+from utils.public import create_id
+from EdmureBlog import settings
 
 
 def login_decorate(func):
@@ -170,3 +175,30 @@ def edit_article(request):
     :return:
     """
     return render(request, 'backend_edit_article.html')
+
+
+def upload_head_portrait(request):
+    """上传头像功能"""
+    username = request.session.get("username", None)  # 获取session中的用户名
+    user_obj = models.UserInfo.objects.filter(username=username).first()  # 获取用户名对应的用户对象
+    avatar = request.FILES.get("head_portrait")  # 获取用户上传的文件
+    file_name = create_id()  # 生成随机文件名
+    file_path = os.path.join(settings.BASE_DIR, "static", "imgs", "avatar", "%s.png" % file_name)  # 获取文件路径
+    # 写入服务器
+    with open(file_path, "wb") as f:
+        for line in avatar:
+            f.write(line)
+    user_obj.avatar = file_name  # 用户头像为头像文件名
+    user_obj.save()  # 存储用户对象
+    ret = {"status": True, "data": None}
+    return HttpResponse(json.dumps(ret))
+
+
+def revoke_head_portrait(request):
+    """撤销头像功能"""
+    username = request.session.get("username", None)  # 获取session中的用户名
+    user_obj = models.UserInfo.objects.filter(username=username).first()  # 获取用户名对应的用户对象
+    user_obj.avatar = "default"  # 将用户头像置为默认
+    user_obj.save()  # 存储用户对象
+    ret = {"status": True, "data": None}
+    return HttpResponse(json.dumps(ret))

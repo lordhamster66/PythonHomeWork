@@ -13,4 +13,8 @@ urlpatterns = [
     url(r'^revoke_head_portrait/$', user.revoke_head_portrait),  # 撤销头像
     url(r'^delete_tag/$', user.delete_tag),  # 删除标签
     url(r'^update_tag/$', user.update_tag),  # 更新标签
+    url(r'^delete_category/$', user.delete_category),  # 删除分类
+    url(r'^update_category/$', user.update_category),  # 更新分类
+    url(r'^delete_article/$', user.delete_article),  # 删除文章
+    url(r'^update_article/$', user.update_article),  # 更新文章
 ]

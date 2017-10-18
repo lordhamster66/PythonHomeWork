@@ -43,17 +43,25 @@
             <tbody>
             {% for obj in category_list %}
                 <tr>
-                    <td>{{ obj.title }}</td>
+                    <td class="info-name">{{ obj.title }}</td>
                     <td>{{ obj.article_set.count }}</td>
                     <td>
-                        <a class="btn btn-danger btn-xs">
+                        <a class="btn btn-danger btn-xs delete-info" nid="{{ obj.nid }}">
                             <i class="fa fa-times" aria-hidden="true"></i>
                             删除
                         </a>
                         |
-                        <a class="btn btn-primary btn-xs">
+                        <a class="btn btn-primary btn-xs edit-info" nid="{{ obj.nid }}">
                             <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                             编辑
+                        </a>
+                        <a class="btn btn-success btn-xs update-info" nid="{{ obj.nid }}" style="display: none">
+                            <i class="fa fa-save" aria-hidden="true"></i>
+                            保存
+                        </a>
+                        <a class="btn btn-primary btn-xs exit-info" style="display: none">
+                            <i class="fa fa-times" aria-hidden="true"></i>
+                            退出编辑
                         </a>
                     </td>
                 </tr>
@@ -63,13 +71,7 @@
 
         <div class="clearfix">
             <ul class="pagination right" style="margin-top: 0">
-                <li><a href="#">&laquo;</a></li>
-                <li><a href="#">1</a></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">4</a></li>
-                <li><a href="#">5</a></li>
-                <li><a href="#">&raquo;</a></li>
+                {{ page_str }}
             </ul>
         </div>
     </div>
@@ -78,5 +80,91 @@
 {% endblock %}
 
 {% block js %}
-
+    <script>
+        $(function () {
+            // 删除分类功能
+            $(".delete-info").click(function () {
+                    var nid = $(this).attr("nid");  // 获取要删除的分类ID
+                    swal({
+                            title: "确定删除吗?",
+                            text: "您将要删除该分类!",
+                            type: "warning",
+                            showCancelButton: true,
+                            confirmButtonColor: "#DD6B55",
+                            confirmButtonText: "确定!",
+                            cancelButtonText: "取消!",
+                            closeOnConfirm: false,
+                            closeOnCancel: false
+                        },
+                        function (isConfirm) {
+                            if (isConfirm) {
+                                $.ajax({
+                                    url: "/backend/delete_category/",
+                                    type: "POST",
+                                    data: {'nid': nid},
+                                    dataType: "JSON",  // 内部会自动将返回的数据用JSON解析
+                                    success: function (obj) {
+                                        if (obj.status) {
+                                            swal({
+                                                    title: "删除成功!",
+                                                    text: "已成功删除该分类!",
+                                                    type: "success",
+                                                    confirmButtonText: "OK",
+                                                    closeOnConfirm: false
+                                                },
+                                                function () {
+                                                    location.href = "/backend/category.html"
+                                                });
+                                        }
+                                    }
+                                });
+                            } else {
+                                swal("已取消", "祝您愉快 :)", "error");
+                            }
+                        });
+                }
+            );
+            // 编辑分类功能
+            $(".edit-info").click(function () {
+                var infoName = $(this).hide().next().show().next().show().parent().prevAll(".info-name").text(); // 获取当前分类名称
+                $(this).siblings(".exit-info").data("infoName", infoName);  // 存入当前分类名称
+                $(this).parent().prevAll(".info-name").html(
+                    '<input type="text" class="form-control" value="' + infoName + '">'
+                );
+            });
+            // 更新分类功能
+            $(".update-info").click(function () {
+                var nid = $(this).attr("nid");  // 获取要更新的分类ID
+                var infoName = $(this).parent().prevAll(".info-name").children(":input").val();  // 获取用户输入的分类名称
+                $.ajax({
+                    url: "/backend/update_category/",
+                    type: "POST",
+                    data: {'nid': nid, "info_name": infoName},
+                    dataType: "JSON",  // 内部会自动将返回的数据用JSON解析
+                    success: function (obj) {
+                        if (obj.status) {
+                            swal({
+                                    title: "保存成功!",
+                                    text: "已成功更新该分类!",
+                                    type: "success",
+                                    confirmButtonText: "OK",
+                                    closeOnConfirm: false
+                                },
+                                function () {
+                                    location.href = "/backend/category.html"
+                                });
+                        } else {
+                            sweetAlert("Oops...", obj.errors, "error");
+                        }
+                    }
+                });
+            });
+            // 退出分类功能
+            $(".exit-info").click(function () {
+                $(this).hide().prev().hide().prev().show();  // 退出编辑按钮和保存按钮隐藏，显示编辑按钮
+                var infoName = $(this).data("infoName");  // 获取该行原有的分类名称
+                $(this).parent().prevAll(".info-name").html(infoName);  // 还原原有的页面
+            });
+        })
+    </script>
 {% endblock %}

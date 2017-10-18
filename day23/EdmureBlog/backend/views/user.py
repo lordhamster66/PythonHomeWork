@@ -151,7 +151,7 @@ def update_tag(request):
     ret = {"status": True, "errors": None, "data": None}
     if request.method == "POST":
         tag_nid = request.POST.get("nid")  # 获取用户想要更新的标签ID
-        tag_name = request.POST.get("tag_name")  # 获取用户想要更新的标签名称
+        tag_name = request.POST.get("info_name")  # 获取用户想要更新的标签名称
         tag_obj = models.Tag.objects.filter(nid=tag_nid).first()
         if tag_name == tag_obj.title:
             ret["status"] = False
@@ -178,9 +178,17 @@ def category(request):
     user_obj = models.UserInfo.objects.filter(username=username).select_related("blog").first()  # 获取用户对象
     category_list = models.Category.objects.filter(blog_id=user_obj.blog.nid).all()  # 获取用户的文章分类
     if request.method == "GET":
+        current_page = int(request.GET.get("p", 1))  # 获取用户选择的页码，默认为第一页
+        page_obj = Page(current_page, len(category_list))  # 获取分页对象
+        page_str = page_obj.page_str("/backend/category.html")  # 获取分页HTML
+        category_list = category_list[page_obj.start:page_obj.end]  # 获取当前页数据
         category_obj = CategoryForm()
         return render(request, 'backend_category.html',
-                      {"user_obj": user_obj, "category_list": category_list, "category_obj": category_obj})
+                      {"user_obj": user_obj,
+                       "category_list": category_list,
+                       "category_obj": category_obj,
+                       "page_str": page_str,
+                       })
     elif request.method == "POST":
         category_obj = CategoryForm(request.POST)
         if category_obj.is_valid():  # categoryform验证通过
@@ -192,8 +200,44 @@ def category(request):
                     title=category,
                     blog_id=user_obj.blog.nid
                 )
+        page_obj = Page(1, len(category_list))  # 获取分页对象
+        page_str = page_obj.page_str("/backend/category.html")  # 获取分页HTML
+        category_list = category_list[page_obj.start:page_obj.end]  # 获取当前页数据
         return render(request, 'backend_category.html',
-                      {"user_obj": user_obj, "category_list": category_list, "category_obj": category_obj})
+                      {"user_obj": user_obj,
+                       "category_list": category_list,
+                       "category_obj": category_obj,
+                       "page_str": page_str, })
+
+
+def delete_category(request):
+    """删除分类功能"""
+    if request.method == "POST":
+        category_nid = request.POST.get("nid")  # 获取用户想要删除的分类ID
+        models.Category.objects.filter(nid=category_nid).delete()  # 删除用户选择的分类
+        ret = {"status": True, "data": None}
+        return HttpResponse(json.dumps(ret))
+
+
+def update_category(request):
+    """更新分类功能"""
+    ret = {"status": True, "errors": None, "data": None}
+    if request.method == "POST":
+        category_nid = request.POST.get("nid")  # 获取用户想要更新的分类ID
+        category_name = request.POST.get("info_name")  # 获取用户想要更新的分类名称
+        category_obj = models.Category.objects.filter(nid=category_nid).first()
+        if category_name == category_obj.title:
+            ret["status"] = False
+            ret["errors"] = "输入的分类名称和原有一样！不需要更新!"
+        else:
+            category_obj_by_category_name = models.Category.objects.filter(title=category_name).first()
+            if category_obj_by_category_name:
+                ret["status"] = False
+                ret["errors"] = "输入的分类名称已存在，请重新输入！"
+            else:
+                category_obj.title = category_name  # 更新分类名称
+                category_obj.save()  # 保存更新好的分类对象
+    return HttpResponse(json.dumps(ret))
 
 
 def article(request):
@@ -204,7 +248,43 @@ def article(request):
     """
     username = request.session.get("username", None)  # 获取session中的用户名
     user_obj = models.UserInfo.objects.filter(username=username).select_related("blog").first()  # 获取用户对象
-    return render(request, 'backend_article.html', {"user_obj": user_obj})
+    article_list = models.Article.objects.filter(blog_id=user_obj.blog.nid).all()  # 获取用户的文章分类
+    if request.method == "GET":
+        current_page = int(request.GET.get("p", 1))  # 获取用户选择的页码，默认为第一页
+        page_obj = Page(current_page, len(article_list))  # 获取分页对象
+        page_str = page_obj.page_str("/backend/article.html")  # 获取分页HTML
+        article_list = article_list[page_obj.start:page_obj.end]  # 获取当前页数据
+        return render(request, 'backend_article.html',
+                      {"user_obj": user_obj, "article_list": article_list, "page_str": page_str})
+
+
+def delete_article(request):
+    """删除文章"""
+    if request.method == "POST":
+        article_nid = request.POST.get("nid")  # 获取用户想要删除的文章ID
+        models.Article.objects.filter(nid=article_nid).delete()  # 删除用户选择的文章
+        ret = {"status": True, "data": None}
+        return HttpResponse(json.dumps(ret))
+
+
+def update_article(request):
+    """更新文章标题"""
+    ret = {"status": True, "errors": None, "data": None}
+    if request.method == "POST":
+        article_nid = request.POST.get("nid")  # 获取用户想要更新的文章ID
+        article_name = request.POST.get("info_name")  # 获取用户想要更新的文章标题
+        article_obj = models.Article.objects.filter(nid=article_nid).first()
+        if article_name == article_obj.title:
+            ret["status"] = False
+            ret["errors"] = "输入的文章标题和原有一样！不需要更新!"
+        else:
+            article_obj_by_article_name = models.Article.objects.filter(title=article_name).first()
+            if article_obj_by_article_name:
+                ret["status"] = False
+                ret["errors"] = "输入的文章标题已存在，请重新输入！"
+            else:
+                models.Article.objects.filter(nid=article_nid).update(title=article_name)
+    return HttpResponse(json.dumps(ret))
 
 
 def add_article(request):

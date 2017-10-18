@@ -11,6 +11,7 @@ from backend.forms import TagForm
 from backend.forms import CategoryForm
 from utils.public import create_id
 from EdmureBlog import settings
+from utils.pagination import Page
 
 
 def login_decorate(func):
@@ -93,22 +94,30 @@ def base_info(request):
             return redirect("/backend/base-info.html")
         else:
             return render(request, 'backend_base_info.html',
-                          {"user_obj": user_obj, "base_info_obj": base_info_obj})
+                          {"user_obj": user_obj, "base_info_obj": base_info_obj}
+                          )
 
 
 @login_decorate
 def tag(request):
     """
+
     博主个人标签管理
     :param request:
     :return:
     """
     username = request.session.get("username", None)  # 获取session中的用户名
-    user_obj = models.UserInfo.objects.filter(username=username).select_related("blog").first()
-    tag_list = models.Tag.objects.filter(blog_id=user_obj.blog.nid).all()
+    user_obj = models.UserInfo.objects.filter(username=username).select_related("blog").first()  # 获取用户对象
+    tag_list = models.Tag.objects.filter(blog_id=user_obj.blog.nid).all()  # 获取用户所有标签
     if request.method == "GET":
-        tag_obj = TagForm()
-        return render(request, 'backend_tag.html', {"tag_list": tag_list, "tag_obj": tag_obj})
+        current_page = int(request.GET.get("p", 1))  # 获取用户选择的页码，默认为第一页
+        page_obj = Page(current_page, len(tag_list))  # 获取分页对象
+        page_str = page_obj.page_str("/backend/tag.html")  # 获取分页HTML
+        tag_list = tag_list[page_obj.start:page_obj.end]  # 获取当前页数据
+        tag_obj = TagForm()  # 生成标签form对象
+        return render(request, 'backend_tag.html', {
+            "user_obj": user_obj, "tag_list": tag_list, "tag_obj": tag_obj, "page_str": page_str
+        })
     elif request.method == "POST":
         tag_obj = TagForm(request.POST)
         if tag_obj.is_valid():  # tagform验证通过
@@ -120,7 +129,42 @@ def tag(request):
                     title=tagname,
                     blog_id=user_obj.blog.nid
                 )
-        return render(request, 'backend_tag.html', {"tag_list": tag_list, "tag_obj": tag_obj})
+        page_obj = Page(1, len(tag_list))  # 获取分页对象
+        page_str = page_obj.page_str("/backend/tag.html")  # 获取分页HTML
+        tag_list = tag_list[page_obj.start:page_obj.end]  # 获取当前页数据
+        return render(request, 'backend_tag.html', {
+            "user_obj": user_obj, "tag_list": tag_list, "tag_obj": tag_obj, "page_str": page_str
+        })
+
+
+def delete_tag(request):
+    """删除标签功能"""
+    if request.method == "POST":
+        tag_nid = request.POST.get("nid")  # 获取用户想要删除的标签ID
+        models.Tag.objects.filter(nid=tag_nid).delete()  # 删除用户选择的标签
+        ret = {"status": True, "data": None}
+        return HttpResponse(json.dumps(ret))
+
+
+def update_tag(request):
+    """保存标签功能"""
+    ret = {"status": True, "errors": None, "data": None}
+    if request.method == "POST":
+        tag_nid = request.POST.get("nid")  # 获取用户想要更新的标签ID
+        tag_name = request.POST.get("tag_name")  # 获取用户想要更新的标签名称
+        tag_obj = models.Tag.objects.filter(nid=tag_nid).first()
+        if tag_name == tag_obj.title:
+            ret["status"] = False
+            ret["errors"] = "输入的标签名称和原有一样！不需要更新!"
+        else:
+            tag_obj_by_tag_name = models.Tag.objects.filter(title=tag_name).first()
+            if tag_obj_by_tag_name:
+                ret["status"] = False
+                ret["errors"] = "输入的标签名称已存在，请重新输入！"
+            else:
+                tag_obj.title = tag_name  # 更新标签名称
+                tag_obj.save()  # 保存更新好的标签对象
+    return HttpResponse(json.dumps(ret))
 
 
 @login_decorate
@@ -135,7 +179,8 @@ def category(request):
     category_list = models.Category.objects.filter(blog_id=user_obj.blog.nid).all()  # 获取用户的文章分类
     if request.method == "GET":
         category_obj = CategoryForm()
-        return render(request, 'backend_category.html', {"category_list": category_list, "category_obj": category_obj})
+        return render(request, 'backend_category.html',
+                      {"user_obj": user_obj, "category_list": category_list, "category_obj": category_obj})
     elif request.method == "POST":
         category_obj = CategoryForm(request.POST)
         if category_obj.is_valid():  # categoryform验证通过
@@ -147,7 +192,8 @@ def category(request):
                     title=category,
                     blog_id=user_obj.blog.nid
                 )
-        return render(request, 'backend_category.html', {"category_list": category_list, "category_obj": category_obj})
+        return render(request, 'backend_category.html',
+                      {"user_obj": user_obj, "category_list": category_list, "category_obj": category_obj})
 
 
 def article(request):
@@ -156,7 +202,9 @@ def article(request):
     :param request:
     :return:
     """
-    return render(request, 'backend_article.html')
+    username = request.session.get("username", None)  # 获取session中的用户名
+    user_obj = models.UserInfo.objects.filter(username=username).select_related("blog").first()  # 获取用户对象
+    return render(request, 'backend_article.html', {"user_obj": user_obj})
 
 
 def add_article(request):
@@ -165,16 +213,20 @@ def add_article(request):
     :param request:
     :return:
     """
-    return render(request, 'backend_add_article.html')
+    username = request.session.get("username", None)  # 获取session中的用户名
+    user_obj = models.UserInfo.objects.filter(username=username).select_related("blog").first()  # 获取用户对象
+    return render(request, 'backend_add_article.html', {"user_obj": user_obj})
 
 
-def edit_article(request):
+def edit_article(request, nid):
     """
     编辑文章
     :param request:
     :return:
     """
-    return render(request, 'backend_edit_article.html')
+    username = request.session.get("username", None)  # 获取session中的用户名
+    user_obj = models.UserInfo.objects.filter(username=username).select_related("blog").first()  # 获取用户对象
+    return render(request, 'backend_edit_article.html', {"user_obj": user_obj})
 
 
 def upload_head_portrait(request):

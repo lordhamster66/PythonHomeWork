@@ -35,6 +35,22 @@ def login_decorate(func):
     return inner
 
 
+def blog_decorate(func):
+    """博客是否开通验证装饰器"""
+
+    def inner(request, *args, **kwargs):
+        username = request.session.get("username", None)  # 获取session中的用户名
+        user_obj = models.UserInfo.objects.filter(username=username).first()  # 获取用户对象
+        blog_obj = models.Blog.objects.filter(user_id=user_obj.nid).first()  # 通过用户ID获取博客对象
+        if blog_obj:  # 博客开通则可继续操作
+            ret = func(request, *args, **kwargs)
+        else:  # 博客未开通则提醒用户进行开通
+            return render(request, "backend_no_blog.html")
+        return ret
+
+    return inner
+
+
 @login_decorate
 def index(request):
     username = request.session.get("username", None)  # 获取session中的用户名
@@ -109,6 +125,7 @@ def base_info(request):
 
 
 @login_decorate
+@blog_decorate
 def tag(request):
     """
 
@@ -178,6 +195,7 @@ def update_tag(request):
 
 
 @login_decorate
+@blog_decorate
 def category(request):
     """
     博主个人分类管理
@@ -251,6 +269,7 @@ def update_category(request):
 
 
 @login_decorate
+@blog_decorate
 def article(request, *args, **kwargs):
     """
     博主个人文章管理
@@ -294,6 +313,7 @@ def delete_article(request):
 
 
 @login_decorate
+@blog_decorate
 def add_article(request):
     """
     添加文章
@@ -337,6 +357,7 @@ def add_article(request):
 
 
 @login_decorate
+@blog_decorate
 def edit_article(request, nid):
     """
     编辑文章

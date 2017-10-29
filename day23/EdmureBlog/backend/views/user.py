@@ -302,7 +302,38 @@ def add_article(request):
     """
     username = request.session.get("username", None)  # 获取session中的用户名
     user_obj = models.UserInfo.objects.filter(username=username).select_related("blog").first()  # 获取用户对象
-    return render(request, 'backend_add_article.html', {"user_obj": user_obj})
+    if request.method == "GET":
+        article_form = ArticleForm(request=request)
+        return render(request, 'backend_add_article.html', {"user_obj": user_obj, "article_form": article_form, })
+    elif request.method == "POST":
+        article_form = ArticleForm(request=request, data=request.POST)
+        if article_form.is_valid():
+            with transaction.atomic():  # 开启事务
+                obj = models.Article(
+                    title=article_form.cleaned_data.pop("title"),  # 文章标题
+                    summary=article_form.cleaned_data.pop("summary"),  # 文章简介
+                    blog_id=user_obj.blog.nid,  # 博客ID
+                    category_id=article_form.cleaned_data.pop("category_id"),  # 分类ID
+                    article_type_id=article_form.cleaned_data.pop("article_type_id"),  # 类型ID
+                )
+                obj.save()  # 创建文章对象
+                content = XSSFilter().process(article_form.cleaned_data.pop("content"))  # 获取过滤好的文章内容
+                models.ArticleDetail.objects.create(
+                    content=content,
+                    article_id=obj.nid
+                )
+                tags = article_form.cleaned_data.pop("tags")  # 获取用户选择的标签ID
+                tag_list = []  # 存储标签对象
+                for tag_id in tags:  # 循环所有标签ID，生成标签对象并存入列表
+                    tag_id = int(tag_id)
+                    tag_list.append(models.Article2Tag(article_id=obj.nid, tag_id=tag_id))
+                models.Article2Tag.objects.bulk_create(tag_list)  # 批量创建标签对象
+            return redirect("/backend/article-0-0.html")
+        else:
+            return render(request, 'backend_add_article.html', {
+                "user_obj": user_obj,
+                "article_form": article_form,
+            })
 
 
 @login_decorate

@@ -9,71 +9,44 @@
         <li><a href="/backend/article-0-0.html">文章管理</a></li>
         <li class="active">创建文章</li>
     </ol>
-    <div style="padding: 5px 8px;">
-        <div class="form-group">
-            <label for="title">标题</label>
-            <input type="text" class="form-control" id="title" placeholder="文章标题">
-        </div>
-        <div class="form-group">
-            <label for="title">简介</label>
-            <textarea class="form-control" placeholder="文章简介"></textarea>
-        </div>
-        <div class="form-group">
-            <label for="content">内容</label>
-            <textarea name="content" style="width: 100%;min-height:500px;visibility:hidden;"></textarea>
-        </div>
-        <div class="form-group">
-            <label for="types">类型</label>
-
-            <div>
-                <label class="radio-inline">
-                    <input type="radio" name="types" value="option1"> 1
-                </label>
-                <label class="radio-inline">
-                    <input type="radio" name="types" value="option2"> 2
-                </label>
-                <label class="radio-inline">
-                    <input type="radio" name="types" value="option3"> 3
-                </label>
+    <form action="/backend/add-article.html" method="post" novalidate>
+        {% csrf_token %}
+        <div style="padding: 5px 8px;">
+            <div class="form-group">
+                <label for="title">标题 <span>{{ article_form.title.errors.0 }}</span></label>
+                {{ article_form.title }}
             </div>
-
-        </div>
-        <div class="form-group">
-            <label for="category">分类</label>
-
-            <div>
-                <label class="radio-inline">
-                    <input type="radio" name="category" value="option1"> 1
-                </label>
-                <label class="radio-inline">
-                    <input type="radio" name="category" value="option2"> 2
-                </label>
-                <label class="radio-inline">
-                    <input type="radio" name="category" value="option3"> 3
-                </label>
+            <div class="form-group">
+                <label for="summary">简介 <span>{{ article_form.summary.errors.0 }}</span></label>
+                {{ article_form.summary }}
+            </div>
+            <div class="form-group">
+                <label for="content">内容 <span>{{ article_form.content.errors.0 }}</span></label>
+                {{ article_form.content }}
+            </div>
+            <div class="form-group">
+                <label for="article_type_id">类型 <span>{{ article_form.article_type_id.errors.0 }}</span></label>
+                <div>
+                    {{ article_form.article_type_id }}
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="category_id">分类 <span>{{ article_form.category_id.errors.0 }}</span></label>
+                <div>
+                    {{ article_form.category_id }}
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="tags">标签 <span>{{ article_form.tags.errors.0 }}</span></label>
+                <div>
+                    {{ article_form.tags }}
+                </div>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">保 存</button>
             </div>
         </div>
-        <div class="form-group">
-            <label for="category">分类</label>
-
-            <div>
-                <label class="checkbox-inline">
-                    <input type="checkbox" id="inlineCheckbox1" value="option1"> 1
-                </label>
-                <label class="checkbox-inline">
-                    <input type="checkbox" id="inlineCheckbox2" value="option2"> 2
-                </label>
-                <label class="checkbox-inline">
-                    <input type="checkbox" id="inlineCheckbox3" value="option3"> 3
-                </label>
-            </div>
-        </div>
-        <div class="form-group">
-            <button type="submit" class="btn btn-primary">保 存</button>
-
-        </div>
-    </div>
-
+    </form>
 
 {% endblock %}
 

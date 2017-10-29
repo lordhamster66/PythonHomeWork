@@ -68,7 +68,7 @@
                 dataType: "JSON",
                 success: function (obj) {
                     if (obj.status) {
-                        location.href = "backend/base-info.html"
+                        location.href = "backend/index.html"
                     } else {
                         if (obj.error.username) {
                             $("#username-error").text(obj.error.username[0].messages);

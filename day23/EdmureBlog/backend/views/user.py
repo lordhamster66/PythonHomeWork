@@ -33,6 +33,13 @@ def login_decorate(func):
 
 
 @login_decorate
+def index(request):
+    username = request.session.get("username", None)  # 获取session中的用户名
+    user_obj = models.UserInfo.objects.filter(username=username).first()
+    return render(request, 'backend_index.html', {"user_obj": user_obj})
+
+
+@login_decorate
 def base_info(request):
     """
     博主个人信息

@@ -3,6 +3,7 @@ from django.conf.urls import include
 from .views import user
 
 urlpatterns = [
+    url(r'^index.html$', user.index),  # 后台主页
     url(r'^base-info.html$', user.base_info),  # 用户基本信息
     url(r'^tag.html$', user.tag),  # 标签管理页面
     url(r'^category.html$', user.category),  # 分类管理页面

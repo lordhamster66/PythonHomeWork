@@ -15,6 +15,9 @@ def index(request):
     :return:
     """
     if request.method == "GET":
+        username = request.session.get("username", None)  # 获取session中的用户名
+        user_obj = models.UserInfo.objects.filter(username=username).select_related("blog").first()  # 获取用户对象
+        article_type_list = models.ArticleType.objects.all()  # 获取所有的文章类型
         current_page = int(request.GET.get("p", "1"))  # 当前页码，默认是第一页
         article_type = request.GET.get("at", request.session.get("article_type"))  # 获取用户类型,获取不到则从session中获取
         request.session["article_type"] = article_type  # 将本次查询的文章类型存入session
@@ -29,9 +32,11 @@ def index(request):
         article_list = article_list[page_obj.start:page_obj.end]  # 获取当前页的所有文章
         page_str = page_obj.page_str("/")  # 获取分页html
         return render(request, 'index.html', {
+            "article_type_list": article_type_list,  # 文章类型
             'article_list': article_list,  # 文章列表
             "page_str": page_str,  # 分页HTML
-            "article_type": article_type  # 文章类型ID
+            "article_type": article_type,  # 文章类型ID
+            "user_obj": user_obj,  # 用户对象
         })
 
 

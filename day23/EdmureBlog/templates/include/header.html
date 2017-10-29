@@ -15,17 +15,30 @@
             <span id="article-type" style="display: none;">{{ article_type }}</span>
             <ul id="article-type-nav" class="nav navbar-nav">
                 <li><a href="/?at=0">全部</a></li>
-                <li><a href="/?at=1">Python</a></li>
-                <li><a href="/?at=2">Linux</a></li>
-                <li><a href="/?at=3">OpanStack</a></li>
-                <li><a href="/?at=4">GoLang</a></li>
-                <li><a href="/?at=5">Scrapy</a></li>
+                {% for article_type in article_type_list %}
+                    <li><a href="/?at={{ article_type.nid }}">{{ article_type.type }}</a></li>
+                {% endfor %}
             </ul>
 
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="/login.html">登陆</a></li>
-                <li><a href="/register.html">注册</a></li>
-
+            <ul class="nav navbar-nav navbar-right ">
+                {% if user_obj %}
+                    <li>
+                        <a href="/backend/index.html">{{ user_obj.nickname }}</a>
+                    </li>
+                    {% if  user_obj.blog.site %}
+                        <li><a style="padding-left: 0;padding-right: 0;">·</a></li>
+                        <li>
+                            <a href="/{{ user_obj.blog.site }}.html">我的博客</a>
+                        </li>
+                    {% endif %}
+                    <li><a style="padding-left: 0;padding-right: 0;">·</a></li>
+                    <li><a href="/backend/index.html">管理</a></li>
+                    <li><a style="padding-left: 0;padding-right: 0;">|</a></li>
+                    <li><a href="/logout.html">退出</a></li>
+                {% else %}
+                    <li><a href="/login.html">登陆</a></li>
+                    <li><a href="/register.html">注册</a></li>
+                {% endif %}
             </ul>
         </div>
     </div>

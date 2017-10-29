@@ -58,7 +58,7 @@ class ArticleDetail(models.Model):
     """
     content = models.TextField(verbose_name='文章内容', )
 
-    article = models.OneToOneField(verbose_name='所属文章', to='Article', to_field='nid')
+    article = models.OneToOneField(verbose_name='所属文章', to='Article', to_field='nid', related_name="article_detail")
 
 
 class UpDown(models.Model):

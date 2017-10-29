@@ -6,12 +6,15 @@ from django.shortcuts import render
 from django.shortcuts import HttpResponse
 from django.shortcuts import redirect
 from repository import models
-from backend.forms import BaseInfoForm
-from backend.forms import TagForm
-from backend.forms import CategoryForm
+from backend.forms.base_form import BaseInfoForm
+from backend.forms.base_form import TagForm
+from backend.forms.base_form import CategoryForm
+from backend.forms.article import ArticleForm
 from utils.public import create_id
 from EdmureBlog import settings
 from utils.pagination import Page
+from django.db import transaction
+from utils.xss import XSSFilter
 
 
 def login_decorate(func):
@@ -290,26 +293,7 @@ def delete_article(request):
         return HttpResponse(json.dumps(ret))
 
 
-def update_article(request):
-    """更新文章标题"""
-    ret = {"status": True, "errors": None, "data": None}
-    if request.method == "POST":
-        article_nid = request.POST.get("nid")  # 获取用户想要更新的文章ID
-        article_name = request.POST.get("info_name")  # 获取用户想要更新的文章标题
-        article_obj = models.Article.objects.filter(nid=article_nid).first()
-        if article_name == article_obj.title:
-            ret["status"] = False
-            ret["errors"] = "输入的文章标题和原有一样！不需要更新!"
-        else:
-            article_obj_by_article_name = models.Article.objects.filter(title=article_name).first()
-            if article_obj_by_article_name:
-                ret["status"] = False
-                ret["errors"] = "输入的文章标题已存在，请重新输入！"
-            else:
-                models.Article.objects.filter(nid=article_nid).update(title=article_name)
-    return HttpResponse(json.dumps(ret))
-
-
+@login_decorate
 def add_article(request):
     """
     添加文章
@@ -321,6 +305,7 @@ def add_article(request):
     return render(request, 'backend_add_article.html', {"user_obj": user_obj})
 
 
+@login_decorate
 def edit_article(request, nid):
     """
     编辑文章
@@ -329,7 +314,59 @@ def edit_article(request, nid):
     """
     username = request.session.get("username", None)  # 获取session中的用户名
     user_obj = models.UserInfo.objects.filter(username=username).select_related("blog").first()  # 获取用户对象
-    return render(request, 'backend_edit_article.html', {"user_obj": user_obj})
+    if request.method == "GET":
+        article_obj = models.Article.objects.filter(nid=nid, blog_id=user_obj.blog.nid).first()  # 获取文章对象
+        if not article_obj:
+            return render(request, 'backend_no_article.html')
+        tags = article_obj.tags.values_list('nid')  # 获取文章对应标签
+        if tags:
+            tags = [i[0] for i in list(tags)]  # 将每一个标签ID放入列表中
+        article_form = ArticleForm(request=request, initial={
+            "title": article_obj.title,  # 文章标题
+            "summary": article_obj.summary,  # 文章简介
+            "content": article_obj.article_detail.content,  # 文章内容
+            "article_type_id": article_obj.article_type_id,  # 文章类型ID
+            "category_id": article_obj.category_id,  # 文章分类ID
+            "tags": tags,  # [18, 25] 列表中每一个元素为标签ID,元组也可以
+        })
+        return render(request, 'backend_edit_article.html', {
+            "user_obj": user_obj,
+            "article_obj": article_obj,
+            "article_form": article_form,
+        })
+    elif request.method == "POST":
+        article_form = ArticleForm(request=request, data=request.POST)
+        article_obj = models.Article.objects.filter(nid=nid, blog_id=user_obj.blog.nid).first()  # 获取文章对象
+        if not article_obj:
+            return render(request, 'backend_no_article.html')
+        if article_form.is_valid():
+            with transaction.atomic():
+                content = XSSFilter().process(article_form.cleaned_data.pop("content"))  # 获取过滤好的文章内容
+                models.ArticleDetail.objects.filter(article=article_obj).update(content=content)  # 更新文章内容
+                models.Article.objects.filter(nid=article_obj.nid).update(
+                    **{
+                        "title": article_form.cleaned_data.pop("title"),
+                        "summary": article_form.cleaned_data.pop("summary"),
+                        "article_type_id": article_form.cleaned_data.pop("article_type_id"),
+                        "category_id": article_form.cleaned_data.pop("category_id"),
+                    }
+                )  # 更新文章
+
+                # 更新文章对应标签
+                models.Article2Tag.objects.filter(article=article_obj).delete()  # 首先删除原有的标签
+                tags = article_form.cleaned_data.pop("tags")  # 获取用户选择的标签ID
+                tag_list = []  # 存储标签对象
+                for tag_id in tags:  # 循环所有标签ID，生成标签对象并存入列表
+                    tag_id = int(tag_id)
+                    tag_list.append(models.Article2Tag(article_id=article_obj.nid, tag_id=tag_id))
+                models.Article2Tag.objects.bulk_create(tag_list)  # 批量创建标签对象
+            return redirect("/backend/article-0-0.html")
+        else:
+            return render(request, 'backend_edit_article.html', {
+                "user_obj": user_obj,
+                "article_obj": article_obj,
+                "article_form": article_form,
+            })
 
 
 def upload_head_portrait(request):

@@ -17,5 +17,4 @@ urlpatterns = [
     url(r'^delete_category/$', user.delete_category),  # 删除分类
     url(r'^update_category/$', user.update_category),  # 更新分类
     url(r'^delete_article/$', user.delete_article),  # 删除文章
-    url(r'^update_article/$', user.update_article),  # 更新文章
 ]

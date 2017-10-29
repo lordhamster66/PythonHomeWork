@@ -1,3 +1,4 @@
+{% load common %}
 <!DOCTYPE html>
 <html>
 <head lang="en">
@@ -27,7 +28,7 @@
                         <div class="clearfix">
                             <!-- 点击头像也可以跳转至文章作者的博客首页 -->
                             <a class="avatar left" href="{{ article.blog.site }}.html">
-                                <img src="/static/imgs/avatar/20130809170025.png">
+                                <img src="/static/imgs/avatar/{{ article.blog.user.avatar }}.png">
                             </a>
                             {{ article.summary }}  <!-- 文章简介 -->
                         </div>
@@ -36,7 +37,7 @@
                                 <i class="fa fa-user-o" aria-hidden="true"></i>
                                 <span>{{ article.blog.user.nickname }}</span>  <!-- 用户昵称 -->
                             </a>
-                            <span>发布于 {{ article.create_time }}</span>  <!-- 发布时间 -->
+                            <span>发布于 {% format_time article.create_time %}</span><!-- 发布时间 -->
                             <a href="#" class="ele">
                                 <i class="fa fa-commenting-o" aria-hidden="true"></i>
                                 <span>{{ article.comment_count }}</span>  <!-- 评论的个数 -->

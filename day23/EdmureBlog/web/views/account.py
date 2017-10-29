@@ -86,7 +86,7 @@ def register(request):
                 models.UserInfo.objects.create(
                     username=username,
                     password=password,
-                    email=email
+                    email=email,
                 )  # 创建用户
             else:  # 验证码不通过
                 ret["status"] = False

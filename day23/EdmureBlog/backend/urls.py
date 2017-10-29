@@ -7,7 +7,7 @@ urlpatterns = [
     url(r'^base-info.html$', user.base_info),  # 用户基本信息
     url(r'^tag.html$', user.tag),  # 标签管理页面
     url(r'^category.html$', user.category),  # 分类管理页面
-    url(r'^article.html$', user.article),  # 文章管理页面
+    url(r'^article-(?P<category_id>\d+)-(?P<article_type_id>\d+).html$', user.article),  # 文章管理页面
     url(r'^add-article.html$', user.add_article),  # 添加文章
     url(r'^edit-article-(\d+).html$', user.edit_article),  # 编辑文章
     url(r'^upload_head_portrait/$', user.upload_head_portrait),  # 上传头像

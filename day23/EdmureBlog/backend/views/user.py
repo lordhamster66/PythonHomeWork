@@ -247,22 +247,38 @@ def update_category(request):
     return HttpResponse(json.dumps(ret))
 
 
-def article(request):
+@login_decorate
+def article(request, *args, **kwargs):
     """
     博主个人文章管理
     :param request:
     :return:
     """
+    condition = {}  # 筛选条件
+    for k, v in kwargs.items():
+        kwargs[k] = int(v)  # 将字符串改为数字
+        if v != "0":
+            condition[k] = v
     username = request.session.get("username", None)  # 获取session中的用户名
     user_obj = models.UserInfo.objects.filter(username=username).select_related("blog").first()  # 获取用户对象
-    article_list = models.Article.objects.filter(blog_id=user_obj.blog.nid).all()  # 获取用户的文章分类
+    category_list = models.Category.objects.filter(blog_id=user_obj.blog.nid).all()  # 获取用户博客的所有分类
+    article_type_list = models.ArticleType.objects.all()  # 获取文章类型
+    article_list = models.Article.objects.filter(blog_id=user_obj.blog.nid).filter(**condition).all()  # 获取用户的文章
     if request.method == "GET":
         current_page = int(request.GET.get("p", 1))  # 获取用户选择的页码，默认为第一页
         page_obj = Page(current_page, len(article_list))  # 获取分页对象
         page_str = page_obj.page_str("/backend/article.html")  # 获取分页HTML
         article_list = article_list[page_obj.start:page_obj.end]  # 获取当前页数据
-        return render(request, 'backend_article.html',
-                      {"user_obj": user_obj, "article_list": article_list, "page_str": page_str})
+        return render(
+            request, 'backend_article.html', {
+                "user_obj": user_obj,  # 用户对象
+                "category_list": category_list,  # 博客分类列表
+                "article_type_list": article_type_list,  # 文章分类
+                "article_list": article_list,  # 文章列表
+                "page_str": page_str,  # 分页对象
+                "kwargs": kwargs,  # 用户文章分类和博客分类
+            }
+        )
 
 
 def delete_article(request):

@@ -2,21 +2,27 @@
 
 {% block content %}
     <div class="summary-list">
-        <div class="summary-item">
-            <div class="summary-title">
-                <a>第五篇：白话tornado源码之褪去模板的外衣</a>
+        {% for row in article_list %}
+            <div class="summary-item">
+                <div class="summary-title">
+                    <a href="/{{ blog_obj.site }}/{{ row.nid }}.html">{{ row.title }}</a>
+                </div>
+                <div class="summary-content">
+                    {{ row.summary }}
+                </div>
+                <div class="summary-footer">
+                    <span>{{ row.create_time|date:"Y-m-d H:i:s" }}</span>
+                    <span>{{ blog_obj.user.nickname }}</span>
+                    <span>阅读({{ row.read_count }})</span>
+                    <a>评论({{ row.comment_count }})</a>
+                    <a>编辑</a>
+                </div>
             </div>
-            <div class="summary-content">
-                摘要: JavaScript的作用域一直以来是前端开发中比较难以理解的知识点，对于JavaScript的作用域主要记住几句话，走遍天下都不怕 一、“JavaScript中无块级作用域”
-                在Java或C#中存在块级作用域，即：大括号也是一个作用域...
-            </div>
-            <div class="summary-footer">
-                <span>2016-07-07 13:08</span>
-                <span>武沛齐</span>
-                <span>阅读(1000)</span>
-                <a>评论(666)</a>
-                <a>编辑</a>
-            </div>
+        {% endfor %}
+        <div class="clearfix">
+            <ul class="pagination right" style="margin-top: 0">
+                {{ page_str }}
+            </ul>
         </div>
     </div>
 {% endblock %}

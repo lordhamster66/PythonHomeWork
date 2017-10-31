@@ -47,8 +47,30 @@ def home(request, site):
     :param site: 博主的网站后缀如：http://xxx.com/wupeiqi.html
     :return:
     """
-    user_home = models.Blog.objects.filter(site=site).select_related('user').first()
-    return render(request, 'home.html', {'user_home': user_home})
+    blog_obj = models.Blog.objects.filter(site=site).select_related('user').first()
+    if not blog_obj:
+        return redirect('/')
+    tag_list = models.Tag.objects.filter(blog=blog_obj)  # 获取博主所有的标签
+    category_list = models.Category.objects.filter(blog=blog_obj)  # 获取博主所有的分类
+    # date_format(create_time,"%Y-%m")
+    date_list_sql = """select nid, count(nid) as num,strftime("%%Y-%%m",create_time) as ctime 
+        from repository_article where blog_id = %s
+        group by strftime("%%Y-%%m",create_time)
+        """ % blog_obj.nid
+    date_list = models.Article.objects.raw(date_list_sql)  # 获取博主文章所揽阔的月份
+    article_list = models.Article.objects.filter(blog=blog_obj).order_by('-nid').all()
+    current_page = int(request.GET.get("p", 1))  # 获取用户选择的页码，默认为第一页
+    page_obj = Page(current_page, len(article_list))  # 获取分页对象
+    page_str = page_obj.page_str("/%s.html" % site)  # 获取分页HTML
+    article_list = article_list[page_obj.start:page_obj.end]  # 获取当前页数据
+    return render(request, 'home.html', {
+        'blog_obj': blog_obj,
+        'tag_list': tag_list,
+        'category_list': category_list,
+        'date_list': date_list,
+        'article_list': article_list,
+        'page_str': page_str,
+    })
 
 
 def filter(request, site, condition, val):
@@ -60,22 +82,40 @@ def filter(request, site, condition, val):
     :param val:
     :return:
     """
-    user_home = models.Blog.objects.filter(site=site).select_related('user').first()
-    if not user_home:
+    blog_obj = models.Blog.objects.filter(site=site).select_related('user').first()
+    if not blog_obj:
         return redirect('/')
+    tag_list = models.Tag.objects.filter(blog=blog_obj)  # 获取博主所有的标签
+    category_list = models.Category.objects.filter(blog=blog_obj)  # 获取博主所有的分类
+    # date_format(create_time,"%Y-%m")
+    date_list_sql = """select nid, count(nid) as num,strftime("%%Y-%%m",create_time) as ctime 
+            from repository_article where blog_id = %s
+            group by strftime("%%Y-%%m",create_time)
+            """ % blog_obj.nid
+    date_list = models.Article.objects.raw(date_list_sql)  # 获取博主文章所揽阔的月份
     template_name = "home_summary_list.html"
     if condition == 'tag':
         template_name = "home_title_list.html"
-        article_list = models.Article.objects.filter(tags__title=val, blog=user_home).all()
+        article_list = models.Article.objects.filter(tags__title=val, blog=blog_obj).all()
     elif condition == 'category':
-        article_list = models.Article.objects.filter(category__title=val, blog=user_home).all()
+        article_list = models.Article.objects.filter(category__title=val, blog=blog_obj).all()
     elif condition == 'date':
-        article_list = models.Article.objects.filter(blog=user_home).extra(
-            where=['date_format(create_time,"%%Y-%%m")=%s'], params=[val, ]).all()
+        article_list = models.Article.objects.filter(blog=blog_obj).extra(
+            where=['strftime("%%Y-%%m",create_time)=%s'], params=[val, ]).all()
     else:
         article_list = []
-
-    return render(request, template_name)
+    current_page = int(request.GET.get("p", 1))  # 获取用户选择的页码，默认为第一页
+    page_obj = Page(current_page, len(article_list))  # 获取分页对象
+    page_str = page_obj.page_str("/%s/%s/%s.html" % (site, condition, val))  # 获取分页HTML
+    article_list = article_list[page_obj.start:page_obj.end]  # 获取当前页数据
+    return render(request, template_name, {
+        'blog_obj': blog_obj,
+        'tag_list': tag_list,
+        'category_list': category_list,
+        'date_list': date_list,
+        'article_list': article_list,
+        'page_str': page_str,
+    })
 
 
 def detail(request, site, nid):
@@ -86,4 +126,5 @@ def detail(request, site, nid):
     :param nid:
     :return:
     """
-    return render(request, 'home_detail.html')
+    blog_obj = models.Blog.objects.filter(site=site).select_related('user').first()
+    return render(request, 'home_detail.html', {'blog_obj': blog_obj})

@@ -4,22 +4,29 @@
 
 {% block content %}
     <div class="title-list">
-        <div class="row-item">
-            <div class="title">
-                <a>第五篇：白话tornado源码之褪去模板的外衣</a>
-            </div>
-            <div class="tips">
-                <span>武沛齐</span>
-                <span>2016-10-08 15:30 </span>
-                <span>
+        {% for row in article_list %}
+            <div class="row-item">
+                <div class="title">
+                    <a href="/{{ blog_obj.site }}/{{ row.nid }}.html">{{ row.title }}</a>
+                </div>
+                <div class="tips">
+                    <span>{{ blog_obj.user.nickname }}</span>
+                    <span>{{ row.create_time|date:"Y-m-d H:i:s" }}</span>
+                    <span>
                     <i class="fa fa-commenting-o" aria-hidden="true"></i>
-                    <span>1000</span>
+                    <span>{{ row.comment_count }}</span>
                 </span>
-                <span>
+                    <span>
                     <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
-                    <span>1000</span>
+                    <span>{{ row.up_count }}</span>
                 </span>
+                </div>
             </div>
+        {% endfor %}
+        <div class="clearfix">
+            <ul class="pagination right" style="margin-top: 0">
+                {{ page_str }}
+            </ul>
         </div>
     </div>
 {% endblock %}

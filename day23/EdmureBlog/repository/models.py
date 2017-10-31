@@ -14,7 +14,7 @@ class UserInfo(models.Model):
 
     create_time = models.DateTimeField(verbose_name='创建时间', auto_now_add=True)
 
-    fans = models.ManyToManyField(verbose_name='粉丝们', to='UserInfo', through='UserFans',
+    fans = models.ManyToManyField(verbose_name='粉丝们', to='UserInfo', through='UserFans', related_name='f',
                                   through_fields=('user', 'follower'))
 
 

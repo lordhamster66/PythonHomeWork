@@ -1,7 +1,9 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
+import json
 from django.shortcuts import render
 from django.shortcuts import redirect
+from django.shortcuts import HttpResponse
 from django.urls import reverse
 from repository import models
 from utils.pagination import Page
@@ -153,3 +155,55 @@ def detail(request, site, nid):
         'comment_list': comment_list,
         'page_str': page_str,
     })
+
+
+def up_down(request):
+    """
+    点赞或者踩功能
+    :param request:
+    :return:
+    """
+    if request.method == "GET":
+        return HttpResponse("ok!")
+    elif request.method == "POST":
+        article_id = request.POST.get("article_id")  # 获取文章ID
+        username = request.POST.get("username")  # 获取用户名
+        condition = request.POST.get("condition")  # 获取条件
+        ret = {"status": False, "errors": None, "data": None}  # 定义返回内容
+        user_obj = models.UserInfo.objects.filter(username=username).first()  # 获取点赞或者踩的用户对象
+        article_obj = models.Article.objects.filter(nid=article_id).first()  # 根据文章ID获取文章对象
+        up_down_obj = models.UpDown.objects.filter(user=user_obj, article_id=article_id).first()  # 根据文章和用户对象获取点赞踩对象
+        if not up_down_obj:  # 对象不存在则创建
+            if condition == "up":  # 点赞操作
+                models.UpDown.objects.create(up=1, article_id=article_id, user=user_obj)
+                article_obj.up_count += 1  # 对文章进行点赞加一
+                article_obj.save()  # 保存文章对象
+                ret["status"] = True
+                return HttpResponse(json.dumps(ret))
+            elif condition == "down":  # 踩操作
+                models.UpDown.objects.create(up=0, article_id=article_id, user=user_obj)
+                article_obj.down_count += 1  # 对文章进行踩加一
+                article_obj.save()  # 保存文章对象
+                ret["status"] = True
+        else:  # 对象存在
+            if condition == "up":  # 点赞操作
+                if up_down_obj.up == 1:
+                    pass
+                else:
+                    up_down_obj.up = 1  # 点赞改为True
+                    up_down_obj.save()  # 保存点赞踩对象
+                    article_obj.up_count += 1  # 对文章进行点赞加一
+                    article_obj.down_count -= 1  # 对文章进行踩减一
+                    article_obj.save()  # 保存文章对象
+                    ret["status"] = True
+            elif condition == "down":  # 踩操作
+                if up_down_obj.up == 1:
+                    up_down_obj.up = 0  # 点赞改为False
+                    up_down_obj.save()  # 保存点赞踩对象
+                    article_obj.up_count -= 1  # 对文章进行点赞减一
+                    article_obj.down_count += 1  # 对文章进行踩加一
+                    article_obj.save()  # 保存文章对象
+                    ret["status"] = True
+                else:
+                    pass
+        return HttpResponse(json.dumps(ret))

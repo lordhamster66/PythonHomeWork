@@ -15,7 +15,7 @@
                     <span>{{ blog_obj.user.nickname }}</span>
                     <span>阅读({{ row.read_count }})</span>
                     <a>评论({{ row.comment_count }})</a>
-                    <a>编辑</a>
+                    <a href="/backend/edit-article-{{ row.nid }}.html">编辑</a>
                 </div>
             </div>
         {% endfor %}

@@ -77,9 +77,9 @@ def filter(request, site, condition, val):
     """
     分类显示
     :param request:
-    :param site:
-    :param condition:
-    :param val:
+    :param site: 博客站点
+    :param condition: 筛选条件
+    :param val: 值
     :return:
     """
     blog_obj = models.Blog.objects.filter(site=site).select_related('user').first()
@@ -127,4 +127,29 @@ def detail(request, site, nid):
     :return:
     """
     blog_obj = models.Blog.objects.filter(site=site).select_related('user').first()
-    return render(request, 'home_detail.html', {'blog_obj': blog_obj})
+    if not blog_obj:
+        return redirect('/')
+    tag_list = models.Tag.objects.filter(blog=blog_obj)  # 获取博主所有的标签
+    category_list = models.Category.objects.filter(blog=blog_obj)  # 获取博主所有的分类
+    # date_format(create_time,"%Y-%m")
+    date_list_sql = """select nid, count(nid) as num,strftime("%%Y-%%m",create_time) as ctime 
+        from repository_article where blog_id = %s
+        group by strftime("%%Y-%%m",create_time)
+        """ % blog_obj.nid
+    date_list = models.Article.objects.raw(date_list_sql)  # 获取博主文章所揽阔的月份
+    # 获取文章对象
+    article = models.Article.objects.filter(blog=blog_obj, nid=nid).select_related('category', 'article_detail').first()
+    comment_list = models.Comment.objects.filter(article=article).select_related('reply')  # 获取评论列表
+    current_page = int(request.GET.get("p", 1))  # 获取用户选择的页码，默认为第一页
+    page_obj = Page(current_page, len(comment_list))  # 获取分页对象
+    page_str = page_obj.page_str("/%s/%s.html" % (site, nid))  # 获取分页HTML
+    comment_list = comment_list[page_obj.start:page_obj.end]  # 获取当前页数据
+    return render(request, 'home_detail.html', {
+        'blog_obj': blog_obj,
+        'tag_list': tag_list,
+        'category_list': category_list,
+        'date_list': date_list,
+        'article': article,
+        'comment_list': comment_list,
+        'page_str': page_str,
+    })

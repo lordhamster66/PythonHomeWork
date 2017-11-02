@@ -63,14 +63,9 @@
                 <div class="panel-heading">吐血推荐</div>
                 <div class="panel-body">
                     <ul class="list-unstyled">
-                        <li>Lorem ipsum dolor sit amet</li>
-                        <li>Consectetur adipiscing elit</li>
-                        <li>Integer molestie lorem at massa</li>
-                        <li>Facilisis in pretium nisl aliquet</li>
-                        <li>Nulla volutpat aliquam velit</li>
-                        <li>Faucibus porta lacus fringilla vel</li>
-                        <li>Aenean sit amet erat nunc</li>
-                        <li>Eget porttitor lorem</li>
+                        {% for article in hot_recommend %}
+                            <li><a href="/{{ article.blog.site }}/{{ article.nid }}.html">{{ article.title }}</a></li>
+                        {% endfor %}
                     </ul>
                 </div>
             </div>
@@ -78,14 +73,9 @@
                 <div class="panel-heading">评论最多</div>
                 <div class="panel-body">
                     <ul class="list-unstyled">
-                        <li>Lorem ipsum dolor sit amet</li>
-                        <li>Consectetur adipiscing elit</li>
-                        <li>Integer molestie lorem at massa</li>
-                        <li>Facilisis in pretium nisl aliquet</li>
-                        <li>Nulla volutpat aliquam velit</li>
-                        <li>Faucibus porta lacus fringilla vel</li>
-                        <li>Aenean sit amet erat nunc</li>
-                        <li>Eget porttitor lorem</li>
+                        {% for article in hot_comment %}
+                            <li><a href="/{{ article.blog.site }}/{{ article.nid }}.html">{{ article.title }}</a></li>
+                        {% endfor %}
                     </ul>
                 </div>
             </div>

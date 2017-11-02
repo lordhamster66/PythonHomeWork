@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
 import json
+from django.db.models import Count, Min, Max, Sum
 from django.shortcuts import render
 from django.shortcuts import redirect
 from django.shortcuts import HttpResponse
@@ -34,12 +35,25 @@ def index(request):
         page_obj = Page(current_page, data_count)  # 生成分页对象
         article_list = article_list[page_obj.start:page_obj.end]  # 获取当前页的所有文章
         page_str = page_obj.page_str("/")  # 获取分页html
+
+        # 回复最多的文章
+        hot_recommend = models.Comment.objects.exclude(reply_id__isnull=True).values('article_id').annotate(
+            c=Count('reply_id'))
+        hot_recommend = sorted(list(hot_recommend), key=lambda i: i['c'], reverse=True)[:8]
+        hot_recommend = models.Article.objects.filter(nid__in=[item["article_id"] for item in hot_recommend]).all()
+
+        # 评论最多的文章
+        hot_comment = models.Comment.objects.values('article_id').annotate(c=Count('article_id'))
+        hot_comment = sorted(list(hot_comment), key=lambda i: i['c'], reverse=True)[:8]
+        hot_comment = models.Article.objects.filter(nid__in=[item["article_id"] for item in hot_comment]).all()
         return render(request, 'index.html', {
             "article_type_list": article_type_list,  # 文章类型
             'article_list': article_list,  # 文章列表
             "page_str": page_str,  # 分页HTML
             "article_type": article_type,  # 文章类型ID
             "user_obj": user_obj,  # 用户对象
+            "hot_recommend": hot_recommend,  # 吐血推荐文章
+            "hot_comment": hot_comment,  # 评论最多文章
         })
 
 

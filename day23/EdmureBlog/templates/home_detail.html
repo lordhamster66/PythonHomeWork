@@ -65,7 +65,11 @@
                             <span>{{ comment.create_time|date:"Y-m-d H:i:s" }}</span>
                         </div>
                         <div class="reply">
-                            <a href="#">回复</a>
+                            <a class="reply-to" style="cursor: pointer"
+                               comment_id="{{ comment.nid }}"
+                               nickname="{{ comment.user.nickname }}">
+                                回复
+                            </a>
                         </div>
                     </div>
                     <div class="reply-body">
@@ -73,7 +77,7 @@
                             <div class="reply-user">@{{ comment.reply.user.nickname }}</div>
                         {% endif %}
                         <div class="content">
-                            {{ comment.content }}
+                            {{ comment.content|safe }}
                         </div>
                     </div>
                 </div>
@@ -92,11 +96,15 @@
                         您需要登录后才可以回帖 <a href="/login.html">登录</a> | <a href="/register.html">立即注册</a>
                     </div>
                 {% endif %}
-                <textarea name="content" style="width: 100%;height:200px;visibility:hidden;"></textarea>
+                <textarea id="reply-content" name="content"
+                          style="width: 100%;height:200px;visibility:hidden;"></textarea>
             </div>
             <div class="reply-btn">
-                <span><span>21</span>/255字</span>
-                <a>发表回复</a>
+                <button type="button"
+                        class="btn btn-primary reply-to-server"
+                        article_id="{{ article.nid }}">
+                    提交评论
+                </button>
             </div>
         </div>
     </div>
@@ -132,14 +140,14 @@
                             if (obj.status) {
                                 location.href = "/{{ blog_obj.site }}/{{ article.nid }}.html"
                             } else {
-                                swal('Oops...', '您已点赞过!', 'error')
+                                swal('您已点赞过!', '', 'warning')
                             }
                         }
                     })
 
                 }
                 else {
-                    swal('Oops...', '您没登录!', 'error')
+                    swal('您没登录!', '', 'warning')
                 }
             });
             $("#down").click(function () {
@@ -154,13 +162,44 @@
                             if (obj.status) {
                                 location.href = "/{{ blog_obj.site }}/{{ article.nid }}.html"
                             } else {
-                                swal('Oops...', '您已踩过!', 'error')
+                                swal('您已踩过!', '', 'warning')
                             }
                         }
                     })
                 }
                 else {
-                    swal('Oops...', '您没登录!', 'error')
+                    swal('您没登录!', '', 'warning')
+                }
+            });
+            $(".reply-to").click(function () {
+                var comment_id = $(this).attr("comment_id");  // 获取要回复的评论ID
+                var nickname = $(this).attr("nickname");  // 获取要回复的用户昵称
+                $(".ke-edit-iframe").contents().find("body").empty().html("@" + nickname).data("nickname", nickname).data("comment_id", comment_id);
+            });
+            $(".reply-to-server").click(function () {
+                var content_tag = $(".ke-edit-iframe").contents().find("body");  // 获取回复内容所在标签
+                var comment_id = content_tag.data("comment_id");  // 获取回复的评论的ID
+                var nickname = content_tag.data("nickname");  // 获取回复的用户昵称
+                var username = "{{ request.session.username }}";  // 获取评论者用户名
+                var article_id = $(this).attr("article_id");  // 获取回复的文章ID
+                var content = content_tag.html().replace("@" + nickname, "");  // 获取回复内容
+                if (content) {
+                    $.ajax({
+                        url: "/reply.html",
+                        type: "POST",
+                        data: {
+                            "comment_id": comment_id,
+                            "username": username,
+                            "article_id": article_id,
+                            "content": content
+                        },
+                        dataType: "JSON",
+                        success: function (obj) {
+                            if (obj.status) {
+                                location.href = "/{{ blog_obj.site }}/{{ article.nid }}.html"
+                            }
+                        }
+                    })
                 }
             })
         })

@@ -7,6 +7,7 @@ from django.shortcuts import HttpResponse
 from django.urls import reverse
 from repository import models
 from utils.pagination import Page
+from utils.xss import XSSFilter
 
 
 def index(request):
@@ -141,6 +142,8 @@ def detail(request, site, nid):
     date_list = models.Article.objects.raw(date_list_sql)  # 获取博主文章所揽阔的月份
     # 获取文章对象
     article = models.Article.objects.filter(blog=blog_obj, nid=nid).select_related('category', 'article_detail').first()
+    article.read_count += 1  # 文章阅读数加一
+    article.save()  # 保存文章对象
     comment_list = models.Comment.objects.filter(article=article).select_related('reply')  # 获取评论列表
     current_page = int(request.GET.get("p", 1))  # 获取用户选择的页码，默认为第一页
     page_obj = Page(current_page, len(comment_list))  # 获取分页对象
@@ -164,7 +167,7 @@ def up_down(request):
     :return:
     """
     if request.method == "GET":
-        return HttpResponse("ok!")
+        pass
     elif request.method == "POST":
         article_id = request.POST.get("article_id")  # 获取文章ID
         username = request.POST.get("username")  # 获取用户名
@@ -206,4 +209,38 @@ def up_down(request):
                     ret["status"] = True
                 else:
                     pass
+        return HttpResponse(json.dumps(ret))
+
+
+def reply(request):
+    """
+    评论文章功能
+    :param request:
+    :return:
+    """
+    if request.method == "GET":
+        pass
+    elif request.method == "POST":
+        ret = {"status": False, "errors": None, "data": None}
+        comment_id = request.POST.get("comment_id")  # 获取要回复的评论ID
+        username = request.POST.get("username")  # 获取评论者用户名
+        user_obj = models.UserInfo.objects.filter(username=username).first()  # 获取评论者对象
+        article_id = request.POST.get("article_id")  # 获取要评论的文章ID
+        content = XSSFilter().process(request.POST.get("content"))  # 获取过滤好的评论者的评论内容
+        # print("comment_id:%s" % comment_id,
+        #       "username:%s" % username,
+        #       "article_id:%s" % article_id,
+        #       "content:%s" % content)
+        # 创建回复记录
+        models.Comment.objects.create(
+            content=content,
+            reply_id=comment_id,
+            article_id=article_id,
+            user_id=user_obj.nid
+        )
+        # 更新文章评论个数
+        article_obj = models.Article.objects.filter(nid=article_id).first()  # 获取文章对象
+        article_obj.comment_count += 1  # 文章评论个数加一
+        article_obj.save()  # 更新文章对象
+        ret["status"] = True  # 返回处理成功的状态
         return HttpResponse(json.dumps(ret))

@@ -19,6 +19,7 @@ from .views import account
 
 urlpatterns = [
     url(r'^up_down.html$', home.up_down),  # 点赞或者踩
+    url(r'^reply.html$', home.reply),  # 评论功能
     url(r'^login.html$', account.login),  # 登录
     url(r'^register.html$', account.register),  # 注册
     url(r'^logout.html$', account.logout),  # 注销

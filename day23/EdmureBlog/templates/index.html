@@ -100,7 +100,7 @@
     $(function () {
         var articleType = $("#article-type").text();  // 获取文章类型ID
         // 根据文章类型ID来使对应的按钮变成灰色
-        $("#article-type-nav").children().removeClass("active").parent().children().eq(articleType).addClass("active");
+        $("#article-type-nav").children().removeClass("active").parent().children("li[article_type_id='" + articleType + "']").addClass("active");
     })
 </script>
 </body>

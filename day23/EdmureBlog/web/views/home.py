@@ -76,7 +76,7 @@ def home(request, site):
         """ % blog_obj.nid
     date_list = models.Article.objects.raw(date_list_sql)  # 获取博主文章所揽阔的月份
     article_list = models.Article.objects.filter(blog=blog_obj).order_by('-nid').all()  # 获取博主所有文章
-    top_article_list = models.Article.objects.filter(top=1).all()  # 获取博主置顶文章
+    top_article_list = models.Article.objects.filter(blog=blog_obj, top=1).all()  # 获取博主置顶文章
     current_page = int(request.GET.get("p", 1))  # 获取用户选择的页码，默认为第一页
     page_obj = Page(current_page, len(article_list))  # 获取分页对象
     page_str = page_obj.page_str("/%s.html" % site)  # 获取分页HTML

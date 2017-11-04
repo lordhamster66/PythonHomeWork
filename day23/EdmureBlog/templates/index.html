@@ -64,7 +64,12 @@
                 <div class="panel-body">
                     <ul class="list-unstyled">
                         {% for article in hot_recommend %}
-                            <li><a href="/{{ article.blog.site }}/{{ article.nid }}.html">{{ article.title }}</a></li>
+                            <li>
+                                {{ forloop.counter }}.
+                                <a href="/{{ article.blog.site }}/{{ article.nid }}.html">
+                                    {{ article.title }}
+                                </a>----{{ article.blog.user.nickname }}
+                            </li>
                         {% endfor %}
                     </ul>
                 </div>
@@ -74,7 +79,12 @@
                 <div class="panel-body">
                     <ul class="list-unstyled">
                         {% for article in hot_comment %}
-                            <li><a href="/{{ article.blog.site }}/{{ article.nid }}.html">{{ article.title }}</a></li>
+                            <li>
+                                {{ forloop.counter }}.
+                                <a href="/{{ article.blog.site }}/{{ article.nid }}.html">
+                                    {{ article.title }}
+                                </a>----{{ article.blog.user.nickname }}
+                            </li>
                         {% endfor %}
                     </ul>
                 </div>

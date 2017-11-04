@@ -17,4 +17,6 @@ urlpatterns = [
     url(r'^delete_category/$', user.delete_category),  # 删除分类
     url(r'^update_category/$', user.update_category),  # 更新分类
     url(r'^delete_article/$', user.delete_article),  # 删除文章
+    url(r'^upload_img.html$', user.upload_img),  # 上传图片
+    url(r'^file_manager.html$', user.file_manager),  # 文件空间管理
 ]

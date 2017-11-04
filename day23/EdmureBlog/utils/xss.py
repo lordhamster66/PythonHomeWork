@@ -29,7 +29,8 @@ class XSSFilter(object):
             ],
             "pre": ['class'],
             "hr": ['class'],
-            'strong': []
+            'strong': [],
+            "iframe": ['src', 'frameborder', 'style']
         }
 
     def process(self, content):

@@ -58,8 +58,15 @@
         KindEditor.ready(function (K) {
             editor = K.create('textarea[name="content"]', {
                 resizeType: 1,
-                uploadJson: '/on.asp',
-                fileManagerJson: '/asp/fjson.asp'
+                uploadJson: '/backend/upload_img.html',
+                extraFileUploadParams: {
+                    'csrfmiddlewaretoken': '{{ csrf_token }}'
+                },
+                fileManagerJson: '/backend/file_manager.html',
+                allowPreviewEmoticons: true,
+                allowImageUpload: true,
+                allowFileManager: true,
+                pluginsPath: '/static/plugins/kindeditor/plugins/'
             });
         });
     </script>

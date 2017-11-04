@@ -330,12 +330,15 @@ def add_article(request):
         article_form = ArticleForm(request=request, data=request.POST)
         if article_form.is_valid():
             with transaction.atomic():  # 开启事务
+                top_list = article_form.cleaned_data.pop("top")  # 获取高级选项列表
+                top_bool = int(top_list[0]) if top_list else 0  # 获取是否选中置顶
                 obj = models.Article(
                     title=article_form.cleaned_data.pop("title"),  # 文章标题
                     summary=article_form.cleaned_data.pop("summary"),  # 文章简介
                     blog_id=user_obj.blog.nid,  # 博客ID
                     category_id=article_form.cleaned_data.pop("category_id"),  # 分类ID
                     article_type_id=article_form.cleaned_data.pop("article_type_id"),  # 类型ID
+                    top=top_bool  # 是否置顶
                 )
                 obj.save()  # 创建文章对象
                 content = XSSFilter().process(article_form.cleaned_data.pop("content"))  # 获取过滤好的文章内容
@@ -381,6 +384,7 @@ def edit_article(request, nid):
             "article_type_id": article_obj.article_type_id,  # 文章类型ID
             "category_id": article_obj.category_id,  # 文章分类ID
             "tags": tags,  # [18, 25] 列表中每一个元素为标签ID,元组也可以
+            "top": [int(article_obj.top)]  # 显示文章是否置顶
         })
         return render(request, 'backend_edit_article.html', {
             "user_obj": user_obj,
@@ -394,6 +398,8 @@ def edit_article(request, nid):
             return render(request, 'backend_no_article.html')
         if article_form.is_valid():
             with transaction.atomic():
+                top_list = article_form.cleaned_data.pop("top")  # 获取高级选项列表
+                top_bool = int(top_list[0]) if top_list else 0  # 获取是否选中置顶
                 content = XSSFilter().process(article_form.cleaned_data.pop("content"))  # 获取过滤好的文章内容
                 models.ArticleDetail.objects.filter(article=article_obj).update(content=content)  # 更新文章内容
                 models.Article.objects.filter(nid=article_obj.nid).update(
@@ -402,6 +408,7 @@ def edit_article(request, nid):
                         "summary": article_form.cleaned_data.pop("summary"),
                         "article_type_id": article_form.cleaned_data.pop("article_type_id"),
                         "category_id": article_form.cleaned_data.pop("category_id"),
+                        "top": top_bool
                     }
                 )  # 更新文章
 

@@ -3,6 +3,23 @@
 {% block content %}
 
     <div class="summary-list">
+        {% for row in top_article_list %}
+            <div class="summary-item">
+                <div class="summary-title">
+                    <a href="/{{ blog_obj.site }}/{{ row.nid }}.html">[置顶]{{ row.title }}</a>
+                </div>
+                <div class="summary-content">
+                    {{ row.summary }}
+                </div>
+                <div class="summary-footer">
+                    <span>{{ row.create_time|date:"Y-m-d H:i:s" }}</span>
+                    <span>{{ row.blog.user.nickname }}</span>
+                    <span>阅读({{ row.read_count }})</span>
+                    <a>评论({{ row.comment_count }})</a>
+                    <a href="/backend/edit-article-{{ row.nid }}.html">编辑</a>
+                </div>
+            </div>
+        {% endfor %}
         {% for row in article_list %}
             <div class="summary-item">
                 <div class="summary-title">

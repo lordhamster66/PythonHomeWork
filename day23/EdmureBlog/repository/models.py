@@ -115,6 +115,8 @@ class Article(models.Model):
         through_fields=('article', 'tag'),
     )
 
+    top = models.BooleanField(verbose_name='是否置顶', default=0)
+
 
 class ArticleType(models.Model):
     """文章类型"""

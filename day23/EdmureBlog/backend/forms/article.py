@@ -55,6 +55,12 @@ class ArticleForm(forms.Form):
         widget=widgets.CheckboxSelectMultiple
     )
 
+    top = fields.MultipleChoiceField(
+        required=False,
+        choices=[("1", "置顶")],
+        widget=widgets.CheckboxSelectMultiple
+    )
+
     def __init__(self, request, *args, **kwargs):
         super(ArticleForm, self).__init__(*args, **kwargs)
         username = request.session.get("username", None)  # 获取session中的用户名

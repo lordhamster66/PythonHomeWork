@@ -90,32 +90,42 @@
                         {% endif %}
                     </div>
                 </div>
-                <div class="row">
-                    <table class="table table-hover">
-                        <thead>
-                        <tr>
-                            <th><input type="checkbox" id="chose-all"></th>
-                            {% for column in admin_class.list_display %}
-                                {% get_table_thead admin_class column orderby_dict condition_dict search_content %}
-                            {% endfor %}
-                        </tr>
-                        </thead>
-                        <tbody>
-                        {% for obj in query_sets %}
+                <form method="post"> {% csrf_token %}
+                    <div class="row">
+                        <table class="table table-hover">
+                            <thead>
                             <tr>
-                                <td><input type="checkbox" tag="table-row" value="{{ obj.id }}"></td>
-                                {% get_table_rows request obj admin_class %}
+                                <th><input type="checkbox" id="chose-all"></th>
+                                {% for column in admin_class.list_display %}
+                                    {% get_table_thead admin_class column orderby_dict condition_dict search_content %}
+                                {% endfor %}
                             </tr>
-                        {% endfor %}
-                        </tbody>
-                    </table>
-                </div>
-                总计:{{ query_sets.paginator.count }}条
-                <div class="row">
-                    <ul class="pagination">
-                        {% get_page_ele query_sets condition_dict orderby_dict search_content %}
-                    </ul>
-                </div>
+                            </thead>
+                            <tbody>
+                            {% for obj in query_sets %}
+                                <tr>
+                                    <td><input type="checkbox" tag="table-row" value="{{ obj.id }}"></td>
+                                    {% get_table_rows request obj admin_class %}
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    总计:{{ query_sets.paginator.count }}条
+                    <div class="row">
+                        <ul class="pagination">
+                            {% get_page_ele query_sets condition_dict orderby_dict search_content %}
+                        </ul>
+                    </div>
+                    {% if admin_class.list_editable %}
+                        <div class="row" style="padding: 10px 50px;margin-bottom: 50px;">
+                            <div class="row" style="padding: 15px;background-color: #f8f8f8;border-radius: 4px;">
+                                <input type="submit" value="保存" class="btn btn-primary pull-right"
+                                       style="margin-left: 10px;">
+                            </div>
+                        </div>
+                    {% endif %}
+                </form>
             </div>
         </div>
     </div>

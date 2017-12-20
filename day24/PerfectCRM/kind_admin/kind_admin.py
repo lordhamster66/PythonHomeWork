@@ -23,6 +23,7 @@ class BaseAdmin(object):
     modelform_exclude_fields = ()  # model_form表单要剔除的字段
     dynamic_default_fields = ()  # 动态默认字段,在修改对象时动态生成
     only_display_img_field = ()  # 只显示图片的字段
+    list_editable = ()  # 行内编辑字段
 
     def delete_selected(self, request, querysets):
         """
@@ -56,6 +57,7 @@ class CustomerAdmin(BaseAdmin):
     list_per_page = 10
     actions = ("aa",)
     readonly_fields = ("qq", "consultant", "tags")
+    # list_editable = ("status",)
 
     # table_readonly = True
 

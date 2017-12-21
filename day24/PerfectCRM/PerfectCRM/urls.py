@@ -23,4 +23,6 @@ urlpatterns = [
     url(r'^accounts/logout/$', views.acc_logout),  # 注销
     url(r'^crm/', include("crm.urls")),  # crm App
     url(r'^kind_admin/', include("kind_admin.urls")),  # kind_admin 插件
+    url(r'^student/', include("student.urls")),  # student app
+    url(r'^teacher/', include("teacher.urls")),  # teacher app
 ]

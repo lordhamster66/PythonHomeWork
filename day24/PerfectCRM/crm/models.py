@@ -334,21 +334,31 @@ class UserProfile(AbstractBaseUser, PermissionsMixin):
     def __str__(self):  # __unicode__ on Python 2
         return self.email
 
-    def has_perm(self, perm, obj=None):
-        "Does the user have a specific permission?"
-        # Simplest possible answer: Yes, always
-        return True
-
-    def has_module_perms(self, app_label):
-        "Does the user have permissions to view the app `app_label`?"
-        # Simplest possible answer: Yes, always
-        return True
+    # def has_perm(self, perm, obj=None):
+    #     "Does the user have a specific permission?"
+    #     # Simplest possible answer: Yes, always
+    #     return True
+    #
+    # def has_module_perms(self, app_label):
+    #     "Does the user have permissions to view the app `app_label`?"
+    #     # Simplest possible answer: Yes, always
+    #     return True
 
     @property
     def is_staff(self):
         "Is the user a member of staff?"
         # Simplest possible answer: All admins are staff
-        return self.is_admin
+        return self.is_active
 
     class Meta:
         verbose_name_plural = "账户表"
+        permissions = (
+            ("can_access_sales_index", "可以访问销售首页"),
+            ("can_access_customer_table", "可以访问kind_admin下注册的客户库"),
+            ("can_access_customer_add", "可以访问在kind_admin下注册的客户库添加客户页面"),
+            ("can_add_customer", "可以在kind_admin下注册的客户库添加客户"),
+            ("can_access_customer_change", "可以访问在kind_admin下注册的客户库所生成的客户修改页"),
+            ("can_change_customer", "可以修改在kind_admin下注册的客户库中的客户,且只能修改自己的客户"),
+            ("can_access_change_password", "可以访问密码修改页"),
+            ("can_change_own_password", "可以修改自己的密码"),
+        )

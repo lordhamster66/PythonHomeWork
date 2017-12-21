@@ -17,6 +17,6 @@ from django.conf.urls import url
 from crm import views
 
 urlpatterns = [
-    url(r'^$', views.index),
-    url(r'^sales/', views.sales_index, name="sales_index"),
+    url(r'^$', views.index),  # crm首页
+    url(r'^sales/', views.sales_index, name="sales_index"),  # 销售首页
 ]

@@ -79,19 +79,23 @@ PermissionDict = {
 
 def only_change_own_password(request, *args, **kwargs):
     """验证只能修改自己的密码"""
-    ret = False  # 最后要返回的验证结果
+    ret = {"status": False, "errors": [], "data": None}  # 要返回的内容
     matched_ret = re.match("/kind_admin/crm/userprofile/(?P<user_id>\d+)/change/password/$", request.path)
     if matched_ret:
         if matched_ret.groupdict().get("user_id") == str(request.user.id):
-            ret = True
+            ret["status"] = True
+        else:
+            ret["errors"].append("因为，您只能修改自己的用户密码！")
     return ret
 
 
 def only_change_your_own_customer(request, *args, **kwargs):
     """销售只能修改自己下面的客户信息"""
-    ret = False  # 最后要返回的验证结果
+    ret = {"status": False, "errors": [], "data": None}  # 要返回的内容
     admin_class = kind_admin.enabled_admins[kwargs.get('app_name')][kwargs.get('table_name')]  # 获取admin_class
     customer_obj = admin_class.model.objects.filter(id=kwargs.get('obj_id')).first()  # 获取要修改的对象
     if customer_obj.consultant == request.user:  # 说明销售在修改自己下面的客户
-        ret = True
+        ret["status"] = True
+    else:
+        ret["errors"].append("因为，您只能修改自己下面的客户信息！")
     return ret

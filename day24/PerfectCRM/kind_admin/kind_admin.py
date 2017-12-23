@@ -56,7 +56,8 @@ class CustomerAdmin(BaseAdmin):
     filter_horizontal = ("tags",)
     list_per_page = 10
     actions = ("aa",)
-    readonly_fields = ("qq", "consultant", "tags")
+    readonly_fields = ("qq", "consultant", "status")
+
     # list_editable = ("status",)
 
     # table_readonly = True

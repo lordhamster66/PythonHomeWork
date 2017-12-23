@@ -18,6 +18,78 @@ PermissionDict = {
     },
 
     # kind_admin项目权限
+    # 可以访问kind_admin下的APP库
+    "crm.can_access_table_index": {
+        "url_type": 0,
+        "url": "table_index",
+        "method": "GET",
+        "args": [],
+        "hooks": []
+    },
+    # 可以访问kind_admin下注册的所有表
+    "crm.can_access_table_objs": {
+        "url_type": 0,
+        "url": "table_objs",
+        "method": "GET",
+        "args": [],
+        "hooks": []
+    },
+    # 可以对kind_admin下注册的所有表进行行内编辑和action操作
+    "crm.can_do_action_or_change_table_objs": {
+        "url_type": 0,
+        "url": "table_objs",
+        "method": "POST",
+        "args": [],
+        "hooks": []
+    },
+    # 可以访问kind_admin下注册的所有表的对象修改页
+    "crm.can_access_table_change": {
+        "url_type": 0,
+        "url": "table_change",
+        "method": "GET",
+        "args": [],
+        "hooks": []
+    },
+    # 可以修改kind_admin下注册的所有表的对象
+    "crm.can_change_table_obj": {
+        "url_type": 0,
+        "url": "table_change",
+        "method": "POST",
+        "args": [],
+        "hooks": []
+    },
+    # 可以访问kind_admin下注册的所有表的删除页
+    "crm.can_access_table_delete": {
+        "url_type": 0,
+        "url": "table_delete",
+        "method": "GET",
+        "args": [],
+        "hooks": []
+    },
+    # 可以删除kind_admin下注册的所有表的信息
+    "crm.can_delete_all_table_obj": {
+        "url_type": 0,
+        "url": "table_delete",
+        "method": "POST",
+        "args": [],
+        "hooks": []
+    },
+    # 可以访问kind_admin下注册的所有表的增加信息页
+    "crm.can_access_table_add": {
+        "url_type": 0,
+        "url": "table_add",
+        "method": "GET",
+        "args": [],
+        "hooks": []
+    },
+    # 可以增加kind_admin下注册的所有表的信息
+    "crm.can_add_all_table_obj": {
+        "url_type": 0,
+        "url": "table_add",
+        "method": "POST",
+        "args": [],
+        "hooks": []
+    },
     # 可以访问kind_admin下注册的客户库
     "crm.can_access_customer_table": {
         "url_type": 1,
@@ -73,6 +145,14 @@ PermissionDict = {
         "method": "POST",
         "args": [],
         "hooks": ["only_change_own_password"],
+    },
+    # 可以修改所有人的密码
+    "crm.can_change_all_password": {
+        "url_type": 0,
+        "url": "change_password",
+        "method": "POST",
+        "args": [],
+        "hooks": []
     },
 }
 

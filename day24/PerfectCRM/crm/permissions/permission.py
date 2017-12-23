@@ -14,7 +14,7 @@ logger = logging.getLogger("__name__")  # 生成一个以当前模块名为名�
 
 def check_user_permission(request, *args, **kwargs):
     """验证用户是否有权限"""
-    ret = {"status": False, "errors": ["对不起，您没权限执行此功能，请联系管理员开通！"], "data": None}  # 要返回的内容
+    ret = {"status": False, "errors": [], "data": None}  # 要返回的内容
     for permission_name, permission_detail in PermissionDict.items():
         url_matched = False  # url是否匹配上
         if permission_detail["url_type"] == 0:  # 相对路径
@@ -36,7 +36,7 @@ def check_user_permission(request, *args, **kwargs):
                     # 如果定义的参数在用户请求的参数中获取不到,则表明用户不符合该条权限定义
                     if not getattr(request, permission_detail["method"]).get(arg):
                         args_matched = False
-                        break
+                        break  # 跳出参数循环，因为已经有一个参数不满足条件了，则不需要再验证其他参数
 
                 if args_matched:  # 参数匹配上了才继续往下走
                     hooks_aproved = True  # 钩子是否通过验证
@@ -59,6 +59,8 @@ def check_user_permission(request, *args, **kwargs):
                         if request.user.has_perm(permission_name):  # 用户如果有该条权限，则通过权限认证系统
                             ret["status"] = True
                             break  # 权限匹配上了直接跳出循环
+    if not ret["status"]:  # 用户没通过权限验证
+        ret["errors"].insert(0, "对不起，您没权限执行此功能，请联系管理员开通！")
 
     return ret
 

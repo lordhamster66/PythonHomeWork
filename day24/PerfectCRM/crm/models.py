@@ -354,6 +354,15 @@ class UserProfile(AbstractBaseUser, PermissionsMixin):
         verbose_name_plural = "账户表"
         permissions = (
             ("can_access_sales_index", "可以访问销售首页"),
+            ("can_access_table_index", "可以访问kind_admin下的APP库"),
+            ("can_access_table_objs", "可以访问kind_admin下注册的所有表"),
+            ("can_do_action_or_change_table_objs", "可以对kind_admin下注册的所有表进行行内编辑和action操作"),
+            ("can_access_table_change", "可以访问kind_admin下注册的所有表的对象修改页"),
+            ("can_change_table_obj", "可以修改kind_admin下注册的所有表的对象"),
+            ("can_access_table_delete", "可以访问kind_admin下注册的所有表的删除页"),
+            ("can_delete_all_table_obj", "可以删除kind_admin下注册的所有表的信息"),
+            ("can_access_table_add", "可以访问kind_admin下注册的所有表的增加信息页"),
+            ("can_add_all_table_obj", "可以增加kind_admin下注册的所有表的信息"),
             ("can_access_customer_table", "可以访问kind_admin下注册的客户库"),
             ("can_access_customer_add", "可以访问在kind_admin下注册的客户库添加客户页面"),
             ("can_add_customer", "可以在kind_admin下注册的客户库添加客户"),
@@ -361,4 +370,5 @@ class UserProfile(AbstractBaseUser, PermissionsMixin):
             ("can_change_customer", "可以修改在kind_admin下注册的客户库中的客户,且只能修改自己的客户"),
             ("can_access_change_password", "可以访问密码修改页"),
             ("can_change_own_password", "可以修改自己的密码"),
+            ("can_change_all_password", "可以修改所有人的密码"),
         )

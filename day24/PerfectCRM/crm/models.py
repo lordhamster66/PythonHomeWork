@@ -36,6 +36,7 @@ class Customer(models.Model):
     status_choices = (
         (0, "未报名"),
         (1, "已报名"),
+        (2, "毕业老学员"),
     )
     status = models.SmallIntegerField(choices=status_choices, default=0, verbose_name="报名状态")
     date = models.DateTimeField(auto_now_add=True, verbose_name="创建时间")
@@ -126,7 +127,7 @@ class ClassList(models.Model):
     end_date = models.DateField(blank=True, null=True, verbose_name="结业日期")
 
     def __str__(self):
-        return "<%s %s %s>" % (self.branch, self.course, self.semester)
+        return "%s %s 第%s期" % (self.branch, self.course, self.semester)
 
     class Meta:
         unique_together = ("branch", "course", "semester")  # 校区课程和第几期需要联合唯一

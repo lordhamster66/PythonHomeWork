@@ -3,7 +3,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PerfectCRM</title>
+    {% block title %}
+        <title>PerfectCRM</title>
+    {% endblock %}
 
     <link rel="shortcut icon" href="/static/img/logo.png">
     <!--STYLESHEET-->
@@ -49,6 +51,9 @@
 
     <!--sweetalert [ OPTIONAL ]-->
     <link rel="stylesheet" href="/static/plugins/sweetalert-master/dist/sweetalert.css">
+
+    <!--dropzone [ OPTIONAL ]-->
+    <link rel="stylesheet" href="/static/plugins/dropzone/dropzone.css">
 
     <!--themes [ OPTIONAL ]-->
     <link href="/static/css/themes/type-c/theme-navy.min.css" rel="stylesheet">
@@ -134,6 +139,12 @@
 
 <!--Demo script [ DEMONSTRATION ]-->
 <script src="/static/js/demo/nifty-demo.min.js"></script>
+
+<!--Bootstrap Wizard [ OPTIONAL ]-->
+<script src="/static/plugins/bootstrap-wizard/jquery.bootstrap.wizard.min.js"></script>
+
+<!--dropzone [ OPTIONAL ]-->
+<script src="/static/plugins/dropzone/dropzone.js"></script>
 
 <!--sweetalert [ OPTIONAL ]-->
 <script src="/static/plugins/sweetalert-master/dist/sweetalert-dev.js"></script>

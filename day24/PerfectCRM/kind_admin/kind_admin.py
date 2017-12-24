@@ -56,7 +56,7 @@ class CustomerAdmin(BaseAdmin):
     filter_horizontal = ("tags",)
     list_per_page = 10
     actions = ("aa",)
-    readonly_fields = ("qq", "consultant", "status")
+    readonly_fields = ("name", "qq", "qq_name", "phone", "person_id", "contact_email", "consultant", "status")
 
     # list_editable = ("status",)
 
@@ -70,7 +70,11 @@ class CustomerAdmin(BaseAdmin):
     aa.display_name = "测试"
 
     def enroll(self):
-        return "<a href='/crm/'>报名链接</a>"
+        if self.instance.status == 0:
+            info = "为其报名"
+        else:
+            info = "报名其他班级"
+        return "<a href='/crm/sales/enrollment/%s/'>%s</a>" % (self.instance.id, info)
 
     enroll.display_name = "报名"
 

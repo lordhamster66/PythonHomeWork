@@ -121,7 +121,15 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
 )
 
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+        'LOCATION': 'unique-snowflake',
+    }
+}
+
 AUTH_USER_MODEL = 'crm.UserProfile'
+ENROLLED_DATA_DIR = os.path.join(BASE_DIR, "enrolled_data")
 BASE_LOG_DIR = os.path.join(BASE_DIR, "log")
 LOGGING = {
     'version': 1,

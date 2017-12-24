@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 # __author__ = "Breakering"
 # Date: 2017/11/18
-from crm import models
 from django.forms import ModelForm, widgets, PasswordInput
 from kind_admin.kind_admin import enabled_admins
 

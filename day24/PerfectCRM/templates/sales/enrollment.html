@@ -1,0 +1,269 @@
+{% extends "index.html" %}
+{% block breadcrumb %}
+    <ol class="breadcrumb">
+        <li class="active">学员报名页</li>
+    </ol>
+{% endblock %}
+{% block page-content %}
+    <div class="panel">
+        <div class="eq-height clearfix">
+            <div class="col-md-5 eq-box-md text-center box-vmiddle-wrap bg-primary">
+
+                <!-- Simple Promotion Widget -->
+                <!--===================================================-->
+                <div class="box-vmiddle pad-all">
+                    <h3 class="text-thin">报名优惠日</h3>
+                    <span class="icon-wrap icon-wrap-lg icon-circle bg-trans-light">
+                        <i class="fa fa-gift fa-5x text-primary"></i>
+                    </span>
+                    <p>现在报名即享<span class="text-lg text-bold">80%</span> 优惠，赶紧行动起来！</p>
+                    <a class="btn btn-lg btn-primary btn-labeled fa fa-arrow-right" href="javascript:void(0);">
+                        查看更多详细内容...
+                    </a>
+                </div>
+                <!--===================================================-->
+
+            </div>
+            <div class="col-md-7 eq-box-md eq-no-panel">
+
+                <!-- Main Form Wizard -->
+                <!--===================================================-->
+                <div id="demo-main-wz">
+
+                    <!--nav-->
+                    <ul class="row wz-step wz-icon-bw wz-nav-off mar-top">
+                        <li class="col-xs-3">
+                            <a data-toggle="tab" href="#demo-main-tab1">
+                                <span class="icon-wrap icon-wrap-xs bg-danger"><i class="fa fa-info"></i></span>
+                                <p class="text-thin">报名课程</p>
+                            </a>
+                        </li>
+                        <li class="col-xs-3">
+                            <a data-toggle="tab" href="#demo-main-tab2">
+                                <span class="icon-wrap icon-wrap-xs bg-warning"><i class="fa fa-user"></i></span>
+                                <p class="text-thin">检查用户信息</p>
+                            </a>
+                        </li>
+                        <li class="col-xs-3">
+                            <a data-toggle="tab" href="#demo-main-tab3">
+                                <span class="icon-wrap icon-wrap-xs bg-info"><i class="fa fa-archive"></i></span>
+                                <p class="text-thin">审查合同</p>
+                            </a>
+                        </li>
+                        <li class="col-xs-3">
+                            <a data-toggle="tab" href="#demo-main-tab4">
+                                <span class="icon-wrap icon-wrap-xs bg-success"><i class="fa fa-heart"></i></span>
+                                <p class="text-thin">报名成功</p>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <!--progress bar-->
+                    <div class="progress progress-xs">
+                        <div class="progress-bar progress-bar-primary"></div>
+                    </div>
+
+
+                    <!--form-->
+                    <div id="main-form" class="form-horizontal">
+                        <div class="panel-body">
+                            <div class="tab-content">
+                                <!--First tab-->
+                                <form id="demo-main-tab1" class="tab-pane">
+                                    <input type="text" name="first_step" value="1" hidden>
+                                    <div class="alert alert-danger media fade in" style="display: none;">
+                                        <div class="media-left">
+                                        <span class="icon-wrap icon-wrap-xs icon-circle alert-icon">
+                                            <i class="fa fa-bolt fa-lg"></i>
+                                        </span>
+                                        </div>
+                                        <div class="media-body"></div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-lg-3 control-label">客户</label>
+                                        <div class="col-lg-7">
+                                            <input type="text" class="form-control" value="{{ customer_obj.qq }}"
+                                                   disabled>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-lg-3 control-label">所报班级</label>
+                                        <div class="col-lg-7">
+                                            {{ enrollment_form_obj.enrolled_class }}
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="form-group">
+                                        <label class="col-lg-3 control-label">课程顾问</label>
+                                        <div class="col-lg-7">
+                                            <input type="text" class="form-control"
+                                                   value="{{ customer_obj.consultant }}"
+                                                   disabled>
+                                        </div>
+                                    </div>
+                                </form>
+
+                                <!--Second tab-->
+                                <form id="demo-main-tab2" class="tab-pane fade">
+                                    <input type="text" name="second_step" value="2" hidden>
+                                    <div class="alert alert-danger media fade in" style="display: none;">
+                                        <div class="media-left">
+                                        <span class="icon-wrap icon-wrap-xs icon-circle alert-icon">
+                                            <i class="fa fa-bolt fa-lg"></i>
+                                        </span>
+                                        </div>
+                                        <div class="media-body"></div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-lg-3 control-label">用户信息</label>
+                                        <div class="col-lg-7">
+                                            <label class="col-lg-7 control-label text-left">
+                                                <a href="/kind_admin/crm/customer/{{ customer_obj.id }}/change/"
+                                                   target="_blank" style="color: #337ab7;">查看用户详细信息</a>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-lg-3 control-label">用户身份证照片</label>
+                                        <div class="col-lg-7" id="download_identity_photo">
+
+                                        </div>
+                                    </div>
+                                </form>
+
+                                <!--Third tab-->
+                                <form id="demo-main-tab3" class="tab-pane">
+                                    <input type="text" name="third_step" value="3" hidden>
+                                    <div class="alert alert-danger media fade in" style="display: none;">
+                                        <div class="media-left">
+                                        <span class="icon-wrap icon-wrap-xs icon-circle alert-icon">
+                                            <i class="fa fa-bolt fa-lg"></i>
+                                        </span>
+                                        </div>
+                                        <div class="media-body"></div>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" name="customer_id" hidden value="{{ customer_obj.id }}">
+                                        <input id="third_step_enrolled_class_id" type="text" name="enrolled_class_id"
+                                               hidden>
+                                        <label class="col-lg-3 control-label">First name</label>
+                                        <div class="col-lg-7">
+                                            <input type="text" placeholder="First name" name="firstName"
+                                                   class="form-control">
+                                        </div>
+                                    </div>
+                                </form>
+
+                                <!--Fourth tab-->
+                                <form id="demo-main-tab4" class="tab-pane">
+                                    <input type="text" name="fourth_step" value="4" hidden>
+                                    <div class="alert alert-danger media fade in" style="display: none;">
+                                        <div class="media-left">
+                                        <span class="icon-wrap icon-wrap-xs icon-circle alert-icon">
+                                            <i class="fa fa-bolt fa-lg"></i>
+                                        </span>
+                                        </div>
+                                        <div class="media-body"></div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-lg-3 control-label">First name</label>
+                                        <div class="col-lg-7">
+                                            <input type="text" placeholder="First name" name="firstName"
+                                                   class="form-control">
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <!--Footer button-->
+                        <div class="pull-right pad-all">
+                            <button type="button" class="previous btn btn-primary">上一步</button>
+                            <button type="button" class="next btn btn-primary">下一步</button>
+                        </div>
+                    </div>
+                </div>
+                <!--===================================================-->
+                <!-- End of Main Form Wizard -->
+
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block js %}
+    <!--Form Wizard [ SAMPLE ]-->
+    <script>
+        // FORM WIZARD
+        // =================================================================
+        // Require Bootstrap Wizard
+        // http://vadimg.com/twitter-bootstrap-wizard-example/
+        // =================================================================
+        // MAIN FORM WIZARD
+        // =================================================================
+        $('#demo-main-wz').bootstrapWizard({
+            tabClass: 'wz-steps',
+            nextSelector: '.next',
+            previousSelector: '.previous',
+            onTabClick: function (tab, navigation, index) {
+                return false;
+            },
+            onInit: function () {
+            },
+            onTabShow: function (tab, navigation, index) {
+                var $total = navigation.find('li').length;
+                var $current = index + 1;
+                var $percent = ($current / $total) * 100;
+                var wdt = 100 / $total;
+                var lft = wdt * index;
+
+                $('#demo-main-wz').find('.progress-bar').css({
+                    width: wdt + '%',
+                    left: lft + "%",
+                    'position': 'relative',
+                    'transition': 'all .5s'
+                });
+
+
+                // If it's the last tab then hide the last button and show the finish instead
+                if ($current >= $total) {
+                    $('#demo-main-wz').find('.next').text("完成").removeClass("btn-primary").addClass("btn-success").removeClass("disabled");
+                } else {
+                    $('#demo-main-wz').find('.next').text("下一步").removeClass("btn-success").addClass("btn-primary");
+                }
+            },
+            onNext: function (tab, navigation, index) {
+                var ret = true;  // 能否继续下一步
+                $.ajax({
+                    url: '{{ request.path }}',
+                    type: "POST",
+                    async: false, // 等待ajax返回结果才会决定是否继续下一步
+                    data: $("#main-form .active").serialize(),
+                    dataType: "JSON",  // 内部会自动将返回的数据用JSON解析
+                    traditional: true,  // 这样设置之后ajax就可以发送多数据了，比如列表
+                    success: function (obj) {
+                        if (!obj.status) {
+                            $("#main-form .active .alert").css("display", "block").find(".media-body").empty().append(obj.errors);
+                            ret = false
+                        } else {
+                            // 第一步操作成功
+                            if ($("#main-form .active").find(":input[name='first_step']").length == 1) {
+                                var customer_id = '{{ customer_obj.id }}';
+                                var enrolled_class_id = $("#id_enrolled_class").val();
+                                $("#third_step_enrolled_class_id").attr("value", enrolled_class_id);
+                                if (obj.data) {
+                                    //<label class="col-lg-7 control-label text-left"><a href="" target="_blank" style="color: #337ab7;"></a></label>
+                                    $("#download_identity_photo").empty();
+                                    var identity_photo_list = obj.data.identity_photo_list;
+                                    for (var i = 0; i < identity_photo_list.length; i++) {
+                                        $("#download_identity_photo").append('<label class="col-lg-7 control-label text-left"><a href="/crm/download_identity_photo/?&customer_id=' + customer_id + '&enrolled_class_id=' + enrolled_class_id + '&file_name=' + identity_photo_list[i] + '" target="_blank" style="color: #337ab7;">' + identity_photo_list[i] + '</a></label>')
+                                    }
+                                }
+                            }
+                            $("#main-form .active .alert").css("display", "none")
+                        }
+                    }
+                });
+                return ret
+            }
+        });
+    </script>
+{% endblock %}

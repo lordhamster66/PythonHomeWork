@@ -23,4 +23,5 @@ urlpatterns = [
     url(r'^customer/registration/(?P<enrollment_id>\d+)/(?P<random_str>\w+)/$',
         views.customer_registration, name="customer_registration"),  # 客户填写报名信息
     url(r'^upload_identity_photo/$', views.upload_identity_photo, name="upload_identity_photo"),  # 上传身份证照片
+    url(r'^download_identity_photo/$', views.download_identity_photo, name="download_identity_photo"),  # 下载身份证照片
 ]

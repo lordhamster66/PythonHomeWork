@@ -342,3 +342,76 @@ Traceback (most recent call last):
   File "D:\GIT\HomeWork\day24\PerfectCRM\crm\views.py", line 82, in enrollment
     customer_alldetail_modelform_obj = forms.CustomerAllDetailModelForm(instance=customer_obj)
 AttributeError: module 'crm.forms' has no attribute 'CustomerAllDetailModelForm'
+[2017-12-26 20:25:42,574][Thread-5:12120][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /crm/download_identity_photo/]
+Traceback (most recent call last):
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    "returned None instead." % (callback.__module__, view_name)
+ValueError: The view crm.views.download_identity_photo didn't return an HttpResponse object. It returned None instead.
+[2017-12-26 20:29:03,979][Thread-5:1584][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /crm/download_identity_photo/]
+Traceback (most recent call last):
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    "returned None instead." % (callback.__module__, view_name)
+ValueError: The view crm.views.download_identity_photo didn't return an HttpResponse object. It returned None instead.
+[2017-12-26 20:45:44,864][Thread-5:9384][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /crm/download_identity_photo/]
+Traceback (most recent call last):
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    "returned None instead." % (callback.__module__, view_name)
+ValueError: The view crm.views.download_identity_photo didn't return an HttpResponse object. It returned None instead.
+[2017-12-26 20:48:02,559][Thread-5:3768][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /crm/download_identity_photo/]
+Traceback (most recent call last):
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    "returned None instead." % (callback.__module__, view_name)
+ValueError: The view crm.views.download_identity_photo didn't return an HttpResponse object. It returned None instead.
+[2017-12-26 21:00:07,442][Thread-5:8656][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /crm/download_identity_photo/]
+Traceback (most recent call last):
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\GIT\HomeWork\day24\PerfectCRM\crm\views.py", line 79, in download_identity_photo
+    identity_photo_path = os.path.join(settings.ENROLLED_DATA_DIR, enrollment_obj.id)  # 客户身份证照片存放地址
+  File "D:\Software\Anaconda\envs\py3-django\lib\ntpath.py", line 114, in join
+    genericpath._check_arg_types('join', path, *paths)
+  File "D:\Software\Anaconda\envs\py3-django\lib\genericpath.py", line 149, in _check_arg_types
+    (funcname, s.__class__.__name__)) from None
+TypeError: join() argument must be str or bytes, not 'int'
+[2017-12-26 21:00:13,444][Thread-6:5544][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /crm/download_identity_photo/]
+Traceback (most recent call last):
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\GIT\HomeWork\day24\PerfectCRM\crm\views.py", line 79, in download_identity_photo
+    identity_photo_path = os.path.join(settings.ENROLLED_DATA_DIR, enrollment_obj.id)  # 客户身份证照片存放地址
+  File "D:\Software\Anaconda\envs\py3-django\lib\ntpath.py", line 114, in join
+    genericpath._check_arg_types('join', path, *paths)
+  File "D:\Software\Anaconda\envs\py3-django\lib\genericpath.py", line 149, in _check_arg_types
+    (funcname, s.__class__.__name__)) from None
+TypeError: join() argument must be str or bytes, not 'int'
+[2017-12-26 21:03:56,179][Thread-5:7616][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /crm/download_identity_photo/]
+Traceback (most recent call last):
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\GIT\HomeWork\day24\PerfectCRM\crm\views.py", line 80, in download_identity_photo
+    file_path = os.path.join(identity_photo_path, file_name)
+  File "D:\Software\Anaconda\envs\py3-django\lib\ntpath.py", line 114, in join
+    genericpath._check_arg_types('join', path, *paths)
+  File "D:\Software\Anaconda\envs\py3-django\lib\genericpath.py", line 149, in _check_arg_types
+    (funcname, s.__class__.__name__)) from None
+TypeError: join() argument must be str or bytes, not 'NoneType'

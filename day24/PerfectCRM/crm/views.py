@@ -66,6 +66,34 @@ def upload_identity_photo(request):
     return HttpResponse(json.dumps(ret))
 
 
+def download_identity_photo(request):
+    """销售下载客户身份证照片进行核查"""
+    if request.method == "GET":
+        customer_id = request.GET.get("customer_id")
+        enrolled_class_id = request.GET.get("enrolled_class_id")
+        file_name = request.GET.get("file_name", "")
+        enrollment_obj = models.Enrollment.objects.filter(
+            customer__id=customer_id,
+            enrolled_class_id=enrolled_class_id
+        ).first()
+        if enrollment_obj:
+            identity_photo_path = os.path.join(settings.ENROLLED_DATA_DIR, str(enrollment_obj.id))  # 客户身份证照片存放地址
+            file_path = os.path.join(identity_photo_path, file_name)
+            if os.path.isfile(file_path):
+                f = open(file_path, "rb")
+                file_obj = f.read()
+                f.close()
+                # 设定文件头，这种设定可以让任意文件都能正确下载，而且已知文本文件不是本地打开
+                response = HttpResponse(file_obj, content_type='APPLICATION/OCTET-STREAM')
+                response['Content-Disposition'] = 'attachment; filename=' + file_name  # 设定传输给客户端的文件名称
+                response['Content-Length'] = os.path.getsize(file_path)  # 传输给客户端的文件大小
+                return response
+            else:
+                return HttpResponse("文件不存在！")
+        else:
+            return HttpResponse("报名信息不存在！")
+
+
 def get_registration_url(enrollment_obj):
     """获取客户填写报名信息的随机URL"""
     random_str = "".join(random.sample(string.ascii_lowercase + string.digits, 6))
@@ -87,10 +115,6 @@ def enrollment(request, customer_id):
             print("报名流程第一步！")
             enrollment_form_obj = forms.EnrollmentForm(request.POST)
             if enrollment_form_obj.is_valid():
-                ret["data"] = {
-                    "customer_id": customer_obj.id,
-                    "enrolled_class_id": request.POST.get("enrolled_class")
-                }
                 try:
                     enrollment_obj = models.Enrollment.objects.create(
                         customer=customer_obj,
@@ -104,6 +128,11 @@ def enrollment(request, customer_id):
                         enrolled_class_id=request.POST.get("enrolled_class")
                     ).first()
                     if enrollment_obj.contract_agreed:  # 用户同意合同并填入了个人信息资料，此时销售可以继续第二步操作了
+                        # 客户身份证照片存放地址
+                        identity_photo_path = os.path.join(settings.ENROLLED_DATA_DIR, str(enrollment_obj.id))
+                        ret["data"] = {"identity_photo_list": []}
+                        for file_name in os.listdir(identity_photo_path):
+                            ret["data"]["identity_photo_list"].append(file_name)
                         ret["status"] = True
                     else:
                         ret["errors"] = "请将此链接发给客户填写:%s" % get_registration_url(enrollment_obj)

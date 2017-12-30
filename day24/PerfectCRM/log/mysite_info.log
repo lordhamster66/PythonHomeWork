@@ -696,3 +696,174 @@ django.db.utils.IntegrityError: NOT NULL constraint failed: crm_payment.consulta
 [2017-12-30 14:36:27,919][Thread-6:5496][task_id:__name__][permission.py:77][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/]
 [2017-12-30 14:37:32,760][Thread-18:5708][task_id:__name__][permission.py:77][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/]
 [2017-12-30 14:45:29,714][Thread-5:7256][task_id:__name__][permission.py:77][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/crm/sales/enrollment/5/]
+[2017-12-30 14:56:14,922][Thread-53:12800][task_id:__name__][permission.py:77][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/]
+[2017-12-30 15:18:40,887][Thread-10:3668][task_id:django.security.csrf][csrf.py:160][WARNING][Forbidden (CSRF token missing or incorrect.): /crm/contract_rejection/5/2/]
+[2017-12-30 15:18:56,668][Thread-15:920][task_id:__name__][permission.py:77][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/crm/contract_rejection/5/2/]
+[2017-12-30 15:47:48,886][Thread-33:14164][task_id:__name__][permission.py:77][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/crm/customerfollowup/]
+[2017-12-30 15:56:47,720][Thread-16:6168][task_id:__name__][permission.py:77][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/crm/customerfollowup/2/delete/]
+[2017-12-30 15:57:57,841][Thread-7:11512][task_id:__name__][permission.py:77][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/crm/userprofile/add/]
+[2017-12-30 15:57:59,939][Thread-8:1988][task_id:__name__][permission.py:77][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/crm/userprofile/2/change/]
+[2017-12-30 15:58:32,559][Thread-22:15916][task_id:__name__][permission.py:77][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/]
+[2017-12-30 16:11:45,186][Thread-1:1468][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /kind_admin/crm/customerfollowup/add/]
+Traceback (most recent call last):
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\GIT\HomeWork\day24\PerfectCRM\crm\permissions\permission.py", line 75, in inner
+    response = func(request, *args, **kwargs)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\GIT\HomeWork\day24\PerfectCRM\kind_admin\views.py", line 93, in table_add
+    "table_name": table_name,
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\loader.py", line 68, in render_to_string
+    return template.render(context, request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\backends\django.py", line 66, in render
+    return self.template.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 207, in render
+    return self._render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\loader_tags.py", line 177, in render
+    return compiled_parent._render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\loader_tags.py", line 177, in render
+    return compiled_parent._render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\loader_tags.py", line 177, in render
+    return compiled_parent._render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\loader_tags.py", line 72, in render
+    result = block.nodelist.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\loader_tags.py", line 72, in render
+    result = block.nodelist.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\library.py", line 203, in render
+    output = self.func(*resolved_args, **resolved_kwargs)
+  File "D:\GIT\HomeWork\day24\PerfectCRM\kind_admin\templatetags\tags.py", line 296, in get_all_error
+    return model_form_obj.errors.get("__all__", "")
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\forms\forms.py", line 175, in errors
+    self.full_clean()
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\forms\forms.py", line 384, in full_clean
+    self._clean_fields()
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\forms\forms.py", line 396, in _clean_fields
+    value = field.widget.value_from_datadict(self.data, self.files, self.add_prefix(name))
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\forms\widgets.py", line 639, in value_from_datadict
+    getter = data.get
+AttributeError: 'generator' object has no attribute 'get'
+[2017-12-30 16:17:36,684][Thread-3:4772][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /kind_admin/crm/customer/]
+Traceback (most recent call last):
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\models\options.py", line 617, in get_field
+    return self.fields_map[field_name]
+KeyError: 'add_customer_followup'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\GIT\HomeWork\day24\PerfectCRM\kind_admin\templatetags\tags.py", line 69, in get_table_rows
+    field_obj = obj._meta.get_field(column)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\models\options.py", line 619, in get_field
+    raise FieldDoesNotExist("%s has no field named '%s'" % (self.object_name, field_name))
+django.core.exceptions.FieldDoesNotExist: Customer has no field named 'add_customer_followup'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\GIT\HomeWork\day24\PerfectCRM\crm\permissions\permission.py", line 75, in inner
+    response = func(request, *args, **kwargs)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\GIT\HomeWork\day24\PerfectCRM\kind_admin\views.py", line 57, in table_objs
+    "search_content": request.GET.get("_q", ""),
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\loader.py", line 68, in render_to_string
+    return template.render(context, request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\backends\django.py", line 66, in render
+    return self.template.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 207, in render
+    return self._render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\loader_tags.py", line 177, in render
+    return compiled_parent._render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\loader_tags.py", line 177, in render
+    return compiled_parent._render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\loader_tags.py", line 72, in render
+    result = block.nodelist.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\loader_tags.py", line 72, in render
+    result = block.nodelist.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\defaulttags.py", line 216, in render
+    nodelist.append(node.render_annotated(context))
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\library.py", line 203, in render
+    output = self.func(*resolved_args, **resolved_kwargs)
+  File "D:\GIT\HomeWork\day24\PerfectCRM\kind_admin\templatetags\tags.py", line 116, in get_table_rows
+    column_data = getattr(admin_class, column)()
+  File "D:\GIT\HomeWork\day24\PerfectCRM\kind_admin\kind_admin.py", line 80, in add_customer_followup
+    点击添加</a>""" % (self.instance)
+TypeError: not enough arguments for format string
+[2017-12-30 16:18:13,000][Thread-3:8312][task_id:django.request][base.py:152][WARNING][Not Found: /kind_admin/crm/customerfollowup/add/        ]
+[2017-12-30 16:19:11,301][Thread-7:4440][task_id:__name__][permission.py:77][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/]
+[2017-12-30 16:19:58,128][Thread-22:7236][task_id:__name__][permission.py:77][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/]

@@ -51,7 +51,10 @@ def register(model_class, admin_class=None):
 
 
 class CustomerAdmin(BaseAdmin):
-    list_display = ("id", "name", "qq", "source", "consult_course", "consultant", "status", "date", "enroll")
+    list_display = (
+        "id", "name", "qq", "source", "consult_course", "consultant", "status", "date",
+        "add_customer_followup", "enroll"
+    )
     list_filter = ("source", "consult_course", "consultant", "status", "date")
     search_fields = ("name", "qq")
     filter_horizontal = ("tags",)
@@ -70,6 +73,14 @@ class CustomerAdmin(BaseAdmin):
         return redirect("/crm/")
 
     aa.display_name = "测试"
+
+    def add_customer_followup(self):
+        return "<a href='/kind_admin/crm/customerfollowup/add/?" \
+               "customer=%s&content=请填写跟进内容&consultant=%s&intention=2'>点击添加</a>" % (
+                   self.instance.id, self.request.user.id
+               )
+
+    add_customer_followup.display_name = "添加跟进记录"
 
     def enroll(self):
         if self.instance.status == 0:
@@ -93,6 +104,8 @@ class TagAdmin(BaseAdmin):
 
 class CustomerFollowUPAdmin(BaseAdmin):
     list_display = ("customer", "consultant", "date")
+    list_filter = ("customer", "consultant", "intention", "date")
+    readonly_fields = ("customer", "consultant")
 
 
 class CourseAdmin(BaseAdmin):

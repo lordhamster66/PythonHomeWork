@@ -32,6 +32,30 @@ PermissionDict = {
         "args": [],
         "hooks": []
     },
+    # 可以下载身份证照片
+    "crm.can_download_identity_photo": {
+        "url_type": 0,
+        "url": "download_identity_photo",
+        "method": "GET",
+        "args": [],
+        "hooks": []
+    },
+    # 可以查看合同信息
+    "crm.can_access_contract_detail": {
+        "url_type": 0,
+        "url": "show_contract",
+        "method": "GET",
+        "args": [],
+        "hooks": []
+    },
+    # 可以驳回合同
+    "crm.can_reject_contract": {
+        "url_type": 0,
+        "url": "contract_rejection",
+        "method": "POST",
+        "args": [],
+        "hooks": []
+    },
 
     # kind_admin项目权限
     # 可以访问kind_admin下的APP库
@@ -166,6 +190,46 @@ PermissionDict = {
     "crm.can_change_all_password": {
         "url_type": 0,
         "url": "change_password",
+        "method": "POST",
+        "args": [],
+        "hooks": []
+    },
+    # 可以访问kind_admin下注册的客户跟进记录
+    "crm.can_access_customer_followup": {
+        "url_type": 1,
+        "url": "/kind_admin/crm/customerfollowup/",
+        "method": "GET",
+        "args": [],
+        "hooks": []
+    },
+    # 可以访问kind_admin下注册的客户跟进记录的修改页面
+    "crm.can_access_customer_followup_change": {
+        "url_type": 2,
+        "url": "/kind_admin/crm/customerfollowup/\d+/change/$",
+        "method": "GET",
+        "args": [],
+        "hooks": []
+    },
+    # 可以修改kind_admin下注册的客户跟进记录
+    "crm.can_change_customer_followup": {
+        "url_type": 2,
+        "url": "/kind_admin/crm/customerfollowup/\d+/change/$",
+        "method": "POST",
+        "args": [],
+        "hooks": []
+    },
+    # 可以访问kind_admin下注册的客户跟进记录的添加页面
+    "crm.can_access_customer_followup_add": {
+        "url_type": 2,
+        "url": "/kind_admin/crm/customerfollowup/add/",
+        "method": "GET",
+        "args": [],
+        "hooks": []
+    },
+    # 可以添加kind_admin下注册的客户跟进记录
+    "crm.can_add_customer_followup": {
+        "url_type": 2,
+        "url": "/kind_admin/crm/customerfollowup/add/",
         "method": "POST",
         "args": [],
         "hooks": []

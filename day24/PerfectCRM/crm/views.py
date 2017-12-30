@@ -69,6 +69,7 @@ def upload_identity_photo(request):
     return HttpResponse(json.dumps(ret))
 
 
+@check_permission_decorate
 @login_required
 def download_identity_photo(request):
     """销售下载客户身份证照片进行核查"""
@@ -98,6 +99,7 @@ def download_identity_photo(request):
             return HttpResponse("报名信息不存在！")
 
 
+@check_permission_decorate
 @login_required
 def show_contract(request):
     """
@@ -105,17 +107,19 @@ def show_contract(request):
     :param request:
     :return:
     """
-    customer_id = request.GET.get("customer_id")
-    enrolled_class_id = request.GET.get("enrolled_class_id")
-    enrollment_obj = models.Enrollment.objects.filter(
-        customer__id=customer_id,
-        enrolled_class_id=enrolled_class_id
-    ).first()
-    customer_obj = enrollment_obj.customer  # 通过报名对象获取客户对象
-    contract_content = enrollment_obj.enrolled_class.contract.content.format(qq=customer_obj.qq)
-    return render(request, "show_contract.html", {"contract_content": contract_content})
+    if request.method == "GET":
+        customer_id = request.GET.get("customer_id")
+        enrolled_class_id = request.GET.get("enrolled_class_id")
+        enrollment_obj = models.Enrollment.objects.filter(
+            customer__id=customer_id,
+            enrolled_class_id=enrolled_class_id
+        ).first()
+        customer_obj = enrollment_obj.customer  # 通过报名对象获取客户对象
+        contract_content = enrollment_obj.enrolled_class.contract.content.format(qq=customer_obj.qq)
+        return render(request, "show_contract.html", {"contract_content": contract_content})
 
 
+@check_permission_decorate
 @login_required
 def contract_rejection(request, customer_id, enrolled_class_id):
     """
@@ -125,11 +129,12 @@ def contract_rejection(request, customer_id, enrolled_class_id):
     :param enrolled_class_id: 报名班级ID
     :return:
     """
-    models.Enrollment.objects.filter(
-        customer__id=customer_id,
-        enrolled_class_id=enrolled_class_id
-    ).update(contract_agreed=False, contract_approved=False)
-    return redirect("/kind_admin/crm/customer/")
+    if request.method == "POST":
+        models.Enrollment.objects.filter(
+            customer__id=customer_id,
+            enrolled_class_id=enrolled_class_id
+        ).update(contract_agreed=False, contract_approved=False)
+        return redirect("/kind_admin/crm/customer/")
 
 
 @check_permission_decorate

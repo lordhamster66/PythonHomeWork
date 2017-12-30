@@ -73,7 +73,11 @@ def table_add(request, app_name, table_name):
     admin_class.need_readonly = False  # 对对象进行添加时，不需要有readonly的需求
     model_form_class = create_model_form(admin_class)  # 获取ModelForm
     if request.method == "GET":
-        model_form_obj = model_form_class()
+        condition_dict = get_condition_dict(request)
+        if condition_dict:
+            model_form_obj = model_form_class(data=condition_dict)
+        else:
+            model_form_obj = model_form_class()
     elif request.method == "POST":
         model_form_obj = model_form_class(request.POST)
         if model_form_obj.is_valid():

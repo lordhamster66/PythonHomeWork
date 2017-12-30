@@ -202,10 +202,12 @@
                         </div>
                         <!--Footer button-->
                         <div class="pull-left pad-all">
-                            <a id="rejected-contract" href="" class="btn btn-danger pull-left"
-                               style="display: none;margin-left: 66px;">
-                                驳回合同
-                            </a>
+                            <form id="rejected-contract" action="" method="post"
+                                  style="display: none;margin-left: 66px;">{% csrf_token %}
+                                <button type="submit" class="btn btn-danger pull-left">
+                                    驳回合同
+                                </button>
+                            </form>
                         </div>
                         <div class="pull-right pad-all">
                             <button type="button" class="previous btn btn-primary">上一步</button>
@@ -287,7 +289,7 @@
                                 $("#fourth_step_enrolled_class_id").attr("value", enrolled_class_id);  // 第四步加入报名班级ID，后台才可以识别该条报名对象
                                 $("#show-contract").attr("href",
                                     "/crm/show_contract/?" + "&customer_id=" + customer_id + "&enrolled_class_id=" + enrolled_class_id);  // 更新展示合同的链接
-                                $("#rejected-contract").attr("href", "/crm/contract_rejection/" + customer_id + "/" + enrolled_class_id + "/");  // 更新驳回合同的链接
+                                $("#rejected-contract").attr("action", "/crm/contract_rejection/" + customer_id + "/" + enrolled_class_id + "/");  // 更新驳回合同的链接
                                 $("#fourth_step_enrolled_clss").text($("#id_enrolled_class").find("option:selected").text());  // 更新第四步的所报班级
                                 if (obj.data) {
                                     // <div class="form-group"><label class="col-lg-3 control-label">客户姓名</label><div class="col-lg-7"><label id="second_step_name" class="col-lg-7 control-label text-left"></label></div></div>

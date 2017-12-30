@@ -24,4 +24,7 @@ urlpatterns = [
         views.customer_registration, name="customer_registration"),  # 客户填写报名信息
     url(r'^upload_identity_photo/$', views.upload_identity_photo, name="upload_identity_photo"),  # 上传身份证照片
     url(r'^download_identity_photo/$', views.download_identity_photo, name="download_identity_photo"),  # 下载身份证照片
+    url(r'^show_contract/$', views.show_contract, name="show_contract"),  # 展示合同信息
+    url(r'^contract_rejection/(?P<customer_id>\d+)/(?P<enrolled_class_id>\d+)/$',
+        views.contract_rejection, name="contract_rejection"),  # 驳回合同
 ]

@@ -53,7 +53,7 @@
                         <li class="col-xs-3">
                             <a data-toggle="tab" href="#demo-main-tab4">
                                 <span class="icon-wrap icon-wrap-xs bg-success"><i class="fa fa-heart"></i></span>
-                                <p class="text-thin">报名成功</p>
+                                <p class="text-thin">缴费并成功报名</p>
                             </a>
                         </li>
                     </ul>
@@ -115,11 +115,13 @@
                                         <div class="media-body"></div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-lg-3 control-label">用户信息</label>
+                                        <label class="col-lg-3 control-label">用户详细信息查看</label>
                                         <div class="col-lg-7">
                                             <label class="col-lg-7 control-label text-left">
                                                 <a href="/kind_admin/crm/customer/{{ customer_obj.id }}/change/"
-                                                   target="_blank" style="color: #337ab7;">查看用户详细信息</a>
+                                                   target="_blank" style="color: #337ab7;">
+                                                    点击查看用户详细信息
+                                                </a>
                                             </label>
                                         </div>
                                     </div>
@@ -146,10 +148,13 @@
                                         <input type="text" name="customer_id" hidden value="{{ customer_obj.id }}">
                                         <input id="third_step_enrolled_class_id" type="text" name="enrolled_class_id"
                                                hidden>
-                                        <label class="col-lg-3 control-label">First name</label>
+                                        <label class="col-lg-3 control-label">审查合同</label>
                                         <div class="col-lg-7">
-                                            <input type="text" placeholder="First name" name="firstName"
-                                                   class="form-control">
+                                            <label class="col-lg-7 control-label text-left">
+                                                <a id="show-contract" href="" target="_blank" style="color: #337ab7;">
+                                                    《点击查看合同详情》
+                                                </a>
+                                            </label>
                                         </div>
                                     </div>
                                 </form>
@@ -157,6 +162,8 @@
                                 <!--Fourth tab-->
                                 <form id="demo-main-tab4" class="tab-pane">
                                     <input type="text" name="fourth_step" value="4" hidden>
+                                    <input id="fourth_step_enrolled_class_id" type="text" name="enrolled_class_id"
+                                           hidden>
                                     <div class="alert alert-danger media fade in" style="display: none;">
                                         <div class="media-left">
                                         <span class="icon-wrap icon-wrap-xs icon-circle alert-icon">
@@ -166,16 +173,40 @@
                                         <div class="media-body"></div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-lg-3 control-label">First name</label>
+                                        <label class="col-lg-3 control-label">客户</label>
                                         <div class="col-lg-7">
-                                            <input type="text" placeholder="First name" name="firstName"
-                                                   class="form-control">
+                                            <label class="col-lg-7 control-label text-left">{{ customer_obj.name }}</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-lg-3 control-label">所报班级</label>
+                                        <div class="col-lg-7">
+                                            <label id="fourth_step_enrolled_clss"
+                                                   class="col-lg-7 control-label text-left"></label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-lg-3 control-label">缴费金额</label>
+                                        <div class="col-lg-7">
+                                            {{ payment_form_obj.amount }}
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-lg-3 control-label">课程顾问</label>
+                                        <div class="col-lg-7">
+                                            <label class="col-lg-7 control-label text-left">{{ customer_obj.consultant }}</label>
                                         </div>
                                     </div>
                                 </form>
                             </div>
                         </div>
                         <!--Footer button-->
+                        <div class="pull-left pad-all">
+                            <a id="rejected-contract" href="" class="btn btn-danger pull-left"
+                               style="display: none;margin-left: 66px;">
+                                驳回合同
+                            </a>
+                        </div>
                         <div class="pull-right pad-all">
                             <button type="button" class="previous btn btn-primary">上一步</button>
                             <button type="button" class="next btn btn-primary">下一步</button>
@@ -222,7 +253,11 @@
                     'transition': 'all .5s'
                 });
 
-
+                if ($current == 3) {
+                    $("#rejected-contract").css("display", "block");
+                } else {
+                    $("#rejected-contract").css("display", "none");
+                }
                 // If it's the last tab then hide the last button and show the finish instead
                 if ($current >= $total) {
                     $('#demo-main-wz').find('.next').text("完成").removeClass("btn-primary").addClass("btn-success").removeClass("disabled");
@@ -246,18 +281,36 @@
                         } else {
                             // 第一步操作成功
                             if ($("#main-form .active").find(":input[name='first_step']").length == 1) {
-                                var customer_id = '{{ customer_obj.id }}';
-                                var enrolled_class_id = $("#id_enrolled_class").val();
-                                $("#third_step_enrolled_class_id").attr("value", enrolled_class_id);
+                                var customer_id = '{{ customer_obj.id }}';  // 获取用户ID
+                                var enrolled_class_id = $("#id_enrolled_class").val();  // 获取报名班级ID，由用户id和报名班级id可以得出报名对象
+                                $("#third_step_enrolled_class_id").attr("value", enrolled_class_id);  // 第三步加入报名班级ID，后台才可以识别该条报名对象
+                                $("#fourth_step_enrolled_class_id").attr("value", enrolled_class_id);  // 第四步加入报名班级ID，后台才可以识别该条报名对象
+                                $("#show-contract").attr("href",
+                                    "/crm/show_contract/?" + "&customer_id=" + customer_id + "&enrolled_class_id=" + enrolled_class_id);  // 更新展示合同的链接
+                                $("#rejected-contract").attr("href", "/crm/contract_rejection/" + customer_id + "/" + enrolled_class_id + "/");  // 更新驳回合同的链接
+                                $("#fourth_step_enrolled_clss").text($("#id_enrolled_class").find("option:selected").text());  // 更新第四步的所报班级
                                 if (obj.data) {
+                                    // <div class="form-group"><label class="col-lg-3 control-label">客户姓名</label><div class="col-lg-7"><label id="second_step_name" class="col-lg-7 control-label text-left"></label></div></div>
+                                    var customer_info = obj.data.customer_info;   // 后端返回的用户更新好的用户信息
+                                    $("#download_identity_photo").parent().prevAll("[tag='customer_info']").remove();  // 将已有的用户信息标签清空
+                                    // 添加更新好的用户信息标签
+                                    for (var i in customer_info) {
+                                        $("#download_identity_photo").parent().before('<div class="form-group" tag="customer_info"><label class="col-lg-3 control-label">' + customer_info[i][0] + '</label><div class="col-lg-7"><label id="second_step_name" class="col-lg-7 control-label text-left">' + customer_info[i][1] + '</label></div></div>')
+                                    }
                                     //<label class="col-lg-7 control-label text-left"><a href="" target="_blank" style="color: #337ab7;"></a></label>
                                     $("#download_identity_photo").empty();
+                                    // 添加用户身份证照片下载链接
                                     var identity_photo_list = obj.data.identity_photo_list;
                                     for (var i = 0; i < identity_photo_list.length; i++) {
                                         $("#download_identity_photo").append('<label class="col-lg-7 control-label text-left"><a href="/crm/download_identity_photo/?&customer_id=' + customer_id + '&enrolled_class_id=' + enrolled_class_id + '&file_name=' + identity_photo_list[i] + '" target="_blank" style="color: #337ab7;">' + identity_photo_list[i] + '</a></label>')
                                     }
                                 }
                             }
+                            // 第四步操作成功
+                            if ($("#main-form .active").find(":input[name='fourth_step']").length == 1) {
+                                location.href = "/kind_admin/crm/customer/"
+                            }
+                            // 操作成功则隐藏错误提示框
                             $("#main-form .active .alert").css("display", "none")
                         }
                     }

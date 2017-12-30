@@ -1,7 +1,7 @@
 import json, random, string, os
 from PerfectCRM import settings
 from django.utils.timezone import now
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, HttpResponse, redirect
 from django.contrib.auth.decorators import login_required
 from crm.permissions.permission import check_permission_decorate
 from crm import forms, models
@@ -26,6 +26,7 @@ def customer_registration(request, enrollment_id, random_str):
     if cache.get(enrollment_id) == random_str:
         enrollment_obj = models.Enrollment.objects.filter(id=enrollment_id).first()  # 获取报名对象
         customer_obj = enrollment_obj.customer  # 通过报名对象获取客户对象
+        contract_content = enrollment_obj.enrolled_class.contract.content.format(qq=customer_obj.qq)
         if request.method == "GET":
             customer_form_obj = forms.CustomerModelForm(instance=customer_obj)
         else:
@@ -44,6 +45,7 @@ def customer_registration(request, enrollment_id, random_str):
         response = render(request, "customer/registration.html", {
             "enrollment_obj": enrollment_obj,
             "customer_form_obj": customer_form_obj,
+            "contract_content": contract_content
         })
     else:
         response = render(request, "pages-403.html", {"errors": ["此链接已失效，请联系您的课程顾问重新为您生成报名链接！"]})
@@ -55,7 +57,7 @@ def upload_identity_photo(request):
     ret = {"status": False, "error": None, "data": None}  # 要返回的内容
     if request.method == "POST":
         if request.is_ajax():
-            enrollment_id = request.POST.get("enrollment_id")
+            enrollment_id = request.POST.get("enrollment_id")  # 获取报名对象ID
             identity_photo_path = os.path.join(settings.ENROLLED_DATA_DIR, enrollment_id)  # 客户身份证照片存放地址
             os.makedirs(identity_photo_path, exist_ok=True)  # 确保目录存在
             for k, file_obj in request.FILES.items():  # 存储文件
@@ -66,6 +68,7 @@ def upload_identity_photo(request):
     return HttpResponse(json.dumps(ret))
 
 
+@login_required
 def download_identity_photo(request):
     """销售下载客户身份证照片进行核查"""
     if request.method == "GET":
@@ -104,15 +107,50 @@ def get_registration_url(enrollment_obj):
     return registration_url
 
 
+@login_required
+def show_contract(request):
+    """
+    展示合同内容
+    :param request:
+    :return:
+    """
+    customer_id = request.GET.get("customer_id")
+    enrolled_class_id = request.GET.get("enrolled_class_id")
+    enrollment_obj = models.Enrollment.objects.filter(
+        customer__id=customer_id,
+        enrolled_class_id=enrolled_class_id
+    ).first()
+    customer_obj = enrollment_obj.customer  # 通过报名对象获取客户对象
+    contract_content = enrollment_obj.enrolled_class.contract.content.format(qq=customer_obj.qq)
+    return render(request, "show_contract.html", {"contract_content": contract_content})
+
+
+@login_required
+def contract_rejection(request, customer_id, enrolled_class_id):
+    """
+    驳回合同
+    :param request:
+    :param customer_id: 用户ID
+    :param enrolled_class_id: 报名班级ID
+    :return:
+    """
+    models.Enrollment.objects.filter(
+        customer__id=customer_id,
+        enrolled_class_id=enrolled_class_id
+    ).update(contract_agreed=False, contract_approved=False)
+    return redirect("/kind_admin/crm/customer/")
+
+
+@login_required
 def enrollment(request, customer_id):
     """销售为客户报名"""
     customer_obj = models.Customer.objects.filter(id=customer_id).first()  # 获取客户对象
-    if request.method == "GET":
-        enrollment_form_obj = forms.EnrollmentForm()
+    enrollment_form_obj = forms.EnrollmentForm()  # 报名model_from
+    payment_form_obj = forms.PaymentModelForm()  # 缴费model_form
     if request.method == "POST":
         ret = {"status": False, "errors": None, "data": None}
         if request.POST.get("first_step"):
-            print("报名流程第一步！")
+            # print("报名流程第一步！")
             enrollment_form_obj = forms.EnrollmentForm(request.POST)
             if enrollment_form_obj.is_valid():
                 try:
@@ -128,9 +166,16 @@ def enrollment(request, customer_id):
                         enrolled_class_id=request.POST.get("enrolled_class")
                     ).first()
                     if enrollment_obj.contract_agreed:  # 用户同意合同并填入了个人信息资料，此时销售可以继续第二步操作了
+                        customer_obj = models.Customer.objects.filter(id=customer_id).first()  # 获取最新的客户对象
+                        ret["data"] = {"identity_photo_list": [], "customer_info": {
+                            "name": ["客户姓名", customer_obj.name],
+                            "qq_name": ["qq名称", customer_obj.qq_name],
+                            "phone": ["手机号", customer_obj.phone],
+                            "person_id": ["身份证号", customer_obj.person_id],
+                            "contact_email": ["联系邮箱", customer_obj.contact_email],
+                        }}  # 第一步操作返回的内容
                         # 客户身份证照片存放地址
                         identity_photo_path = os.path.join(settings.ENROLLED_DATA_DIR, str(enrollment_obj.id))
-                        ret["data"] = {"identity_photo_list": []}
                         for file_name in os.listdir(identity_photo_path):
                             ret["data"]["identity_photo_list"].append(file_name)
                         ret["status"] = True
@@ -140,11 +185,11 @@ def enrollment(request, customer_id):
                 ret["errors"] = enrollment_form_obj.errors.as_ul()
             return HttpResponse(json.dumps(ret))
         elif request.POST.get("second_step"):
-            print("报名流程第二步！")
+            # print("报名流程第二步！")
             ret["status"] = True
             return HttpResponse(json.dumps(ret))
         elif request.POST.get("third_step"):
-            print("报名流程第三步！")
+            # print("报名流程第三步！")
             models.Enrollment.objects.filter(
                 customer_id=request.POST.get("customer_id"),
                 enrolled_class_id=request.POST.get("enrolled_class_id")
@@ -152,10 +197,25 @@ def enrollment(request, customer_id):
             ret["status"] = True
             return HttpResponse(json.dumps(ret))
         elif request.POST.get("fourth_step"):
-            print("报名流程第四步！")
-            ret["status"] = True
+            # print("报名流程第四步！")
+            class_obj = models.ClassList.objects.filter(id=request.POST.get("enrolled_class_id")).first()  # 获取用户报名的班级
+            data = {
+                "customer": customer_obj,
+                "course": class_obj.course,
+                "amount": request.POST.get("amount"),
+                "consultant": customer_obj.consultant,
+            }
+            payment_form_obj = forms.PaymentModelForm(data=data)
+            if payment_form_obj.is_valid():
+                models.Payment.objects.create(**data)  # 创建缴费记录
+                customer_obj.status = 1  # 将客户状态改为已报名
+                customer_obj.save()  # 保存客户对象
+                ret["status"] = True
+            else:
+                ret["errors"] = payment_form_obj.errors.as_ul()
             return HttpResponse(json.dumps(ret))
     return render(request, "sales/enrollment.html", {
         "customer_obj": customer_obj,
         "enrollment_form_obj": enrollment_form_obj,
+        "payment_form_obj": payment_form_obj,
     })

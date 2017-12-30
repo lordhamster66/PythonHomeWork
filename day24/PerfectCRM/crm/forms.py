@@ -28,3 +28,16 @@ class CustomerModelForm(ModelForm):
         model = models.Customer
         fields = "__all__"
         exclude = ("qq", "consultant", "source", "referral_from", "consult_course", "content", "tags", "memo", "status")
+
+
+class PaymentModelForm(ModelForm):
+    """缴费记录modelform"""
+
+    def __new__(cls, *args, **kwargs):
+        for field_name, field_obj in cls.base_fields.items():
+            field_obj.widget.attrs["class"] = "form-control"
+            return ModelForm.__new__(cls)
+
+    class Meta:
+        model = models.Payment
+        fields = ('amount',)

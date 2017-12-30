@@ -355,6 +355,8 @@ class UserProfile(AbstractBaseUser, PermissionsMixin):
         verbose_name_plural = "账户表"
         permissions = (
             ("can_access_sales_index", "可以访问销售首页"),
+            ("can_access_enrollment_for_customer", "可以访问报名页"),
+            ("can_enrollment_for_customer", "可以给用户报名"),
             ("can_access_table_index", "可以访问kind_admin下的APP库"),
             ("can_access_table_objs", "可以访问kind_admin下注册的所有表"),
             ("can_do_action_or_change_table_objs", "可以对kind_admin下注册的所有表进行行内编辑和action操作"),

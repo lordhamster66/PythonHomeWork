@@ -686,3 +686,13 @@ Traceback (most recent call last):
   File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
     return Database.Cursor.execute(self, query, params)
 django.db.utils.IntegrityError: NOT NULL constraint failed: crm_payment.consultant_id
+[2017-12-30 14:34:14,279][Thread-18:6808][task_id:__name__][permission.py:77][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/]
+[2017-12-30 14:34:35,986][Thread-31:7764][task_id:__name__][permission.py:77][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/crm/course/add/]
+[2017-12-30 14:34:39,305][Thread-32:16160][task_id:__name__][permission.py:77][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/crm/course/add/]
+[2017-12-30 14:34:42,856][Thread-33:7824][task_id:__name__][permission.py:77][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/crm/userprofile/add/]
+[2017-12-30 14:34:46,057][Thread-34:2792][task_id:__name__][permission.py:77][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/crm/userprofile/add/]
+[2017-12-30 14:34:49,784][Thread-36:5524][task_id:__name__][permission.py:77][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/crm/userprofile/add/]
+[2017-12-30 14:34:53,456][Thread-37:8772][task_id:__name__][permission.py:77][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/crm/userprofile/add/]
+[2017-12-30 14:36:27,919][Thread-6:5496][task_id:__name__][permission.py:77][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/]
+[2017-12-30 14:37:32,760][Thread-18:5708][task_id:__name__][permission.py:77][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/]
+[2017-12-30 14:45:29,714][Thread-5:7256][task_id:__name__][permission.py:77][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/crm/sales/enrollment/5/]

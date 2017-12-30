@@ -1,11 +1,12 @@
-import json, random, string, os
+import json
+import os
 from PerfectCRM import settings
-from django.utils.timezone import now
 from django.shortcuts import render, HttpResponse, redirect
 from django.contrib.auth.decorators import login_required
 from crm.permissions.permission import check_permission_decorate
 from crm import forms, models
 from django.core.cache import cache
+from crm.utils import get_registration_url
 
 
 # Create your views here.
@@ -97,16 +98,6 @@ def download_identity_photo(request):
             return HttpResponse("报名信息不存在！")
 
 
-def get_registration_url(enrollment_obj):
-    """获取客户填写报名信息的随机URL"""
-    random_str = "".join(random.sample(string.ascii_lowercase + string.digits, 6))
-    cache.set(enrollment_obj.id, random_str, 60 * 10)  # 设置链接超时时间为10分钟
-    registration_url = "http://127.0.0.1:8000/crm/customer/registration/%s/%s/" % (
-        enrollment_obj.id, random_str
-    )
-    return registration_url
-
-
 @login_required
 def show_contract(request):
     """
@@ -141,6 +132,7 @@ def contract_rejection(request, customer_id, enrolled_class_id):
     return redirect("/kind_admin/crm/customer/")
 
 
+@check_permission_decorate
 @login_required
 def enrollment(request, customer_id):
     """销售为客户报名"""

@@ -3,6 +3,7 @@
 # __author__ = "Breakering"
 # Date: 2017/11/11
 from django.shortcuts import redirect
+from django.contrib.auth.models import Group
 from crm import models
 
 enabled_admins = {}
@@ -56,6 +57,7 @@ class CustomerAdmin(BaseAdmin):
     filter_horizontal = ("tags",)
     list_per_page = 10
     actions = ("aa",)
+    modelform_exclude_fields = ("status",)
     readonly_fields = ("name", "qq", "qq_name", "phone", "person_id", "contact_email", "consultant", "status")
 
     # list_editable = ("status",)
@@ -116,8 +118,13 @@ class CourseRecordAdmin(BaseAdmin):
 class UserProfileAdmin(BaseAdmin):
     list_display = ("email", "name", "last_login", 'is_admin', "is_active")
     readonly_fields = ("email", "password",)
-    filter_horizontal = ("roles",)
-    modelform_exclude_fields = ("is_superuser", "last_login", "groups", "user_permissions")
+    filter_horizontal = ("roles", "groups", "user_permissions")
+    modelform_exclude_fields = ("is_superuser", "last_login",)
+
+
+class GroupAdmin(BaseAdmin):
+    list_display = ("name",)
+    filter_horizontal = ("permissions",)
 
 
 class RoleAdmin(BaseAdmin):
@@ -138,5 +145,6 @@ register(models.ClassList, ClassListAdmin)
 register(models.Contract, ContractAdmin)
 register(models.CourseRecord, CourseRecordAdmin)
 register(models.UserProfile, UserProfileAdmin)
+register(Group, GroupAdmin)
 register(models.Role, RoleAdmin)
 register(models.Menu, MenuAdmin)

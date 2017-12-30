@@ -16,6 +16,22 @@ PermissionDict = {
         "args": [],  # 请求参数
         "hooks": []  # 预留钩子,or 和 and 为关键字代表或和与的关系,只有此列表全为真才会通过验证
     },
+    # 可以访问报名页
+    "crm.can_access_enrollment_for_customer": {
+        "url_type": 0,
+        "url": "enrollment_for_customer",
+        "method": "GET",
+        "args": [],
+        "hooks": []
+    },
+    # 可以给用户报名
+    "crm.can_enrollment_for_customer": {
+        "url_type": 0,
+        "url": "enrollment_for_customer",
+        "method": "POST",
+        "args": [],
+        "hooks": []
+    },
 
     # kind_admin项目权限
     # 可以访问kind_admin下的APP库

@@ -250,6 +250,7 @@ class Menu(models.Model):
     name = models.CharField(unique=True, max_length=32, verbose_name="菜单名")
     url_type = models.SmallIntegerField(choices=((0, 'relative_name'), (1, 'absolute_url')), verbose_name="菜单url类型")
     url_name = models.CharField(unique=True, max_length=128, verbose_name="菜单url")
+    icon = models.CharField(max_length=32, blank=True, null=True, verbose_name="菜单图标")
 
     def __str__(self):
         return self.name
@@ -382,4 +383,6 @@ class UserProfile(AbstractBaseUser, PermissionsMixin):
             ("can_change_customer_followup", "可以修改kind_admin下注册的客户跟进记录"),
             ("can_access_customer_followup_add", "可以访问kind_admin下注册的客户跟进记录的添加页面"),
             ("can_add_customer_followup", "可以添加kind_admin下注册的客户跟进记录"),
+            ("can_access_course_record", "可以访问kind_admin下注册的上课记录"),
+            ("can_do_action_or_change_course_record", "可以对kind_admin下注册的上课记录进行行内编辑和action操作"),
         )

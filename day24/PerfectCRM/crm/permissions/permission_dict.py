@@ -220,7 +220,7 @@ PermissionDict = {
     },
     # 可以访问kind_admin下注册的客户跟进记录的添加页面
     "crm.can_access_customer_followup_add": {
-        "url_type": 2,
+        "url_type": 1,
         "url": "/kind_admin/crm/customerfollowup/add/",
         "method": "GET",
         "args": [],
@@ -232,6 +232,22 @@ PermissionDict = {
         "url": "/kind_admin/crm/customerfollowup/add/",
         "method": "POST",
         "args": [],
+        "hooks": []
+    },
+    # 可以访问kind_admin下注册的上课记录
+    "crm.can_access_course_record": {
+        "url_type": 2,
+        "url": "/kind_admin/crm/courserecord/",
+        "method": "GET",
+        "args": ["from_class__id", "teacher__id"],
+        "hooks": []
+    },
+    # 可以对kind_admin下注册的上课记录进行行内编辑和action操作
+    "crm.can_do_action_or_change_course_record": {
+        "url_type": 2,
+        "url": "/kind_admin/crm/courserecord/",
+        "method": "POST",
+        "args": ["from_class__id", "teacher__id"],
         "hooks": []
     },
 }

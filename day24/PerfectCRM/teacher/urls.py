@@ -17,5 +17,6 @@ from django.conf.urls import url
 from teacher import views
 
 urlpatterns = [
-    # url(r'^$', views.index),  # crm首页
+    url(r'^$', views.index, name="teacher_index"),  # 教师首页
+    url(r'^class_taken/$', views.class_taken, name="class_taken"),  # 所带班级
 ]

@@ -228,7 +228,7 @@ PermissionDict = {
     },
     # 可以添加kind_admin下注册的客户跟进记录
     "crm.can_add_customer_followup": {
-        "url_type": 2,
+        "url_type": 1,
         "url": "/kind_admin/crm/customerfollowup/add/",
         "method": "POST",
         "args": [],
@@ -236,18 +236,50 @@ PermissionDict = {
     },
     # 可以访问kind_admin下注册的上课记录
     "crm.can_access_course_record": {
-        "url_type": 2,
+        "url_type": 1,
         "url": "/kind_admin/crm/courserecord/",
         "method": "GET",
-        "args": ["from_class__id", "teacher__id"],
+        "args": [],
         "hooks": []
     },
     # 可以对kind_admin下注册的上课记录进行行内编辑和action操作
     "crm.can_do_action_or_change_course_record": {
-        "url_type": 2,
+        "url_type": 1,
         "url": "/kind_admin/crm/courserecord/",
         "method": "POST",
-        "args": ["from_class__id", "teacher__id"],
+        "args": [],
+        "hooks": []
+    },
+    # 可以访问kind_admin下注册的上课记录修改页面
+    "crm.can_access_course_record_change": {
+        "url_type": 2,
+        "url": "/kind_admin/crm/courserecord/\d+/change/$",
+        "method": "GET",
+        "args": [],
+        "hooks": []
+    },
+    # 可以修改kind_admin下注册的上课记录
+    "crm.can_change_course_record": {
+        "url_type": 2,
+        "url": "/kind_admin/crm/courserecord/\d+/change/$",
+        "method": "POST",
+        "args": [],
+        "hooks": []
+    },
+    # 可以访问kind_admin下注册的上课记录添加页面
+    "crm.can_access_course_record_add": {
+        "url_type": 1,
+        "url": "/kind_admin/crm/courserecord/add/",
+        "method": "GET",
+        "args": [],
+        "hooks": []
+    },
+    # 可以添加kind_admin下注册的上课记录
+    "crm.can_add_course_record": {
+        "url_type": 1,
+        "url": "/kind_admin/crm/courserecord/add/",
+        "method": "POST",
+        "args": [],
         "hooks": []
     },
 }

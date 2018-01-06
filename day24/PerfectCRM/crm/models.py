@@ -385,4 +385,8 @@ class UserProfile(AbstractBaseUser, PermissionsMixin):
             ("can_add_customer_followup", "可以添加kind_admin下注册的客户跟进记录"),
             ("can_access_course_record", "可以访问kind_admin下注册的上课记录"),
             ("can_do_action_or_change_course_record", "可以对kind_admin下注册的上课记录进行行内编辑和action操作"),
+            ("can_access_course_record_change", "可以访问kind_admin下注册的上课记录修改页面"),
+            ("can_change_course_record", "可以修改kind_admin下注册的上课记录"),
+            ("can_access_course_record_add", "可以访问kind_admin下注册的上课记录添加页面"),
+            ("can_add_course_record", "可以添加kind_admin下注册的上课记录"),
         )

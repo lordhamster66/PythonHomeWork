@@ -947,3 +947,122 @@ django.core.exceptions.FieldError: Cannot resolve keyword 'classlist' into field
 [2018-01-04 21:26:10,534][Thread-76:7636][task_id:__name__][permission.py:77][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/1/change/]
 [2018-01-04 21:29:08,848][Thread-117:7056][task_id:__name__][permission.py:77][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/add/]
 [2018-01-04 21:29:13,493][Thread-118:4844][task_id:__name__][permission.py:77][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/add/]
+[2018-01-06 14:42:41,928][Thread-1:16332][task_id:django.request][base.py:152][WARNING][Not Found: /]
+[2018-01-06 14:42:42,001][Thread-3:16264][task_id:django.request][base.py:152][WARNING][Not Found: /favicon.ico]
+[2018-01-06 14:44:29,886][Thread-137:15272][task_id:__name__][permission.py:77][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/1/change/]
+[2018-01-06 14:44:44,176][Thread-140:14404][task_id:__name__][permission.py:77][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/add/]
+[2018-01-06 14:46:02,745][Thread-143:15496][task_id:django.request][base.py:152][WARNING][Not Found: /]
+[2018-01-06 14:48:28,418][Thread-209:7072][task_id:__name__][permission.py:77][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/1/change/]
+[2018-01-06 14:55:10,597][Thread-129:13568][task_id:__name__][permission.py:77][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-01-06 14:56:34,849][Thread-3:8036][task_id:__name__][permission.py:77][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/classlist/1/change/]
+[2018-01-06 14:56:58,021][Thread-6:14984][task_id:__name__][permission.py:77][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/add/]
+[2018-01-06 15:01:00,990][Thread-60:16956][task_id:__name__][permission.py:77][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-01-06 15:01:19,959][Thread-63:14844][task_id:__name__][permission.py:77][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/]
+[2018-01-06 15:01:24,934][Thread-64:13096][task_id:__name__][permission.py:77][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/]
+[2018-01-06 15:07:42,200][Thread-45:2228][task_id:__name__][permission.py:77][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-01-06 15:08:51,609][Thread-49:10868][task_id:__name__][permission.py:77][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-01-06 15:10:11,855][Thread-1:2464][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /kind_admin/crm/courserecord/]
+Traceback (most recent call last):
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    "returned None instead." % (callback.__module__, view_name)
+ValueError: The view crm.permissions.permission.inner didn't return an HttpResponse object. It returned None instead.
+[2018-01-06 15:11:26,969][Thread-3:15016][task_id:__name__][permission.py:77][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-01-06 15:12:01,773][Thread-48:12696][task_id:__name__][permission.py:77][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-01-06 15:26:13,671][Thread-136:17252][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /kind_admin/crm/courserecord/]
+Traceback (most recent call last):
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\db\backends\utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.IntegrityError: UNIQUE constraint failed: crm_studyrecord.student_id, crm_studyrecord.course_record_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Git\PythonHomeWork\day24\PerfectCRM\crm\permissions\permission.py", line 75, in inner
+    response = func(request, *args, **kwargs)
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "C:\Git\PythonHomeWork\day24\PerfectCRM\kind_admin\views.py", line 32, in table_objs
+    return func(admin_class, request, querysets)  # 有则直接运行该函数并返回
+  File "C:\Git\PythonHomeWork\day24\PerfectCRM\kind_admin\kind_admin.py", line 142, in create_study_record
+    models.StudyRecord.objects.bulk_create(study_record_obj_list)  # 批量生成学习记录
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\db\models\query.py", line 443, in bulk_create
+    ids = self._batched_insert(objs_without_pk, fields, batch_size)
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\db\models\query.py", line 1099, in _batched_insert
+    self._insert(item, fields=fields, using=self.db)
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\db\models\query.py", line 1076, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\db\models\sql\compiler.py", line 1099, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\db\backends\utils.py", line 80, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\db\backends\utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\db\utils.py", line 94, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\utils\six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\db\backends\utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.IntegrityError: UNIQUE constraint failed: crm_studyrecord.student_id, crm_studyrecord.course_record_id
+[2018-01-06 15:39:21,592][Thread-88:4132][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /kind_admin/crm/courserecord/]
+Traceback (most recent call last):
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\db\backends\utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.IntegrityError: UNIQUE constraint failed: crm_studyrecord.student_id, crm_studyrecord.course_record_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Git\PythonHomeWork\day24\PerfectCRM\crm\permissions\permission.py", line 75, in inner
+    response = func(request, *args, **kwargs)
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "C:\Git\PythonHomeWork\day24\PerfectCRM\kind_admin\views.py", line 32, in table_objs
+    return func(admin_class, request, querysets)  # 有则直接运行该函数并返回
+  File "C:\Git\PythonHomeWork\day24\PerfectCRM\kind_admin\kind_admin.py", line 142, in create_study_record
+    models.StudyRecord.objects.bulk_create(study_record_obj_list)  # 批量生成学习记录
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\db\models\query.py", line 443, in bulk_create
+    ids = self._batched_insert(objs_without_pk, fields, batch_size)
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\db\models\query.py", line 1099, in _batched_insert
+    self._insert(item, fields=fields, using=self.db)
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\db\models\query.py", line 1076, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\db\models\sql\compiler.py", line 1099, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\db\backends\utils.py", line 80, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\db\backends\utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\db\utils.py", line 94, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\utils\six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\db\backends\utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.IntegrityError: UNIQUE constraint failed: crm_studyrecord.student_id, crm_studyrecord.course_record_id

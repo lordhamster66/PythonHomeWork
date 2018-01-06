@@ -126,6 +126,28 @@ class ContractAdmin(BaseAdmin):
 
 class CourseRecordAdmin(BaseAdmin):
     list_display = ("from_class", "day_num", "teacher", "has_homework")
+    readonly_fields = ("from_class", "teacher")
+    actions = ("create_study_record",)
+
+    def create_study_record(self, request, querysets):
+        """批量创建学习记录"""
+        study_record_obj_list = []  # 存储学习记录对象
+        for course_record_obj in querysets:
+            for enrollment_obj in course_record_obj.from_class.enrollment_set.all():
+                study_record_obj_list.append(models.StudyRecord(
+                    student=enrollment_obj,
+                    course_record=course_record_obj,
+                    attendance=0
+                ))
+        models.StudyRecord.objects.bulk_create(study_record_obj_list)  # 批量生成学习记录
+        return redirect(request.path)
+
+    create_study_record.display_name = "创建所有学习记录"
+
+
+class StudyRecordAdmin(BaseAdmin):
+    """学习记录admin"""
+    list_display = ("student", "course_record", "attendance", "score", "date")
 
 
 class UserProfileAdmin(BaseAdmin):
@@ -157,6 +179,7 @@ register(models.Branch, BranchAdmin)
 register(models.ClassList, ClassListAdmin)
 register(models.Contract, ContractAdmin)
 register(models.CourseRecord, CourseRecordAdmin)
+register(models.StudyRecord, StudyRecordAdmin)
 register(models.UserProfile, UserProfileAdmin)
 register(Group, GroupAdmin)
 register(models.Role, RoleAdmin)

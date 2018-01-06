@@ -1,0 +1,45 @@
+{% extends "index.html" %}
+{% load crm_tags %}
+{% block css %}
+    <style>
+        .class-container {
+            float: left;
+            margin-right: 50px;
+            margin-bottom: 20px;
+            width: 150px;
+            height: 200px;
+            border: 1px solid #dddddd
+        }
+
+        .class-container img {
+            width: 140px;
+            height: 120px;
+        }
+    </style>
+{% endblock %}
+{% block page-content %}
+    <div class="panel panel-bordered panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title"><b>所带班级列表</b></h3>
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                {% for class in class_taken_list %}
+                    <div class="class-container text-center">
+                        <h4>{{ class }}</h4>
+                        <a href="/kind_admin/crm/courserecord/?from_class__id={{ class.id }}&teacher__id={{ request.user.id }}">
+                            <img src="/static/img/class_img.jpg" alt="班级">
+                        </a>
+                        <h5>学员数：{{ class.enrollment_set.count }}人</h5>
+                    </div>
+                {% endfor %}
+            </div>
+            总计:{{ class_taken_list.paginator.count }}个班级
+            <div class="row">
+                <ul class="pagination">
+                    {% get_page_ele class_taken_list %}
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock %}

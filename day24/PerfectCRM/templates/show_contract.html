@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}
+    <title>报名中心</title>
+{% endblock %}
+{% block css %}
+    <style>
+        body {
+            background: url(/static/img/bg-img/bg-img-5.jpg);
+        }
+    </style>
+{% endblock %}
+{% block body %}
+    <div class="container" style="margin-top: 50px;">
+        <div class="panel panel-colorful panel-info">
+            <div class="panel-heading">
+                <h3 class="panel-title">详细合同信息</h3>
+            </div>
+            <div class="panel-body">
+                <pre>{{ contract_content }}</pre>
+            </div>
+        </div>
+    </div>
+{% endblock %}

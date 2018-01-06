@@ -1,0 +1,949 @@
+[2017-12-21 21:06:32,458][Thread-59:13340][task_id:__name__][permission.py:72][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/crm/userprofile/2/change/password/]
+[2017-12-21 21:06:32,476][Thread-60:9080][task_id:django.request][base.py:152][WARNING][Not Found: /favicon.ico]
+[2017-12-21 21:08:39,118][Thread-15:7040][task_id:__name__][permission.py:72][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/crm/userprofile/1/change/password/]
+[2017-12-21 21:11:21,065][Thread-1:1452][task_id:__name__][permission.py:72][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/crm/sales/]
+[2017-12-21 21:12:42,356][Thread-13:1076][task_id:__name__][permission.py:72][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/crm/sales/]
+[2017-12-21 21:12:44,121][Thread-14:5396][task_id:__name__][permission.py:72][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/crm/sales/]
+[2017-12-21 21:12:44,560][Thread-15:9096][task_id:__name__][permission.py:72][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/crm/sales/]
+[2017-12-21 21:12:44,769][Thread-16:1864][task_id:__name__][permission.py:72][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/crm/sales/]
+[2017-12-21 21:12:45,065][Thread-17:11592][task_id:__name__][permission.py:72][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/crm/sales/]
+[2017-12-21 21:12:45,249][Thread-18:10976][task_id:__name__][permission.py:72][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/crm/sales/]
+[2017-12-21 21:12:45,452][Thread-19:9712][task_id:__name__][permission.py:72][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/crm/sales/]
+[2017-12-21 21:12:45,601][Thread-20:7228][task_id:__name__][permission.py:72][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/crm/sales/]
+[2017-12-21 21:12:45,801][Thread-21:9960][task_id:__name__][permission.py:72][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/crm/sales/]
+[2017-12-21 21:12:45,968][Thread-22:14808][task_id:__name__][permission.py:72][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/crm/sales/]
+[2017-12-21 21:12:46,145][Thread-23:10472][task_id:__name__][permission.py:72][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/crm/sales/]
+[2017-12-21 21:12:46,313][Thread-24:9152][task_id:__name__][permission.py:72][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/crm/sales/]
+[2017-12-21 21:12:46,488][Thread-25:5624][task_id:__name__][permission.py:72][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/crm/sales/]
+[2017-12-21 21:12:46,656][Thread-26:2640][task_id:__name__][permission.py:72][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/crm/sales/]
+[2017-12-21 21:12:46,817][Thread-27:6072][task_id:__name__][permission.py:72][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/crm/sales/]
+[2017-12-21 21:12:47,000][Thread-28:6020][task_id:__name__][permission.py:72][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/crm/sales/]
+[2017-12-21 21:12:47,185][Thread-29:9144][task_id:__name__][permission.py:72][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/crm/sales/]
+[2017-12-21 21:12:47,376][Thread-30:13124][task_id:__name__][permission.py:72][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/crm/sales/]
+[2017-12-21 21:12:47,633][Thread-31:11824][task_id:__name__][permission.py:72][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/crm/sales/]
+[2017-12-21 21:12:49,051][Thread-32:13284][task_id:__name__][permission.py:72][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/crm/sales/]
+[2017-12-21 21:12:50,123][Thread-33:4816][task_id:__name__][permission.py:72][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/crm/sales/]
+[2017-12-21 21:12:51,345][Thread-34:2512][task_id:__name__][permission.py:72][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/crm/sales/]
+[2017-12-21 21:12:51,528][Thread-35:11076][task_id:__name__][permission.py:72][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/crm/sales/]
+[2017-12-21 21:12:51,985][Thread-36:10140][task_id:__name__][permission.py:72][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/crm/sales/]
+[2017-12-21 21:12:52,176][Thread-37:3240][task_id:__name__][permission.py:72][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/crm/sales/]
+[2017-12-21 21:13:17,161][Thread-39:5964][task_id:__name__][permission.py:72][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/crm/sales/]
+[2017-12-21 21:13:18,409][Thread-40:13352][task_id:__name__][permission.py:72][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/crm/sales/]
+[2017-12-21 21:13:32,114][Thread-47:7672][task_id:__name__][permission.py:72][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/crm/sales/]
+[2017-12-21 21:13:35,084][Thread-49:6244][task_id:__name__][permission.py:72][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/crm/sales/]
+[2017-12-21 21:13:36,602][Thread-50:14888][task_id:__name__][permission.py:72][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/crm/sales/]
+[2017-12-21 21:13:47,558][Thread-57:10816][task_id:__name__][permission.py:72][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/crm/sales/]
+[2017-12-21 21:13:50,364][Thread-58:12720][task_id:__name__][permission.py:72][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/crm/sales/]
+[2017-12-21 21:14:11,612][Thread-63:11972][task_id:__name__][permission.py:72][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/crm/sales/]
+[2017-12-21 21:20:26,293][Thread-4:8784][task_id:__name__][permission.py:72][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/crm/customer/]
+[2017-12-21 21:21:01,109][Thread-3:5088][task_id:__name__][permission.py:72][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/crm/customer/add/]
+[2017-12-21 21:21:04,363][Thread-4:7508][task_id:__name__][permission.py:72][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/crm/customer/4/change/]
+[2017-12-21 21:21:10,124][Thread-5:4616][task_id:__name__][permission.py:72][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/crm/customer/add/]
+[2017-12-21 21:21:23,725][Thread-11:14432][task_id:__name__][permission.py:72][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/crm/customer/]
+[2017-12-21 21:21:32,989][Thread-13:7952][task_id:__name__][permission.py:72][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/crm/customer/]
+[2017-12-21 21:22:07,549][Thread-18:952][task_id:__name__][permission.py:72][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/crm/customer/add/]
+[2017-12-21 21:25:45,123][Thread-4:7632][task_id:__name__][permission.py:72][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/crm/customer/add/]
+[2017-12-21 21:26:09,945][Thread-11:10136][task_id:__name__][permission.py:72][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/crm/customer/add/]
+[2017-12-21 21:28:24,722][Thread-5:10848][task_id:__name__][permission.py:72][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/crm/course/add/]
+[2017-12-21 21:28:27,488][Thread-6:1032][task_id:__name__][permission.py:72][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/crm/tag/add/]
+[2017-12-21 21:28:29,894][Thread-7:8540][task_id:__name__][permission.py:72][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/crm/userprofile/add/]
+[2017-12-21 21:28:33,212][Thread-8:11596][task_id:__name__][permission.py:72][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/crm/tag/add/]
+[2017-12-21 21:28:39,894][Thread-9:9676][task_id:__name__][permission.py:72][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/crm/course/1/change/]
+[2017-12-21 21:28:47,406][Thread-10:9312][task_id:__name__][permission.py:72][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/crm/course/1/change/]
+[2017-12-21 21:29:00,099][Thread-13:8848][task_id:__name__][permission.py:72][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/]
+[2017-12-21 21:29:11,083][Thread-15:3004][task_id:__name__][permission.py:72][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/crm/customer/5/change/]
+[2017-12-21 21:29:13,708][Thread-16:9548][task_id:__name__][permission.py:72][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/crm/customer/4/change/]
+[2017-12-21 21:29:18,004][Thread-17:3840][task_id:__name__][permission.py:72][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/crm/customer/5/change/]
+[2017-12-21 21:30:00,587][Thread-20:15216][task_id:__name__][permission.py:72][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/crm/customer/5/change/]
+[2017-12-21 21:30:15,116][Thread-22:11608][task_id:__name__][permission.py:72][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/crm/customer/5/change/]
+[2017-12-21 21:32:33,023][Thread-16:1840][task_id:__name__][permission.py:72][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/crm/customer/4/change/]
+[2017-12-21 21:38:24,010][Thread-12:6848][task_id:__name__][permission.py:72][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/crm/customer/5/change/]
+[2017-12-21 21:38:49,897][Thread-15:12536][task_id:__name__][permission.py:72][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/crm/customer/5/change/]
+[2017-12-21 21:39:48,854][Thread-1:7220][task_id:__name__][permission.py:72][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/crm/customer/5/change/]
+[2017-12-21 21:42:41,585][Thread-5:12536][task_id:__name__][permission.py:72][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/crm/customer/4/change/]
+[2017-12-21 21:42:58,218][Thread-11:3568][task_id:__name__][permission.py:72][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/crm/customer/4/change/]
+[2017-12-21 21:43:02,009][Thread-13:10136][task_id:__name__][permission.py:72][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/crm/course/1/change/]
+[2017-12-21 21:43:30,974][Thread-17:3404][task_id:__name__][permission.py:72][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/crm/customer/]
+[2017-12-21 21:47:30,330][Thread-18:15356][task_id:__name__][permission.py:72][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/crm/customer/4/change/]
+[2017-12-21 21:47:32,955][Thread-20:756][task_id:__name__][permission.py:72][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/crm/customer/4/change/]
+[2017-12-21 21:47:35,261][Thread-22:10980][task_id:__name__][permission.py:72][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/crm/customer/4/delete/]
+[2017-12-21 21:47:37,465][Thread-23:10356][task_id:__name__][permission.py:72][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/crm/customer/4/change/]
+[2017-12-23 10:44:59,109][Thread-1:6708][task_id:django.request][base.py:152][WARNING][Not Found: /]
+[2017-12-23 10:44:59,530][Thread-3:5292][task_id:django.request][base.py:152][WARNING][Not Found: /favicon.ico]
+[2017-12-23 10:45:41,896][Thread-68:7912][task_id:__name__][permission.py:72][WARNING][用户:1079614505@qq.com正在尝试访问无权限接口/kind_admin/]
+[2017-12-23 10:46:52,506][Thread-104:9144][task_id:__name__][permission.py:72][WARNING][用户:1079614505@qq.com正在尝试访问无权限接口/kind_admin/crm/course/add/]
+[2017-12-23 10:48:44,423][Thread-107:4896][task_id:__name__][permission.py:72][WARNING][用户:1079614505@qq.com正在尝试访问无权限接口/kind_admin/crm/customer/5/change/]
+[2017-12-23 10:49:49,257][Thread-190:14220][task_id:__name__][permission.py:72][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/]
+[2017-12-23 10:49:49,273][Thread-191:2728][task_id:django.request][base.py:152][WARNING][Not Found: /favicon.ico]
+[2017-12-23 10:50:01,560][Thread-198:8964][task_id:__name__][permission.py:72][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/crm/customer/4/change/]
+[2017-12-23 10:56:01,882][Thread-3:3836][task_id:__name__][permission.py:72][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/]
+[2017-12-23 10:56:04,370][Thread-4:10900][task_id:django.request][base.py:152][WARNING][Not Found: /kind_admin/index.html]
+[2017-12-23 10:56:41,272][Thread-6:3960][task_id:__name__][permission.py:72][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/]
+[2017-12-23 10:57:16,207][Thread-10:10596][task_id:__name__][permission.py:72][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/]
+[2017-12-23 10:57:25,312][Thread-12:1616][task_id:__name__][permission.py:72][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/]
+[2017-12-23 10:57:29,265][Thread-14:12364][task_id:__name__][permission.py:72][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/]
+[2017-12-23 11:01:30,844][Thread-1:248][task_id:__name__][permission.py:72][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/]
+[2017-12-23 11:04:24,755][Thread-1:2568][task_id:__name__][permission.py:72][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/]
+[2017-12-23 11:04:35,234][Thread-4:8672][task_id:__name__][permission.py:72][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/]
+[2017-12-23 11:04:40,665][Thread-5:6940][task_id:__name__][permission.py:72][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/]
+[2017-12-23 11:06:45,138][Thread-4:10868][task_id:__name__][permission.py:72][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/]
+[2017-12-23 11:06:59,208][Thread-1:7120][task_id:__name__][permission.py:72][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/]
+[2017-12-23 11:07:12,793][Thread-5:12632][task_id:__name__][permission.py:72][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/]
+[2017-12-23 11:07:13,400][Thread-7:11988][task_id:__name__][permission.py:72][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/]
+[2017-12-23 11:11:24,299][Thread-1:8508][task_id:__name__][permission.py:75][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/]
+[2017-12-23 11:11:26,809][Thread-4:6364][task_id:__name__][permission.py:75][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/]
+[2017-12-23 11:11:27,632][Thread-6:9076][task_id:__name__][permission.py:75][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/]
+[2017-12-23 11:11:28,360][Thread-8:8744][task_id:__name__][permission.py:75][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/]
+[2017-12-23 11:11:28,993][Thread-10:6980][task_id:__name__][permission.py:75][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/]
+[2017-12-23 11:11:29,608][Thread-12:9032][task_id:__name__][permission.py:75][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/]
+[2017-12-23 11:11:34,898][Thread-15:2128][task_id:__name__][permission.py:75][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/crm/customer/4/change/]
+[2017-12-23 11:13:34,923][Thread-17:5488][task_id:__name__][permission.py:75][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/crm/customer/4/change/]
+[2017-12-23 11:14:14,519][Thread-1:4148][task_id:__name__][permission.py:75][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/crm/customer/4/change/]
+[2017-12-23 11:14:24,297][Thread-5:13580][task_id:__name__][permission.py:75][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/crm/customer/4/change/]
+[2017-12-23 11:14:53,162][Thread-1:8468][task_id:__name__][permission.py:75][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/crm/customer/4/change/]
+[2017-12-23 11:18:22,251][Thread-29:6224][task_id:__name__][permission.py:75][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/crm/userprofile/1/change/password/]
+[2017-12-23 11:19:13,768][Thread-49:14172][task_id:__name__][permission.py:75][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/crm/customer/4/change/]
+[2017-12-23 11:22:40,538][Thread-62:2012][task_id:__name__][permission.py:75][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/crm/userprofile/2/change/]
+[2017-12-23 11:22:43,764][Thread-63:8920][task_id:__name__][permission.py:75][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/crm/userprofile/add/]
+[2017-12-23 11:22:48,005][Thread-64:3340][task_id:__name__][permission.py:75][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/crm/tag/add/]
+[2017-12-23 11:22:50,876][Thread-65:10300][task_id:__name__][permission.py:75][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/crm/course/add/]
+[2017-12-23 11:22:55,460][Thread-66:10972][task_id:__name__][permission.py:75][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/crm/course/1/change/]
+[2017-12-23 11:23:01,499][Thread-67:10500][task_id:__name__][permission.py:75][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/crm/tag/add/]
+[2017-12-23 11:23:29,157][Thread-74:12792][task_id:__name__][permission.py:75][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/crm/customer/]
+[2017-12-23 11:28:38,906][Thread-81:5100][task_id:__name__][permission.py:75][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/]
+[2017-12-23 11:29:13,405][Thread-86:11192][task_id:__name__][permission.py:75][WARNING][用户:1079614505@qq.com正在尝试访问无权限接口/kind_admin/]
+[2017-12-23 11:29:17,754][Thread-87:8500][task_id:__name__][permission.py:75][WARNING][用户:1079614505@qq.com正在尝试访问无权限接口/kind_admin/]
+[2017-12-23 11:32:57,746][Thread-7:2772][task_id:__name__][permission.py:75][WARNING][用户:1079614505@qq.com正在尝试访问无权限接口/kind_admin/crm/tag/]
+[2017-12-23 11:35:33,829][Thread-5:10880][task_id:__name__][permission.py:75][WARNING][用户:1079614505@qq.com正在尝试访问无权限接口/kind_admin/crm/tag/1-2-3-4/delete/]
+[2017-12-23 12:28:21,894][Thread-17:13612][task_id:__name__][permission.py:75][WARNING][用户:1079614505@qq.com正在尝试访问无权限接口/kind_admin/crm/userprofile/3/change/]
+[2017-12-23 12:30:37,742][Thread-19:9160][task_id:__name__][permission.py:75][WARNING][用户:1079614505@qq.com正在尝试访问无权限接口/kind_admin/crm/userprofile/3/change/]
+[2017-12-23 12:43:29,503][Thread-4:10464][task_id:__name__][permission.py:77][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/crm/customer/4/change/]
+[2017-12-23 12:43:37,791][Thread-10:1152][task_id:__name__][permission.py:77][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/crm/customer/4/change/]
+[2017-12-23 12:54:23,390][Thread-6:14620][task_id:django.request][base.py:152][WARNING][Not Found: /]
+[2017-12-23 13:18:18,538][Thread-24:1308][task_id:__name__][permission.py:77][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/]
+[2017-12-23 14:01:04,666][Thread-114:15052][task_id:django.security.csrf][csrf.py:160][WARNING][Forbidden (CSRF token missing or incorrect.): /crm/sales/enrollment/5/]
+[2017-12-23 16:09:44,354][Thread-20:15584][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /crm/sales/enrollment/5/]
+Traceback (most recent call last):
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\backends\utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.IntegrityError: UNIQUE constraint failed: crm_enrollment.customer_id, crm_enrollment.enrolled_class_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\GIT\HomeWork\day24\PerfectCRM\crm\views.py", line 33, in enrollment
+    consultant=customer_obj.consultant,
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\models\query.py", line 394, in create
+    obj.save(force_insert=True, using=self.db)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\models\base.py", line 807, in save
+    force_update=force_update, update_fields=update_fields)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\models\base.py", line 837, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\models\base.py", line 923, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\models\base.py", line 962, in _do_insert
+    using=using, raw=raw)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\models\query.py", line 1076, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\models\sql\compiler.py", line 1099, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\backends\utils.py", line 80, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\backends\utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\utils.py", line 94, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\utils\six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\backends\utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.IntegrityError: UNIQUE constraint failed: crm_enrollment.customer_id, crm_enrollment.enrolled_class_id
+[2017-12-23 16:18:59,083][Thread-17:14500][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /crm/sales/enrollment/5/]
+Traceback (most recent call last):
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\backends\utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.IntegrityError: UNIQUE constraint failed: crm_enrollment.customer_id, crm_enrollment.enrolled_class_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\GIT\HomeWork\day24\PerfectCRM\crm\views.py", line 33, in enrollment
+    consultant=customer_obj.consultant,
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\models\query.py", line 394, in create
+    obj.save(force_insert=True, using=self.db)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\models\base.py", line 807, in save
+    force_update=force_update, update_fields=update_fields)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\models\base.py", line 837, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\models\base.py", line 923, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\models\base.py", line 962, in _do_insert
+    using=using, raw=raw)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\models\query.py", line 1076, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\models\sql\compiler.py", line 1099, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\backends\utils.py", line 80, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\backends\utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\utils.py", line 94, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\utils\six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\backends\utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.IntegrityError: UNIQUE constraint failed: crm_enrollment.customer_id, crm_enrollment.enrolled_class_id
+[2017-12-23 16:19:58,686][Thread-4:16316][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /crm/sales/enrollment/5/]
+Traceback (most recent call last):
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\backends\utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.IntegrityError: UNIQUE constraint failed: crm_enrollment.customer_id, crm_enrollment.enrolled_class_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\GIT\HomeWork\day24\PerfectCRM\crm\views.py", line 33, in enrollment
+    consultant=customer_obj.consultant,
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\models\query.py", line 394, in create
+    obj.save(force_insert=True, using=self.db)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\models\base.py", line 807, in save
+    force_update=force_update, update_fields=update_fields)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\models\base.py", line 837, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\models\base.py", line 923, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\models\base.py", line 962, in _do_insert
+    using=using, raw=raw)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\models\query.py", line 1076, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\models\sql\compiler.py", line 1099, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\backends\utils.py", line 80, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\backends\utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\utils.py", line 94, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\utils\six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\backends\utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.IntegrityError: UNIQUE constraint failed: crm_enrollment.customer_id, crm_enrollment.enrolled_class_id
+[2017-12-23 16:22:31,053][Thread-3:15844][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /crm/sales/enrollment/5/]
+Traceback (most recent call last):
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\GIT\HomeWork\day24\PerfectCRM\crm\views.py", line 42, in enrollment
+    return HttpResponse(json.dumps(ret))
+  File "D:\Software\Anaconda\envs\py3-django\lib\json\__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+  File "D:\Software\Anaconda\envs\py3-django\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "D:\Software\Anaconda\envs\py3-django\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "D:\Software\Anaconda\envs\py3-django\lib\json\encoder.py", line 180, in default
+    o.__class__.__name__)
+TypeError: Object of type 'dict_items' is not JSON serializable
+[2017-12-23 16:24:11,652][Thread-3:11808][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /crm/sales/enrollment/5/]
+Traceback (most recent call last):
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\GIT\HomeWork\day24\PerfectCRM\crm\views.py", line 42, in enrollment
+    print(dict(enrollment_form_obj.errors.as_data))
+TypeError: 'method' object is not iterable
+[2017-12-23 16:24:59,652][Thread-3:16128][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /crm/sales/enrollment/5/]
+Traceback (most recent call last):
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\GIT\HomeWork\day24\PerfectCRM\crm\views.py", line 42, in enrollment
+    print(json.loads(enrollment_form_obj.errors.as_json))
+  File "D:\Software\Anaconda\envs\py3-django\lib\json\__init__.py", line 348, in loads
+    'not {!r}'.format(s.__class__.__name__))
+TypeError: the JSON object must be str, bytes or bytearray, not 'method'
+[2017-12-23 16:51:00,800][Thread-11:440][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /crm/sales/enrollment/5/]
+Traceback (most recent call last):
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\GIT\HomeWork\day24\PerfectCRM\crm\views.py", line 51, in enrollment
+    "enrollment_form_obj": enrollment_form_obj,
+UnboundLocalError: local variable 'enrollment_form_obj' referenced before assignment
+[2017-12-23 16:51:01,761][Thread-12:16368][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /crm/sales/enrollment/5/]
+Traceback (most recent call last):
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\GIT\HomeWork\day24\PerfectCRM\crm\views.py", line 51, in enrollment
+    "enrollment_form_obj": enrollment_form_obj,
+UnboundLocalError: local variable 'enrollment_form_obj' referenced before assignment
+[2017-12-23 17:31:16,157][Thread-8:15160][task_id:django.request][base.py:152][WARNING][Not Found: /crm/customer/registration/15/fiy8wz/]
+[2017-12-23 17:31:34,652][Thread-1:15788][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /crm/customer/registration/15/fiy8wz/]
+Traceback (most recent call last):
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+TypeError: customer_registration() got multiple values for argument 'enrollment_id'
+[2017-12-23 17:31:50,946][Thread-8:15028][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /crm/customer/registration/15/fiy8wz/]
+Traceback (most recent call last):
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+TypeError: customer_registration() got multiple values for argument 'enrollment_id'
+[2017-12-23 17:31:55,569][Thread-9:11008][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /crm/customer/registration/15/fiy8wz/]
+Traceback (most recent call last):
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+TypeError: customer_registration() got multiple values for argument 'enrollment_id'
+[2017-12-23 17:32:08,962][Thread-13:15000][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /crm/customer/registration/15/fiy8wz/]
+Traceback (most recent call last):
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+TypeError: customer_registration() got multiple values for argument 'enrollment_id'
+[2017-12-23 17:32:10,387][Thread-1:7044][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /crm/customer/registration/15/fiy8wz/]
+Traceback (most recent call last):
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    "returned None instead." % (callback.__module__, view_name)
+ValueError: The view crm.views.customer_registration didn't return an HttpResponse object. It returned None instead.
+[2017-12-23 17:32:11,352][Thread-3:16160][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /crm/customer/registration/15/fiy8wz/]
+Traceback (most recent call last):
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    "returned None instead." % (callback.__module__, view_name)
+ValueError: The view crm.views.customer_registration didn't return an HttpResponse object. It returned None instead.
+[2017-12-23 17:32:12,272][Thread-4:10956][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /crm/customer/registration/15/fiy8wz/]
+Traceback (most recent call last):
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    "returned None instead." % (callback.__module__, view_name)
+ValueError: The view crm.views.customer_registration didn't return an HttpResponse object. It returned None instead.
+[2017-12-23 17:32:13,079][Thread-5:15544][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /crm/customer/registration/15/fiy8wz/]
+Traceback (most recent call last):
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    "returned None instead." % (callback.__module__, view_name)
+ValueError: The view crm.views.customer_registration didn't return an HttpResponse object. It returned None instead.
+[2017-12-23 17:32:18,356][Thread-1:12996][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /crm/customer/registration/15/fiy8wz/]
+Traceback (most recent call last):
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    "returned None instead." % (callback.__module__, view_name)
+ValueError: The view crm.views.customer_registration didn't return an HttpResponse object. It returned None instead.
+[2017-12-23 17:35:00,099][Thread-16:11672][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /crm/customer/registration/15/doarue/]
+Traceback (most recent call last):
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    "returned None instead." % (callback.__module__, view_name)
+ValueError: The view crm.views.customer_registration didn't return an HttpResponse object. It returned None instead.
+[2017-12-24 10:13:33,925][Thread-1:11504][task_id:django.request][base.py:152][WARNING][Not Found: /]
+[2017-12-24 10:13:34,488][Thread-3:11780][task_id:django.request][base.py:152][WARNING][Not Found: /favicon.ico]
+[2017-12-24 10:15:13,984][Thread-10:3740][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /crm/customer/registration/14/tfjx3b/]
+Traceback (most recent call last):
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    "returned None instead." % (callback.__module__, view_name)
+ValueError: The view crm.views.customer_registration didn't return an HttpResponse object. It returned None instead.
+[2017-12-24 10:15:14,288][Thread-11:7748][task_id:django.request][base.py:152][WARNING][Not Found: /favicon.ico]
+[2017-12-24 10:38:21,688][Thread-183:9296][task_id:__name__][permission.py:77][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/crm/customer/]
+[2017-12-24 11:24:10,210][Thread-8:8556][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /crm/customer/registration/14/4l0hio/]
+Traceback (most recent call last):
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\GIT\HomeWork\day24\PerfectCRM\crm\views.py", line 32, in customer_registration
+    for k, v in customer_form_obj.cleaned_data.items():
+RuntimeError: dictionary changed size during iteration
+[2017-12-24 12:56:25,413][Thread-56:1580][task_id:django.request][base.py:152][WARNING][Not Found: /file/post]
+[2017-12-24 12:56:28,614][Thread-57:1656][task_id:django.request][base.py:152][WARNING][Not Found: /file/post]
+[2017-12-24 13:02:48,292][Thread-8:9376][task_id:django.request][base.py:152][WARNING][Not Found: /file/post]
+[2017-12-24 13:08:29,159][Thread-21:7592][task_id:django.request][base.py:152][WARNING][Not Found: /file/post]
+[2017-12-24 13:09:25,451][Thread-23:10728][task_id:django.request][base.py:152][WARNING][Not Found: /file/upload]
+[2017-12-24 13:09:25,459][Thread-24:5144][task_id:django.request][base.py:152][WARNING][Not Found: /file/upload]
+[2017-12-24 13:09:25,491][Thread-25:6836][task_id:django.request][base.py:152][WARNING][Not Found: /file/upload]
+[2017-12-24 13:09:25,503][Thread-26:5760][task_id:django.request][base.py:152][WARNING][Not Found: /file/upload]
+[2017-12-24 13:09:25,511][Thread-27:1872][task_id:django.request][base.py:152][WARNING][Not Found: /file/upload]
+[2017-12-24 13:09:25,518][Thread-28:10784][task_id:django.request][base.py:152][WARNING][Not Found: /file/upload]
+[2017-12-24 13:09:27,832][Thread-29:10576][task_id:django.request][base.py:152][WARNING][Not Found: /file/upload]
+[2017-12-24 13:09:30,730][Thread-30:13996][task_id:django.request][base.py:152][WARNING][Not Found: /file/upload]
+[2017-12-24 13:10:03,988][Thread-31:10856][task_id:django.request][base.py:152][WARNING][Not Found: /file/upload]
+[2017-12-24 13:13:12,278][Thread-64:4880][task_id:django.request][base.py:152][WARNING][Not Found: /file/upload]
+[2017-12-24 13:13:15,254][Thread-65:976][task_id:django.request][base.py:152][WARNING][Not Found: /file/upload]
+[2017-12-24 13:14:00,047][Thread-72:2212][task_id:django.request][base.py:152][WARNING][Not Found: /file/upload]
+[2017-12-24 13:33:37,868][Thread-8:844][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /crm/upload_identity_photo]
+Traceback (most recent call last):
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\utils\deprecation.py", line 138, in __call__
+    response = self.process_request(request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\middleware\common.py", line 63, in process_request
+    path = self.get_full_path_with_slash(request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\middleware\common.py", line 101, in get_full_path_with_slash
+    'url': request.get_host() + new_path,
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 127.0.0.1:8000/crm/upload_identity_photo/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+[2017-12-24 13:34:36,032][Thread-9:9264][task_id:django.security.csrf][csrf.py:160][WARNING][Forbidden (CSRF token missing or incorrect.): /crm/upload_identity_photo/]
+[2017-12-24 13:50:00,040][Thread-5:15524][task_id:django.security.csrf][csrf.py:160][WARNING][Forbidden (CSRF token missing or incorrect.): /crm/upload_identity_photo/]
+[2017-12-24 15:28:06,611][Thread-53:13736][task_id:django.request][base.py:152][WARNING][Not Found: /file/upload]
+[2017-12-24 15:28:06,620][Thread-54:15496][task_id:django.request][base.py:152][WARNING][Not Found: /file/upload]
+[2017-12-24 15:28:06,629][Thread-55:9508][task_id:django.request][base.py:152][WARNING][Not Found: /file/upload]
+[2017-12-24 15:28:44,210][Thread-65:15548][task_id:django.security.csrf][csrf.py:160][WARNING][Forbidden (CSRF token missing or incorrect.): /crm/upload_identity_photo/]
+[2017-12-24 15:29:55,945][Thread-75:6956][task_id:django.security.csrf][csrf.py:160][WARNING][Forbidden (CSRF token missing or incorrect.): /crm/upload_identity_photo/]
+[2017-12-24 15:58:58,008][Thread-4:11640][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /crm/upload_identity_photo/]
+Traceback (most recent call last):
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\GIT\HomeWork\day24\PerfectCRM\crm\views.py", line 62, in upload_identity_photo
+    with open(os.path.join(identity_photo_path, "%s%s" % (now(), file_obj.name)), "wb") as f:
+OSError: [Errno 22] Invalid argument: 'D:\\GIT\\HomeWork\\day24\\PerfectCRM\\enrolled_data\\14\\2017-12-24 07:58:58.008505+00:0050c43e904cf22.jpg'
+[2017-12-24 16:14:35,828][Thread-4:16956][task_id:__name__][permission.py:77][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/]
+[2017-12-24 16:14:39,954][Thread-6:16508][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /crm/sales/enrollment/5/]
+Traceback (most recent call last):
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\GIT\HomeWork\day24\PerfectCRM\crm\views.py", line 82, in enrollment
+    customer_alldetail_modelform_obj = forms.CustomerAllDetailModelForm(instance=customer_obj)
+AttributeError: module 'crm.forms' has no attribute 'CustomerAllDetailModelForm'
+[2017-12-26 19:59:38,868][Thread-1:3608][task_id:django.request][base.py:152][WARNING][Not Found: /]
+[2017-12-26 19:59:39,290][Thread-3:4100][task_id:django.request][base.py:152][WARNING][Not Found: /favicon.ico]
+[2017-12-26 20:25:42,574][Thread-5:12120][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /crm/download_identity_photo/]
+Traceback (most recent call last):
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    "returned None instead." % (callback.__module__, view_name)
+ValueError: The view crm.views.download_identity_photo didn't return an HttpResponse object. It returned None instead.
+[2017-12-26 20:28:33,872][Thread-6:9280][task_id:django.request][base.py:152][WARNING][Not Found: /crm/download_identity_photo/&customer_id=5&enrolled_class_id=1]
+[2017-12-26 20:29:03,979][Thread-5:1584][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /crm/download_identity_photo/]
+Traceback (most recent call last):
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    "returned None instead." % (callback.__module__, view_name)
+ValueError: The view crm.views.download_identity_photo didn't return an HttpResponse object. It returned None instead.
+[2017-12-26 20:45:44,864][Thread-5:9384][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /crm/download_identity_photo/]
+Traceback (most recent call last):
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    "returned None instead." % (callback.__module__, view_name)
+ValueError: The view crm.views.download_identity_photo didn't return an HttpResponse object. It returned None instead.
+[2017-12-26 20:48:02,559][Thread-5:3768][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /crm/download_identity_photo/]
+Traceback (most recent call last):
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    "returned None instead." % (callback.__module__, view_name)
+ValueError: The view crm.views.download_identity_photo didn't return an HttpResponse object. It returned None instead.
+[2017-12-26 21:00:07,442][Thread-5:8656][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /crm/download_identity_photo/]
+Traceback (most recent call last):
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\GIT\HomeWork\day24\PerfectCRM\crm\views.py", line 79, in download_identity_photo
+    identity_photo_path = os.path.join(settings.ENROLLED_DATA_DIR, enrollment_obj.id)  # 客户身份证照片存放地址
+  File "D:\Software\Anaconda\envs\py3-django\lib\ntpath.py", line 114, in join
+    genericpath._check_arg_types('join', path, *paths)
+  File "D:\Software\Anaconda\envs\py3-django\lib\genericpath.py", line 149, in _check_arg_types
+    (funcname, s.__class__.__name__)) from None
+TypeError: join() argument must be str or bytes, not 'int'
+[2017-12-26 21:00:13,444][Thread-6:5544][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /crm/download_identity_photo/]
+Traceback (most recent call last):
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\GIT\HomeWork\day24\PerfectCRM\crm\views.py", line 79, in download_identity_photo
+    identity_photo_path = os.path.join(settings.ENROLLED_DATA_DIR, enrollment_obj.id)  # 客户身份证照片存放地址
+  File "D:\Software\Anaconda\envs\py3-django\lib\ntpath.py", line 114, in join
+    genericpath._check_arg_types('join', path, *paths)
+  File "D:\Software\Anaconda\envs\py3-django\lib\genericpath.py", line 149, in _check_arg_types
+    (funcname, s.__class__.__name__)) from None
+TypeError: join() argument must be str or bytes, not 'int'
+[2017-12-26 21:03:56,179][Thread-5:7616][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /crm/download_identity_photo/]
+Traceback (most recent call last):
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\GIT\HomeWork\day24\PerfectCRM\crm\views.py", line 80, in download_identity_photo
+    file_path = os.path.join(identity_photo_path, file_name)
+  File "D:\Software\Anaconda\envs\py3-django\lib\ntpath.py", line 114, in join
+    genericpath._check_arg_types('join', path, *paths)
+  File "D:\Software\Anaconda\envs\py3-django\lib\genericpath.py", line 149, in _check_arg_types
+    (funcname, s.__class__.__name__)) from None
+TypeError: join() argument must be str or bytes, not 'NoneType'
+[2017-12-28 20:16:03,771][Thread-3:14308][task_id:django.request][base.py:152][WARNING][Not Found: /]
+[2017-12-28 20:16:04,298][Thread-1:6884][task_id:django.request][base.py:152][WARNING][Not Found: /favicon.ico]
+[2017-12-28 20:16:26,257][Thread-89:2436][task_id:__name__][permission.py:77][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/]
+[2017-12-28 21:10:03,741][Thread-50:3032][task_id:django.request][base.py:152][WARNING][Not Found: /favicon.ico]
+[2017-12-30 12:45:43,337][Thread-3:12796][task_id:django.request][base.py:152][WARNING][Not Found: /]
+[2017-12-30 12:45:43,797][Thread-1:5108][task_id:django.request][base.py:152][WARNING][Not Found: /favicon.ico]
+[2017-12-30 13:10:47,150][Thread-5:4816][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /crm/show_contract/1/]
+Traceback (most recent call last):
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\GIT\HomeWork\day24\PerfectCRM\crm\views.py", line 117, in show_contract
+    customer_obj = enrollment_obj.customer  # 通过报名对象获取客户对象
+AttributeError: 'NoneType' object has no attribute 'customer'
+[2017-12-30 13:10:47,555][Thread-6:6552][task_id:django.request][base.py:152][WARNING][Not Found: /favicon.ico]
+[2017-12-30 13:22:51,231][Thread-6:3316][task_id:django.request][base.py:152][WARNING][Not Found: /crm/contract_rejection/5/1/]
+[2017-12-30 13:33:17,549][Thread-32:15188][task_id:__name__][permission.py:77][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/crm/customer/]
+[2017-12-30 13:54:31,332][Thread-18:12628][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /crm/sales/enrollment/5/]
+Traceback (most recent call last):
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\GIT\HomeWork\day24\PerfectCRM\crm\views.py", line 205, in enrollment
+    "enrollment_form_obj": enrollment_form_obj,
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\loader.py", line 67, in render_to_string
+    template = get_template(template_name, using=using)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\loader.py", line 21, in get_template
+    return engine.get_template(template_name)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\backends\django.py", line 39, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\engine.py", line 162, in get_template
+    template, origin = self.find_template(template_name)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\engine.py", line 136, in find_template
+    name, template_dirs=dirs, skip=skip,
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\loaders\base.py", line 44, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 191, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 230, in compile_nodelist
+    return parser.parse()
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 515, in parse
+    raise self.error(token, e)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 513, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\loader_tags.py", line 312, in do_extends
+    nodelist = parser.parse()
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 515, in parse
+    raise self.error(token, e)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 513, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\loader_tags.py", line 255, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 482, in parse
+    raise self.error(token, 'Empty variable tag on line %d' % token.lineno)
+django.template.exceptions.TemplateSyntaxError: Empty variable tag on line 182
+[2017-12-30 14:22:38,620][Thread-6:5444][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /crm/sales/enrollment/5/]
+Traceback (most recent call last):
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\backends\utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.IntegrityError: NOT NULL constraint failed: crm_payment.consultant_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\GIT\HomeWork\day24\PerfectCRM\crm\views.py", line 209, in enrollment
+    payment_form_obj.save()
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\forms\models.py", line 463, in save
+    self.instance.save()
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\models\base.py", line 807, in save
+    force_update=force_update, update_fields=update_fields)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\models\base.py", line 837, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\models\base.py", line 923, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\models\base.py", line 962, in _do_insert
+    using=using, raw=raw)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\models\query.py", line 1076, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\models\sql\compiler.py", line 1099, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\backends\utils.py", line 80, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\backends\utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\utils.py", line 94, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\utils\six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\backends\utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.IntegrityError: NOT NULL constraint failed: crm_payment.consultant_id
+[2017-12-30 14:34:14,279][Thread-18:6808][task_id:__name__][permission.py:77][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/]
+[2017-12-30 14:34:35,986][Thread-31:7764][task_id:__name__][permission.py:77][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/crm/course/add/]
+[2017-12-30 14:34:39,305][Thread-32:16160][task_id:__name__][permission.py:77][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/crm/course/add/]
+[2017-12-30 14:34:42,856][Thread-33:7824][task_id:__name__][permission.py:77][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/crm/userprofile/add/]
+[2017-12-30 14:34:46,057][Thread-34:2792][task_id:__name__][permission.py:77][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/crm/userprofile/add/]
+[2017-12-30 14:34:49,784][Thread-36:5524][task_id:__name__][permission.py:77][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/crm/userprofile/add/]
+[2017-12-30 14:34:53,456][Thread-37:8772][task_id:__name__][permission.py:77][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/crm/userprofile/add/]
+[2017-12-30 14:36:27,919][Thread-6:5496][task_id:__name__][permission.py:77][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/]
+[2017-12-30 14:37:32,760][Thread-18:5708][task_id:__name__][permission.py:77][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/]
+[2017-12-30 14:45:29,714][Thread-5:7256][task_id:__name__][permission.py:77][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/crm/sales/enrollment/5/]
+[2017-12-30 14:56:14,922][Thread-53:12800][task_id:__name__][permission.py:77][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/]
+[2017-12-30 15:18:40,887][Thread-10:3668][task_id:django.security.csrf][csrf.py:160][WARNING][Forbidden (CSRF token missing or incorrect.): /crm/contract_rejection/5/2/]
+[2017-12-30 15:18:56,668][Thread-15:920][task_id:__name__][permission.py:77][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/crm/contract_rejection/5/2/]
+[2017-12-30 15:47:48,886][Thread-33:14164][task_id:__name__][permission.py:77][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/crm/customerfollowup/]
+[2017-12-30 15:56:47,720][Thread-16:6168][task_id:__name__][permission.py:77][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/crm/customerfollowup/2/delete/]
+[2017-12-30 15:57:57,841][Thread-7:11512][task_id:__name__][permission.py:77][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/crm/userprofile/add/]
+[2017-12-30 15:57:59,939][Thread-8:1988][task_id:__name__][permission.py:77][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/crm/userprofile/2/change/]
+[2017-12-30 15:58:32,559][Thread-22:15916][task_id:__name__][permission.py:77][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/]
+[2017-12-30 16:11:45,186][Thread-1:1468][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /kind_admin/crm/customerfollowup/add/]
+Traceback (most recent call last):
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\GIT\HomeWork\day24\PerfectCRM\crm\permissions\permission.py", line 75, in inner
+    response = func(request, *args, **kwargs)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\GIT\HomeWork\day24\PerfectCRM\kind_admin\views.py", line 93, in table_add
+    "table_name": table_name,
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\loader.py", line 68, in render_to_string
+    return template.render(context, request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\backends\django.py", line 66, in render
+    return self.template.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 207, in render
+    return self._render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\loader_tags.py", line 177, in render
+    return compiled_parent._render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\loader_tags.py", line 177, in render
+    return compiled_parent._render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\loader_tags.py", line 177, in render
+    return compiled_parent._render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\loader_tags.py", line 72, in render
+    result = block.nodelist.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\loader_tags.py", line 72, in render
+    result = block.nodelist.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\library.py", line 203, in render
+    output = self.func(*resolved_args, **resolved_kwargs)
+  File "D:\GIT\HomeWork\day24\PerfectCRM\kind_admin\templatetags\tags.py", line 296, in get_all_error
+    return model_form_obj.errors.get("__all__", "")
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\forms\forms.py", line 175, in errors
+    self.full_clean()
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\forms\forms.py", line 384, in full_clean
+    self._clean_fields()
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\forms\forms.py", line 396, in _clean_fields
+    value = field.widget.value_from_datadict(self.data, self.files, self.add_prefix(name))
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\forms\widgets.py", line 639, in value_from_datadict
+    getter = data.get
+AttributeError: 'generator' object has no attribute 'get'
+[2017-12-30 16:17:36,684][Thread-3:4772][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /kind_admin/crm/customer/]
+Traceback (most recent call last):
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\models\options.py", line 617, in get_field
+    return self.fields_map[field_name]
+KeyError: 'add_customer_followup'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\GIT\HomeWork\day24\PerfectCRM\kind_admin\templatetags\tags.py", line 69, in get_table_rows
+    field_obj = obj._meta.get_field(column)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\models\options.py", line 619, in get_field
+    raise FieldDoesNotExist("%s has no field named '%s'" % (self.object_name, field_name))
+django.core.exceptions.FieldDoesNotExist: Customer has no field named 'add_customer_followup'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\GIT\HomeWork\day24\PerfectCRM\crm\permissions\permission.py", line 75, in inner
+    response = func(request, *args, **kwargs)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\GIT\HomeWork\day24\PerfectCRM\kind_admin\views.py", line 57, in table_objs
+    "search_content": request.GET.get("_q", ""),
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\loader.py", line 68, in render_to_string
+    return template.render(context, request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\backends\django.py", line 66, in render
+    return self.template.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 207, in render
+    return self._render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\loader_tags.py", line 177, in render
+    return compiled_parent._render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\loader_tags.py", line 177, in render
+    return compiled_parent._render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\loader_tags.py", line 72, in render
+    result = block.nodelist.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\loader_tags.py", line 72, in render
+    result = block.nodelist.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\defaulttags.py", line 216, in render
+    nodelist.append(node.render_annotated(context))
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\library.py", line 203, in render
+    output = self.func(*resolved_args, **resolved_kwargs)
+  File "D:\GIT\HomeWork\day24\PerfectCRM\kind_admin\templatetags\tags.py", line 116, in get_table_rows
+    column_data = getattr(admin_class, column)()
+  File "D:\GIT\HomeWork\day24\PerfectCRM\kind_admin\kind_admin.py", line 80, in add_customer_followup
+    点击添加</a>""" % (self.instance)
+TypeError: not enough arguments for format string
+[2017-12-30 16:18:13,000][Thread-3:8312][task_id:django.request][base.py:152][WARNING][Not Found: /kind_admin/crm/customerfollowup/add/        ]
+[2017-12-30 16:19:11,301][Thread-7:4440][task_id:__name__][permission.py:77][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/]
+[2017-12-30 16:19:58,128][Thread-22:7236][task_id:__name__][permission.py:77][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/]
+[2018-01-04 20:05:29,986][Thread-1:4760][task_id:django.request][base.py:152][WARNING][Not Found: /]
+[2018-01-04 20:05:30,411][Thread-3:7612][task_id:django.request][base.py:152][WARNING][Not Found: /favicon.ico]
+[2018-01-04 20:11:30,075][Thread-160:12072][task_id:__name__][permission.py:77][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/]
+[2018-01-04 20:25:49,746][Thread-345:5396][task_id:django.request][base.py:152][WARNING][Not Found: /teacher]
+[2018-01-04 20:25:49,790][Thread-346:8452][task_id:django.request][base.py:152][WARNING][Not Found: /favicon.ico]
+[2018-01-04 20:25:52,888][Thread-347:10504][task_id:django.request][base.py:152][WARNING][Not Found: /teacher/]
+[2018-01-04 21:15:54,061][Thread-33:1908][task_id:__name__][permission.py:77][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-01-04 21:16:36,053][Thread-46:6492][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /kind_admin/crm/courserecord/]
+Traceback (most recent call last):
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\GIT\HomeWork\day24\PerfectCRM\crm\permissions\permission.py", line 75, in inner
+    response = func(request, *args, **kwargs)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\GIT\HomeWork\day24\PerfectCRM\kind_admin\views.py", line 46, in table_objs
+    contact_list = admin_class.model.objects.filter(**condition_dict).order_by(
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\models\query.py", line 784, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\models\query.py", line 802, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\models\sql\query.py", line 1250, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\models\sql\query.py", line 1276, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\models\sql\query.py", line 1154, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\models\sql\query.py", line 1034, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\models\sql\query.py", line 1352, in names_to_path
+    "Choices are: %s" % (name, ", ".join(available)))
+django.core.exceptions.FieldError: Cannot resolve keyword 'classlist_id' into field. Choices are: date, day_num, from_class, from_class_id, has_homework, homework_content, homework_title, id, outline, studyrecord, teacher, teacher_id
+[2018-01-04 21:16:41,498][Thread-47:6644][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /kind_admin/crm/courserecord/]
+Traceback (most recent call last):
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\GIT\HomeWork\day24\PerfectCRM\crm\permissions\permission.py", line 75, in inner
+    response = func(request, *args, **kwargs)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\GIT\HomeWork\day24\PerfectCRM\kind_admin\views.py", line 46, in table_objs
+    contact_list = admin_class.model.objects.filter(**condition_dict).order_by(
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\models\query.py", line 784, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\models\query.py", line 802, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\models\sql\query.py", line 1250, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\models\sql\query.py", line 1276, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\models\sql\query.py", line 1154, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\models\sql\query.py", line 1034, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\models\sql\query.py", line 1352, in names_to_path
+    "Choices are: %s" % (name, ", ".join(available)))
+django.core.exceptions.FieldError: Cannot resolve keyword 'classlist' into field. Choices are: date, day_num, from_class, from_class_id, has_homework, homework_content, homework_title, id, outline, studyrecord, teacher, teacher_id
+[2018-01-04 21:18:24,118][Thread-28:2768][task_id:__name__][permission.py:77][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-01-04 21:18:26,876][Thread-29:15324][task_id:__name__][permission.py:77][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-01-04 21:18:36,677][Thread-33:13948][task_id:__name__][permission.py:77][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-01-04 21:18:38,588][Thread-34:11544][task_id:__name__][permission.py:77][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-01-04 21:18:50,868][Thread-37:1668][task_id:__name__][permission.py:77][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-01-04 21:19:00,972][Thread-39:9740][task_id:__name__][permission.py:77][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-01-04 21:25:15,844][Thread-43:8584][task_id:__name__][permission.py:77][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/]
+[2018-01-04 21:25:28,432][Thread-49:6204][task_id:__name__][permission.py:77][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-01-04 21:26:10,534][Thread-76:7636][task_id:__name__][permission.py:77][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/1/change/]
+[2018-01-04 21:29:08,848][Thread-117:7056][task_id:__name__][permission.py:77][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/add/]
+[2018-01-04 21:29:13,493][Thread-118:4844][task_id:__name__][permission.py:77][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/add/]

@@ -990,3 +990,423 @@ Traceback (most recent call last):
   File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
     return Database.Cursor.execute(self, query, params)
 django.db.utils.IntegrityError: UNIQUE constraint failed: crm_studyrecord.student_id, crm_studyrecord.course_record_id
+[2018-01-09 20:59:07,180][Thread-15:13140][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /student/my_classes/]
+Traceback (most recent call last):
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\GIT\HomeWork\day24\PerfectCRM\student\views.py", line 12, in my_classes
+    return render(request, "student/my_classes.html")
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\loader.py", line 68, in render_to_string
+    return template.render(context, request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\backends\django.py", line 66, in render
+    return self.template.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 207, in render
+    return self._render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\loader_tags.py", line 177, in render
+    return compiled_parent._render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\loader_tags.py", line 177, in render
+    return compiled_parent._render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\loader_tags.py", line 72, in render
+    result = block.nodelist.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\loader_tags.py", line 72, in render
+    result = block.nodelist.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\library.py", line 203, in render
+    output = self.func(*resolved_args, **resolved_kwargs)
+  File "D:\GIT\HomeWork\day24\PerfectCRM\crm\templatetags\crm_tags.py", line 30, in get_page_ele
+    if query_sets.has_previous():
+AttributeError: 'str' object has no attribute 'has_previous'
+[2018-01-09 21:01:50,428][Thread-35:1884][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /student/my_classes/]
+Traceback (most recent call last):
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\GIT\HomeWork\day24\PerfectCRM\student\views.py", line 12, in my_classes
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\loader.py", line 68, in render_to_string
+    return template.render(context, request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\backends\django.py", line 66, in render
+    return self.template.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 207, in render
+    return self._render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\loader_tags.py", line 177, in render
+    return compiled_parent._render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\loader_tags.py", line 177, in render
+    return compiled_parent._render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\loader_tags.py", line 72, in render
+    result = block.nodelist.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\loader_tags.py", line 72, in render
+    result = block.nodelist.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\library.py", line 203, in render
+    output = self.func(*resolved_args, **resolved_kwargs)
+  File "D:\GIT\HomeWork\day24\PerfectCRM\crm\templatetags\crm_tags.py", line 30, in get_page_ele
+    if query_sets.has_previous():
+AttributeError: 'str' object has no attribute 'has_previous'
+[2018-01-09 21:10:51,205][Thread-12:6996][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /student/my_classes/]
+Traceback (most recent call last):
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\GIT\HomeWork\day24\PerfectCRM\student\views.py", line 13, in my_classes
+    return render(request, "student/my_classes.html")
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\loader.py", line 68, in render_to_string
+    return template.render(context, request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\backends\django.py", line 66, in render
+    return self.template.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 207, in render
+    return self._render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\loader_tags.py", line 177, in render
+    return compiled_parent._render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\loader_tags.py", line 177, in render
+    return compiled_parent._render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\loader_tags.py", line 72, in render
+    result = block.nodelist.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\loader_tags.py", line 72, in render
+    result = block.nodelist.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\library.py", line 203, in render
+    output = self.func(*resolved_args, **resolved_kwargs)
+  File "D:\GIT\HomeWork\day24\PerfectCRM\crm\templatetags\crm_tags.py", line 30, in get_page_ele
+    if query_sets.has_previous():
+AttributeError: 'str' object has no attribute 'has_previous'
+[2018-01-09 21:12:00,932][Thread-1:7376][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /student/my_classes/]
+Traceback (most recent call last):
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\GIT\HomeWork\day24\PerfectCRM\student\views.py", line 12, in my_classes
+    print(request.user.user_info.enrollment_set.all())
+AttributeError: 'RelatedManager' object has no attribute 'enrollment_set'
+[2018-01-09 21:12:21,987][Thread-4:11952][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /student/my_classes/]
+Traceback (most recent call last):
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\GIT\HomeWork\day24\PerfectCRM\student\views.py", line 13, in my_classes
+    return render(request, "student/my_classes.html")
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\loader.py", line 68, in render_to_string
+    return template.render(context, request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\backends\django.py", line 66, in render
+    return self.template.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 207, in render
+    return self._render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\loader_tags.py", line 177, in render
+    return compiled_parent._render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\loader_tags.py", line 177, in render
+    return compiled_parent._render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\loader_tags.py", line 72, in render
+    result = block.nodelist.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\loader_tags.py", line 72, in render
+    result = block.nodelist.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\library.py", line 203, in render
+    output = self.func(*resolved_args, **resolved_kwargs)
+  File "D:\GIT\HomeWork\day24\PerfectCRM\crm\templatetags\crm_tags.py", line 30, in get_page_ele
+    if query_sets.has_previous():
+AttributeError: 'str' object has no attribute 'has_previous'
+[2018-01-09 21:12:52,347][Thread-1:13536][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /student/my_classes/]
+Traceback (most recent call last):
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\GIT\HomeWork\day24\PerfectCRM\student\views.py", line 13, in my_classes
+    return render(request, "student/my_classes.html")
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\loader.py", line 68, in render_to_string
+    return template.render(context, request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\backends\django.py", line 66, in render
+    return self.template.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 207, in render
+    return self._render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\loader_tags.py", line 177, in render
+    return compiled_parent._render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\loader_tags.py", line 177, in render
+    return compiled_parent._render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\loader_tags.py", line 72, in render
+    result = block.nodelist.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\loader_tags.py", line 72, in render
+    result = block.nodelist.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\library.py", line 203, in render
+    output = self.func(*resolved_args, **resolved_kwargs)
+  File "D:\GIT\HomeWork\day24\PerfectCRM\crm\templatetags\crm_tags.py", line 30, in get_page_ele
+    if query_sets.has_previous():
+AttributeError: 'str' object has no attribute 'has_previous'
+[2018-01-09 21:30:26,420][Thread-1:712][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /student/my_classes/]
+Traceback (most recent call last):
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\GIT\HomeWork\day24\PerfectCRM\student\views.py", line 13, in my_classes
+    return render(request, "student/my_classes.html")
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\loader.py", line 68, in render_to_string
+    return template.render(context, request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\backends\django.py", line 66, in render
+    return self.template.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 207, in render
+    return self._render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\loader_tags.py", line 177, in render
+    return compiled_parent._render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\loader_tags.py", line 177, in render
+    return compiled_parent._render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\loader_tags.py", line 72, in render
+    result = block.nodelist.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\loader_tags.py", line 72, in render
+    result = block.nodelist.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\library.py", line 203, in render
+    output = self.func(*resolved_args, **resolved_kwargs)
+  File "D:\GIT\HomeWork\day24\PerfectCRM\crm\templatetags\crm_tags.py", line 30, in get_page_ele
+    if query_sets.has_previous():
+AttributeError: 'str' object has no attribute 'has_previous'
+[2018-01-09 21:30:44,127][Thread-1:8320][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /student/my_classes/]
+Traceback (most recent call last):
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\GIT\HomeWork\day24\PerfectCRM\student\views.py", line 13, in my_classes
+    return render(request, "student/my_classes.html")
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\loader.py", line 68, in render_to_string
+    return template.render(context, request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\backends\django.py", line 66, in render
+    return self.template.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 207, in render
+    return self._render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\loader_tags.py", line 177, in render
+    return compiled_parent._render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\loader_tags.py", line 177, in render
+    return compiled_parent._render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\loader_tags.py", line 72, in render
+    result = block.nodelist.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\loader_tags.py", line 72, in render
+    result = block.nodelist.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\template\library.py", line 203, in render
+    output = self.func(*resolved_args, **resolved_kwargs)
+  File "D:\GIT\HomeWork\day24\PerfectCRM\crm\templatetags\crm_tags.py", line 30, in get_page_ele
+    if query_sets.has_previous():
+AttributeError: 'str' object has no attribute 'has_previous'
+[2018-01-09 21:33:10,003][Thread-1:6856][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /student/my_classes/]
+Traceback (most recent call last):
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\GIT\HomeWork\day24\PerfectCRM\student\views.py", line 12, in my_classes
+    contact_list = request.user.stu_info.enrollment_set.enrolled_class.all()
+AttributeError: 'RelatedManager' object has no attribute 'enrolled_class'

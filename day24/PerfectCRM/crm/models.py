@@ -319,6 +319,8 @@ class UserProfile(AbstractBaseUser, PermissionsMixin):
     is_active = models.BooleanField(default=True)
     is_admin = models.BooleanField(default=False)
     roles = models.ManyToManyField("Role", blank=True, verbose_name="所属角色", default=None)
+    stu_info = models.ForeignKey("Customer", blank=True, null=True, verbose_name="学员信息",
+                                 help_text="学员报名成功之后，方可为其创建账户！")
 
     objects = UserProfileManager()
 

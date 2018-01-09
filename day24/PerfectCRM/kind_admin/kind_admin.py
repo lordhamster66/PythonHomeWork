@@ -2,8 +2,9 @@
 # -*- coding: utf-8 -*-
 # __author__ = "Breakering"
 # Date: 2017/11/11
-from django.shortcuts import redirect
+from django.shortcuts import redirect, render
 from django.contrib.auth.models import Group
+from django.db.utils import IntegrityError
 from crm import models
 
 enabled_admins = {}
@@ -125,7 +126,7 @@ class ContractAdmin(BaseAdmin):
 
 
 class CourseRecordAdmin(BaseAdmin):
-    list_display = ("from_class", "day_num", "teacher", "has_homework")
+    list_display = ("from_class", "day_num", "teacher", "has_homework", "study_record")
     readonly_fields = ("from_class", "teacher")
     actions = ("create_study_record",)
 
@@ -134,20 +135,37 @@ class CourseRecordAdmin(BaseAdmin):
         study_record_obj_list = []  # 存储学习记录对象
         for course_record_obj in querysets:
             for enrollment_obj in course_record_obj.from_class.enrollment_set.all():
-                study_record_obj_list.append(models.StudyRecord(
-                    student=enrollment_obj,
-                    course_record=course_record_obj,
-                    attendance=0
-                ))
-        models.StudyRecord.objects.bulk_create(study_record_obj_list)  # 批量生成学习记录
+                if enrollment_obj.contract_agreed and enrollment_obj.contract_approved:  # 学员同意合同且合同审核通过
+                    study_record_obj_list.append(models.StudyRecord(
+                        student=enrollment_obj,
+                        course_record=course_record_obj,
+                        attendance=0
+                    ))
+        try:
+            models.StudyRecord.objects.bulk_create(study_record_obj_list)  # 批量生成学习记录
+        except IntegrityError as e:  # 已经创建过该节上课记录的所有学习记录
+            return render(request, "pages-403.html", {"errors": ["已经创建过该节上课记录的所有学习记录"]})
         return redirect(request.path)
 
+    def study_record(self):
+        """查看该节所有学习记录"""
+        return "<a href='/kind_admin/crm/studyrecord/?course_record=%s'>点击查看</a>" % self.instance.id
+
+    study_record.display_name = "该节所有学习记录"
     create_study_record.display_name = "创建所有学习记录"
 
 
 class StudyRecordAdmin(BaseAdmin):
     """学习记录admin"""
     list_display = ("student", "course_record", "attendance", "score", "date")
+    list_filter = ("student", "course_record", "attendance", "score", "date")
+    list_editable = ("attendance",)
+    readonly_fields = ("student", "course_record")
+
+
+class EnrollmentAdmin(BaseAdmin):
+    """报名表admin"""
+    list_display = ("customer", "enrolled_class", "consultant", "contract_agreed", "contract_approved", "date")
 
 
 class UserProfileAdmin(BaseAdmin):
@@ -180,6 +198,7 @@ register(models.ClassList, ClassListAdmin)
 register(models.Contract, ContractAdmin)
 register(models.CourseRecord, CourseRecordAdmin)
 register(models.StudyRecord, StudyRecordAdmin)
+register(models.Enrollment, EnrollmentAdmin)
 register(models.UserProfile, UserProfileAdmin)
 register(Group, GroupAdmin)
 register(models.Role, RoleAdmin)

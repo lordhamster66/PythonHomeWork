@@ -309,7 +309,8 @@ def foreignKey_add_button(admin_class, field):
     field_obj = admin_class.model._meta.get_field(field_name)  # 字段对象
     models = enabled_admins.get(admin_class.model._meta.app_label)
     if type(field_obj).__name__ in ["ForeignKey", "ManyToManyField"]:  # todo OneToOneField
-        if field_obj.related_model._meta.model_name in models:  # 如果对应外键的model注册到enabled_admins里面了则显示添加按钮
+        # 如果对应外键的model注册到enabled_admins里面了则显示添加按钮
+        if field_obj.related_model._meta.model_name in models:
             btn_ele += "<a href='/kind_admin/%s/%s/add/' class='btn btn-success btn-xs btn-rounded' target='_blank' style='display:inline-block;margin-top:4px;'><i class='fa fa-plus' aria-hidden='true'></i>添加</a>" % (
                 admin_class.model._meta.app_label,
                 field_obj.related_model._meta.model_name

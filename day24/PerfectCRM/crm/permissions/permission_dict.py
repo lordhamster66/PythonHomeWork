@@ -282,6 +282,38 @@ PermissionDict = {
         "args": [],
         "hooks": []
     },
+    # 可以访问kind_admin下注册的学习记录
+    "crm.can_access_study_record": {
+        "url_type": 1,
+        "url": "/kind_admin/crm/studyrecord/",
+        "method": "GET",
+        "args": [],
+        "hooks": []
+    },
+    # 可以对kind_admin下注册的学习记录进行行内编辑和action操作
+    "crm.can_do_action_or_change_study_record": {
+        "url_type": 1,
+        "url": "/kind_admin/crm/studyrecord/",
+        "method": "POST",
+        "args": [],
+        "hooks": []
+    },
+    # 可以访问kind_admin下注册的学习记录修改页面
+    "crm.can_access_study_record_change": {
+        "url_type": 2,
+        "url": "/kind_admin/crm/studyrecord/\d+/change/$",
+        "method": "GET",
+        "args": [],
+        "hooks": []
+    },
+    # 可以修改kind_admin下注册的学习记录
+    "crm.can_change_study_record": {
+        "url_type": 2,
+        "url": "/kind_admin/crm/studyrecord/\d+/change/$",
+        "method": "POST",
+        "args": [],
+        "hooks": []
+    },
 }
 
 

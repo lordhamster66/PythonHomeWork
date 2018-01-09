@@ -846,3 +846,147 @@ Traceback (most recent call last):
   File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
     return Database.Cursor.execute(self, query, params)
 django.db.utils.IntegrityError: UNIQUE constraint failed: crm_studyrecord.student_id, crm_studyrecord.course_record_id
+[2018-01-08 21:02:01,490][Thread-96:6196][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /kind_admin/crm/courserecord/]
+Traceback (most recent call last):
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\backends\utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.IntegrityError: UNIQUE constraint failed: crm_studyrecord.student_id, crm_studyrecord.course_record_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\GIT\HomeWork\day24\PerfectCRM\crm\permissions\permission.py", line 75, in inner
+    response = func(request, *args, **kwargs)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\GIT\HomeWork\day24\PerfectCRM\kind_admin\views.py", line 32, in table_objs
+    return func(admin_class, request, querysets)  # 有则直接运行该函数并返回
+  File "D:\GIT\HomeWork\day24\PerfectCRM\kind_admin\kind_admin.py", line 142, in create_study_record
+    models.StudyRecord.objects.bulk_create(study_record_obj_list)  # 批量生成学习记录
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\models\query.py", line 443, in bulk_create
+    ids = self._batched_insert(objs_without_pk, fields, batch_size)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\models\query.py", line 1099, in _batched_insert
+    self._insert(item, fields=fields, using=self.db)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\models\query.py", line 1076, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\models\sql\compiler.py", line 1099, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\backends\utils.py", line 80, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\backends\utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\utils.py", line 94, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\utils\six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\backends\utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.IntegrityError: UNIQUE constraint failed: crm_studyrecord.student_id, crm_studyrecord.course_record_id
+[2018-01-08 21:44:46,764][Thread-26:11544][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /kind_admin/crm/courserecord/]
+Traceback (most recent call last):
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\backends\utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.IntegrityError: UNIQUE constraint failed: crm_studyrecord.student_id, crm_studyrecord.course_record_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\GIT\HomeWork\day24\PerfectCRM\crm\permissions\permission.py", line 75, in inner
+    response = func(request, *args, **kwargs)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\GIT\HomeWork\day24\PerfectCRM\kind_admin\views.py", line 32, in table_objs
+    return func(admin_class, request, querysets)  # 有则直接运行该函数并返回
+  File "D:\GIT\HomeWork\day24\PerfectCRM\kind_admin\kind_admin.py", line 143, in create_study_record
+    models.StudyRecord.objects.bulk_create(study_record_obj_list)  # 批量生成学习记录
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\models\query.py", line 443, in bulk_create
+    ids = self._batched_insert(objs_without_pk, fields, batch_size)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\models\query.py", line 1099, in _batched_insert
+    self._insert(item, fields=fields, using=self.db)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\models\query.py", line 1076, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\models\sql\compiler.py", line 1099, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\backends\utils.py", line 80, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\backends\utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\utils.py", line 94, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\utils\six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\backends\utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.IntegrityError: UNIQUE constraint failed: crm_studyrecord.student_id, crm_studyrecord.course_record_id
+[2018-01-08 21:45:26,351][Thread-1:8940][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /kind_admin/crm/courserecord/]
+Traceback (most recent call last):
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\backends\utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.IntegrityError: UNIQUE constraint failed: crm_studyrecord.student_id, crm_studyrecord.course_record_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\GIT\HomeWork\day24\PerfectCRM\crm\permissions\permission.py", line 75, in inner
+    response = func(request, *args, **kwargs)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\GIT\HomeWork\day24\PerfectCRM\kind_admin\views.py", line 32, in table_objs
+    return func(admin_class, request, querysets)  # 有则直接运行该函数并返回
+  File "D:\GIT\HomeWork\day24\PerfectCRM\kind_admin\kind_admin.py", line 144, in create_study_record
+    models.StudyRecord.objects.bulk_create(study_record_obj_list)  # 批量生成学习记录
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\models\query.py", line 443, in bulk_create
+    ids = self._batched_insert(objs_without_pk, fields, batch_size)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\models\query.py", line 1099, in _batched_insert
+    self._insert(item, fields=fields, using=self.db)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\models\query.py", line 1076, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\models\sql\compiler.py", line 1099, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\backends\utils.py", line 80, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\backends\utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\utils.py", line 94, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\utils\six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\backends\utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "D:\Software\Anaconda\envs\py3-django\lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.IntegrityError: UNIQUE constraint failed: crm_studyrecord.student_id, crm_studyrecord.course_record_id

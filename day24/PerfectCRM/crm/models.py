@@ -42,7 +42,7 @@ class Customer(models.Model):
     date = models.DateTimeField(auto_now_add=True, verbose_name="创建时间")
 
     def __str__(self):
-        return self.qq
+        return "%s %s" % (self.qq, self.name)
 
     class Meta:
         verbose_name_plural = "客户信息表"
@@ -158,7 +158,7 @@ class CourseRecord(models.Model):
     date = models.DateField(auto_now_add=True, verbose_name="创建日期")
 
     def __str__(self):
-        return "<%s %s>" % (self.from_class, self.day_num)
+        return "<%s 第%s节>" % (self.from_class, self.day_num)
 
     class Meta:
         unique_together = ("from_class", "day_num")
@@ -206,8 +206,8 @@ class Enrollment(models.Model):
     customer = models.ForeignKey("Customer", verbose_name="学员")
     enrolled_class = models.ForeignKey("ClassList", verbose_name="所报班级")
     consultant = models.ForeignKey("UserProfile", verbose_name="课程顾问")
-    contract_agreed = models.BooleanField(default=False, verbose_name="学员已同意合同")
-    contract_approved = models.BooleanField(default=False, verbose_name="合同已审核")
+    contract_agreed = models.BooleanField(default=False, verbose_name="学员是否同意合同")
+    contract_approved = models.BooleanField(default=False, verbose_name="合同是否审核")
     date = models.DateTimeField(auto_now_add=True, verbose_name="报名时间")
 
     def __str__(self):
@@ -389,4 +389,8 @@ class UserProfile(AbstractBaseUser, PermissionsMixin):
             ("can_change_course_record", "可以修改kind_admin下注册的上课记录"),
             ("can_access_course_record_add", "可以访问kind_admin下注册的上课记录添加页面"),
             ("can_add_course_record", "可以添加kind_admin下注册的上课记录"),
+            ("can_access_study_record", "可以访问kind_admin下注册的学习记录"),
+            ("can_do_action_or_change_study_record", "可以对kind_admin下注册的学习记录进行行内编辑和action操作"),
+            ("can_access_study_record_change", "可以访问kind_admin下注册的学习记录修改页面"),
+            ("can_change_study_record", "可以修改kind_admin下注册的学习记录"),
         )

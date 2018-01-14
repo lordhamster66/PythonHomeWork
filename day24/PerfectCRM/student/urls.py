@@ -19,4 +19,6 @@ from student import views
 urlpatterns = [
     url(r'^$', views.index, name="student_index"),  # 学员首页
     url(r'^my_classes/$', views.my_classes, name="my_classes"),  # 我的班级
+    url(r'^my_class_course_record/(?P<class_list_id>\d+)/$',
+        views.my_class_course_record, name="my_class_course_record"),  # 我的班级上课记录
 ]

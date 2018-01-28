@@ -46,11 +46,17 @@
                                 </td>
                                 <td>{{ course_record_obj.user_study_record_obj.get_attendance_display }}</td>
                                 <td>{% if course_record_obj.has_homework %}是{% else %}否{% endif %}</td>
-                                <td>作业详情</td>
+                                <td>
+                                    {% if course_record_obj.has_homework %}
+                                        <a href="/student/homework_detail/{{ course_record_obj.user_study_record_obj.id }}/">点击查看</a>
+                                    {% else %}
+                                        本节没有作业哦
+                                    {% endif %}
+                                </td>
                                 <td>
                                     <a href="javascript:void(0);" class="add-popover"
                                        data-html="true"
-                                       data-original-title="课程大纲"
+                                       data-original-title="讲师评语"
                                        data-content="<pre>{{ course_record_obj.user_study_record_obj.memo }}</pre>"
                                        data-placement="top" data-trigger="focus" data-toggle="popover">
                                         {{ course_record_obj.user_study_record_obj.memo|truncatewords:"1" }}

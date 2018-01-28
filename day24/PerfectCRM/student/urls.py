@@ -21,4 +21,7 @@ urlpatterns = [
     url(r'^my_classes/$', views.my_classes, name="my_classes"),  # 我的班级
     url(r'^my_class_course_record/(?P<class_list_id>\d+)/$',
         views.my_class_course_record, name="my_class_course_record"),  # 我的班级上课记录
+    url(r'^homework_detail/(?P<study_record_id>\d+)/$', views.homework_detail, name="homework_detail"),  # 作业详情
+    url(r'^upload_homework/$', views.upload_homework, name="upload_homework"),  # 上传作业
+    url(r'^delete_homework/$', views.delete_homework, name="delete_homework"),  # 删除作业
 ]

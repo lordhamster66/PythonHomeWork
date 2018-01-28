@@ -129,7 +129,8 @@ CACHES = {
 }
 
 AUTH_USER_MODEL = 'crm.UserProfile'
-ENROLLED_DATA_DIR = os.path.join(BASE_DIR, "enrolled_data")
+ENROLLED_DATA_DIR = os.path.join(BASE_DIR, "enrolled_data")  # 报名身份信息存放路径
+STUDENT_HOMEWORK_DIR = os.path.join(BASE_DIR, "student_homework")  # 学员作业存放路径
 BASE_LOG_DIR = os.path.join(BASE_DIR, "log")
 LOGGING = {
     'version': 1,

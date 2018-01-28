@@ -1,0 +1,50 @@
+{% extends "index.html" %}
+{% load crm_tags %}
+{% block breadcrumb %}
+    <ol class="breadcrumb">
+        <li class="active">我的班级</li>
+    </ol>
+{% endblock %}
+{% block css %}
+    <style>
+        .class-container {
+            float: left;
+            margin-right: 50px;
+            margin-bottom: 20px;
+            width: 150px;
+            height: 200px;
+            border: 1px solid #dddddd
+        }
+
+        .class-container img {
+            width: 140px;
+            height: 120px;
+        }
+    </style>
+{% endblock %}
+{% block page-content %}
+    <div class="panel panel-bordered panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title"><b>我的班级</b></h3>
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                {% for class in my_classes_list %}
+                    <div class="class-container text-center">
+                        <h4>{{ class }}</h4>
+                        <a href="/student/my_class_course_record/{{ class.id }}/">
+                            <img src="/static/img/class_img.jpg" alt="班级">
+                        </a>
+                        <h5>已上节次:{{ class.courserecord_set.count }}节</h5>
+                    </div>
+                {% endfor %}
+            </div>
+            总计:{{ my_classes_list.paginator.count }}个班级
+            <div class="row">
+                <ul class="pagination">
+                    {% get_page_ele my_classes_list %}
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock %}

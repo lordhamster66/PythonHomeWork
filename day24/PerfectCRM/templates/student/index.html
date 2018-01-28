@@ -1,0 +1,9 @@
+{% extends "index.html" %}
+{% block breadcrumb %}
+    <ol class="breadcrumb">
+        <li class="active">学员首页</li>
+    </ol>
+{% endblock %}
+{% block page-content %}
+    <h1>Welcome {{ request.user.name }}!</h1>
+{% endblock %}

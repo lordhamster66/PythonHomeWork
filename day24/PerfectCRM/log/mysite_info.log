@@ -1747,3 +1747,7 @@ Traceback (most recent call last):
   File "D:\GIT\HomeWork\day24\PerfectCRM\student\views.py", line 38, in my_class_course_record
     user_score = models.StudyRecord.objects.filter(student=enrollment_obj).values('score').annotate(c=sum('score'))
 TypeError: unsupported operand type(s) for +: 'int' and 'str'
+[2018-01-28 13:04:25,678][Thread-1:7412][task_id:django.request][base.py:152][WARNING][Not Found: /]
+[2018-01-28 13:04:26,773][Thread-3:12504][task_id:django.request][base.py:152][WARNING][Not Found: /favicon.ico]
+[2018-01-28 13:05:22,908][Thread-69:2228][task_id:django.request][base.py:152][WARNING][Not Found: /]
+[2018-01-28 13:05:23,712][Thread-70:14364][task_id:django.request][base.py:152][WARNING][Not Found: /favicon.ico]

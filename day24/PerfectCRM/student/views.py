@@ -168,7 +168,7 @@ def download_homework(request):
         if course_record_id and study_record_id and stu_info_id and homework_file_name:
             # 获取学员作业存放路径
             student_homework_abspath = os.path.join(
-                settings.STUDENT_HOMEWORK_DIR, str(request.user.stu_info.id),
+                settings.STUDENT_HOMEWORK_DIR, str(stu_info_id),
                 str(course_record_id), str(study_record_id)
             )
             homework_file_path = os.path.join(student_homework_abspath, homework_file_name)

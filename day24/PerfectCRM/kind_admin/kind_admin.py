@@ -157,10 +157,24 @@ class CourseRecordAdmin(BaseAdmin):
 
 class StudyRecordAdmin(BaseAdmin):
     """学习记录admin"""
-    list_display = ("student", "course_record", "attendance", "score", "date")
+    list_display = ("student", "course_record", "attendance", "check_homework", "score", "memo", "date")
     list_filter = ("student", "course_record", "attendance", "score", "date")
-    list_editable = ("attendance",)
+    list_editable = ("attendance", "score", "memo")
     readonly_fields = ("student", "course_record")
+
+    def check_homework(self):
+        """查看可以下载的作业"""
+        if self.instance.course_record.has_homework:
+            return '''
+            <button type="button" study-record-id="%s"
+            class="btn btn-info check-homework" data-toggle="modal" 
+            data-target=".bs-example-modal-sm">
+            点击查看
+            </button>''' % self.instance.id
+        else:  # 没有作业
+            return '没有作业'
+
+    check_homework.display_name = "作业查看"
 
 
 class EnrollmentAdmin(BaseAdmin):

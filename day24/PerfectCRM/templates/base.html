@@ -173,6 +173,38 @@
             language: "zh-CN",//语言设置
             format: "yyyy-mm-dd"//日期显示格式
         });
+
+
+        // 教师在点击作业查看时触发
+        $(".check-homework").click(function () {
+            var study_record_id = $(this).attr("study-record-id");
+            $.ajax({
+                url: '/teacher/homework_list/',
+                type: "POST",
+                async: false,
+                data: {'study_record_id': study_record_id},
+                dataType: "JSON",  // 内部会自动将返回的数据用JSON解析
+                traditional: true,  // 这样设置之后ajax就可以发送多数据了，比如列表
+                success: function (obj) {
+                    //console.log(obj);
+                    $("#small-modal .modal-title").text("作业列表");
+                    if (obj.status) {
+                        $("#small-modal #homework-files").empty();
+                        for (var file_name in obj.data) {
+                            var tr_ele = document.createElement("tr");
+                            var td1 = document.createElement("td");
+                            $(td1).text(file_name);
+                            var td2 = document.createElement("td");
+                            $(td2).text(obj.data[file_name].file_size);
+                            var td3 = document.createElement("td");
+                            $(td3).html('<a href="' + obj.data[file_name].download_url + '"><i class="fa fa-download" style="color:#00bdf8;cursor:pointer;" aria-hidden="true"></i></a>');
+                            $(tr_ele).append(td1).append(td2).append(td3);
+                            $("#small-modal #homework-files").append(tr_ele);
+                        }
+                    }
+                }
+            })
+        })
     })
 </script>
 {% block js %}{% endblock %}

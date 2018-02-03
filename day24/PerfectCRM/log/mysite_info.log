@@ -1941,3 +1941,50 @@ Traceback (most recent call last):
   File "C:\Git\PythonHomeWork\day24\PerfectCRM\student\views.py", line 152, in delete_homework
     os.remove(homework_file_path)
 FileNotFoundError: [WinError 2] 系统找不到指定的文件。: 'C:\\Git\\PythonHomeWork\\day24\\PerfectCRM\\student_homework\\4\\1\\5\\244'
+[2018-02-03 14:44:49,942][Thread-12:8960][task_id:__name__][permission.py:77][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/1-2/delete/]
+[2018-02-03 15:28:57,706][Thread-23:5172][task_id:__name__][permission.py:77][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/studyrecord/add/]
+[2018-02-03 15:36:38,889][Thread-45:4684][task_id:__name__][permission.py:77][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/]
+[2018-02-03 15:50:36,360][Thread-5:10148][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /student/download_homework/]
+Traceback (most recent call last):
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Git\PythonHomeWork\day24\PerfectCRM\student\views.py", line 171, in download_homework
+    settings.STUDENT_HOMEWORK_DIR, str(request.user.stu_info.id),
+AttributeError: 'NoneType' object has no attribute 'id'
+[2018-02-03 15:52:35,167][Thread-73:15188][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /student/download_homework/]
+Traceback (most recent call last):
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Git\PythonHomeWork\day24\PerfectCRM\student\views.py", line 171, in download_homework
+    settings.STUDENT_HOMEWORK_DIR, str(request.user.stu_info.id),
+AttributeError: 'NoneType' object has no attribute 'id'
+[2018-02-03 15:55:19,591][Thread-1:6640][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /student/download_homework/]
+Traceback (most recent call last):
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Git\PythonHomeWork\day24\PerfectCRM\student\views.py", line 171, in download_homework
+    settings.STUDENT_HOMEWORK_DIR, str(request.user.stu_info.id),
+AttributeError: 'NoneType' object has no attribute 'id'
+[2018-02-03 15:56:05,181][Thread-5:11536][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /student/download_homework/]
+Traceback (most recent call last):
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Git\PythonHomeWork\day24\PerfectCRM\student\views.py", line 171, in download_homework
+    settings.STUDENT_HOMEWORK_DIR, str(request.user.stu_info.id),
+AttributeError: 'NoneType' object has no attribute 'id'

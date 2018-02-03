@@ -19,4 +19,5 @@ from teacher import views
 urlpatterns = [
     url(r'^$', views.index, name="teacher_index"),  # 教师首页
     url(r'^class_taken/$', views.class_taken, name="class_taken"),  # 所带班级
+    url(r'^homework_list/$', views.homework_list, name="homework_list"),  # 返回作业列表，这样老师可以逐一进行下载
 ]

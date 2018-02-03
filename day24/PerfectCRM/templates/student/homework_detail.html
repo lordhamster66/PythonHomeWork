@@ -32,6 +32,7 @@
                         <th>文件名</th>
                         <th>大小(kb)</th>
                         <th>上传时间</th>
+                        <th>下载</th>
                         <th>删除</th>
                     </tr>
                     </thead>
@@ -39,11 +40,18 @@
                     {% for file_name, info in homework_files_dict.items %}
                         <tr>
                             <td>{{ forloop.counter }}</td>
-                            <td>{{ file_name }}</td>
+                            <td class="row-file-name">{{ file_name }}</td>
                             <td>{{ info.file_size }}</td>
                             <td>{{ info.st_mtime }}</td>
                             <td>
-                                <a onclick="deleteHomewor(this);"><i class="fa fa-close" style="color:red;cursor:pointer;" aria-hidden="true"></i></a>
+                                <a href="/student/download_homework/?stu_info_id={{ request.user.stu_info.id }}&course_record_id={{ study_record_obj.course_record.id }}&study_record_id={{ study_record_obj.id }}&homework_file_name={{ file_name }}"><i
+                                        class="fa fa-download" style="color:#00bdf8;cursor:pointer;"
+                                        aria-hidden="true"></i></a>
+                            </td>
+                            <td>
+                                <a onclick="deleteHomewor(this);"><i class="fa fa-close"
+                                                                     style="color:red;cursor:pointer;"
+                                                                     aria-hidden="true"></i></a>
                             </td>
                         </tr>
                     {% endfor %}
@@ -85,14 +93,17 @@
                         var td1 = document.createElement("td");
                         $(td1).text(index);
                         var td2 = document.createElement("td");
+                        $(td2).addClass("row-file-name");
                         $(td2).text(file_name);
                         var td3 = document.createElement("td");
                         $(td3).text(response_obj.data[file_name].file_size);
                         var td4 = document.createElement("td");
                         $(td4).text(response_obj.data[file_name].st_mtime);
                         var td5 = document.createElement("td");
-                        $(td5).html("<a onclick=\"deleteHomewor(this);\"><i class=\"fa fa-close\" style=\"color:red;cursor:pointer;\" aria-hidden=\"true\"></i></a>");
-                        $(tr_ele).append(td1).append(td2).append(td3).append(td4).append(td5);
+                        $(td5).html('<a href=\"/student/download_homework/?stu_info_id={{ request.user.stu_info.id }}&course_record_id={{ study_record_obj.course_record.id }}&study_record_id={{ study_record_obj.id }}&homework_file_name=' + file_name + '\"><i class=\"fa fa-download\" style=\"color:#00bdf8;cursor:pointer;\" aria-hidden=\"true\"></i></a>');
+                        var td6 = document.createElement("td");
+                        $(td6).html("<a onclick=\"deleteHomewor(this);\"><i class=\"fa fa-close\" style=\"color:red;cursor:pointer;\" aria-hidden=\"true\"></i></a>");
+                        $(tr_ele).append(td1).append(td2).append(td3).append(td4).append(td5).append(td6);
                         $("#homework-files").append(tr_ele);
                     }
                 } else {
@@ -104,9 +115,10 @@
                 }
             }
         });
+
         // 删除作业文件
-        function deleteHomewor (ths) {
-            var homework_file_name = $(ths).parent().prev().prev().prev().text();  // 获取要删除的作业文件名称
+        function deleteHomewor(ths) {
+            var homework_file_name = $(ths).parent().prevAll(".row-file-name").text();  // 获取要删除的作业文件名称
             console.log(homework_file_name);
             swal({
                     title: "确定删除吗?",

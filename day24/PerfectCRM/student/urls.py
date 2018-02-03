@@ -24,4 +24,5 @@ urlpatterns = [
     url(r'^homework_detail/(?P<study_record_id>\d+)/$', views.homework_detail, name="homework_detail"),  # 作业详情
     url(r'^upload_homework/$', views.upload_homework, name="upload_homework"),  # 上传作业
     url(r'^delete_homework/$', views.delete_homework, name="delete_homework"),  # 删除作业
+    url(r'^download_homework/$', views.download_homework, name="download_homework"),  # 下载作业
 ]

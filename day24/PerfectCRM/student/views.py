@@ -152,3 +152,36 @@ def delete_homework(request):
         os.remove(homework_file_path)
         ret["status"] = True
     return HttpResponse(json.dumps(ret))
+
+
+def download_homework(request):
+    """
+    下载作业
+    :param request:
+    :return:
+    """
+    if request.method == "GET":
+        stu_info_id = request.GET.get("stu_info_id")  # 获取学员信息对象ID
+        course_record_id = request.GET.get("course_record_id")  # 获取上课记录ID
+        study_record_id = request.GET.get("study_record_id")  # 获取学习记录ID
+        homework_file_name = request.GET.get("homework_file_name")  # 获取要删除的作业文件名称
+        if course_record_id and study_record_id and stu_info_id and homework_file_name:
+            # 获取学员作业存放路径
+            student_homework_abspath = os.path.join(
+                settings.STUDENT_HOMEWORK_DIR, str(request.user.stu_info.id),
+                str(course_record_id), str(study_record_id)
+            )
+            homework_file_path = os.path.join(student_homework_abspath, homework_file_name)
+            if os.path.isfile(homework_file_path):
+                with open(homework_file_path, "rb") as f:
+                    file_obj = f.read()
+                # 设定文件头，这种设定可以让任意文件都能正确下载，而且已知文本文件不是本地打开
+                response = HttpResponse(file_obj, content_type='APPLICATION/OCTET-STREAM')
+                # 设定传输给客户端的文件名称
+                response['Content-Disposition'] = 'attachment; filename=' + homework_file_name
+                response['Content-Length'] = os.path.getsize(homework_file_path)  # 传输给客户端的文件大小
+                return response
+            else:
+                return HttpResponse("文件不存在！")
+        else:
+            return HttpResponse("参数错误！")

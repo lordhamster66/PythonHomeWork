@@ -1597,3 +1597,87 @@ Traceback (most recent call last):
   File "C:\Git\PythonHomeWork\day24\PerfectCRM\student\views.py", line 81, in homework_detail
     all_homework_files_name_list = os.listdir(student_homework_abspath)  # 学员已经上传的本次所有作业文件名称
 FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'C:\\Git\\PythonHomeWork\\day24\\PerfectCRM\\student_homework\\4\\1\\5'
+[2018-02-03 13:20:26,238][Thread-3:8524][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /student/download_homework/]
+Traceback (most recent call last):
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    "returned None instead." % (callback.__module__, view_name)
+ValueError: The view student.views.download_homework didn't return an HttpResponse object. It returned None instead.
+[2018-02-03 13:32:38,129][Thread-9:3944][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /student/delete_homework/]
+Traceback (most recent call last):
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Git\PythonHomeWork\day24\PerfectCRM\student\views.py", line 152, in delete_homework
+    os.remove(homework_file_path)
+FileNotFoundError: [WinError 2] 系统找不到指定的文件。: 'C:\\Git\\PythonHomeWork\\day24\\PerfectCRM\\student_homework\\4\\1\\5\\244'
+[2018-02-03 13:32:39,324][Thread-10:2892][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /student/delete_homework/]
+Traceback (most recent call last):
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Git\PythonHomeWork\day24\PerfectCRM\student\views.py", line 152, in delete_homework
+    os.remove(homework_file_path)
+FileNotFoundError: [WinError 2] 系统找不到指定的文件。: 'C:\\Git\\PythonHomeWork\\day24\\PerfectCRM\\student_homework\\4\\1\\5\\244'
+[2018-02-03 13:32:39,874][Thread-11:8472][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /student/delete_homework/]
+Traceback (most recent call last):
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Git\PythonHomeWork\day24\PerfectCRM\student\views.py", line 152, in delete_homework
+    os.remove(homework_file_path)
+FileNotFoundError: [WinError 2] 系统找不到指定的文件。: 'C:\\Git\\PythonHomeWork\\day24\\PerfectCRM\\student_homework\\4\\1\\5\\244'
+[2018-02-03 13:32:40,065][Thread-12:3076][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /student/delete_homework/]
+Traceback (most recent call last):
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Git\PythonHomeWork\day24\PerfectCRM\student\views.py", line 152, in delete_homework
+    os.remove(homework_file_path)
+FileNotFoundError: [WinError 2] 系统找不到指定的文件。: 'C:\\Git\\PythonHomeWork\\day24\\PerfectCRM\\student_homework\\4\\1\\5\\244'
+[2018-02-03 13:32:40,252][Thread-13:2680][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /student/delete_homework/]
+Traceback (most recent call last):
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Git\PythonHomeWork\day24\PerfectCRM\student\views.py", line 152, in delete_homework
+    os.remove(homework_file_path)
+FileNotFoundError: [WinError 2] 系统找不到指定的文件。: 'C:\\Git\\PythonHomeWork\\day24\\PerfectCRM\\student_homework\\4\\1\\5\\244'
+[2018-02-03 13:32:40,439][Thread-14:14932][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /student/delete_homework/]
+Traceback (most recent call last):
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Git\PythonHomeWork\day24\PerfectCRM\student\views.py", line 152, in delete_homework
+    os.remove(homework_file_path)
+FileNotFoundError: [WinError 2] 系统找不到指定的文件。: 'C:\\Git\\PythonHomeWork\\day24\\PerfectCRM\\student_homework\\4\\1\\5\\244'
+[2018-02-03 13:33:04,852][Thread-17:15992][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /student/delete_homework/]
+Traceback (most recent call last):
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Git\PythonHomeWork\day24\PerfectCRM\student\views.py", line 152, in delete_homework
+    os.remove(homework_file_path)
+FileNotFoundError: [WinError 2] 系统找不到指定的文件。: 'C:\\Git\\PythonHomeWork\\day24\\PerfectCRM\\student_homework\\4\\1\\5\\244'

@@ -26,6 +26,7 @@ class BaseAdmin(object):
     dynamic_default_fields = ()  # 动态默认字段,在修改对象时动态生成
     only_display_img_field = ()  # 只显示图片的字段
     list_editable = ()  # 行内编辑字段
+    field_color = {}  # 字段对应显示的颜色
 
     def delete_selected(self, request, querysets):
         """
@@ -63,6 +64,11 @@ class CustomerAdmin(BaseAdmin):
     actions = ("aa",)
     modelform_exclude_fields = ("status",)
     readonly_fields = ("name", "qq", "qq_name", "phone", "person_id", "contact_email", "consultant", "status")
+    field_color = {
+        "status": {
+            "0": ["red", "white"], "1": ["green", "white"], "2": ["yellow", "white"]
+        }
+    }
 
     # list_editable = ("status",)
 
@@ -104,7 +110,7 @@ class TagAdmin(BaseAdmin):
 
 
 class CustomerFollowUPAdmin(BaseAdmin):
-    list_display = ("customer", "consultant", "date")
+    list_display = ("customer", "consultant", "intention", "date")
     list_filter = ("customer", "consultant", "intention", "date")
     readonly_fields = ("customer", "consultant")
 
@@ -161,6 +167,17 @@ class StudyRecordAdmin(BaseAdmin):
     list_filter = ("student", "course_record", "attendance", "score", "date")
     list_editable = ("attendance", "score", "memo")
     readonly_fields = ("student", "course_record")
+    field_color = {
+        "attendance": {
+            "0": ["green", "white"], "1": ["red", "white"], "2": ["yellow", "black"], "3": ["red", "white"]
+        },
+        "score": {
+            "100": ["green", "white"], "90": ["#46b9d8", "white"], "85": ["#46b9d8", "white"],
+            "80": ["#46b9d8", "white"], "75": ["blue", "white"], "70": ["blue", "white"],
+            "60": ["blue", "white"], "40": ["yellow", "black"], "-50": ["yellow", "white"],
+            "-100": ["red", "white"], "0": ["white", "black"]
+        }
+    }
 
     def check_homework(self):
         """查看可以下载的作业"""

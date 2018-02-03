@@ -65,14 +65,25 @@ def get_table_rows(request, obj, admin_class):
     """根据admin配置显示表中的每行"""
     td_ele = ""
     for index, column in enumerate(admin_class.list_display):
+        field_color = ""  # 要为字段添加的背景及字体的颜色
+        default_color_list = ["white", "black"]  # 默认的背景及字体颜色
         try:
+            # 为字段添加背景及字体颜色
+            if column in admin_class.field_color:
+                column_value = str(getattr(obj, column))
+                field_color = "background-color:%s;color:%s" % (
+                    admin_class.field_color[column].get(column_value, default_color_list)[0],
+                    admin_class.field_color[column].get(column_value, default_color_list)[1]
+                )
             field_obj = obj._meta.get_field(column)
             if field_obj.choices:  # 外键或者是内置choices字段
                 column_data = getattr(obj, "get_%s_display" % column)()
             else:
                 column_data = getattr(obj, column)
+            # 时间格式的字段
             if isinstance(column_data, datetime):
                 column_data = column_data.strftime("%Y-%m-%d %H:%M:%S")
+            # 日期格式的字段
             if isinstance(column_data, date):
                 column_data = column_data.strftime("%Y-%m-%d")
             if index == 0:  # 表示是第一列，加上跳转至修改页面的a标签
@@ -95,7 +106,16 @@ def get_table_rows(request, obj, admin_class):
                         ''' % (column, obj.id, column_data)
 
                     else:  # 外键布尔值或者是有choices的字段
-                        select_ele = '''<select class="form-control" name={filter_field}>'''
+                        #  style="background-color:red;color:white"
+                        editable_field_color = ""  # 行内编辑字段的背景及字体颜色
+                        if column in admin_class.field_color:  # 字段有自定义颜色
+                            column_value = str(getattr(obj, column))
+                            editable_field_color = "style='background-color:%s;color:%s'" % (
+                                admin_class.field_color[column].get(column_value, default_color_list)[0],
+                                admin_class.field_color[column].get(column_value, default_color_list)[1]
+                            )
+                        field_color = ""
+                        select_ele = '''<select class="form-control" name={filter_field} %s> ''' % editable_field_color
                         if type(field_obj).__name__ == "BooleanField":  # 外键
                             choices = (("False", "False"), ("True", "True"))
                         else:
@@ -114,7 +134,7 @@ def get_table_rows(request, obj, admin_class):
             admin_class.request = request  # 在admin_class里封装请求内容
             if hasattr(admin_class, column):
                 column_data = getattr(admin_class, column)()
-        td_ele += "<td style='white-space:nowrap'>%s</td>" % column_data
+        td_ele += "<td style='white-space:nowrap;%s'>%s</td>" % (field_color, column_data)
     return mark_safe(td_ele)
 
 
@@ -134,7 +154,7 @@ def get_page_ele(query_sets, condition_dict, orderby_dict, search_content):
     # 显示的页数
     for loop_num in query_sets.paginator.page_range:
         if loop_num < 3 or loop_num > query_sets.paginator.num_pages - 2 or abs(
-                        loop_num - query_sets.number) < 2:  # 最前2页和最后两页以及当前页及当前页前后两页
+                loop_num - query_sets.number) < 2:  # 最前2页和最后两页以及当前页及当前页前后两页
             actived = ""
             if loop_num == query_sets.number:  # 如果是当前页则激活
                 actived = "active"

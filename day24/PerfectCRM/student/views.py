@@ -36,20 +36,23 @@ def my_class_course_record(request, class_list_id):
     if stu_info:  # 关联学生信息才会有班级显示
         # 获取对应报名对象
         enrollment_obj = models.Enrollment.objects.filter(customer=stu_info, enrolled_class=class_list_obj).first()
-        # 获取对应班级的所有上课记录
-        raw_course_record_obj_list = models.CourseRecord.objects.filter(
-            from_class=class_list_obj
-        ).all().order_by("day_num")
-        # 对该学员所报班级的所有上课记录进行分数求和，得出该学员在该班级的总成绩得分
-        user_score_info = models.StudyRecord.objects.filter(student=enrollment_obj).aggregate(Sum("score"))
-        for course_record_obj in raw_course_record_obj_list:
-            user_study_record_obj = models.StudyRecord.objects.filter(
-                student=enrollment_obj,
-                course_record=course_record_obj
-            ).first()  # 获取对应上课记录的学习记录
-            course_record_obj.user_study_record_obj = user_study_record_obj  # 将该用户本节上课记录的学习记录封装起来
-            # 将封装好的上课记录对象加入上课记录列表中，这样可以在调取上课记录时直接获取到该学员的学习记录
-            course_record_obj_list.append(course_record_obj)
+        if enrollment_obj:  # 有对应的报名对象，说明该学员报名该班级，有权限查看相关信息
+            # 获取对应班级的所有上课记录
+            raw_course_record_obj_list = models.CourseRecord.objects.filter(
+                from_class=class_list_obj
+            ).all().order_by("day_num")
+            # 对该学员所报班级的所有上课记录进行分数求和，得出该学员在该班级的总成绩得分
+            user_score_info = models.StudyRecord.objects.filter(student=enrollment_obj).aggregate(Sum("score"))
+            for course_record_obj in raw_course_record_obj_list:
+                user_study_record_obj = models.StudyRecord.objects.filter(
+                    student=enrollment_obj,
+                    course_record=course_record_obj
+                ).first()  # 获取对应上课记录的学习记录
+                course_record_obj.user_study_record_obj = user_study_record_obj  # 将该用户本节上课记录的学习记录封装起来
+                # 将封装好的上课记录对象加入上课记录列表中，这样可以在调取上课记录时直接获取到该学员的学习记录
+                course_record_obj_list.append(course_record_obj)
+        else:
+            return redirect("/student/my_classes/")
     # 获取带分页对象的对应班级的所有上课记录
     course_record_obj_list = get_paginator_query_sets(request, course_record_obj_list, 10)
     return render(request, "student/my_class_course_record.html", {

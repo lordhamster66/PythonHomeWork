@@ -48,7 +48,11 @@
                                 <td>{% if course_record_obj.has_homework %}是{% else %}否{% endif %}</td>
                                 <td>
                                     {% if course_record_obj.has_homework %}
-                                        <a href="/student/homework_detail/{{ course_record_obj.user_study_record_obj.id }}/">点击查看</a>
+                                        {% if course_record_obj.user_study_record_obj %}
+                                            <a href="/student/homework_detail/{{ course_record_obj.user_study_record_obj.id }}/">点击查看</a>
+                                        {% else %}
+                                            讲师未生成学习记录
+                                        {% endif %}
                                     {% else %}
                                         本节没有作业哦
                                     {% endif %}

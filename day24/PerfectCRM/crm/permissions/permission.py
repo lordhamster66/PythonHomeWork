@@ -14,7 +14,7 @@ logger = logging.getLogger("__name__")  # 生成一个以当前模块名为名�
 
 def check_user_permission(request, *args, **kwargs):
     """验证用户是否有权限"""
-    ret = {"status": False, "errors": [], "data": None}  # 要返回的内容
+    ret = {"status": False, "errors": [], "data": {}}  # 要返回的内容
     for permission_name, permission_detail in PermissionDict.items():
         url_matched = False  # url是否匹配上
         if permission_detail["url_type"] == 0:  # 相对路径
@@ -49,8 +49,10 @@ def check_user_permission(request, *args, **kwargs):
                                 if hasattr(permission_dict, hook_name):  # 执行用户自定义钩子
                                     hook_fun = getattr(permission_dict, hook_name)
                                     hook_fun_ret = hook_fun(request, *args, **kwargs)
-                                    if hook_fun_ret.get("errors"):
+                                    if hook_fun_ret.get("errors"):  # 钩子执行有错误返回时需要添加至错误列表
                                         ret["errors"].extend(hook_fun_ret["errors"])
+                                    if hook_fun_ret.get("data"):  # 钩子执行返回的数据需要添加至数据字典中
+                                        ret["data"].update(hook_fun_ret.get("data"))
                                     judgment_str += "%s " % hook_fun_ret.get("status")
                         judgment_str = "all([%s])" % judgment_str
                         hooks_aproved = eval(judgment_str)
@@ -76,6 +78,10 @@ def check_permission_decorate(func):
             else:  # 权限认证不通过
                 logger.warning("用户:%s正在尝试访问无权限接口%s" % (request.user.email, request.path))
                 response = render(request, "pages-403.html", {"errors": ret["errors"]})
+                if ret["data"]:  # 对返回的数据进行处理
+                    should_redirect = ret["data"].get("should_redirect")  # 如果有跳转需要则进行跳转操作
+                    if should_redirect:
+                        response = redirect(should_redirect)
         else:  # 没登录跳转至登录页
             response = redirect("/accounts/login/")
         return response

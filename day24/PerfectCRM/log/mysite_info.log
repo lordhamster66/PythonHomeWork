@@ -2053,3 +2053,425 @@ Traceback (most recent call last):
   File "C:\Git\PythonHomeWork\day24\PerfectCRM\kind_admin\templatetags\tags.py", line 76, in get_table_rows
     admin_class.field_color[column].get(column_value)[0],
 TypeError: 'NoneType' object is not subscriptable
+[2018-02-03 17:15:22,269][Thread-1:6704][task_id:django.request][base.py:152][WARNING][Not Found: /]
+[2018-02-03 17:15:24,042][Thread-3:14704][task_id:django.request][base.py:152][WARNING][Not Found: /favicon.ico]
+[2018-02-04 14:30:33,833][Thread-1:5196][task_id:django.request][base.py:152][WARNING][Not Found: /]
+[2018-02-04 14:30:35,815][Thread-3:9276][task_id:django.request][base.py:152][WARNING][Not Found: /favicon.ico]
+[2018-02-04 14:31:36,548][Thread-80:8920][task_id:__name__][permission.py:77][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/]
+[2018-02-04 15:02:48,519][Thread-1:13596][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /kind_admin/crm/courserecord/]
+Traceback (most recent call last):
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Git\PythonHomeWork\day24\PerfectCRM\crm\permissions\permission.py", line 73, in inner
+    ret = check_user_permission(request, *args, **kwargs)
+  File "C:\Git\PythonHomeWork\day24\PerfectCRM\crm\permissions\permission.py", line 51, in check_user_permission
+    hook_fun_ret = hook_fun(request, *args, **kwargs)
+  File "C:\Git\PythonHomeWork\day24\PerfectCRM\crm\permissions\permission_dict.py", line 349, in only_check_own_course_record
+    print(request.user.classlist_set.all())
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\utils\functional.py", line 239, in inner
+    return func(self._wrapped, *args)
+AttributeError: 'UserProfile' object has no attribute 'cla'
+[2018-02-04 15:03:21,652][Thread-1:376][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /kind_admin/crm/courserecord/]
+Traceback (most recent call last):
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Git\PythonHomeWork\day24\PerfectCRM\crm\permissions\permission.py", line 73, in inner
+    ret = check_user_permission(request, *args, **kwargs)
+  File "C:\Git\PythonHomeWork\day24\PerfectCRM\crm\permissions\permission.py", line 51, in check_user_permission
+    hook_fun_ret = hook_fun(request, *args, **kwargs)
+  File "C:\Git\PythonHomeWork\day24\PerfectCRM\crm\permissions\permission_dict.py", line 349, in only_check_own_course_record
+    print(dict(request.user))
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\utils\functional.py", line 239, in inner
+    return func(self._wrapped, *args)
+TypeError: 'UserProfile' object is not iterable
+[2018-02-04 15:06:10,670][Thread-1:8156][task_id:__name__][permission.py:77][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:06:17,768][Thread-4:13132][task_id:__name__][permission.py:77][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:06:39,823][Thread-10:14548][task_id:__name__][permission.py:77][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:09:24,881][Thread-4:11196][task_id:__name__][permission.py:77][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:20:53,720][Thread-1:7004][task_id:__name__][permission.py:77][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/add/]
+[2018-02-04 15:25:13,136][Thread-1:3516][task_id:__name__][permission.py:77][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/add/]
+[2018-02-04 15:25:25,330][Thread-6:1500][task_id:__name__][permission.py:77][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/add/]
+[2018-02-04 15:26:18,661][Thread-1:8372][task_id:__name__][permission.py:77][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/add/]
+[2018-02-04 15:26:29,891][Thread-5:2984][task_id:__name__][permission.py:77][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:26:59,250][Thread-7:15784][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /kind_admin/crm/courserecord/add/]
+Traceback (most recent call last):
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\db\backends\utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.IntegrityError: UNIQUE constraint failed: crm_courserecord.from_class_id, crm_courserecord.day_num
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Git\PythonHomeWork\day24\PerfectCRM\crm\permissions\permission.py", line 75, in inner
+    response = func(request, *args, **kwargs)
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "C:\Git\PythonHomeWork\day24\PerfectCRM\kind_admin\views.py", line 85, in table_add
+    model_form_obj.save()  # 增加对象
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\forms\models.py", line 463, in save
+    self.instance.save()
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\db\models\base.py", line 807, in save
+    force_update=force_update, update_fields=update_fields)
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\db\models\base.py", line 837, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\db\models\base.py", line 923, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\db\models\base.py", line 962, in _do_insert
+    using=using, raw=raw)
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\db\models\query.py", line 1076, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\db\models\sql\compiler.py", line 1099, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\db\backends\utils.py", line 80, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\db\backends\utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\db\utils.py", line 94, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\utils\six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\db\backends\utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.IntegrityError: UNIQUE constraint failed: crm_courserecord.from_class_id, crm_courserecord.day_num
+[2018-02-04 15:27:18,479][Thread-10:3604][task_id:__name__][permission.py:77][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:27:21,371][Thread-11:17036][task_id:__name__][permission.py:77][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:27:23,225][Thread-13:10504][task_id:__name__][permission.py:77][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:27:27,808][Thread-16:8308][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /kind_admin/crm/courserecord/add/]
+Traceback (most recent call last):
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\db\backends\utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.IntegrityError: UNIQUE constraint failed: crm_courserecord.from_class_id, crm_courserecord.day_num
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Git\PythonHomeWork\day24\PerfectCRM\crm\permissions\permission.py", line 75, in inner
+    response = func(request, *args, **kwargs)
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "C:\Git\PythonHomeWork\day24\PerfectCRM\kind_admin\views.py", line 85, in table_add
+    model_form_obj.save()  # 增加对象
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\forms\models.py", line 463, in save
+    self.instance.save()
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\db\models\base.py", line 807, in save
+    force_update=force_update, update_fields=update_fields)
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\db\models\base.py", line 837, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\db\models\base.py", line 923, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\db\models\base.py", line 962, in _do_insert
+    using=using, raw=raw)
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\db\models\query.py", line 1076, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\db\models\sql\compiler.py", line 1099, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\db\backends\utils.py", line 80, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\db\backends\utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\db\utils.py", line 94, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\utils\six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\db\backends\utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\lingx\AppData\Local\Continuum\anaconda3\envs\py3-dj\lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.IntegrityError: UNIQUE constraint failed: crm_courserecord.from_class_id, crm_courserecord.day_num
+[2018-02-04 15:27:50,944][Thread-22:12832][task_id:__name__][permission.py:77][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/4-5/delete/]
+[2018-02-04 15:28:17,438][Thread-26:15428][task_id:__name__][permission.py:77][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:28:31,808][Thread-30:12980][task_id:__name__][permission.py:77][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:39:45,445][Thread-4:15396][task_id:__name__][permission.py:77][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:40:35,350][Thread-1:15668][task_id:__name__][permission.py:77][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:40:39,104][Thread-4:17384][task_id:__name__][permission.py:77][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:40:39,875][Thread-6:5628][task_id:__name__][permission.py:77][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:40:40,513][Thread-8:16820][task_id:__name__][permission.py:77][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:40:41,192][Thread-10:8068][task_id:__name__][permission.py:77][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:40:43,126][Thread-12:14316][task_id:__name__][permission.py:77][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:40:43,712][Thread-14:8664][task_id:__name__][permission.py:77][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:40:58,952][Thread-1:9348][task_id:__name__][permission.py:77][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:41:14,216][Thread-4:13868][task_id:__name__][permission.py:77][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:19,492][Thread-1:7256][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:19,526][Thread-3:4172][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:19,542][Thread-4:1376][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:19,559][Thread-5:16568][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:19,575][Thread-6:15712][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:19,592][Thread-7:5868][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:19,607][Thread-8:884][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:19,622][Thread-9:2596][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:19,640][Thread-10:2640][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:19,655][Thread-11:14488][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:19,668][Thread-12:10364][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:19,685][Thread-13:2980][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:19,703][Thread-14:6572][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:19,723][Thread-15:12292][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:19,741][Thread-16:3364][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:19,757][Thread-17:9556][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:19,774][Thread-18:11752][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:19,789][Thread-19:11924][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:19,805][Thread-20:2932][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:19,818][Thread-21:11156][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:19,830][Thread-22:8436][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:19,947][Thread-23:13964][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:19,974][Thread-24:15996][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:19,999][Thread-25:7156][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:20,019][Thread-26:13788][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:20,037][Thread-27:4944][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:20,054][Thread-28:9292][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:20,072][Thread-29:4192][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:20,087][Thread-30:11764][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:20,103][Thread-31:7976][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:20,118][Thread-32:16244][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:20,136][Thread-33:1780][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:20,151][Thread-34:9688][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:20,172][Thread-35:13572][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:20,192][Thread-36:5188][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:20,208][Thread-37:5272][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:20,223][Thread-38:2088][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:20,242][Thread-39:6344][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:20,260][Thread-40:11584][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:20,276][Thread-41:8920][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:20,293][Thread-42:10852][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:20,312][Thread-43:6288][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:22,522][Thread-44:11320][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:22,541][Thread-45:13128][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:22,559][Thread-46:13004][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:22,575][Thread-47:6228][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:22,591][Thread-48:16724][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:22,609][Thread-49:13612][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:22,626][Thread-50:13956][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:22,640][Thread-51:11820][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:22,654][Thread-52:8336][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:22,669][Thread-53:12888][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:22,685][Thread-54:9780][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:22,700][Thread-55:13752][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:22,717][Thread-56:17376][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:22,736][Thread-57:7812][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:22,754][Thread-58:3080][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:22,772][Thread-59:9664][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:22,787][Thread-60:3816][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:22,802][Thread-61:13512][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:22,817][Thread-62:9408][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:22,835][Thread-63:5912][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:22,850][Thread-64:13452][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:23,543][Thread-65:5252][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:23,559][Thread-66:8044][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:23,573][Thread-67:10336][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:23,589][Thread-68:9692][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:23,606][Thread-69:15304][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:23,621][Thread-70:8620][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:23,636][Thread-71:4168][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:23,651][Thread-72:10464][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:23,668][Thread-73:11160][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:23,684][Thread-74:8428][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:23,698][Thread-75:15380][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:23,712][Thread-76:5116][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:23,727][Thread-77:5772][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:23,742][Thread-78:7148][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:23,762][Thread-79:11824][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:23,780][Thread-80:2892][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:23,802][Thread-81:6072][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:23,821][Thread-82:11204][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:23,838][Thread-83:1548][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:23,858][Thread-84:8132][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:23,874][Thread-85:4080][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:28,931][Thread-86:14568][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:28,947][Thread-87:7724][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:28,963][Thread-88:6248][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:28,977][Thread-89:11376][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:28,991][Thread-90:6612][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:29,005][Thread-91:8788][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:29,020][Thread-92:17008][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:29,035][Thread-93:9380][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:29,050][Thread-94:6076][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:29,064][Thread-95:10436][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:29,079][Thread-96:5208][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:29,093][Thread-97:10320][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:29,110][Thread-98:10728][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:29,123][Thread-99:14536][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:29,144][Thread-100:7368][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:29,160][Thread-101:4176][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:29,177][Thread-102:7736][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:29,196][Thread-103:12624][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:29,212][Thread-104:6524][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:29,234][Thread-105:7720][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:29,248][Thread-106:12640][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:47,143][Thread-107:4084][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:47,168][Thread-108:15672][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:47,186][Thread-109:16816][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:47,203][Thread-110:7712][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:47,218][Thread-111:16540][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:47,237][Thread-112:2328][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:47,256][Thread-113:6596][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:47,273][Thread-114:8640][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:47,294][Thread-115:2496][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:47,321][Thread-116:6448][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:47,341][Thread-117:7692][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:47,370][Thread-118:4688][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:47,397][Thread-119:6484][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:47,417][Thread-120:8996][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:47,453][Thread-121:4500][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:47,483][Thread-122:8732][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:47,503][Thread-123:7248][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:47,517][Thread-124:5384][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:47,533][Thread-125:8780][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:47,551][Thread-126:3604][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:47:47,584][Thread-127:17036][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:48:06,906][Thread-1:13584][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:48:07,163][Thread-3:4112][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:48:07,179][Thread-4:16204][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:48:07,194][Thread-5:5608][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:48:07,207][Thread-6:13372][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:48:07,221][Thread-7:12968][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:48:07,235][Thread-8:11028][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:48:07,249][Thread-9:4020][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:48:07,262][Thread-10:7100][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:48:07,278][Thread-11:11056][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:48:07,291][Thread-12:9456][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:48:07,305][Thread-13:2708][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:48:07,319][Thread-14:11844][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:48:07,333][Thread-15:15248][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:48:07,349][Thread-16:8492][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:48:07,362][Thread-17:9348][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:48:07,380][Thread-18:12716][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:48:07,397][Thread-19:13344][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:48:07,418][Thread-20:16956][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:48:07,436][Thread-21:8596][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:48:07,454][Thread-22:11868][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:48:28,981][Thread-1:11468][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:48:29,023][Thread-3:11308][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:48:29,038][Thread-4:8900][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:48:29,054][Thread-5:10528][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:48:29,072][Thread-6:1252][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:48:29,087][Thread-7:1524][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:48:29,101][Thread-8:5228][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:48:29,116][Thread-9:11380][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:48:29,131][Thread-10:8536][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:48:29,146][Thread-11:9128][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:48:29,160][Thread-12:14460][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:48:29,174][Thread-13:12864][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:48:29,190][Thread-14:8792][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:48:29,203][Thread-15:15716][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:48:29,219][Thread-16:15144][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:48:29,233][Thread-17:2276][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:48:29,249][Thread-18:4448][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:48:29,268][Thread-19:4040][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:48:29,284][Thread-20:17164][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:48:29,298][Thread-21:12884][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:48:29,312][Thread-22:5752][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:48:29,438][Thread-23:12808][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:48:29,457][Thread-24:16292][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:48:29,471][Thread-25:6528][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:48:29,487][Thread-26:9356][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:48:29,503][Thread-27:8156][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:48:29,519][Thread-28:13720][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:48:29,535][Thread-29:768][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:48:29,550][Thread-30:10672][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:48:29,563][Thread-31:4932][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:48:29,580][Thread-32:15012][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:48:29,593][Thread-33:5604][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:48:29,607][Thread-34:11440][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:48:29,621][Thread-35:17100][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:48:29,633][Thread-36:15208][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:48:29,652][Thread-37:8012][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:48:29,665][Thread-38:15752][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:48:29,679][Thread-39:8964][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:48:29,695][Thread-40:14548][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:48:29,710][Thread-41:6368][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:48:29,724][Thread-42:11032][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:48:29,737][Thread-43:4156][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:48:45,849][Thread-47:12704][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:48:45,871][Thread-48:14076][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:48:45,890][Thread-49:7796][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:48:45,906][Thread-50:2824][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:48:45,924][Thread-51:16792][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:48:45,943][Thread-52:2608][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:48:45,957][Thread-53:13468][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:48:45,970][Thread-54:6088][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:48:45,983][Thread-55:11592][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:48:45,996][Thread-56:9296][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:48:46,010][Thread-57:7584][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:48:46,023][Thread-58:12916][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:48:46,036][Thread-59:16376][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:48:46,051][Thread-60:10348][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:48:46,069][Thread-61:12228][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:48:46,084][Thread-62:16400][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:48:46,101][Thread-63:13360][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:48:46,118][Thread-64:13324][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:48:46,137][Thread-65:12184][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:48:46,154][Thread-66:3892][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:48:46,171][Thread-67:4876][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:48:46,297][Thread-68:15888][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:48:46,321][Thread-69:15632][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:48:46,334][Thread-70:7756][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:48:46,351][Thread-71:13024][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:48:46,368][Thread-72:6244][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:48:46,384][Thread-73:1152][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:48:46,398][Thread-74:1580][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:48:46,413][Thread-75:7108][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:48:46,430][Thread-76:8504][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:48:46,444][Thread-77:8064][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:48:46,459][Thread-78:15168][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:48:46,475][Thread-79:9156][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:48:46,489][Thread-80:14456][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:48:46,508][Thread-81:4624][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:48:46,524][Thread-82:15976][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:48:46,539][Thread-83:12696][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:48:46,556][Thread-84:7124][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:48:46,569][Thread-85:2340][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:48:46,586][Thread-86:16368][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:48:46,602][Thread-87:7628][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:48:46,620][Thread-88:972][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:50:03,168][Thread-1:12364][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:50:25,727][Thread-10:7784][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/add/]
+[2018-02-04 15:50:33,434][Thread-13:4044][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 15:59:51,501][Thread-6:7292][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/studyrecord/add/]
+[2018-02-04 16:00:03,535][Thread-9:5224][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/studyrecord/4-5-6-7-8/delete/]
+[2018-02-04 16:08:26,277][Thread-3:8056][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/studyrecord/]
+[2018-02-04 16:09:15,645][Thread-20:15632][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/studyrecord/]
+[2018-02-04 16:09:24,207][Thread-25:16640][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/studyrecord/]
+[2018-02-04 16:10:29,272][Thread-42:14008][task_id:__name__][permission.py:79][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/crm/customer/4/change/]
+[2018-02-04 16:16:05,232][Thread-101:9356][task_id:django.request][base.py:152][WARNING][Not Found: /student/homework_detail//]
+[2018-02-04 16:16:16,808][Thread-107:7860][task_id:django.request][base.py:152][WARNING][Not Found: /student/homework_detail//]
+[2018-02-04 16:16:51,815][Thread-115:13604][task_id:django.request][base.py:152][WARNING][Not Found: /student/homework_detail//]
+[2018-02-04 16:19:18,713][Thread-132:4324][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/courserecord/]
+[2018-02-04 16:19:30,334][Thread-136:1956][task_id:__name__][permission.py:79][WARNING][用户:alex@126.com正在尝试访问无权限接口/kind_admin/crm/studyrecord/]
+[2018-02-04 16:38:58,058][Thread-5:12280][task_id:__name__][permission.py:79][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/crm/customerfollowup/add/]
+[2018-02-04 16:39:04,177][Thread-9:17396][task_id:__name__][permission.py:79][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/crm/customerfollowup/add/]
+[2018-02-04 16:39:26,994][Thread-16:8000][task_id:__name__][permission.py:79][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/crm/customerfollowup/add/]
+[2018-02-04 16:39:33,675][Thread-18:11324][task_id:__name__][permission.py:79][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/crm/customerfollowup/add/]
+[2018-02-04 16:41:08,707][Thread-5:8136][task_id:__name__][permission.py:79][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/crm/customerfollowup/3/change/]
+[2018-02-04 16:42:11,260][Thread-5:5972][task_id:__name__][permission.py:79][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/crm/customerfollowup/3/change/]
+[2018-02-04 16:43:21,755][Thread-13:13388][task_id:__name__][permission.py:79][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/kind_admin/crm/customerfollowup/add/]
+[2018-02-04 16:45:57,007][Thread-4:12280][task_id:__name__][permission.py:79][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/crm/sales/enrollment/5/]
+[2018-02-04 16:47:11,935][Thread-5:9332][task_id:__name__][permission.py:79][WARNING][用户:2577460245@qq.com正在尝试访问无权限接口/crm/sales/enrollment/4/]

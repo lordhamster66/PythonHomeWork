@@ -22,7 +22,7 @@ PermissionDict = {
         "url": "enrollment_for_customer",
         "method": "GET",
         "args": [],
-        "hooks": []
+        "hooks": ["only_enroll_own_customer"]
     },
     # 可以给用户报名
     "crm.can_enrollment_for_customer": {
@@ -216,7 +216,7 @@ PermissionDict = {
         "url": "/kind_admin/crm/customerfollowup/\d+/change/$",
         "method": "POST",
         "args": [],
-        "hooks": []
+        "hooks": ["only_change_own_customer_followup"]
     },
     # 可以访问kind_admin下注册的客户跟进记录的添加页面
     "crm.can_access_customer_followup_add": {
@@ -232,7 +232,7 @@ PermissionDict = {
         "url": "/kind_admin/crm/customerfollowup/add/",
         "method": "POST",
         "args": [],
-        "hooks": []
+        "hooks": ["only_add_own_customer_followup"]
     },
     # 可以访问kind_admin下注册的上课记录
     "crm.can_access_course_record": {
@@ -240,7 +240,7 @@ PermissionDict = {
         "url": "/kind_admin/crm/courserecord/",
         "method": "GET",
         "args": [],
-        "hooks": []
+        "hooks": ["only_check_own_course_record"]
     },
     # 可以对kind_admin下注册的上课记录进行行内编辑和action操作
     "crm.can_do_action_or_change_course_record": {
@@ -280,7 +280,7 @@ PermissionDict = {
         "url": "/kind_admin/crm/courserecord/add/",
         "method": "POST",
         "args": [],
-        "hooks": []
+        "hooks": ["only_add_own_course_record"]
     },
     # 可以访问kind_admin下注册的学习记录
     "crm.can_access_study_record": {
@@ -288,7 +288,7 @@ PermissionDict = {
         "url": "/kind_admin/crm/studyrecord/",
         "method": "GET",
         "args": [],
-        "hooks": []
+        "hooks": ["only_check_study_record_under_own_course_record"]
     },
     # 可以对kind_admin下注册的学习记录进行行内编辑和action操作
     "crm.can_do_action_or_change_study_record": {
@@ -338,4 +338,84 @@ def only_change_your_own_customer(request, *args, **kwargs):
         ret["status"] = True
     else:
         ret["errors"].append("因为，您只能修改自己下面的客户信息！")
+    return ret
+
+
+def only_check_own_course_record(request, *args, **kwargs):
+    """讲师只能查看自己所带班级的上课记录"""
+    ret = {"status": False, "errors": [],
+           "data": {"should_redirect": "/teacher/class_taken/"}}  # 要返回的内容
+    if request.GET.get("teacher__id") == str(request.user.id):
+        class_id = request.GET.get("from_class__id")  # 获取讲师要访问的上课记录所对应的班级对象id
+        taken_class_ids_list = [str(obj.id) for obj in request.user.classlist_set.all()]  # 获取讲师带的所有班级对象的ID
+        if class_id in taken_class_ids_list:  # 如果要访问的班级ID在所带的班级ID列表里面则可以进行访问
+            ret["status"] = True
+            ret["data"] = None
+    return ret
+
+
+def only_add_own_course_record(request, *args, **kwargs):
+    """讲师只能添加自己所带班级的上课记录"""
+    ret = {"status": False, "errors": [], "data": None}  # 要返回的内容
+    class_id = request.POST.get("from_class")  # 获取讲师将要添加上课记录的班级ID
+    taken_class_ids_list = [str(obj.id) for obj in request.user.classlist_set.all()]  # 获取讲师带的所有班级对象的ID
+    if class_id in taken_class_ids_list:
+        teacher_id = request.POST.get("teacher")
+        if teacher_id == str(request.user.id):
+            ret["status"] = True
+        else:
+            ret["errors"].append("因为，您必须选择自己作为讲师！")
+    else:
+        ret["errors"].append("因为，您只能增加自己所带班级的上课记录！")
+    return ret
+
+
+def only_check_study_record_under_own_course_record(request, *args, **kwargs):
+    """讲师只能查看自己上课记录下面的学习记录"""
+    ret = {"status": False, "errors": [], "data": None}  # 要返回的内容
+    course_record_id = request.GET.get("course_record")  # 获取要查看的学习记录所对应的上课记录ID
+    # 获取讲师所有上课记录对象的ID
+    course_record_ids_list_of_teacher = [str(obj.id) for obj in request.user.courserecord_set.all()]
+    if course_record_id in course_record_ids_list_of_teacher:
+        ret["status"] = True
+    else:
+        ret["errors"].append("因为，您只能查看自己所带课程下面的学习记录！")
+    return ret
+
+
+def only_add_own_customer_followup(request, *args, **kwargs):
+    """只能添加自己客户的相关跟进记录"""
+    ret = {"status": False, "errors": [], "data": None}  # 要返回的内容
+    customer_id = request.POST.get("customer")  # 要添加跟进记录的客户ID
+    consultant_id = request.POST.get("consultant")  # 要添加跟进记录的顾问ID
+    own_customer_ids_list = [str(obj.id) for obj in request.user.customer_set.all()]  # 所属该顾问的所有客户ID
+    if str(request.user.id) == consultant_id and customer_id in own_customer_ids_list:
+        ret["status"] = True
+    else:
+        ret["errors"].append("因为，您只能添加自己客户的跟进记录！")
+    return ret
+
+
+def only_change_own_customer_followup(request, *args, **kwargs):
+    """只能修改自己客户的相关跟进记录"""
+    ret = {"status": False, "errors": [], "data": None}  # 要返回的内容
+    customer_id = request.POST.get("customer")  # 要修改跟进记录的客户ID
+    consultant_id = request.POST.get("consultant")  # 要修改跟进记录的顾问ID
+    own_customer_ids_list = [str(obj.id) for obj in request.user.customer_set.all()]  # 所属该顾问的所有客户ID
+    if str(request.user.id) == consultant_id and customer_id in own_customer_ids_list:
+        ret["status"] = True
+    else:
+        ret["errors"].append("因为，您只能修改自己客户的相关跟进记录！")
+    return ret
+
+
+def only_enroll_own_customer(request, *args, **kwargs):
+    """销售只能给自己的客户进行报名操作"""
+    ret = {"status": False, "errors": [], "data": None}  # 要返回的内容
+    customer_id = kwargs.get("customer_id")
+    own_customer_ids_list = [str(obj.id) for obj in request.user.customer_set.all()]  # 所属该顾问的所有客户ID
+    if customer_id in own_customer_ids_list:
+        ret["status"] = True
+    else:
+        ret["errors"].append("因为，您只能给自己的客户进行报名！")
     return ret

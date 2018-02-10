@@ -211,6 +211,10 @@ class GroupAdmin(BaseAdmin):
     filter_horizontal = ("permissions",)
 
 
+class PaymentAdmin(BaseAdmin):
+    list_display = ("customer", "course", "amount", "consultant", "date")
+
+
 class RoleAdmin(BaseAdmin):
     list_display = ("name",)
     filter_horizontal = ("menus",)
@@ -233,4 +237,5 @@ register(models.Enrollment, EnrollmentAdmin)
 register(models.UserProfile, UserProfileAdmin)
 register(Group, GroupAdmin)
 register(models.Role, RoleAdmin)
+register(models.Payment, PaymentAdmin)
 register(models.Menu, MenuAdmin)

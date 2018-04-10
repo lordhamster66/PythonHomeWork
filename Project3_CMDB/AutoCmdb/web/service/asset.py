@@ -110,14 +110,20 @@ class Asset(BaseServiceList):
             'server_title': 'select hostname from repository_server where repository_server.asset_id=repository_asset.id and repository_asset.device_type_id=1',
             'network_title': 'select management_ip from repository_networkdevice where repository_networkdevice.asset_id=repository_asset.id and repository_asset.device_type_id=2',
         }
+        # 全局变量
         global_dict = {
             'device_status_list': self.device_status_list,
             'device_type_list': self.device_type_list,
             'idc_list': self.idc_list,
             'business_unit_list': self.business_unit_list
         }
+        # queryset
         queryset = models.Asset.objects.all()
-        super(Asset, self).__init__(condition_config, table_config, extra_select, global_dict, queryset)
+
+        # 要排除的字段
+        exclude_fields = ("latest_date",)
+        self.filter_horizontal = ("tag",)
+        super(Asset, self).__init__(condition_config, table_config, extra_select, global_dict, queryset, exclude_fields)
 
     @property
     def device_status_list(self):

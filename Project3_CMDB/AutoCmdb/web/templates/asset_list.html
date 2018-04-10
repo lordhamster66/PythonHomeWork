@@ -7,7 +7,7 @@
 
 {% block conent %}
     <ol class="breadcrumb" style="margin-bottom: 0;">
-        <li><a href="/cmdb.html">首页</a></li>
+        <li><a href="{% url 'cmdb_index' %}">首页</a></li>
         <li class="active">资产管理</li>
     </ol>
     <div style="padding: 5px 8px;">
@@ -30,8 +30,11 @@
                         <div class="inputs">
                             <div class="input-group">
                                 <div id="search_condition" init="false" class="input-group-btn">
-                                    <label type="button" class="btn btn-default no-radius" style="width: 100px;">&nbsp;</label>
-                                    <button type="button" class="btn btn-default dropdown-toggle no-border-r" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="caret"></span></button>
+                                    <label type="button" class="btn btn-default no-radius"
+                                           style="width: 100px;">&nbsp;</label>
+                                    <button type="button" class="btn btn-default dropdown-toggle no-border-r"
+                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span
+                                            class="caret"></span></button>
                                     <ul class="change-search-condition dropdown-menu">
 
                                     </ul>
@@ -53,7 +56,8 @@
                     <a id="check_cancel" class="btn btn-default no-radius"><i class="fa fa-minus-square-o"></i> 取消</a>
                     <a id="check_reverse" class="btn btn-default no-radius"><i
                             class="fa fa-check-square-o"></i> 反选</a>
-                    <a class="btn btn-default no-radius" href="/add-asset.html"><i class="fa fa-plus-circle"></i>添加</a>
+                    <a class="btn btn-default no-radius" href="{% url 'add_asset' %}"><i class="fa fa-plus-circle"></i>添加资产</a>
+                    <a class="btn btn-default no-radius" href="{% url 'add_server' %}"><i class="fa fa-plus-circle"></i>添加服务器</a>
                     <a id="do_delete" class="btn btn-default no-radius"><i class="fa fa-trash"></i> 删除</a>
                     <a id="edit_mode_target" class="btn btn-default no-radius"><i class="fa fa-pencil-square-o"></i>
                         <span>进入编辑模式</span></a>
@@ -125,11 +129,13 @@
     <script type="text/javascript" src="/static/js/nb-list.js"></script>
 
     <script>
+        function ChangePage(p) {
+            $.nbDataList('{% url 'asset_json' %}', p)
+        }
+
         $(function () {
             $.initMenu('#menu_asset');
-            $.nbDataList('/assets.html');
+            $.nbDataList('{% url 'asset_json' %}', 1);
         });
-
-
     </script>
 {% endblock %}

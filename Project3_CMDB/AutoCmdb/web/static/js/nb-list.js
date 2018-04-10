@@ -16,26 +16,6 @@
         });
     };
 
-    /*
-     CSRF配置
-     */
-    function csrfSafeMethod(method) {
-        // these HTTP methods do not require CSRF protection
-        return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
-    }
-
-    /*
-     全局Ajax中添加请求头X-CSRFToken，用于跨过CSRF验证
-     */
-    $.ajaxSetup({
-        beforeSend: function (xhr, settings) {
-            if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
-                xhr.setRequestHeader("X-CSRFToken", $.cookie('csrftoken'));
-            }
-        }
-    });
-
-
     function saveData() {
         // 退出编辑模式
         if ($('#edit_mode_target').hasClass('btn-warning')) {
@@ -875,13 +855,12 @@
             });
         },
 
-        'nbDataList': function(url){
+        'nbDataList': function (url, p) {
             requestUrl = url;
-            initialize(1);
+            initialize(p);
             bindMenuFunction();
             bindMultiSelect();
             bindSearchCondition();
         }
-
     });
 })(jQuery);

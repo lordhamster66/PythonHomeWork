@@ -153,7 +153,6 @@ class HandleNic(object):
             models.NIC.objects.create(**cur_nic_dict)
             models.AssetRecord.objects.create(asset_obj=server_obj.asset, creator=user_obj, content=log_str)
 
-
     @staticmethod
     def _del_nic(del_list, nic_objs, server_obj, user_obj):
         for item in nic_objs:
@@ -161,7 +160,6 @@ class HandleNic(object):
                 log_str = '[移除网卡]{name}:mac地址为{hwaddr};状态为{up};掩码为{netmask};IP地址为{ipaddrs}'.format(**item.__dict__)
                 item.delete()
                 models.AssetRecord.objects.create(asset_obj=server_obj.asset, creator=user_obj, content=log_str)
-
 
     @staticmethod
     def _update_nic(update_list, nic_objs, client_nic_dict, server_obj, user_obj):
@@ -242,7 +240,6 @@ class HandleMemory(object):
             models.Memory.objects.create(**cur_mem_dict)
             models.AssetRecord.objects.create(asset_obj=server_obj.asset, creator=user_obj, content=log_str)
 
-
     @staticmethod
     def _del_memory(del_list, mem_objs, server_obj, user_obj):
         for item in mem_objs:
@@ -251,7 +248,6 @@ class HandleMemory(object):
                     **item.__dict__)
                 item.delete()
                 models.AssetRecord.objects.create(asset_obj=server_obj.asset, creator=user_obj, content=log_str)
-
 
     @staticmethod
     def _update_memory(update_list, mem_objs, client_mem_dict, server_obj, user_obj):
@@ -335,7 +331,6 @@ class HandleDisk(object):
             models.Disk.objects.create(**cur_disk_dict)
             models.AssetRecord.objects.create(asset_obj=server_obj.asset, creator=user_obj, content=log_str)
 
-
     @staticmethod
     def _del_disk(del_list, disk_objs, server_obj, user_obj):
         for item in disk_objs:
@@ -343,7 +338,6 @@ class HandleDisk(object):
                 log_str = '[移除硬盘]插槽为{slot};容量为{capacity};硬盘类型为{pd_type};型号为{model}'.format(**item.__dict__)
                 item.delete()
                 models.AssetRecord.objects.create(asset_obj=server_obj.asset, creator=user_obj, content=log_str)
-
 
     @staticmethod
     def _update_disk(update_list, disk_objs, client_disk_dict, server_obj, user_obj):
@@ -371,4 +365,3 @@ class HandleDisk(object):
                 if log_list:
                     models.AssetRecord.objects.create(asset_obj=server_obj.asset, creator=user_obj,
                                                       content=';'.join(log_list))
-

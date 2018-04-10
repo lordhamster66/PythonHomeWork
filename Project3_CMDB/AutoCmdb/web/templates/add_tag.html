@@ -1,0 +1,133 @@
+{% extends 'layout/_layout.html' %}
+{% load tags %}
+
+{% block css %}
+
+{% endblock %}
+
+{% block conent %}
+    <ol class="breadcrumb" style="margin-bottom: 0;">
+        <li><a href="{% url 'cmdb_index' %}">首页</a></li>
+        <li><a href="{% url 'tag_index' %}">标签管理</a></li>
+        <li class="active">添加标签</li>
+    </ol>
+    <div style="padding: 5px 8px;">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <h3 class="panel-title"><b>添加标签</b></h3>
+            </div>
+            <div class="panel-body">
+                <div class="col-md-8 col-lg-offset-1">
+                    <form id="base-form" class="form-horizontal">
+                        {% for field in model_form_obj %}
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label" style="font-weight:normal;">
+                                    {% if field.field.required %}
+                                        <b>{{ field.label }}:</b>
+                                    {% else %}
+                                        {{ field.label }}:
+                                    {% endif %}
+                                </label>
+                                <div class="col-sm-10">
+                                    {% if field.name in service_obj.filter_horizontal %}
+                                        <div class="col-lg-4">
+                                            <div class="panel panel-info">
+                                                <div class="panel-heading">
+                                                    <h3 class="panel-title">可用 {{ field.label }}</h3>
+                                                </div>
+                                                <div class="panel-body" style="padding: 0;">
+                                                    {% get_m2m_available_objs service_obj field.name model_form_obj as m2m_available_objs %}
+                                                    <select class="filter_horizontal form-control" multiple
+                                                            id="{{ field.name }}_move_from"
+                                                            field_name="{{ field.name }}"
+                                                            style="height: 300px;">
+                                                        {% for obj in m2m_available_objs %}
+                                                            <option tag="option"
+                                                                    value="{{ obj.id }}">{{ obj }}</option>
+                                                        {% endfor %}
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <p style="text-align: center;">
+                                                {% if m2m_available_objs %}
+                                                    <a class="add_all_link selector-chooseall active"
+                                                       id="{{ field.name }}_chooseall">全选</a>
+                                                {% else %}
+                                                    <a class="add_all_link selector-chooseall"
+                                                       id="{{ field.name }}_chooseall">全选</a>
+                                                {% endif %}
+                                            </p>
+                                            <span style="font-size: smaller">按住 ”Control“，或者Mac上的 “Command”，可以选择多个。</span>
+                                        </div>
+                                        <div class="col-lg-1">
+                                            <ul class="selector-chooser">
+                                                <li>
+                                                    <a title="选择" id="{{ field.name }}_add_link"
+                                                       field_name="{{ field.name }}"
+                                                       class="selector-add">选择</a>
+                                                </li>
+                                                <li>
+                                                    <a title="删除" id="{{ field.name }}_remove_link"
+                                                       field_name="{{ field.name }}"
+                                                       class="selector-remove">删除</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <div class="panel panel-success">
+                                                <div class="panel-heading">
+                                                    <h3 class="panel-title">选中的 {{ field.label }}</h3>
+                                                </div>
+                                                <div class="panel-body" style="padding: 0;">
+                                                    {% get_m2m_chosen_objs model_form_obj field.name as m2m_chosen_objs %}
+                                                    <select class="filter_horizontal form-control move_to" multiple
+                                                            field_name="{{ field.name }}"
+                                                            name="{{ field.name }}" id="{{ field.name }}_move_to"
+                                                            style="height: 250px;">
+                                                        {% for obj in m2m_chosen_objs %}
+                                                            <option tag="option"
+                                                                    value="{{ obj.id }}">{{ obj }}</option>
+                                                        {% endfor %}
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <p style="text-align: center;">
+                                                {% if m2m_chosen_objs %}
+                                                    <a class="add_all_link selector-clearall active"
+                                                       id="{{ field.name }}_clearall">删除全部</a>
+                                                {% else %}
+                                                    <a class="add_all_link selector-clearall"
+                                                       id="{{ field.name }}_clearall">删除全部</a>
+                                                {% endif %}
+                                            </p>
+                                        </div>
+                                    {% else %}
+                                        {{ field }}
+                                    {% endif %}
+                                </div>
+                            </div>
+                        {% endfor %}
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button id="submit" type="button" class="btn btn-primary">添加</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block js %}
+    <script type="text/javascript" src="/static/js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="/static/plugins/bootstrap/js/bootstrap.js"></script>
+    <script type="text/javascript" src="/static/js/nb-list.js"></script>
+    <script type="text/javascript" src="/static/js/filter_horizontal.js"></script>
+    <script>
+        $(function () {
+            $.initMenu('#menu_tag');
+            $.initFilterHorizontal("{% url 'tag_json' %}", "{% url 'tag_index' %}")
+        });
+    </script>
+{% endblock %}

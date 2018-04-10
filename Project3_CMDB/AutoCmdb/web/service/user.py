@@ -8,8 +8,9 @@ class User(BaseServiceList):
     def __init__(self):
         # 查询条件的配置
         condition_config = [
-            {'name': 'name', 'text': '用户名', 'condition_type': 'input'},
+            {'name': 'name', 'text': '姓名', 'condition_type': 'input'},
             {'name': 'email', 'text': '邮箱', 'condition_type': 'input'},
+            {'name': 'mobile', 'text': '手机', 'condition_type': 'input'},
         ]
         # 表格的配置
         table_config = [
@@ -22,7 +23,7 @@ class User(BaseServiceList):
             },
             {
                 'q': 'name',
-                'title': "用户名",
+                'title': "姓名",
                 'display': 1,
                 'text': {'content': "{n}", 'kwargs': {'n': '@name'}},
                 'attr': {'name': 'name', 'id': '@name', 'origin': '@name', 'edit-enable': 'true',
@@ -52,10 +53,19 @@ class User(BaseServiceList):
                 'attr': {'name': 'phone', 'id': '@phone', 'origin': '@phone', 'edit-enable': 'true',
                          'edit-type': 'input', }
             },
-
+            {
+                'q': 'username',
+                'title': "用户名",
+                'display': 1,
+                'text': {'content': "{n}", 'kwargs': {'n': '@username'}},
+                'attr': {'name': 'username', 'id': '@username', 'origin': '@username', 'edit-enable': 'true',
+                         'edit-type': 'input', }
+            },
         ]
         # 额外搜索条件
         extra_select = {}
         global_dict = {}
         queryset = models.UserProfile.objects.all()
-        super(User, self).__init__(condition_config, table_config, extra_select, global_dict, queryset)
+        # 要排除的字段
+        exclude_fields = ()
+        super(User, self).__init__(condition_config, table_config, extra_select, global_dict, queryset, exclude_fields)

@@ -5,11 +5,12 @@ from django.db.models import Q
 from utils.response import BaseResponse
 from utils.pager import PageInfo
 from django.http.request import QueryDict
+from django.forms import ModelForm
 
 
 class BaseServiceList(object):
 
-    def __init__(self, condition_config, table_config, extra_select, global_dict, queryset):
+    def __init__(self, condition_config, table_config, extra_select, global_dict, queryset, exclude_fields):
         # 查询条件的配置，列表
         self.condition_config = condition_config
 
@@ -33,6 +34,9 @@ class BaseServiceList(object):
 
         # queryset对象
         self.queryset = queryset
+
+        # 要排除的字段
+        self.exclude_fields = exclude_fields
 
     @property
     def values_list(self):
@@ -126,3 +130,35 @@ class BaseServiceList(object):
             response.status = False
             response.message = str(e)
         return response
+
+    def post_queryset(self, request):
+        response = BaseResponse()
+        model_form_class = self.create_model_form()
+        model_form_obj = model_form_class(request.POST)
+        if model_form_obj.is_valid():
+            model_form_obj.save()
+            response.message = '创建成功'
+        else:
+            response.status = False
+            response.error = model_form_obj.errors
+        return response
+
+    def create_model_form(self):
+
+        def __new__(cls, *args, **kwargs):
+            for field_name, field_obj in cls.base_fields.items():
+                model_field_obj = self.queryset.model._meta.get_field(field_name)
+                if type(model_field_obj).__name__ == "DateField":
+                    field_obj.widget.attrs["class"] = "form-control date-picker"
+                else:
+                    field_obj.widget.attrs["class"] = "form-control"
+            return ModelForm.__new__(cls)
+
+        class Meta:
+            model = self.queryset.model
+            fields = "__all__"
+            exclude = self.exclude_fields
+
+        attrs = {"Meta": Meta, "__new__": __new__}
+        model_form_class = type("DynamicModelForm", (ModelForm,), attrs)
+        return model_form_class

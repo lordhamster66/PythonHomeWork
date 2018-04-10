@@ -33,7 +33,7 @@ class AutoBase(object):
 
     def post_asset(self, msg, callback=None):
         """
-        post方式向街口提交资产信息
+        post方式向接口提交资产信息
         :param msg:
         :param callback:
         :return:

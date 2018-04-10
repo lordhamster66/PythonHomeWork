@@ -6,9 +6,11 @@ class UserProfile(models.Model):
     用户信息
     """
     name = models.CharField(u'姓名', max_length=32)
-    email = models.EmailField(u'邮箱')
+    email = models.EmailField(u'邮箱', unique=True)
     phone = models.CharField(u'座机', max_length=32)
     mobile = models.CharField(u'手机', max_length=32)
+    username = models.CharField(u'用户名', max_length=64, unique=True)
+    password = models.CharField(u'密码', max_length=64)
 
     class Meta:
         verbose_name_plural = "用户表"
@@ -17,19 +19,19 @@ class UserProfile(models.Model):
         return self.name
 
 
-class AdminInfo(models.Model):
-    """
-    用户登陆相关信息
-    """
-    user_info = models.OneToOneField("UserProfile")
-    username = models.CharField(u'用户名', max_length=64)
-    password = models.CharField(u'密码', max_length=64)
-
-    class Meta:
-        verbose_name_plural = "管理员表"
-
-    def __str__(self):
-        return self.user_info.name
+# class AdminInfo(models.Model):
+#     """
+#     用户登陆相关信息
+#     """
+#     user_info = models.OneToOneField("UserProfile")
+#     username = models.CharField(u'用户名', max_length=64)
+#     password = models.CharField(u'密码', max_length=64)
+#
+#     class Meta:
+#         verbose_name_plural = "管理员表"
+#
+#     def __str__(self):
+#         return self.user_info.name
 
 
 class UserGroup(models.Model):
@@ -104,16 +106,16 @@ class Asset(models.Model):
         (4, '下架'),
     )
 
-    device_type_id = models.IntegerField(choices=device_type_choices, default=1)
-    device_status_id = models.IntegerField(choices=device_status_choices, default=1)
+    device_type_id = models.IntegerField(verbose_name="设备类型", choices=device_type_choices, default=1)
+    device_status_id = models.IntegerField(verbose_name="设备状态", choices=device_status_choices, default=1)
 
     cabinet_num = models.CharField('机柜号', max_length=30, null=True, blank=True)
     cabinet_order = models.CharField('机柜中序号', max_length=30, null=True, blank=True)
 
-    idc = models.ForeignKey('IDC', verbose_name='IDC机房', null=True, blank=True)
+    idc = models.ForeignKey('IDC', verbose_name='IDC机房')
     business_unit = models.ForeignKey('BusinessUnit', verbose_name='属于的业务线', null=True, blank=True)
 
-    tag = models.ManyToManyField('Tag')
+    tag = models.ManyToManyField('Tag', verbose_name="标签", blank=True)
 
     latest_date = models.DateField(null=True)
     create_at = models.DateTimeField(auto_now_add=True)
@@ -129,9 +131,9 @@ class Server(models.Model):
     """
     服务器信息
     """
-    asset = models.OneToOneField('Asset')
+    asset = models.OneToOneField('Asset', verbose_name="资产")
 
-    hostname = models.CharField(max_length=128, unique=True)
+    hostname = models.CharField("主机名", max_length=128, unique=True)
     sn = models.CharField('SN号', max_length=64, db_index=True)
     manufacturer = models.CharField(verbose_name='制造商', max_length=64, null=True, blank=True)
     model = models.CharField('型号', max_length=64, null=True, blank=True)
@@ -177,7 +179,7 @@ class Disk(models.Model):
     model = models.CharField('磁盘型号', max_length=32)
     capacity = models.FloatField('磁盘容量GB')
     pd_type = models.CharField('磁盘类型', max_length=32)
-    server_obj = models.ForeignKey('Server',related_name='disk')
+    server_obj = models.ForeignKey('Server', related_name='disk')
 
     class Meta:
         verbose_name_plural = "硬盘表"
@@ -195,8 +197,7 @@ class NIC(models.Model):
     netmask = models.CharField(max_length=64)
     ipaddrs = models.CharField('ip地址', max_length=256)
     up = models.BooleanField(default=False)
-    server_obj = models.ForeignKey('Server',related_name='nic')
-
+    server_obj = models.ForeignKey('Server', related_name='nic')
 
     class Meta:
         verbose_name_plural = "网卡表"
@@ -216,8 +217,7 @@ class Memory(models.Model):
     sn = models.CharField('内存SN号', max_length=64, null=True, blank=True)
     speed = models.CharField('速度', max_length=16, null=True, blank=True)
 
-    server_obj = models.ForeignKey('Server',related_name='memory')
-
+    server_obj = models.ForeignKey('Server', related_name='memory')
 
     class Meta:
         verbose_name_plural = "内存表"
@@ -234,7 +234,6 @@ class AssetRecord(models.Model):
     content = models.TextField(null=True)
     creator = models.ForeignKey('UserProfile', null=True, blank=True)
     create_at = models.DateTimeField(auto_now_add=True)
-
 
     class Meta:
         verbose_name_plural = "资产记录表"
@@ -257,7 +256,3 @@ class ErrorLog(models.Model):
 
     def __str__(self):
         return self.title
-
-
-
-

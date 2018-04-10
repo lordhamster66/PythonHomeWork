@@ -7,7 +7,12 @@
     <link rel="stylesheet" href="/static/plugins/font-awesome/css/font-awesome.css"/>
     <link rel="stylesheet" href="/static/css/backend.css"/>
     <link rel="stylesheet" href="/static/css/commons.css"/>
+    <link rel="stylesheet" href="/static/css/filter_horizontal.css"/>
+    <!--Bootstrap Datepicker [ OPTIONAL ]-->
+    <link href="/static/plugins/bootstrap-datepicker/bootstrap-datepicker.css" rel="stylesheet">
 
+    <!--sweetalert [ OPTIONAL ]-->
+    <link rel="stylesheet" href="/static/plugins/sweetalert-master/dist/sweetalert.css">
     {% block css %} {% endblock %}
 </head>
 <body>
@@ -16,27 +21,27 @@
 </div>
 <div class="pg-body">
     <div class="menu">
-        <a id="menu_asset" class="menu-item" href="/asset.html">
+        <a id="menu_asset" class="menu-item" href="{% url 'asset_index' %}">
             <i class="fa fa-connectdevelop" aria-hidden="true"></i>
             <span>资产管理</span>
         </a>
-        <a id="menu_user_profile" class="menu-item" href="/users.html">
+        <a id="menu_user_profile" class="menu-item" href="{% url 'user_index' %}">
             <i class="fa fa-cogs" aria-hidden="true"></i>
             <span>用户管理</span>
         </a>
-        <a class="menu-item" href="#">
+        <a id="menu_business_unit" class="menu-item" href="{% url 'business_unit_index' %}">
             <i class="fa fa-free-code-camp" aria-hidden="true"></i>
             <span>业务管理</span>
         </a>
-        <a class="menu-item" href="#">
+        <a id="menu_idc" class="menu-item" href="{% url 'idc_index' %}">
             <i class="fa fa-cloud-upload" aria-hidden="true"></i>
             <span>IDC管理</span>
         </a>
-        <a class="menu-item" href="#">
+        <a id="menu_tag" class="menu-item" href="{% url 'tag_index' %}">
             <i class="fa fa-cubes" aria-hidden="true"></i>
             <span>标签管理</span>
         </a>
-        <a class="menu-item" href="#">
+        <a id="menu_error_log" class="menu-item" href="{% url 'error_log_index' %}">
             <i class="fa fa-desktop" aria-hidden="true"></i>
             <span>日志管理</span>
         </a>
@@ -47,6 +52,39 @@
     </div>
 </div>
 <script type="text/javascript" src="/static/js/jquery-1.12.4.js"></script>
+
+<!--Bootstrap Datepicker [ OPTIONAL ]-->
+<script src="/static/plugins/bootstrap-datepicker/bootstrap-datepicker.js"></script>
+<script src="/static/plugins/bootstrap-datepicker/locales/bootstrap-datepicker.zh-CN.js"></script>
+
+<!--sweetalert [ OPTIONAL ]-->
+<script src="/static/plugins/sweetalert-master/dist/sweetalert-dev.js"></script>
+<script>
+    $(function () {
+        /* CSRF配置 */
+        function csrfSafeMethod(method) {
+            // these HTTP methods do not require CSRF protection
+            return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+        }
+
+        /* 全局Ajax中添加请求头X-CSRFToken，用于跨过CSRF验证  */
+        $.ajaxSetup({
+            beforeSend: function (xhr, settings) {
+                if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+                    xhr.setRequestHeader("X-CSRFToken", $.cookie('csrftoken'));
+                }
+            }
+        });
+        // 日期控件
+        $(".date-picker").datepicker({
+            autoclose: true,  // 自动关闭
+            todayHighlight: true,  // 今日日期高亮
+            todayBtn: 'linked',  // 显示今日
+            language: "zh-CN",//语言设置
+            format: "yyyy-mm-dd"//日期显示格式
+        });
+    })
+</script>
 {% block js %}{% endblock %}
 </body>
 </html>

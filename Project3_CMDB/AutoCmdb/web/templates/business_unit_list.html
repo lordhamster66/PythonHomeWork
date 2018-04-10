@@ -7,8 +7,8 @@
 
 {% block conent %}
     <ol class="breadcrumb" style="margin-bottom: 0;">
-        <li><a href="/cmdb.html">首页</a></li>
-        <li class="active">用户管理</li>
+        <li><a href="{% url 'cmdb_index' %}">首页</a></li>
+        <li class="active">业务管理</li>
     </ol>
     <div style="padding: 5px 8px;">
 
@@ -30,8 +30,11 @@
                         <div class="inputs">
                             <div class="input-group">
                                 <div id="search_condition" init="false" class="input-group-btn">
-                                    <label type="button" class="btn btn-default no-radius" style="width: 100px;">&nbsp;</label>
-                                    <button type="button" class="btn btn-default dropdown-toggle no-border-r" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="caret"></span></button>
+                                    <label type="button" class="btn btn-default no-radius"
+                                           style="width: 100px;">&nbsp;</label>
+                                    <button type="button" class="btn btn-default dropdown-toggle no-border-r"
+                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span
+                                            class="caret"></span></button>
                                     <ul class="change-search-condition dropdown-menu">
 
                                     </ul>
@@ -53,7 +56,8 @@
                     <a id="check_cancel" class="btn btn-default no-radius"><i class="fa fa-minus-square-o"></i> 取消</a>
                     <a id="check_reverse" class="btn btn-default no-radius"><i
                             class="fa fa-check-square-o"></i> 反选</a>
-                    <a class="btn btn-default no-radius" href="#"><i class="fa fa-plus-circle"></i>添加</a>
+                    <a class="btn btn-default no-radius" href="{% url 'add_business_unit' %}"><i
+                            class="fa fa-plus-circle"></i>添加</a>
                     <a id="do_delete" class="btn btn-default no-radius"><i class="fa fa-trash"></i> 删除</a>
                     <a id="edit_mode_target" class="btn btn-default no-radius"><i class="fa fa-pencil-square-o"></i>
                         <span>进入编辑模式</span></a>
@@ -98,7 +102,7 @@
     <div id="modal_delete" class="alert alert-danger alert-dismissible fade in modal-delete hide" role="alert">
         <button type="button" class="close" aria-label="Close" onclick="$.Hide('#shade,#modal_delete');"><span>×</span>
         </button>
-        <h4>确定用户信息？</h4>
+        <h4>确定删除业务线？</h4>
 
         <p style="text-align: right">
             <button type="button" class="btn btn-danger" id="do_delete_confirm">确定删除</button>
@@ -123,11 +127,13 @@
     <script type="text/javascript" src="/static/js/nb-list.js"></script>
 
     <script>
+        function ChangePage(p) {
+            $.nbDataList('{% url 'business_unit_json' %}', p)
+        }
+
         $(function () {
-            $.initMenu('#menu_user_profile');
-            $.nbDataList('/user.html');
+            $.initMenu('#menu_business_unit');
+            $.nbDataList('{% url 'business_unit_json' %}', 1);
         });
-
-
     </script>
 {% endblock %}

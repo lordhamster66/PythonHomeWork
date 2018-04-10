@@ -29,6 +29,10 @@ class AssetJsonView(View):
         response = self.obj.put_queryset(request)
         return JsonResponse(response.__dict__)
 
+    def post(self, request):
+        response = self.obj.post_queryset(request)
+        return JsonResponse(response.__dict__)
+
 
 class AssetDetailView(View):
     def get(self, request, device_type_id, asset_nid):
@@ -38,4 +42,21 @@ class AssetDetailView(View):
 
 class AddAssetView(View):
     def get(self, request, *args, **kwargs):
-        return render(request, 'add_asset.html')
+        service_obj = asset.Asset()
+        model_form_class = service_obj.create_model_form()
+        model_form_obj = model_form_class()
+        return render(request, 'add_asset.html', {
+            "model_form_obj": model_form_obj,
+            "service_obj": service_obj
+        })
+
+
+class AddServerView(View):
+    def get(self, request, *args, **kwargs):
+        service_obj = asset.Asset()
+        model_form_class = service_obj.create_model_form()
+        model_form_obj = model_form_class()
+        return render(request, 'add_asset.html', {
+            "model_form_obj": model_form_obj,
+            "service_obj": service_obj
+        })

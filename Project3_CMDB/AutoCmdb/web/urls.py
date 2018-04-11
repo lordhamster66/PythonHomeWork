@@ -12,7 +12,7 @@ from web.views import error_log
 urlpatterns = [
     url(r'^login.html$', account.LoginView.as_view()),  # 登录
     url(r'^logout.html$', account.LogoutView.as_view()),  # 注销
-    url(r'^index.html$', home.IndexView.as_view()),  # 平台首页
+    url(r'^index.html$', home.IndexView.as_view(), name="index"),  # 平台首页
     # 以下均为资产相关
     url(r'^cmdb.html$', home.CmdbView.as_view(), name="cmdb_index"),  # 资产首页
     url(r'^chart-(?P<chart_type>\w+).html$', home.ChartView.as_view()),  # 获取图表数据

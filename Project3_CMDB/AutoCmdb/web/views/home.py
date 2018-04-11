@@ -4,19 +4,24 @@ from django.views import View
 from django.shortcuts import render
 from django.http import JsonResponse
 from web.service import chart
+from django.utils.decorators import method_decorator
+from utils.my_decorator import login_decorator
 
 
 class IndexView(View):
+    @method_decorator(login_decorator)
     def get(self, request, *args, **kwargs):
         return render(request, 'index.html')
 
 
 class CmdbView(View):
+    @method_decorator(login_decorator)
     def get(self, request, *args, **kwargs):
         return render(request, 'cmdb.html')
 
 
 class ChartView(View):
+    @method_decorator(login_decorator)
     def get(self, request, chart_type):
         if chart_type == 'business':
             response = chart.Business.chart()

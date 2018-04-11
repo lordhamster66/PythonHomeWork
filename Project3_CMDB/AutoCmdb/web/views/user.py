@@ -4,13 +4,15 @@ import hashlib
 from django.views import View
 from django.shortcuts import render, redirect
 from django.http import JsonResponse
-
 from web.service import user
 from web.forms import UserProfileForm
 from repository import models
+from django.utils.decorators import method_decorator
+from utils.my_decorator import login_decorator
 
 
 class UserListView(View):
+    @method_decorator(login_decorator)
     def get(self, request, *args, **kwargs):
         return render(request, 'user_list.html')
 
@@ -20,26 +22,31 @@ class UserJsonView(View):
         self.obj = user.User()
         super(UserJsonView, self).__init__(**kwargs)
 
+    @method_decorator(login_decorator)
     def get(self, request):
         response = self.obj.fetch_queryset(request)
         return JsonResponse(response.__dict__)
 
+    @method_decorator(login_decorator)
     def delete(self, request):
         response = self.obj.delete_queryset(request)
         return JsonResponse(response.__dict__)
 
+    @method_decorator(login_decorator)
     def put(self, request):
         response = self.obj.put_queryset(request)
         return JsonResponse(response.__dict__)
 
 
 class AddUserView(View):
+    @method_decorator(login_decorator)
     def get(self, request, *args, **kwargs):
         form_obj = UserProfileForm()
         return render(request, 'add_user.html', {
             "form_obj": form_obj,
         })
 
+    @method_decorator(login_decorator)
     def post(self, request):
         form_obj = UserProfileForm(request.POST)
         if form_obj.is_valid():

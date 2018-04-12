@@ -1,0 +1,987 @@
+[2018-03-23 17:47:28,854][Thread-7:140688957818624][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /audit_log/49/]
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/py3-dj/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/opt/anaconda3/envs/py3-dj/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/opt/anaconda3/envs/py3-dj/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/anaconda3/envs/py3-dj/lib/python3.6/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/king/KindFortressMachine/web/views.py", line 100, in audit_log_detail
+    audit_log_parser = audit.AuditLogHandler(audit_log_detail_path, condition_dict.get("parse_mark"))
+  File "/home/king/KindFortressMachine/backend/audit.py", line 11, in __init__
+    self.log_file_obj = AuditLogHandler._get_file(log_file)
+  File "/home/king/KindFortressMachine/backend/audit.py", line 16, in _get_file
+    return open(log_file)
+FileNotFoundError: [Errno 2] No such file or directory: '/home/king/KindFortressMachine/log/audit_log/2018-03-23/strace_49.log'
+[2018-03-23 17:47:31,756][Thread-9:140688957818624][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /audit_log/48/]
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/py3-dj/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/opt/anaconda3/envs/py3-dj/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/opt/anaconda3/envs/py3-dj/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/anaconda3/envs/py3-dj/lib/python3.6/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/king/KindFortressMachine/web/views.py", line 100, in audit_log_detail
+    audit_log_parser = audit.AuditLogHandler(audit_log_detail_path, condition_dict.get("parse_mark"))
+  File "/home/king/KindFortressMachine/backend/audit.py", line 11, in __init__
+    self.log_file_obj = AuditLogHandler._get_file(log_file)
+  File "/home/king/KindFortressMachine/backend/audit.py", line 16, in _get_file
+    return open(log_file)
+FileNotFoundError: [Errno 2] No such file or directory: '/home/king/KindFortressMachine/log/audit_log/2018-03-23/strace_48.log'
+[2018-03-23 17:47:33,558][Thread-10:140688957818624][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /audit_log/47/]
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/py3-dj/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/opt/anaconda3/envs/py3-dj/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/opt/anaconda3/envs/py3-dj/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/anaconda3/envs/py3-dj/lib/python3.6/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/king/KindFortressMachine/web/views.py", line 100, in audit_log_detail
+    audit_log_parser = audit.AuditLogHandler(audit_log_detail_path, condition_dict.get("parse_mark"))
+  File "/home/king/KindFortressMachine/backend/audit.py", line 11, in __init__
+    self.log_file_obj = AuditLogHandler._get_file(log_file)
+  File "/home/king/KindFortressMachine/backend/audit.py", line 16, in _get_file
+    return open(log_file)
+FileNotFoundError: [Errno 2] No such file or directory: '/home/king/KindFortressMachine/log/audit_log/2018-03-23/strace_47.log'
+[2018-03-23 17:47:35,475][Thread-11:140688957818624][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /audit_log/46/]
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/py3-dj/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/opt/anaconda3/envs/py3-dj/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/opt/anaconda3/envs/py3-dj/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/anaconda3/envs/py3-dj/lib/python3.6/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/king/KindFortressMachine/web/views.py", line 100, in audit_log_detail
+    audit_log_parser = audit.AuditLogHandler(audit_log_detail_path, condition_dict.get("parse_mark"))
+  File "/home/king/KindFortressMachine/backend/audit.py", line 11, in __init__
+    self.log_file_obj = AuditLogHandler._get_file(log_file)
+  File "/home/king/KindFortressMachine/backend/audit.py", line 16, in _get_file
+    return open(log_file)
+FileNotFoundError: [Errno 2] No such file or directory: '/home/king/KindFortressMachine/log/audit_log/2018-03-23/strace_46.log'
+[2018-03-23 18:12:13,139][Thread-59:140688957818624][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /audit_log/46/]
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/py3-dj/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/opt/anaconda3/envs/py3-dj/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/opt/anaconda3/envs/py3-dj/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/anaconda3/envs/py3-dj/lib/python3.6/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/king/KindFortressMachine/web/views.py", line 100, in audit_log_detail
+    audit_log_parser = audit.AuditLogHandler(audit_log_detail_path, condition_dict.get("parse_mark"))
+  File "/home/king/KindFortressMachine/backend/audit.py", line 11, in __init__
+    self.log_file_obj = AuditLogHandler._get_file(log_file)
+  File "/home/king/KindFortressMachine/backend/audit.py", line 16, in _get_file
+    return open(log_file)
+FileNotFoundError: [Errno 2] No such file or directory: '/home/king/KindFortressMachine/log/audit_log/2018-03-23/strace_46.log'
+[2018-03-23 18:19:22,109][Thread-81:140688957818624][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /audit_log/55/]
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/py3-dj/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/opt/anaconda3/envs/py3-dj/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/opt/anaconda3/envs/py3-dj/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/anaconda3/envs/py3-dj/lib/python3.6/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/king/KindFortressMachine/web/views.py", line 100, in audit_log_detail
+    audit_log_parser = audit.AuditLogHandler(audit_log_detail_path, condition_dict.get("parse_mark"))
+  File "/home/king/KindFortressMachine/backend/audit.py", line 11, in __init__
+    self.log_file_obj = AuditLogHandler._get_file(log_file)
+  File "/home/king/KindFortressMachine/backend/audit.py", line 16, in _get_file
+    return open(log_file)
+FileNotFoundError: [Errno 2] No such file or directory: '/home/king/KindFortressMachine/log/audit_log/2018-03-23/strace_55.log'
+[2018-03-23 18:19:38,895][Thread-89:140688957818624][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /audit_log/54/]
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/py3-dj/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/opt/anaconda3/envs/py3-dj/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/opt/anaconda3/envs/py3-dj/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/anaconda3/envs/py3-dj/lib/python3.6/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/king/KindFortressMachine/web/views.py", line 100, in audit_log_detail
+    audit_log_parser = audit.AuditLogHandler(audit_log_detail_path, condition_dict.get("parse_mark"))
+  File "/home/king/KindFortressMachine/backend/audit.py", line 11, in __init__
+    self.log_file_obj = AuditLogHandler._get_file(log_file)
+  File "/home/king/KindFortressMachine/backend/audit.py", line 16, in _get_file
+    return open(log_file)
+FileNotFoundError: [Errno 2] No such file or directory: '/home/king/KindFortressMachine/log/audit_log/2018-03-23/strace_54.log'
+[2018-03-23 18:19:41,500][Thread-90:140688957818624][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /audit_log/53/]
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/py3-dj/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/opt/anaconda3/envs/py3-dj/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/opt/anaconda3/envs/py3-dj/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/anaconda3/envs/py3-dj/lib/python3.6/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/king/KindFortressMachine/web/views.py", line 100, in audit_log_detail
+    audit_log_parser = audit.AuditLogHandler(audit_log_detail_path, condition_dict.get("parse_mark"))
+  File "/home/king/KindFortressMachine/backend/audit.py", line 11, in __init__
+    self.log_file_obj = AuditLogHandler._get_file(log_file)
+  File "/home/king/KindFortressMachine/backend/audit.py", line 16, in _get_file
+    return open(log_file)
+FileNotFoundError: [Errno 2] No such file or directory: '/home/king/KindFortressMachine/log/audit_log/2018-03-23/strace_53.log'
+[2018-03-23 18:19:43,646][Thread-91:140688957818624][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /audit_log/52/]
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/py3-dj/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/opt/anaconda3/envs/py3-dj/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/opt/anaconda3/envs/py3-dj/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/anaconda3/envs/py3-dj/lib/python3.6/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/king/KindFortressMachine/web/views.py", line 100, in audit_log_detail
+    audit_log_parser = audit.AuditLogHandler(audit_log_detail_path, condition_dict.get("parse_mark"))
+  File "/home/king/KindFortressMachine/backend/audit.py", line 11, in __init__
+    self.log_file_obj = AuditLogHandler._get_file(log_file)
+  File "/home/king/KindFortressMachine/backend/audit.py", line 16, in _get_file
+    return open(log_file)
+FileNotFoundError: [Errno 2] No such file or directory: '/home/king/KindFortressMachine/log/audit_log/2018-03-23/strace_52.log'
+[2018-03-24 15:26:04,860][Thread-84:139849484908288][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /audit_log/53/]
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/py3-dj/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/opt/anaconda3/envs/py3-dj/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/opt/anaconda3/envs/py3-dj/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/anaconda3/envs/py3-dj/lib/python3.6/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/king/KindFortressMachine/web/views.py", line 100, in audit_log_detail
+    audit_log_parser = audit.AuditLogHandler(audit_log_detail_path, condition_dict.get("parse_mark"))
+  File "/home/king/KindFortressMachine/backend/audit.py", line 11, in __init__
+    self.log_file_obj = AuditLogHandler._get_file(log_file)
+  File "/home/king/KindFortressMachine/backend/audit.py", line 16, in _get_file
+    return open(log_file)
+FileNotFoundError: [Errno 2] No such file or directory: '/home/king/KindFortressMachine/log/audit_log/2018-03-23/strace_53.log'
+[2018-03-25 10:39:29,986][Thread-9:11852][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /web_ssh/]
+Traceback (most recent call last):
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\views.py", line 116, in web_ssh
+    "web_ssh_url": settings.WEB_SSH_URL,
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\conf\__init__.py", line 57, in __getattr__
+    val = getattr(self._wrapped, name)
+AttributeError: 'Settings' object has no attribute 'WEB_SSH_URL'
+[2018-03-25 10:39:54,818][Thread-1:2848][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /web_ssh/]
+Traceback (most recent call last):
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\views.py", line 116, in web_ssh
+    "web_ssh_url": settings.WEB_SSH_URL,
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\conf\__init__.py", line 57, in __getattr__
+    val = getattr(self._wrapped, name)
+AttributeError: 'Settings' object has no attribute 'WEB_SSH_URL'
+[2018-03-25 10:39:55,700][Thread-3:8036][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /web_ssh/]
+Traceback (most recent call last):
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\views.py", line 116, in web_ssh
+    "web_ssh_url": settings.WEB_SSH_URL,
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\conf\__init__.py", line 57, in __getattr__
+    val = getattr(self._wrapped, name)
+AttributeError: 'Settings' object has no attribute 'WEB_SSH_URL'
+[2018-03-25 10:52:39,282][Thread-10:6196][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /multitask_cmd/]
+Traceback (most recent call last):
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    "returned None instead." % (callback.__module__, view_name)
+ValueError: The view web.views.multitask_cmd didn't return an HttpResponse object. It returned None instead.
+[2018-03-25 13:43:41,471][Thread-86:13792][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /multitask_cmd/]
+Traceback (most recent call last):
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\views.py", line 126, in multitask_cmd
+    return render(request, "multitask_cmd.html")
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\template\loader.py", line 68, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\template\backends\django.py", line 66, in render
+    return self.template.render(context)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\template\base.py", line 207, in render
+    return self._render(context)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\template\loader_tags.py", line 177, in render
+    return compiled_parent._render(context)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\template\loader_tags.py", line 177, in render
+    return compiled_parent._render(context)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\template\loader_tags.py", line 72, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\template\loader_tags.py", line 72, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\template\defaulttags.py", line 172, in render
+    values = list(values)
+TypeError: 'ManyRelatedManager' object is not iterable
+[2018-03-25 15:31:25,025][Thread-4:788][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /multitask/]
+Traceback (most recent call last):
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\views.py", line 145, in multitask
+    ret["data"] = {"multi_task_obj_id": multi_task_obj.id}
+AttributeError: 'NoneType' object has no attribute 'id'
+[2018-03-25 15:57:31,965][Thread-8:15640][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /multitask/]
+Traceback (most recent call last):
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\views.py", line 145, in multitask
+    ret["data"] = {"multi_task_obj_id": multi_task_obj.id}
+AttributeError: 'NoneType' object has no attribute 'id'
+[2018-03-25 15:58:02,765][Thread-4:7392][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /multitask/]
+Traceback (most recent call last):
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\views.py", line 142, in multitask
+    if multi_task_handler_obj.is_vaild():  # 验证批量任务是否符合规范
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\backend\multi_task_handler.py", line 26, in is_vaild
+    multiTaskType_clean = getattr(self, f"{multiTaskType}_clean")
+AttributeError: 'MultiTaskHandler' object has no attribute 'dmd_clean'
+[2018-03-25 16:05:06,758][Thread-4:2644][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /multitask/]
+Traceback (most recent call last):
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\views.py", line 145, in multitask
+    ret["data"] = {"multi_task_obj_id": multi_task_obj.id}
+AttributeError: 'NoneType' object has no attribute 'id'
+[2018-03-25 16:26:54,420][Thread-4:9384][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /multitask/]
+Traceback (most recent call last):
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\views.py", line 145, in multitask
+    ret["data"] = {"multi_task_obj_id": multi_task_obj.id}
+AttributeError: 'NoneType' object has no attribute 'id'
+[2018-03-25 16:30:24,378][Thread-8:15852][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /multitask/]
+Traceback (most recent call last):
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\views.py", line 143, in multitask
+    multi_task_obj = multi_task_handler_obj.run()  # 运行批量任务
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\backend\multi_task_handler.py", line 99, in run
+    multi_task_func()
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\contextlib.py", line 52, in inner
+    return func(*args, **kwds)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\backend\multi_task_handler.py", line 79, in cmd
+    result="init"
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\db\models\base.py", line 554, in __init__
+    _setattr(self, field.name, rel_obj)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\db\models\fields\related_descriptors.py", line 216, in __set__
+    self.field.remote_field.model._meta.object_name,
+ValueError: Cannot assign "'3'": "MultiTaskDetail.bind_host" must be a "BindHost" instance.
+[2018-03-25 16:43:24,219][Thread-1:2996][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /admin/web/multitaskdetail/]
+Traceback (most recent call last):
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\core\handlers\base.py", line 217, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\core\handlers\base.py", line 215, in _get_response
+    response = response.render()
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\template\response.py", line 107, in render
+    self.content = self.rendered_content
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\template\response.py", line 84, in rendered_content
+    content = template.render(context, self._request)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\template\backends\django.py", line 66, in render
+    return self.template.render(context)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\template\base.py", line 207, in render
+    return self._render(context)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\template\loader_tags.py", line 177, in render
+    return compiled_parent._render(context)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\template\loader_tags.py", line 177, in render
+    return compiled_parent._render(context)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\template\loader_tags.py", line 72, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\template\loader_tags.py", line 72, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\template\library.py", line 225, in render
+    _dict = self.func(*resolved_args, **resolved_kwargs)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 340, in result_list
+    'results': list(results(cl))}
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 316, in results
+    yield ResultList(None, items_for_result(cl, res, None))
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 307, in __init__
+    super(ResultList, self).__init__(*items)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 250, in items_for_result
+    if force_text(result_repr) == '':
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\utils\encoding.py", line 76, in force_text
+    s = six.text_type(s)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\models.py", line 179, in __str__
+    return f"{self.get_task_type_display}-{self.content}"
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\db\models\base.py", line 589, in __repr__
+    u = six.text_type(self)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\models.py", line 179, in __str__
+    return f"{self.get_task_type_display}-{self.content}"
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\db\models\base.py", line 589, in __repr__
+    u = six.text_type(self)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\models.py", line 179, in __str__
+    return f"{self.get_task_type_display}-{self.content}"
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\db\models\base.py", line 589, in __repr__
+    u = six.text_type(self)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\models.py", line 179, in __str__
+    return f"{self.get_task_type_display}-{self.content}"
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\db\models\base.py", line 589, in __repr__
+    u = six.text_type(self)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\models.py", line 179, in __str__
+    return f"{self.get_task_type_display}-{self.content}"
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\db\models\base.py", line 589, in __repr__
+    u = six.text_type(self)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\models.py", line 179, in __str__
+    return f"{self.get_task_type_display}-{self.content}"
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\db\models\base.py", line 589, in __repr__
+    u = six.text_type(self)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\models.py", line 179, in __str__
+    return f"{self.get_task_type_display}-{self.content}"
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\db\models\base.py", line 589, in __repr__
+    u = six.text_type(self)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\models.py", line 179, in __str__
+    return f"{self.get_task_type_display}-{self.content}"
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\db\models\base.py", line 589, in __repr__
+    u = six.text_type(self)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\models.py", line 179, in __str__
+    return f"{self.get_task_type_display}-{self.content}"
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\db\models\base.py", line 589, in __repr__
+    u = six.text_type(self)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\models.py", line 179, in __str__
+    return f"{self.get_task_type_display}-{self.content}"
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\db\models\base.py", line 589, in __repr__
+    u = six.text_type(self)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\models.py", line 179, in __str__
+    return f"{self.get_task_type_display}-{self.content}"
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\db\models\base.py", line 589, in __repr__
+    u = six.text_type(self)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\models.py", line 179, in __str__
+    return f"{self.get_task_type_display}-{self.content}"
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\db\models\base.py", line 589, in __repr__
+    u = six.text_type(self)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\models.py", line 179, in __str__
+    return f"{self.get_task_type_display}-{self.content}"
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\db\models\base.py", line 589, in __repr__
+    u = six.text_type(self)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\models.py", line 179, in __str__
+    return f"{self.get_task_type_display}-{self.content}"
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\db\models\base.py", line 589, in __repr__
+    u = six.text_type(self)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\models.py", line 179, in __str__
+    return f"{self.get_task_type_display}-{self.content}"
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\db\models\base.py", line 589, in __repr__
+    u = six.text_type(self)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\models.py", line 179, in __str__
+    return f"{self.get_task_type_display}-{self.content}"
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\db\models\base.py", line 589, in __repr__
+    u = six.text_type(self)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\models.py", line 179, in __str__
+    return f"{self.get_task_type_display}-{self.content}"
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\db\models\base.py", line 589, in __repr__
+    u = six.text_type(self)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\models.py", line 179, in __str__
+    return f"{self.get_task_type_display}-{self.content}"
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\db\models\base.py", line 589, in __repr__
+    u = six.text_type(self)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\models.py", line 179, in __str__
+    return f"{self.get_task_type_display}-{self.content}"
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\db\models\base.py", line 589, in __repr__
+    u = six.text_type(self)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\models.py", line 179, in __str__
+    return f"{self.get_task_type_display}-{self.content}"
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\db\models\base.py", line 589, in __repr__
+    u = six.text_type(self)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\models.py", line 179, in __str__
+    return f"{self.get_task_type_display}-{self.content}"
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\db\models\base.py", line 589, in __repr__
+    u = six.text_type(self)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\models.py", line 179, in __str__
+    return f"{self.get_task_type_display}-{self.content}"
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\db\models\base.py", line 589, in __repr__
+    u = six.text_type(self)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\models.py", line 179, in __str__
+    return f"{self.get_task_type_display}-{self.content}"
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\db\models\base.py", line 589, in __repr__
+    u = six.text_type(self)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\models.py", line 179, in __str__
+    return f"{self.get_task_type_display}-{self.content}"
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\db\models\base.py", line 589, in __repr__
+    u = six.text_type(self)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\models.py", line 179, in __str__
+    return f"{self.get_task_type_display}-{self.content}"
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\db\models\base.py", line 589, in __repr__
+    u = six.text_type(self)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\models.py", line 179, in __str__
+    return f"{self.get_task_type_display}-{self.content}"
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\db\models\base.py", line 589, in __repr__
+    u = six.text_type(self)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\models.py", line 179, in __str__
+    return f"{self.get_task_type_display}-{self.content}"
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\db\models\base.py", line 589, in __repr__
+    u = six.text_type(self)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\models.py", line 179, in __str__
+    return f"{self.get_task_type_display}-{self.content}"
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\db\models\base.py", line 589, in __repr__
+    u = six.text_type(self)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\models.py", line 179, in __str__
+    return f"{self.get_task_type_display}-{self.content}"
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\db\models\base.py", line 589, in __repr__
+    u = six.text_type(self)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\models.py", line 179, in __str__
+    return f"{self.get_task_type_display}-{self.content}"
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\db\models\base.py", line 589, in __repr__
+    u = six.text_type(self)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\models.py", line 179, in __str__
+    return f"{self.get_task_type_display}-{self.content}"
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\db\models\base.py", line 589, in __repr__
+    u = six.text_type(self)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\models.py", line 179, in __str__
+    return f"{self.get_task_type_display}-{self.content}"
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\db\models\base.py", line 589, in __repr__
+    u = six.text_type(self)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\models.py", line 179, in __str__
+    return f"{self.get_task_type_display}-{self.content}"
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\db\models\base.py", line 589, in __repr__
+    u = six.text_type(self)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\models.py", line 179, in __str__
+    return f"{self.get_task_type_display}-{self.content}"
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\db\models\base.py", line 589, in __repr__
+    u = six.text_type(self)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\models.py", line 179, in __str__
+    return f"{self.get_task_type_display}-{self.content}"
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\db\models\base.py", line 589, in __repr__
+    u = six.text_type(self)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\models.py", line 179, in __str__
+    return f"{self.get_task_type_display}-{self.content}"
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\db\models\base.py", line 589, in __repr__
+    u = six.text_type(self)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\models.py", line 179, in __str__
+    return f"{self.get_task_type_display}-{self.content}"
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\db\models\base.py", line 589, in __repr__
+    u = six.text_type(self)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\models.py", line 179, in __str__
+    return f"{self.get_task_type_display}-{self.content}"
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\db\models\base.py", line 589, in __repr__
+    u = six.text_type(self)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\models.py", line 179, in __str__
+    return f"{self.get_task_type_display}-{self.content}"
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\db\models\base.py", line 589, in __repr__
+    u = six.text_type(self)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\models.py", line 179, in __str__
+    return f"{self.get_task_type_display}-{self.content}"
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\db\models\base.py", line 589, in __repr__
+    u = six.text_type(self)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\models.py", line 179, in __str__
+    return f"{self.get_task_type_display}-{self.content}"
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\db\models\base.py", line 589, in __repr__
+    u = six.text_type(self)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\models.py", line 179, in __str__
+    return f"{self.get_task_type_display}-{self.content}"
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\db\models\base.py", line 589, in __repr__
+    u = six.text_type(self)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\models.py", line 179, in __str__
+    return f"{self.get_task_type_display}-{self.content}"
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\db\models\base.py", line 589, in __repr__
+    u = six.text_type(self)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\models.py", line 179, in __str__
+    return f"{self.get_task_type_display}-{self.content}"
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\db\models\base.py", line 589, in __repr__
+    u = six.text_type(self)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\models.py", line 179, in __str__
+    return f"{self.get_task_type_display}-{self.content}"
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\db\models\base.py", line 589, in __repr__
+    u = six.text_type(self)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\models.py", line 179, in __str__
+    return f"{self.get_task_type_display}-{self.content}"
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\db\models\base.py", line 589, in __repr__
+    u = six.text_type(self)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\models.py", line 179, in __str__
+    return f"{self.get_task_type_display}-{self.content}"
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\db\models\base.py", line 589, in __repr__
+    u = six.text_type(self)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\models.py", line 179, in __str__
+    return f"{self.get_task_type_display}-{self.content}"
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\db\models\base.py", line 589, in __repr__
+    u = six.text_type(self)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\models.py", line 179, in __str__
+    return f"{self.get_task_type_display}-{self.content}"
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\db\models\base.py", line 589, in __repr__
+    u = six.text_type(self)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\models.py", line 179, in __str__
+    return f"{self.get_task_type_display}-{self.content}"
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\db\models\base.py", line 589, in __repr__
+    u = six.text_type(self)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\models.py", line 179, in __str__
+    return f"{self.get_task_type_display}-{self.content}"
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\db\models\base.py", line 589, in __repr__
+    u = six.text_type(self)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\models.py", line 179, in __str__
+    return f"{self.get_task_type_display}-{self.content}"
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\db\models\base.py", line 589, in __repr__
+    u = six.text_type(self)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\models.py", line 179, in __str__
+    return f"{self.get_task_type_display}-{self.content}"
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\db\models\base.py", line 589, in __repr__
+    u = six.text_type(self)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\models.py", line 179, in __str__
+    return f"{self.get_task_type_display}-{self.content}"
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\db\models\base.py", line 589, in __repr__
+    u = six.text_type(self)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\models.py", line 179, in __str__
+    return f"{self.get_task_type_display}-{self.content}"
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\db\models\base.py", line 589, in __repr__
+    u = six.text_type(self)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\models.py", line 179, in __str__
+    return f"{self.get_task_type_display}-{self.content}"
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\db\models\base.py", line 589, in __repr__
+    u = six.text_type(self)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\models.py", line 179, in __str__
+    return f"{self.get_task_type_display}-{self.content}"
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\db\models\base.py", line 589, in __repr__
+    u = six.text_type(self)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\models.py", line 179, in __str__
+    return f"{self.get_task_type_display}-{self.content}"
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\db\models\base.py", line 589, in __repr__
+    u = six.text_type(self)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\models.py", line 179, in __str__
+    return f"{self.get_task_type_display}-{self.content}"
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\db\models\base.py", line 589, in __repr__
+    u = six.text_type(self)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\models.py", line 179, in __str__
+    return f"{self.get_task_type_display}-{self.content}"
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\db\models\base.py", line 589, in __repr__
+    u = six.text_type(self)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\models.py", line 179, in __str__
+    return f"{self.get_task_type_display}-{self.content}"
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\db\models\base.py", line 589, in __repr__
+    u = six.text_type(self)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\models.py", line 179, in __str__
+    return f"{self.get_task_type_display}-{self.content}"
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\db\models\base.py", line 589, in __repr__
+    u = six.text_type(self)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\models.py", line 179, in __str__
+    return f"{self.get_task_type_display}-{self.content}"
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\db\models\base.py", line 589, in __repr__
+    u = six.text_type(self)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\models.py", line 179, in __str__
+    return f"{self.get_task_type_display}-{self.content}"
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\db\models\base.py", line 589, in __repr__
+    u = six.text_type(self)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\models.py", line 179, in __str__
+    return f"{self.get_task_type_display}-{self.content}"
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\db\models\base.py", line 589, in __repr__
+    u = six.text_type(self)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\models.py", line 179, in __str__
+    return f"{self.get_task_type_display}-{self.content}"
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\db\models\base.py", line 589, in __repr__
+    u = six.text_type(self)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\models.py", line 179, in __str__
+    return f"{self.get_task_type_display}-{self.content}"
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\db\models\base.py", line 589, in __repr__
+    u = six.text_type(self)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\models.py", line 179, in __str__
+    return f"{self.get_task_type_display}-{self.content}"
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\db\models\base.py", line 589, in __repr__
+    u = six.text_type(self)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\models.py", line 179, in __str__
+    return f"{self.get_task_type_display}-{self.content}"
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\db\models\base.py", line 589, in __repr__
+    u = six.text_type(self)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\models.py", line 179, in __str__
+    return f"{self.get_task_type_display}-{self.content}"
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\db\models\base.py", line 589, in __repr__
+    u = six.text_type(self)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\models.py", line 179, in __str__
+    return f"{self.get_task_type_display}-{self.content}"
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\db\models\base.py", line 589, in __repr__
+    u = six.text_type(self)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\models.py", line 179, in __str__
+    return f"{self.get_task_type_display}-{self.content}"
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\db\models\base.py", line 589, in __repr__
+    u = six.text_type(self)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\models.py", line 179, in __str__
+    return f"{self.get_task_type_display}-{self.content}"
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\db\models\base.py", line 589, in __repr__
+    u = six.text_type(self)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\models.py", line 179, in __str__
+    return f"{self.get_task_type_display}-{self.content}"
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\db\models\base.py", line 589, in __repr__
+    u = six.text_type(self)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\models.py", line 179, in __str__
+    return f"{self.get_task_type_display}-{self.content}"
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\db\models\base.py", line 589, in __repr__
+    u = six.text_type(self)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\models.py", line 179, in __str__
+    return f"{self.get_task_type_display}-{self.content}"
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\db\models\base.py", line 589, in __repr__
+    u = six.text_type(self)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\models.py", line 179, in __str__
+    return f"{self.get_task_type_display}-{self.content}"
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\db\models\base.py", line 589, in __repr__
+    u = six.text_type(self)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\models.py", line 179, in __str__
+    return f"{self.get_task_type_display}-{self.content}"
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\db\models\base.py", line 589, in __repr__
+    u = six.text_type(self)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\models.py", line 179, in __str__
+    return f"{self.get_task_type_display}-{self.content}"
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\db\models\base.py", line 589, in __repr__
+    u = six.text_type(self)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\models.py", line 179, in __str__
+    return f"{self.get_task_type_display}-{self.content}"
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\db\models\base.py", line 589, in __repr__
+    u = six.text_type(self)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\models.py", line 179, in __str__
+    return f"{self.get_task_type_display}-{self.content}"
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\db\models\base.py", line 589, in __repr__
+    u = six.text_type(self)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\models.py", line 179, in __str__
+    return f"{self.get_task_type_display}-{self.content}"
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\db\models\base.py", line 589, in __repr__
+    u = six.text_type(self)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\models.py", line 179, in __str__
+    return f"{self.get_task_type_display}-{self.content}"
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\db\models\base.py", line 589, in __repr__
+    u = six.text_type(self)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\models.py", line 179, in __str__
+    return f"{self.get_task_type_display}-{self.content}"
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\db\models\base.py", line 589, in __repr__
+    u = six.text_type(self)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\models.py", line 179, in __str__
+    return f"{self.get_task_type_display}-{self.content}"
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\db\models\base.py", line 589, in __repr__
+    u = six.text_type(self)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\models.py", line 179, in __str__
+    return f"{self.get_task_type_display}-{self.content}"
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\db\models\base.py", line 589, in __repr__
+    u = six.text_type(self)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\models.py", line 179, in __str__
+    return f"{self.get_task_type_display}-{self.content}"
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\db\models\base.py", line 589, in __repr__
+    u = six.text_type(self)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\models.py", line 179, in __str__
+    return f"{self.get_task_type_display}-{self.content}"
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\db\models\base.py", line 589, in __repr__
+    u = six.text_type(self)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\models.py", line 179, in __str__
+    return f"{self.get_task_type_display}-{self.content}"
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\db\models\base.py", line 589, in __repr__
+    u = six.text_type(self)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\models.py", line 179, in __str__
+    return f"{self.get_task_type_display}-{self.content}"
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\db\models\base.py", line 589, in __repr__
+    u = six.text_type(self)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\models.py", line 179, in __str__
+    return f"{self.get_task_type_display}-{self.content}"
+RecursionError: maximum recursion depth exceeded while calling a Python object
+[2018-03-25 17:44:45,025][Thread-4:988][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /multitask/]
+Traceback (most recent call last):
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\views.py", line 159, in multitask
+    return HttpResponse(json.dumps(ret))
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\json\__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\json\encoder.py", line 180, in default
+    o.__class__.__name__)
+TypeError: Object of type 'BindHost' is not JSON serializable
+[2018-03-26 11:03:41,247][Thread-3:140641374893824][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /api/multitask/]
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/py3-dj/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/opt/anaconda3/envs/py3-dj/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/opt/anaconda3/envs/py3-dj/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/anaconda3/envs/py3-dj/lib/python3.6/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/king/KindFortressMachine/web/views.py", line 148, in multitask
+    multi_task_run_status, multi_task_obj = multi_task_handler_obj.run()  # 运行批量任务
+  File "/home/king/KindFortressMachine/backend/multi_task_handler.py", line 94, in run
+    multi_task_func()
+  File "/opt/anaconda3/envs/py3-dj/lib/python3.6/contextlib.py", line 52, in inner
+    return func(*args, **kwds)
+  File "/home/king/KindFortressMachine/backend/multi_task_handler.py", line 80, in cmd
+    subprocess.run(f"kill {multi_task_pid}")
+  File "/opt/anaconda3/envs/py3-dj/lib/python3.6/subprocess.py", line 403, in run
+    with Popen(*popenargs, **kwargs) as process:
+  File "/opt/anaconda3/envs/py3-dj/lib/python3.6/subprocess.py", line 709, in __init__
+    restore_signals, start_new_session)
+  File "/opt/anaconda3/envs/py3-dj/lib/python3.6/subprocess.py", line 1344, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'kill 3833': 'kill 3833'
+[2018-03-26 11:54:24,367][Thread-61:140381467436800][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /api/multitask/]
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/py3-dj/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/opt/anaconda3/envs/py3-dj/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/opt/anaconda3/envs/py3-dj/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/anaconda3/envs/py3-dj/lib/python3.6/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/king/KindFortressMachine/web/views.py", line 152, in multitask
+    for multi_task_detail_obj in multi_task_obj.multitaskdetail_set.all():
+AttributeError: 'NoneType' object has no attribute 'multitaskdetail_set'
+[2018-03-26 12:20:59,885][Thread-210:139868807788288][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /api/multitask/]
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/py3-dj/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/opt/anaconda3/envs/py3-dj/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/opt/anaconda3/envs/py3-dj/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/anaconda3/envs/py3-dj/lib/python3.6/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/king/KindFortressMachine/web/views.py", line 152, in multitask
+    for multi_task_detail_obj in multi_task_obj.multitaskdetail_set.all():
+AttributeError: 'NoneType' object has no attribute 'multitaskdetail_set'
+[2018-03-26 15:45:26,998][Thread-4:13684][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /api/multitask/upload_file]
+Traceback (most recent call last):
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    "returned None instead." % (callback.__module__, view_name)
+ValueError: The view web.views.multitask_upload_file didn't return an HttpResponse object. It returned None instead.
+[2018-03-26 15:53:35,166][Thread-23:9388][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /api/multitask/upload_file]
+Traceback (most recent call last):
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\views.py", line 196, in multitask_upload_file
+    user_multi_task_file_transfer_dir = os.path.join(settings.MULTI_TASK_FILE_TRANSFER_DIR, request.user.id)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\ntpath.py", line 114, in join
+    genericpath._check_arg_types('join', path, *paths)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\genericpath.py", line 149, in _check_arg_types
+    (funcname, s.__class__.__name__)) from None
+TypeError: join() argument must be str or bytes, not 'int'
+[2018-03-26 15:53:53,493][Thread-1:12612][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /api/multitask/upload_file]
+Traceback (most recent call last):
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\views.py", line 197, in multitask_upload_file
+    os.removedirs(user_multi_task_file_transfer_dir)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\os.py", line 238, in removedirs
+    rmdir(name)
+FileNotFoundError: [WinError 2] 系统找不到指定的文件。: 'D:\\Nutstore_Files\\PythonStudy\\day27\\KindFortressMachine\\multi_task_file_transfer\\2'
+[2018-03-26 15:55:40,981][Thread-4:8796][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /api/multitask/upload_file]
+Traceback (most recent call last):
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    "returned None instead." % (callback.__module__, view_name)
+ValueError: The view web.views.multitask_upload_file didn't return an HttpResponse object. It returned None instead.
+[2018-03-26 15:58:08,887][Thread-5:17260][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /api/multitask/upload_file]
+Traceback (most recent call last):
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\views.py", line 199, in multitask_upload_file
+    os.removedirs(user_multi_task_file_transfer_dir)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\os.py", line 238, in removedirs
+    rmdir(name)
+OSError: [WinError 145] 目录不是空的。: 'D:\\Nutstore_Files\\PythonStudy\\day27\\KindFortressMachine\\multi_task_file_transfer\\2'
+[2018-03-26 15:58:37,877][Thread-4:14384][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /api/multitask/upload_file]
+Traceback (most recent call last):
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\views.py", line 199, in multitask_upload_file
+    os.remove(user_multi_task_file_transfer_dir)
+PermissionError: [WinError 5] 拒绝访问。: 'D:\\Nutstore_Files\\PythonStudy\\day27\\KindFortressMachine\\multi_task_file_transfer\\2'
+[2018-03-26 16:00:25,074][Thread-1:12184][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /api/multitask/upload_file]
+Traceback (most recent call last):
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\views.py", line 199, in multitask_upload_file
+    os.rmdir(user_multi_task_file_transfer_dir)
+OSError: [WinError 145] 目录不是空的。: 'D:\\Nutstore_Files\\PythonStudy\\day27\\KindFortressMachine\\multi_task_file_transfer\\2'
+[2018-03-26 16:03:46,279][Thread-4:18048][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /api/multitask/upload_file]
+Traceback (most recent call last):
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\Nutstore_Files\PythonStudy\day27\KindFortressMachine\web\views.py", line 197, in multitask_upload_file
+    if request.META.has_key('HTTP_X_FORWARDED_FOR'):
+AttributeError: 'dict' object has no attribute 'has_key'
+[2018-03-26 16:05:31,586][Thread-3:16888][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /api/multitask/upload_file]
+Traceback (most recent call last):
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    "returned None instead." % (callback.__module__, view_name)
+ValueError: The view web.views.multitask_upload_file didn't return an HttpResponse object. It returned None instead.
+[2018-03-26 16:06:56,157][Thread-4:17428][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /api/multitask/upload_file]
+Traceback (most recent call last):
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    "returned None instead." % (callback.__module__, view_name)
+ValueError: The view web.views.multitask_upload_file didn't return an HttpResponse object. It returned None instead.
+[2018-03-26 16:07:02,778][Thread-5:17552][task_id:django.request][exception.py:135][ERROR][Internal Server Error: /api/multitask/upload_file]
+Traceback (most recent call last):
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\lingx\AppData\Local\conda\conda\envs\py3-dj\lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    "returned None instead." % (callback.__module__, view_name)
+ValueError: The view web.views.multitask_upload_file didn't return an HttpResponse object. It returned None instead.

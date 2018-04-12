@@ -1,0 +1,125 @@
+{% extends "multitask_cmd.html" %}
+{% block page-title %}智能堡垒机批量文件{% endblock %}
+{% block breadcrumb %}
+    <li class="active"><a href="#">批量文件</a></li>
+{% endblock %}
+{% block multi_task_content %}
+    <!-- 命令内容 -->
+    <div class="row">
+        <div class="panel">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    文件内容
+                    <input id="cancel-task" type="button" class="btn btn-danger btn-rounded" value="终止任务"
+                           disabled="disabled">
+                </h3>
+            </div>
+            <div class="panel-body">
+
+                <div class="dropzone" id="myDropzone">
+                    <div class="dz-default dz-message">
+                        <div class="dz-icon icon-wrap icon-circle icon-wrap-md">
+                            <i class="fa fa-cloud-upload fa-3x"></i>
+                        </div>
+                        <div>
+                            <p class="dz-text">拖拽文件上传</p>
+                            <p class="text-muted">或者点击打开文件上传</p>
+                        </div>
+                    </div>
+                </div>
+
+                <br>
+                <input id="submit-task" type="button" class="btn btn-info btn-rounded" value="提交">
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block submit_task %}
+    <script>
+        // 上传作业文件
+        Dropzone.autoDiscover = false;
+        var myDropzone = new Dropzone("#myDropzone", {
+            url: "{% url 'multitask_upload_file' %}",  // 最重要的参数，指明了文件提交到哪个页面
+            method: 'post',  // 默认为post，如果需要，可以改为put。
+            paramName: 'file',  // 相当于<input>元素的name属性，默认为file。
+            // maxFilesize: 5,  // 最大文件大小，单位是 MB。
+            maxFiles: 1,  // 默认为null，可以指定为一个数值，限制最多文件数量。
+            addRemoveLinks: true,  // 默认false。如果设为true，则会给文件添加一个删除链接。
+            // acceptedFiles: 'image/*,application/pdf,.psd,.obj',  // 指明允许上传的文件类型
+            dictRemoveLinks: "x",
+            dictCancelUpload: "x",
+            uploadMultiple: false,  // 指明是否允许 Dropzone 一次提交多个文件
+            filesizeBase: 1024,
+            init: function () {
+                this.on("sending", function (file, xhr, formData) {
+                    formData.append("csrfmiddlewaretoken", "{{ csrf_token }}");  // 携带csrf
+                    formData.append("filesize", file.size);
+                });
+                this.on("success", function (file, response, e) {
+                    response_obj = JSON.parse(response);
+                    if (response_obj["status"]) {
+                        $("#submit-task").attr("file_name", file.name);
+                    }
+                });
+                this.on("addedfile", function (file) {
+                    // actions...
+                    console.log(myDropzone.files)
+                });
+                this.on("removedfile", function (file) {
+                    console.log("File " + file.name + " removed");
+                });
+            }
+        });
+
+
+        // 提交任务
+        $("#submit-task").click(function () {
+
+            // 用户必须输入命令
+            var file_name = $("#submit-task").attr("file_name");  // 获取用户上传的文件名称
+            if (!file_name) {
+                swal("Ops!", "必须上传一个文件！", "warning");
+                return false
+            }
+
+            // 用户必须选择至少一个主机
+            var check_bind_hosts = $(".bind-host-check-button.active");  // 获取用户选择的主机
+            if (check_bind_hosts.length === 0) {
+                swal("Ops!", "必须选择主机！", "warning");
+                return false
+            }
+
+            var bind_hosts_ids = [];  // 定义要存放所有用户选择主机的列表
+            $.each($(".bind-host-check-button.active"), function (index, ele) {
+                var tmp_bind_host_id = $($(ele).children()[0]).val();
+                bind_hosts_ids.push(tmp_bind_host_id);  // 放入用户已经选择的主机ID
+            });
+
+            // 定义要发给后端的数据
+            var multiTaskData = {
+                "multiTaskType": "file_transfer",
+                "isCancel": "0",
+                "file_name": file_name,
+                "bind_hosts_ids": bind_hosts_ids
+            };
+
+            submitMultiTask(multiTaskData)
+        });
+    </script>
+{% endblock %}
+
+{% block cancel_task %}
+    <script>
+        // 终止批量任务操作
+        $("#cancel-task").click(function () {
+            // 定义要发给后端的数据
+            var multiTaskData = {
+                "multiTaskType": "file_transfer",
+                "isCancel": "1",
+                "multi_task_obj_id": $(this).attr("multi_task_obj_id")
+            };
+            cancelMultiTask(multiTaskData)
+        })
+    </script>
+{% endblock %}

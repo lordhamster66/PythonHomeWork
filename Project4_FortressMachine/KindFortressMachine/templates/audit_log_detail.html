@@ -1,0 +1,94 @@
+{% extends "index.html" %}
+{% load base_tags %}
+{% block page-title %}智能堡垒机审计日志{% endblock %}
+{% block breadcrumb %}
+    <li><a href="{% url "audit_log" %}">审计日志</a></li>
+    <li class="active"><a href="#">日志记录</a></li>
+{% endblock %}
+{% block page-content %}
+    <div class="panel panel-bordered panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">日志记录</h3>
+        </div>
+        <div class="panel-body">
+            <div id="demo-dt-basic_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
+                <form id="base-form" method="get">
+                    <!-- 每页显示几条选项 -->
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="dataTables_length" id="demo-dt-basic_length"><label>
+                                显示
+                                {{ audit_log_detail_form_obj.list_per_page }}
+                                条
+                            </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 查询选项 -->
+                    <div class="row">
+                        <div class="col-sm-3" style="text-align: center;">
+                            <label for="parse_mark">{{ audit_log_detail_form_obj.parse_mark.label }}</label>
+                            {{ audit_log_detail_form_obj.parse_mark }}
+                        </div>
+                    </div>
+                </form>
+                <!-- 表格内容 -->
+                <div class="row table-responsive">
+                    <div class="col-sm-12">
+                        <table class="table table-striped table-bordered dataTable no-footer dtr-inline"
+                               cellspacing="0"
+                               width="100%" role="grid" style="width: 100%;">
+                            <thead>
+                            <tr>
+                                <th style="white-space: nowrap;">序号</th>
+                                <th style="white-space: nowrap;">时间</th>
+                                <th style="white-space: nowrap;">内容</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for cmd_content in cmd_list %}
+                                <tr>
+                                    <td style="white-space: nowrap;">{{ forloop.counter }}</td>
+                                    <td style="white-space: nowrap;">
+                                        {% timestamp_to_str cmd_content.0 %}
+                                    </td>
+                                    <td style="white-space: nowrap;">{{ cmd_content.1 }}</td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- 表格底部 -->
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="dataTables_info" id="demo-dt-basic_info" role="status" aria-live="polite">
+                            总计{{ cmd_list.paginator.count }}条
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <nav aria-label="Page navigation">
+                            <ul class="pagination  pull-right">
+                                {% get_page_ele cmd_list %}
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block js %}
+    <script>
+        $(function () {
+            $("#list_per_page").change(function () {
+                $("#base-form").submit();
+            });
+            $("#parse_mark").change(function () {
+                $("#base-form").submit();
+            });
+        })
+    </script>
+{% endblock %}

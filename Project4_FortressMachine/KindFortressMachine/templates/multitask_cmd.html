@@ -1,0 +1,326 @@
+{% extends "index.html" %}
+{% block page-title %}智能堡垒机批量命令{% endblock %}
+{% block breadcrumb %}
+    <li class="active"><a href="#">批量命令</a></li>
+{% endblock %}
+{% block page-content %}
+    <div class="row">
+        <!-- 主机列表 -->
+        <div class="col-lg-4">
+            <div class="panel">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        主机列表(选中主机个数:<span id="check-bind-hosts-num" style="color: red;">0</span>个)
+                    </h3>
+                </div>
+                <div class="panel-body">
+                    <ul class="list-group bord-no">
+
+                        <!-- 已分组主机详情 -->
+                        {% for host_group in request.user.host_groups.all %}
+                            <li class="list-group-item">
+                                <label class="form-checkbox form-normal form-primary check-all-bind-hosts">
+                                    <input type="checkbox">
+                                </label>
+                                <a class="toggle-all-bind-hosts" href="javascript:void(0);">{{ host_group.name }}</a>
+                                <span class="badge badge-primary">{{ host_group.bind_hosts.count }}</span>
+                            </li>
+                            <ul class="hide">
+                                {% for bind_host in host_group.bind_hosts.all %}
+                                    <li style="list-style-type: none;">
+                                        <label class="form-checkbox form-normal form-primary bind-host-check-button">
+                                            <input type="checkbox" value="{{ bind_host.id }}">
+                                        </label>
+                                        {{ forloop.counter }}.{{ bind_host.remote_user.username }}@{{ bind_host.host.ip_adr }}
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        {% endfor %}
+
+                        <!-- 未分组主机详情 -->
+                        <li class="list-group-item">
+                            <label class="form-checkbox form-normal form-primary check-all-bind-hosts">
+                                <input type="checkbox">
+                            </label>
+                            <a class="toggle-all-bind-hosts" href="javascript:void(0);">未分组主机</a>
+                            <span class="badge badge-primary">{{ request.user.bind_hosts.count }}</span>
+                        </li>
+                        <ul class="hide">
+                            {% for bind_host in request.user.bind_hosts.all %}
+                                <li style="list-style-type: none;">
+                                    <label class="form-checkbox form-normal form-primary bind-host-check-button">
+                                        <input type="checkbox" value="{{ bind_host.id }}">
+                                    </label>
+                                    {{ forloop.counter }}.{{ bind_host.remote_user.username }}@{{ bind_host.host.ip_adr }}
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 命令内容&任务结果 -->
+        <div class="col-lg-8">
+
+            {% block multi_task_content %}
+                <!-- 命令内容 -->
+                <div class="row">
+                    <div class="panel">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">
+                                命令内容
+                                <input id="cancel-task" type="button" class="btn btn-danger btn-rounded" value="终止任务"
+                                       disabled="disabled">
+                            </h3>
+                        </div>
+                        <div class="panel-body">
+
+                            <textarea class="form-control" id="cmd-str" rows="1"></textarea>
+
+                            <br>
+                            <input id="submit-task" type="button" class="btn btn-info btn-rounded" value="提交">
+                        </div>
+                    </div>
+                </div>
+            {% endblock %}
+
+            <!-- 任务结果 -->
+            <div class="row">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">任务结果</h3>
+                    </div>
+                    <div class="panel-body">
+                        <ol id="multitask-content">
+
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block js %}
+    <script>
+        // 计算已经选中的主机个数并显示
+        function countCheckBindHosts(mod_num) {
+            var check_bind_hosts_num = $(".bind-host-check-button.active").length;
+            $("#check-bind-hosts-num").text(check_bind_hosts_num + mod_num);
+        }
+    </script>
+
+    <script>
+        // 点击展开或者收缩所有主机列表
+        $(".toggle-all-bind-hosts").click(function () {
+            $(this).parent().next().toggleClass("hide");
+        });
+    </script>
+
+    <script>
+        // 选中所有主机列表或者取消所有主机列表
+        $(".check-all-bind-hosts").click(function () {
+            if ($(this).hasClass("active")) {
+                $(this).parent().next().find(".bind-host-check-button").removeClass("active")
+            } else {
+                $(this).parent().next().find(".bind-host-check-button").addClass("active")
+            }
+            countCheckBindHosts(0)
+        });
+    </script>
+
+    <script>
+        // 单击某个主机
+        $(".bind-host-check-button").click(function () {
+            if ($(this).hasClass("active")) {
+                countCheckBindHosts(-1)
+            } else {
+                countCheckBindHosts(1)
+            }
+        });
+    </script>
+
+    <script>
+        // 提交批量任务函数
+        function submitMultiTask(multiTaskData) {
+            // 进行post请求
+            $.post("{% url 'multitask' %}", {
+                    "multiTaskData": JSON.stringify(multiTaskData),
+                    "csrfmiddlewaretoken": '{{ csrf_token }}'
+                }, function (ret) {
+                    ret_obj = JSON.parse(ret);
+                    // console.log(ret_obj);
+                    if (ret_obj["status"]) {
+                        // 任务发起之后，提交按钮变灰，必须等本次任务全部执行完毕
+                        $("#submit-task").attr("disabled", "disabled");
+
+                        // 任务发起之后，终止按钮可以正常工作
+                        $("#cancel-task").removeAttr("disabled");
+
+                        // 任务发起之后，任务结果面板先清空，然后显示本次任务的详情
+                        $("#multitask-content").empty();
+                        var multi_task_detail_info = ret_obj["data"]['multi_task_detail_info'];
+                        for (var i = 0; i < multi_task_detail_info.length; i++) {
+                            var li_ele = document.createElement("li");
+                            $(li_ele).attr("multi_task_detail_id", multi_task_detail_info[i]["id"]);
+                            $(li_ele).html(multi_task_detail_info[i]["bind_host"] + "&nbsp;&nbsp;&nbsp;&nbsp;");
+                            var span_ele = document.createElement("span");
+                            $(span_ele).text("init");
+                            $(li_ele).append(span_ele);
+                            var pre_ele = document.createElement("pre");
+                            $(pre_ele).text("init....");
+                            $(li_ele).append(pre_ele);
+                            $("#multitask-content").append(li_ele)
+                        }
+
+                        // 批量任务对象ID
+                        var multi_task_obj_id = ret_obj["data"]['multi_task_obj_id'];
+
+                        // 终止任务按钮添加上一个批量任务对象ID的标签，此时用户可以用此ID来终止此次任务
+                        $("#cancel-task").attr("multi_task_obj_id", multi_task_obj_id);
+
+                        // 启动轮询任务
+                        multitaskInterval = setInterval(function () {
+                                getMultitaskRet(multi_task_obj_id)
+                            }, 1000
+                        )
+                    } else {
+                        var error_str = "";  //错误字段
+                        for (var i = 0; i < ret_obj["errors"].length; i++) {
+                            for (var index in ret_obj["errors"][i]) {
+                                error_str += index + ":" + ret_obj["errors"][i][index] + "\n"
+                            }
+                        }
+                        swal("Ops!", error_str, "warning");
+                    }
+                }
+            );
+        }
+    </script>
+
+    {% block submit_task %}
+        <script>
+            $("#submit-task").click(function () {
+
+                // 用户必须输入命令
+                var cmd = $("#cmd-str").val().trim();  // 获取用户输入的命令
+                if (cmd.length === 0) {
+                    swal("Ops!", "必须输入命令！", "warning");
+                    return false
+                }
+
+                // 用户必须选择至少一个主机
+                var check_bind_hosts = $(".bind-host-check-button.active");  // 获取用户选择的主机
+                if (check_bind_hosts.length === 0) {
+                    swal("Ops!", "必须选择主机！", "warning");
+                    return false
+                }
+
+                var bind_hosts_ids = [];  // 定义要存放所有用户选择主机的列表
+                $.each($(".bind-host-check-button.active"), function (index, ele) {
+                    var tmp_bind_host_id = $($(ele).children()[0]).val();
+                    bind_hosts_ids.push(tmp_bind_host_id);  // 放入用户已经选择的主机ID
+                });
+
+                // 定义要发给后端的数据
+                var multiTaskData = {
+                    "multiTaskType": "cmd",
+                    "isCancel": "0",
+                    "cmd": cmd,
+                    "bind_hosts_ids": bind_hosts_ids
+                };
+
+                submitMultiTask(multiTaskData)
+
+            });
+        </script>
+    {% endblock %}
+
+    <script>
+        var multiTaskStatusDict = {
+            "0": ["#46b9d8", "init"],
+            "1": ["#97c664", "success"],
+            "2": ["red", "failed"]
+        };
+
+        //  轮询任务，用来更新任务状态及结果
+        function getMultitaskRet(multi_task_obj_id) {
+            $.post("{% url 'multitask_ret' %}", {
+                "multi_task_obj_id": multi_task_obj_id,
+                "csrfmiddlewaretoken": '{{ csrf_token }}'
+            }, function (ret) {
+                var ret_obj = JSON.parse(ret);  // 后端返回的结果
+                var multi_task_detail_info = ret_obj["data"]["multi_task_detail_info"];  // 后端返回的批量任务执行情况
+                var task_done = true;  // 任务完成了吗
+                for (var i = 0; i < multi_task_detail_info.length; i++) {
+                    var multi_task_detail_id = multi_task_detail_info[i]["id"];
+                    var multi_task_detail_li_ele = $("#multitask-content [multi_task_detail_id=" + multi_task_detail_id + "]");
+                    $(multi_task_detail_li_ele).children("span").text(
+                        multiTaskStatusDict[multi_task_detail_info[i]["status"]][1]
+                    );
+                    $(multi_task_detail_li_ele).children("span").css(
+                        "color",
+                        multiTaskStatusDict[multi_task_detail_info[i]["status"]][0]
+                    );
+                    $(multi_task_detail_li_ele).children("pre").text(multi_task_detail_info[i]["result"]);
+                    if (multi_task_detail_info[i]["status"] === 0) {
+                        task_done = false
+                    }
+                }
+                if (task_done) {
+                    $("#submit-task").removeAttr("disabled");
+                    $("#cancel-task").attr("disabled", "disabled");
+                    clearInterval(multitaskInterval);
+                }
+            });
+        }
+    </script>
+
+    <script>
+        // 终止批量任务操作函数
+        function cancelMultiTask(multiTaskData) {
+            $.post("{% url 'multitask' %}", {
+                "multiTaskData": JSON.stringify(multiTaskData),
+                "csrfmiddlewaretoken": '{{ csrf_token }}'
+            }, function (ret) {
+                ret_obj = JSON.parse(ret);
+                if (ret_obj["status"]) {
+                    $("#cancel-task").attr("disabled", "disabled");
+                    $("#submit-task").removeAttr("disabled");
+                    clearInterval(multitaskInterval);
+                    var multi_task_detail_info = ret_obj["data"]["multi_task_detail_info"];  // 后端返回的批量任务执行情况
+                    for (var i = 0; i < multi_task_detail_info.length; i++) {
+                        var multi_task_detail_id = multi_task_detail_info[i]["id"];
+                        var multi_task_detail_li_ele = $("#multitask-content [multi_task_detail_id=" + multi_task_detail_id + "]");
+                        if (multi_task_detail_info[i]["status"] === 0) {
+                            $(multi_task_detail_li_ele).children("pre").text("任务已经终止");
+                        }
+                    }
+                } else {
+                    var error_str = "";  //错误字段
+                    for (var i = 0; i < ret_obj["errors"].length; i++) {
+                        for (var index in ret_obj["errors"][i]) {
+                            error_str += index + ":" + ret_obj["errors"][i][index] + "\n"
+                        }
+                    }
+                    swal("Ops!", error_str, "warning");
+                }
+            })
+        }
+    </script>
+
+    {% block cancel_task %}
+        <script>
+            // 终止批量任务操作
+            $("#cancel-task").click(function () {
+                // 定义要发给后端的数据
+                var multiTaskData = {
+                    "multiTaskType": "cmd",
+                    "isCancel": "1",
+                    "multi_task_obj_id": $(this).attr("multi_task_obj_id")
+                };
+                cancelMultiTask(multiTaskData)
+            })
+        </script>
+    {% endblock %}
+{% endblock %}

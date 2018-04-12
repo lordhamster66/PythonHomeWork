@@ -10,7 +10,13 @@ from django.forms import ModelForm
 
 class BaseServiceList(object):
 
-    def __init__(self, condition_config, table_config, extra_select, global_dict, queryset, exclude_fields):
+    def __init__(
+        self,
+        condition_config,
+        table_config, extra_select,
+        global_dict, queryset,
+        exclude_fields
+    ):
         # 查询条件的配置，列表
         self.condition_config = condition_config
 
@@ -20,7 +26,8 @@ class BaseServiceList(object):
             'q': 'title',       # 用于数据库查询的字段，即Model.Tb.objects.xxx.values(*['v',]), None则表示不获取相应的数据库列
             'title': '标题',     # table表格显示的列名
             'display': 0        # 实现在表格中显示 0，不显示；1显示
-            'text': {'content': "{id}", 'kwargs': {'id': '@id'}}, # 表格的每一个td中显示的内容,一个@表示获取数据库查询字段，两个@@，表示根据当前id在全局变量中找到id对应的内容
+            # 表格的每一个td中显示的内容,一个@表示获取数据库查询字段，两个@@，表示根据当前id在全局变量中找到id对应的内容
+            'text': {'content': "{id}", 'kwargs': {'id': '@id'}}, 
             'attr': {}          # 自定义属性
         }
         """
@@ -74,7 +81,8 @@ class BaseServiceList(object):
             ret = {}
             conditions = self.queryset_condition(request)
             queryset_count = self.queryset.filter(conditions).count()
-            page_info = PageInfo(request.GET.get('pager', None), queryset_count)
+            page_info = PageInfo(request.GET.get(
+                'pager', None), queryset_count)
             queryset_list = self.queryset.filter(conditions).extra(select=self.extra_select).values(
                 *self.values_list)[page_info.start:page_info.end]
 
@@ -123,7 +131,8 @@ class BaseServiceList(object):
                     response.status = False
                     error_count += 1
             if error_count:
-                response.message = '共%s条,失败%s条' % (len(update_list), error_count,)
+                response.message = '共%s条,失败%s条' % (
+                    len(update_list), error_count,)
             else:
                 response.message = '更新成功'
         except Exception as e:
@@ -147,7 +156,8 @@ class BaseServiceList(object):
 
         def __new__(cls, *args, **kwargs):
             for field_name, field_obj in cls.base_fields.items():
-                model_field_obj = self.queryset.model._meta.get_field(field_name)
+                model_field_obj = self.queryset.model._meta.get_field(
+                    field_name)
                 if type(model_field_obj).__name__ == "DateField":
                     field_obj.widget.attrs["class"] = "form-control date-picker"
                 else:

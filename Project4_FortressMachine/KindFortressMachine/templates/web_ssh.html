@@ -1,0 +1,18 @@
+{% extends "index.html" %}
+{% block page-title %}智能堡垒机WEB SSH{% endblock %}
+{% block breadcrumb %}
+    <li class="active"><a href="#">WEB SSH</a></li>
+{% endblock %}
+{% block page-content %}
+    <div class="panel">
+        <div class="panel-heading">
+            <h3 class="panel-title">
+                WEB SSH(ps:堡垒机SSH账号:{{ info_dict.web_ssh_user }},密码:{{ info_dict.web_ssh_pwd }})
+            </h3>
+        </div>
+        <div class="panel-body">
+            <iframe src="{{ info_dict.web_ssh_url }}" scrolling="auto" frameborder="0"
+                    style="width: 100%;height: 500px;"></iframe>
+        </div>
+    </div>
+{% endblock %}

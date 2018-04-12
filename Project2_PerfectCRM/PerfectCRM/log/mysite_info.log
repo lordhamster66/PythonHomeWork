@@ -2499,3 +2499,7 @@ django.db.utils.IntegrityError: UNIQUE constraint failed: crm_courserecord.from_
 [2018-02-10 11:17:54,449][Thread-163:872][task_id:django.request][base.py:152][WARNING][Not Found: /favicon.ico]
 [2018-02-10 11:54:25,145][Thread-209:9852][task_id:django.request][base.py:152][WARNING][Not Found: /kind_admin/index]
 [2018-02-10 11:54:38,120][Thread-211:7048][task_id:django.request][base.py:152][WARNING][Not Found: /kind_admin/table_index.html]
+[2018-04-12 17:42:28,750][Thread-1:18092][task_id:django.request][base.py:152][WARNING][Not Found: /]
+[2018-04-12 17:42:29,314][Thread-3:7184][task_id:django.request][base.py:152][WARNING][Not Found: /favicon.ico]
+[2018-04-12 17:43:11,315][Thread-63:3288][task_id:__name__][permission.py:79][WARNING][用户:1079614505@qq.com正在尝试访问无权限接口/crm/sales/enrollment/7/]
+[2018-04-12 17:49:24,130][Thread-133:5700][task_id:__name__][permission.py:79][WARNING][用户:1079614505@qq.com正在尝试访问无权限接口/crm/sales/enrollment/5/]

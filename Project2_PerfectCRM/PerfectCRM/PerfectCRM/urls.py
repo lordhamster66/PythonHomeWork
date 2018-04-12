@@ -16,8 +16,10 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 from PerfectCRM import views
+from crm import views as crm_views
 
 urlpatterns = [
+    url(r'^$', crm_views.index),
     url(r'^admin/', admin.site.urls),  # django admin
     url(r'^accounts/login/$', views.acc_login),  # 登录
     url(r'^accounts/logout/$', views.acc_logout),  # 注销

@@ -24,7 +24,7 @@ SECRET_KEY = 'o&1+vw7bb68&pbisdh^u62sn^ulq1xt)c&tn%9g2b2&75kog*k'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -120,6 +120,8 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
 )
+
+STATIC_ROOT = os.path.join(BASE_DIR, "static_assets")
 
 CACHES = {
     'default': {
